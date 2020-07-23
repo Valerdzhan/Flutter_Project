@@ -1,17 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/navigates/background_lesson.dart';
-import 'package:myapp/navigates/http_lesson.dart';
-import 'package:myapp/navigates/http_post_lesson.dart';
-import 'package:myapp/navigates/lesson_4.dart';
-import 'package:myapp/navigates/todo.dart';
-import 'package:myapp/navigates/websocket_lesson.dart';
-// import 'package:myapp/tutorial_1.dart';
-import 'tutorial_1.dart';
-import 'navigates/second.dart';
-import 'navigates/lesson_3.dart';
-
 void main() {
-  runApp(MyAppWS());
+  runApp(MaterialApp(
+    title: 'Test app',
+    home: TutorialHome()
+  ));
 }
 
 class TutorialHome extends StatelessWidget {
