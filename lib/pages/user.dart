@@ -5,7 +5,7 @@ class UserPage extends StatelessWidget {
   final String _title = 'Пользователь';
   @override
   Widget build(BuildContext context) {
-    return MyScaffold(title: this._title, body: UserPageBody());
+    return MyScaffold(title: this._title, body: UserPageBody(), isDrawer: false,);
   }
 }
 

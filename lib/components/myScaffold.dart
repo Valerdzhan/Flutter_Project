@@ -5,8 +5,9 @@ import 'menu.dart';
 class MyScaffold extends StatelessWidget {
   final String title;
   final Widget body;
+  final bool isDrawer;
 
-  MyScaffold({Key key, this.title, this.body});
+  MyScaffold({Key key, this.title, this.body, this.isDrawer = true});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class MyScaffold extends StatelessWidget {
         ],
       ),
       body: body,
-      drawer: MyDrawer(),
+      drawer: isDrawer ? MyDrawer() : null,
     );
   }
 }

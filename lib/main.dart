@@ -15,9 +15,8 @@ class MyApp extends StatelessWidget {
       title: this._title,
       initialRoute: '/',
       routes: {
-        '/': (context) => HomePage(title: this._title),
+        '/': (context) => TaskListPage(),
         '/user': (context) => UserPage(),
-        '/second': (context) => SecondScreen()
       },
       theme: ThemeData(
         primarySwatch: Colors.blue

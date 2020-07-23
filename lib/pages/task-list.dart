@@ -1,24 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/components/myScaffold.dart';
 
-class SecondScreen extends StatelessWidget {
-  final String _title = 'Second';
+class TaskListPage extends StatefulWidget {
+  @override
+  _TaskListState createState() => _TaskListState();
+}
+
+class _TaskListState extends State<TaskListPage> {
+  final String _title = 'Мои задачи';
   @override
   Widget build(BuildContext context) {
-    return MyScaffold(title: this._title, body: SecondScreenBody());
+    return MyScaffold(title: this._title, body: TaskListBody());
   }
 }
 
-class SecondScreenBody extends StatelessWidget {
+class TaskListBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: RaisedButton(
-        onPressed: () {
-          Navigator.pop(context);
-        },
-        child: Text('Go back!'),
-      ),
+      child: Column(
+        children: <Widget>[
+          Text('Task list')
+        ],
+      ) 
+      
     );
   }
 }
