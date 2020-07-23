@@ -1,0 +1,35 @@
+import 'package:flutter/material.dart';
+
+import 'menu.dart';
+
+class MyScaffold extends StatelessWidget {
+  final String title;
+  final Widget body;
+
+  MyScaffold({Key key, this.title, this.body});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(this.title),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            tooltip: 'Поиск',
+            onPressed: () => {print('click search')},
+          ),
+          IconButton(
+            icon: Icon(Icons.person),
+            tooltip: 'Пользователь',
+            onPressed: () => {
+              Navigator.pushNamed(context, '/user')
+            },
+          )
+        ],
+      ),
+      body: body,
+      drawer: MyDrawer(),
+    );
+  }
+}
