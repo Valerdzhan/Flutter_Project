@@ -3,6 +3,10 @@ import 'package:myapp/components/myScaffold.dart';
 
 class UserPage extends StatelessWidget {
   final String _title = 'Пользователь';
+  static const BottomNavigationBarItem navItem = BottomNavigationBarItem(
+    icon: Icon(Icons.person),
+    title: Text('Пользователь'),
+  );
   @override
   Widget build(BuildContext context) {
     return MyScaffold(title: this._title, body: UserPageBody(), isDrawer: false,);

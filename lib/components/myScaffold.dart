@@ -20,13 +20,14 @@ class MyScaffold extends StatelessWidget {
             tooltip: 'Поиск',
             onPressed: () => {print('click search')},
           ),
-          IconButton(
-            icon: Icon(Icons.person),
-            tooltip: 'Пользователь',
-            onPressed: () => {
-              Navigator.pushNamed(context, '/user')
-            },
-          )
+          // Страница пользователя, переход через route /user
+          // IconButton(
+          //   icon: Icon(Icons.person),
+          //   tooltip: 'Пользователь',
+          //   onPressed: () => {
+          //     Navigator.pushNamed(context, '/user')
+          //   },
+          // )
         ],
       ),
       body: body,

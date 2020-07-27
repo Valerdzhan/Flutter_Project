@@ -18,7 +18,7 @@ class MyDrawer extends StatelessWidget {
             leading: Icon(Icons.list),
             title: Text('Мои задачи'),
             onTap: () {
-              Navigator.pushNamed(context, '/tasks');
+              Navigator.pushNamed(context, '/');
             },
           ),
           ListTile(

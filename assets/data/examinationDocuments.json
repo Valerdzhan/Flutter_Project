@@ -1,0 +1,344 @@
+{
+    "examinationDocuments": {
+        "count": 12,
+        "items": [
+            {
+                "id": "01722638262945dea0f7b4f57eba4a74",
+                "compileTitle": "№ 44 от 02.05.2020 - test examine 5e",
+                "title": "test examine 5e",
+                "documentType": "ORDER",
+                "readAuditList": [
+                    {
+                        "userId": "01684ad838234dd08597e3eeb0343869",
+                        "whenRead": "2020-05-18T05:18:36.64Z",
+                        "masters": [
+                            "01684ada3adc484d97914a719ad28c7a",
+                            "01684ada41fc491c901b04566a6768dc"
+                        ],
+                        "__typename": "ReadAuditType"
+                    }
+                ],
+                "examinationAuditList": [
+                    {
+                        "userId": "01684ad838234dd08597e3eeb0343869",
+                        "whenRead": "2020-05-18T05:24:59.688Z",
+                        "masters": [],
+                        "__typename": "ReadAuditType"
+                    }
+                ],
+                "publisherId": "01684ad838234dd08597e3eeb0343869",
+                "whenPublished": "2020-05-18T05:24:41.183Z",
+                "__typename": "LNAListItem"
+            },
+            {
+                "id": "017236f86de54b62864cc16211a0c769",
+                "compileTitle": "№ 45 от 02.05.2020 - Новый приказ",
+                "title": "Новый приказ",
+                "documentType": "ORDER",
+                "readAuditList": [
+                    {
+                        "userId": "01684ad838234dd08597e3eeb0343869",
+                        "whenRead": "2020-05-21T11:22:33.627Z",
+                        "masters": [
+                            "01684ada3adc484d97914a719ad28c7a",
+                            "01684ada41fc491c901b04566a6768dc"
+                        ],
+                        "__typename": "ReadAuditType"
+                    }
+                ],
+                "examinationAuditList": [
+                    {
+                        "userId": "01684ad838234dd08597e3eeb0343869",
+                        "whenRead": "2020-05-21T11:24:16.706Z",
+                        "masters": [],
+                        "__typename": "ReadAuditType"
+                    }
+                ],
+                "publisherId": "01684ad838234dd08597e3eeb0343869",
+                "whenPublished": "2020-05-21T11:24:10.146Z",
+                "__typename": "LNAListItem"
+            },
+            {
+                "id": "01722659e76f44598f39f1645085a18e",
+                "compileTitle": "№ 8 от 02.05.2020 - Документ для регистрации 1",
+                "title": "Документ для регистрации 1",
+                "documentType": "DIRECTIVE",
+                "readAuditList": [
+                    {
+                        "userId": "01684ad838234dd08597e3eeb0343869",
+                        "whenRead": "2020-05-18T05:55:27.77Z",
+                        "masters": [
+                            "01684ada3adc484d97914a719ad28c7a",
+                            "01684ada41fc491c901b04566a6768dc"
+                        ],
+                        "__typename": "ReadAuditType"
+                    }
+                ],
+                "examinationAuditList": [
+                    {
+                        "userId": "01684ad838234dd08597e3eeb0343869",
+                        "whenRead": "2020-05-18T06:12:27.402Z",
+                        "masters": [],
+                        "__typename": "ReadAuditType"
+                    }
+                ],
+                "publisherId": "01684ad838234dd08597e3eeb0343869",
+                "whenPublished": "2020-05-18T05:59:24.671Z",
+                "__typename": "LNAListItem"
+            },
+            {
+                "id": "01722644535144feb55946e4f701c8f8",
+                "compileTitle": "№ 7 от 02.05.2020 - Кнопка ознакомления в распоряжении",
+                "title": "Кнопка ознакомления в распоряжении",
+                "documentType": "DIRECTIVE",
+                "readAuditList": [
+                    {
+                        "userId": "01684ad838234dd08597e3eeb0343869",
+                        "whenRead": "2020-05-18T05:31:54.549Z",
+                        "masters": [
+                            "01684ada3adc484d97914a719ad28c7a",
+                            "01684ada41fc491c901b04566a6768dc"
+                        ],
+                        "__typename": "ReadAuditType"
+                    }
+                ],
+                "examinationAuditList": [
+                    {
+                        "userId": "01684ad838234dd08597e3eeb0343869",
+                        "whenRead": "2020-05-18T05:32:28.027Z",
+                        "masters": [],
+                        "__typename": "ReadAuditType"
+                    }
+                ],
+                "publisherId": "01684ad838234dd08597e3eeb0343869",
+                "whenPublished": "2020-05-18T05:32:21.243Z",
+                "__typename": "LNAListItem"
+            },
+            {
+                "id": "01722602813e48c39dd9241aa9bbec02",
+                "compileTitle": "№ 43 от 02.05.2020 - Проверка модального окна приказа и длинного названия документа",
+                "title": "Проверка модального окна приказа и длинного названия документа",
+                "documentType": "ORDER",
+                "readAuditList": [
+                    {
+                        "userId": "01684ad838234dd08597e3eeb0343869",
+                        "whenRead": "2020-05-18T04:20:00.632Z",
+                        "masters": [
+                            "01684ada3adc484d97914a719ad28c7a",
+                            "01684ada41fc491c901b04566a6768dc"
+                        ],
+                        "__typename": "ReadAuditType"
+                    }
+                ],
+                "examinationAuditList": [
+                    {
+                        "userId": "01684ad838234dd08597e3eeb0343869",
+                        "whenRead": "2020-05-18T05:16:00.26Z",
+                        "masters": [],
+                        "__typename": "ReadAuditType"
+                    }
+                ],
+                "publisherId": "01684ad838234dd08597e3eeb0343869",
+                "whenPublished": "2020-05-18T04:20:29.292Z",
+                "__typename": "LNAListItem"
+            },
+            {
+                "id": "017225e9a75448d398a18c3fc4aae81e",
+                "compileTitle": "№ 6 от 02.05.2020 - Модальное окно ознакомления",
+                "title": "Модальное окно ознакомления",
+                "documentType": "DIRECTIVE",
+                "readAuditList": [
+                    {
+                        "userId": "01684ad838234dd08597e3eeb0343869",
+                        "whenRead": "2020-05-18T03:52:52.864Z",
+                        "masters": [
+                            "01684ada3adc484d97914a719ad28c7a",
+                            "01684ada41fc491c901b04566a6768dc"
+                        ],
+                        "__typename": "ReadAuditType"
+                    }
+                ],
+                "examinationAuditList": [
+                    {
+                        "userId": "01684ad838234dd08597e3eeb0343869",
+                        "whenRead": "2020-05-18T04:19:11.528Z",
+                        "masters": [],
+                        "__typename": "ReadAuditType"
+                    }
+                ],
+                "publisherId": "01684ad838234dd08597e3eeb0343869",
+                "whenPublished": "2020-05-18T03:53:21.927Z",
+                "__typename": "LNAListItem"
+            },
+            {
+                "id": "017217e3704f4b6398a2536cf6229f56",
+                "compileTitle": "№ 42 от 01.05.2020 - новый приказ",
+                "title": "новый приказ",
+                "documentType": "ORDER",
+                "readAuditList": [
+                    {
+                        "userId": "01684ad838234dd08597e3eeb0343869",
+                        "whenRead": "2020-05-15T10:31:24.185Z",
+                        "masters": [
+                            "01684ada3adc484d97914a719ad28c7a",
+                            "01684ada41fc491c901b04566a6768dc"
+                        ],
+                        "__typename": "ReadAuditType"
+                    }
+                ],
+                "examinationAuditList": [
+                    {
+                        "userId": "01684ad838234dd08597e3eeb0343869",
+                        "whenRead": "2020-05-18T03:51:24.06Z",
+                        "masters": [],
+                        "__typename": "ReadAuditType"
+                    }
+                ],
+                "publisherId": "01684ad838234dd08597e3eeb0343869",
+                "whenPublished": "2020-05-15T10:32:04.684Z",
+                "__typename": "LNAListItem"
+            },
+            {
+                "id": "01720db05878444291e1dda81c92901d",
+                "compileTitle": "№ 40 от 01.05.2020 - Какой-то приказ",
+                "title": "Какой-то приказ",
+                "documentType": "ORDER",
+                "readAuditList": [
+                    {
+                        "userId": "01684ad838234dd08597e3eeb0343869",
+                        "whenRead": "2020-05-13T10:59:22.26Z",
+                        "masters": [
+                            "01684ada3adc484d97914a719ad28c7a",
+                            "01684ada41fc491c901b04566a6768dc"
+                        ],
+                        "__typename": "ReadAuditType"
+                    }
+                ],
+                "examinationAuditList": [
+                    {
+                        "userId": "01684ad838234dd08597e3eeb0343869",
+                        "whenRead": "2020-05-14T07:20:56.463Z",
+                        "masters": [],
+                        "__typename": "ReadAuditType"
+                    }
+                ],
+                "publisherId": "01684ad838234dd08597e3eeb0343869",
+                "whenPublished": "2020-05-14T06:45:03.422Z",
+                "__typename": "LNAListItem"
+            },
+            {
+                "id": "017212120f4d4ca09e869bc095794023",
+                "compileTitle": "№ 5 от 02.05.2020 - Какое то распоряжение",
+                "title": "Какое то распоряжение",
+                "documentType": "DIRECTIVE",
+                "readAuditList": [
+                    {
+                        "userId": "01684ad838234dd08597e3eeb0343869",
+                        "whenRead": "2020-05-14T07:24:37.311Z",
+                        "masters": [
+                            "01684ada3adc484d97914a719ad28c7a",
+                            "01684ada41fc491c901b04566a6768dc"
+                        ],
+                        "__typename": "ReadAuditType"
+                    }
+                ],
+                "examinationAuditList": [
+                    {
+                        "userId": "01684ad838234dd08597e3eeb0343869",
+                        "whenRead": "2020-05-14T07:30:45.109Z",
+                        "masters": [],
+                        "__typename": "ReadAuditType"
+                    }
+                ],
+                "publisherId": "01684ad838234dd08597e3eeb0343869",
+                "whenPublished": "2020-05-14T07:29:30.806Z",
+                "__typename": "LNAListItem"
+            },
+            {
+                "id": "01720d9e9f524c3ea25f1d26b3abc8ed",
+                "compileTitle": "№ 41 от 01.05.2020 - Проверка ознакомления",
+                "title": "Проверка ознакомления",
+                "documentType": "ORDER",
+                "readAuditList": [
+                    {
+                        "userId": "01684ad838234dd08597e3eeb0343869",
+                        "whenRead": "2020-05-13T10:40:02.663Z",
+                        "masters": [
+                            "01684ada3adc484d97914a719ad28c7a",
+                            "01684ada41fc491c901b04566a6768dc"
+                        ],
+                        "__typename": "ReadAuditType"
+                    }
+                ],
+                "examinationAuditList": [
+                    {
+                        "userId": "01684ad838234dd08597e3eeb0343869",
+                        "whenRead": "2020-05-15T06:20:24.631Z",
+                        "masters": [],
+                        "__typename": "ReadAuditType"
+                    }
+                ],
+                "publisherId": "01684ad838234dd08597e3eeb0343869",
+                "whenPublished": "2020-05-13T11:01:45.09Z",
+                "__typename": "LNAListItem"
+            },
+            {
+                "id": "0171edca3cc1449bb881dd747a920d58",
+                "compileTitle": "№ 39 от 01.05.2020 - Приказ Иванов",
+                "title": "Приказ Иванов",
+                "documentType": "ORDER",
+                "readAuditList": [
+                    {
+                        "userId": "01684ad838234dd08597e3eeb0343869",
+                        "whenRead": "2020-05-07T06:19:50.488Z",
+                        "masters": [
+                            "01684ada3adc484d97914a719ad28c7a",
+                            "01684ada41fc491c901b04566a6768dc"
+                        ],
+                        "__typename": "ReadAuditType"
+                    }
+                ],
+                "examinationAuditList": [
+                    {
+                        "userId": "01684ad838234dd08597e3eeb0343869",
+                        "whenRead": "2020-05-15T10:30:59.702Z",
+                        "masters": [],
+                        "__typename": "ReadAuditType"
+                    }
+                ],
+                "publisherId": "01684ad838234dd08597e3eeb0343869",
+                "whenPublished": "2020-05-07T06:20:43.263Z",
+                "__typename": "LNAListItem"
+            },
+            {
+                "id": "0171968e593b4078a737c79563e8043d",
+                "compileTitle": "№ 38 от 01.04.2020 - новый приказ",
+                "title": "новый приказ",
+                "documentType": "ORDER",
+                "readAuditList": [
+                    {
+                        "userId": "01684ad838234dd08597e3eeb0343869",
+                        "whenRead": "2020-04-20T07:47:27.804Z",
+                        "masters": [
+                            "01684ada3adc484d97914a719ad28c7a",
+                            "01684ada41fc491c901b04566a6768dc"
+                        ],
+                        "__typename": "ReadAuditType"
+                    }
+                ],
+                "examinationAuditList": [
+                    {
+                        "userId": "01684ad838234dd08597e3eeb0343869",
+                        "whenRead": "2020-04-20T08:25:29.857Z",
+                        "masters": [],
+                        "__typename": "ReadAuditType"
+                    }
+                ],
+                "publisherId": "01684ad838234dd08597e3eeb0343869",
+                "whenPublished": "2020-04-20T07:48:26.657Z",
+                "__typename": "LNAListItem"
+            }
+        ],
+        "__typename": "DocumentListItemInterfaceCollection"
+    }
+}
