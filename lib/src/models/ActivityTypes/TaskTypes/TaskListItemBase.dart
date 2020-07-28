@@ -1,5 +1,5 @@
-import 'package:myapp/models/DocumentDescriptor.dart';
-import 'package:myapp/models/documentListItemBase.dart';
+import 'package:myapp/src/models/DocumentDescriptor.dart';
+import 'package:myapp/src/models/documentListItemBase.dart';
 
 class TaskListItemBase {
   final String taskId;
@@ -58,9 +58,16 @@ class TaskListItemBase {
         hasChildren: json['hasChildren'] as bool,
         actor: json['actorId'] as String,
         dueDate: json['dueDate'] as DateTime,
-        documentLastVersion: DocumentDescriptor.fromJson(json['documentLastVersion']),
+        documentLastVersion:
+            DocumentDescriptor.fromJson(json['documentLastVersion']),
         state: json['state'] as String,
         status: json['status'] as String,
         note: json['note'] as String);
+  }
+
+  static List<TaskListItemBase> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<TaskListItemBase>()
+        : json.map((value) => TaskListItemBase.fromJson(value)).toList();
   }
 }

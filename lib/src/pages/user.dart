@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/components/myScaffold.dart';
+import 'package:myapp/src/components/myScaffold.dart';
 
 class UserPage extends StatelessWidget {
   final String _title = 'Пользователь';
@@ -9,7 +9,11 @@ class UserPage extends StatelessWidget {
   );
   @override
   Widget build(BuildContext context) {
-    return MyScaffold(title: this._title, body: UserPageBody(), isDrawer: false,);
+    return MyScaffold(
+      title: this._title,
+      body: UserPageBody(),
+      isDrawer: false,
+    );
   }
 }
 

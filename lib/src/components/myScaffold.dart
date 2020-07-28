@@ -6,8 +6,14 @@ class MyScaffold extends StatelessWidget {
   final String title;
   final Widget body;
   final bool isDrawer;
+  final dynamic floatingActionButton;
 
-  MyScaffold({Key key, this.title, this.body, this.isDrawer = true});
+  MyScaffold(
+      {Key key,
+      this.title,
+      this.body,
+      this.isDrawer = true,
+      this.floatingActionButton});
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +37,7 @@ class MyScaffold extends StatelessWidget {
         ],
       ),
       body: body,
+      floatingActionButton: floatingActionButton,
       drawer: isDrawer ? MyDrawer() : null,
     );
   }

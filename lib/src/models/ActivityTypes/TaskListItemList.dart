@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:myapp/models/ActivityTypes/TaskTypes/TaskListItemBase.dart';
+import 'package:myapp/src/models/ActivityTypes/TaskTypes/TaskListItemBase.dart';
 
 class TaskListItemList {
   final int count;
@@ -11,8 +10,6 @@ class TaskListItemList {
     final items = json['items'] as List;
     return TaskListItemList(
         count: json['count'] as int,
-        items: items.map((i) => TaskListItemBase.fromJson(i)).toList()
-    );
-        //;items as List<TaskListItemBase> //.map<TaskListItemBase>((item) => TaskListItemBase.fromJson(item)));
+        items: TaskListItemBase.listFromJson(items));
   }
 }

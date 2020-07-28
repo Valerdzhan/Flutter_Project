@@ -1,27 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/pages/task-list.dart';
-import 'package:myapp/pages/user.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:myapp/src/pages/task-list.dart';
+import 'package:myapp/src/pages/user.dart';
+import 'package:myapp/src/redux/store.dart';
+import 'package:myapp/src/redux/users/users_actions.dart';
 
-void main() {
+void main() async {
+  await Redux.init();
+
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  final String _title = 'СЭД'; 
+  final String _title = 'СЭД';
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: this._title,
-      // initialRoute: '/',
-      // routes: {
-      //   '/': (context) => TaskListPage(),
-      //   '/user': (context) => UserPage(),
-      // },
-      theme: ThemeData(
-        primarySwatch: Colors.blue
-      ),
-      home: HomePage(title: 'Главная',),
-    );
+        title: this._title,
+        // initialRoute: '/',
+        // routes: {
+        //   '/': (context) => TaskListPage(),
+        //   '/user': (context) => UserPage(),
+        // },
+        theme: ThemeData(primarySwatch: Colors.blue),
+        home: StoreProvider<AppState>(
+          store: Redux.store,
+          child: HomePage(
+            title: 'Главная',
+          ),
+        ));
   }
 }
 
@@ -50,7 +58,6 @@ class MyApp extends StatelessWidget {
 //   }
 // }
 
-
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
   final String title;
@@ -70,6 +77,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    Redux.store.dispatch(fetchUsersAction);
     return Scaffold(
       body: [TaskListPage(), UserPage()][_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -84,4 +92,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
