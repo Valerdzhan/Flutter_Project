@@ -26,22 +26,15 @@ class _TaskListState extends State<TaskListPage> {
 }
 
 class TaskListBody extends StatelessWidget {
-  void _onFetchTasksPressed() {
-    Redux.store.dispatch(fetchTastsAction);
-  }
-
   @override
   Widget build(BuildContext context) {
     Redux.store.dispatch(fetchTastsAction);
     return Container(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: <Widget>[
-            RaisedButton(
-              child: Text('Load tasks'),
-              onPressed: _onFetchTasksPressed,
-            ),
-            StoreConnector<AppState, bool>(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        children: <Widget>[
+          Center(
+            child: StoreConnector<AppState, bool>(
               distinct: true,
               converter: (store) => store.state.tasksState.isLoading,
               builder: (context, isLoading) {
@@ -52,41 +45,30 @@ class TaskListBody extends StatelessWidget {
                 }
               },
             ),
-            StoreConnector<AppState, bool>(
+          ),
+          StoreConnector<AppState, bool>(
+            distinct: true,
+            converter: (store) => store.state.tasksState.isError,
+            builder: (context, isLoading) {
+              if (isLoading) {
+                return Text('Failed');
+              } else {
+                return SizedBox.shrink();
+              }
+            },
+          ),
+          Expanded(
+            child: StoreConnector<AppState, TaskListItemList>(
               distinct: true,
-              converter: (store) => store.state.tasksState.isError,
-              builder: (context, isLoading) {
-                if (isLoading) {
-                  return Text('Failed');
-                } else {
-                  return SizedBox.shrink();
-                }
+              converter: (store) => store.state.tasksState.taskList,
+              builder: (context, tasks) {
+                return TaskListItemBaseList(tasks: tasks);
               },
             ),
-            Expanded(
-              child: StoreConnector<AppState, TaskListItemList>(
-                distinct: true,
-                converter: (store) => store.state.tasksState.taskList,
-                builder: (context, tasks) {
-                  return TaskListItemBaseList(tasks: tasks);
-                },
-              ),
-            ),
-          ],
-        )
-        // Center(
-        //   child: FutureBuilder<TaskListItemList>(
-        //     future: parseJson(),
-        //     builder: (context, snapshot) {
-        //       if (snapshot.hasError) print(snapshot.error);
-
-        //       return snapshot.hasData
-        //           ? TaskListItemBaseList(tasks: snapshot.data)
-        //           : Center(child: CircularProgressIndicator());
-        //     },
-        //   ),
-        // ),
-        );
+          ),
+        ],
+      ),
+    );
   }
 }
 
