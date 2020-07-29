@@ -1,26 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:myapp/src/components/myScaffold.dart';
+import 'package:myapp/src/layout/user.dart';
 import 'package:myapp/src/models/ActivityTypes/TaskListItemList.dart';
-import 'package:myapp/src/models/User/minimaUserItem.dart';
 import 'package:myapp/src/redux/store.dart';
 import 'package:myapp/src/redux/tasks/tasks_actions.dart';
-import 'package:queries/collections.dart';
-
-// Future<String> _loadUserTasks() async {
-//   return await rootBundle.loadString("assets/data/UserTasks.json");
-// }
-
-// Future<TaskListItemList> parseJson() async {
-//   String jsonString = await _loadUserTasks();
-//   Map<String, dynamic> userTasks = jsonDecode(jsonString);
-//   return parseUserTasks(userTasks['userTasks']);
-// }
-
-// // A function that converts a response body into a List<Photo>.
-// TaskListItemList parseUserTasks(Map<String, dynamic> responseBody) {
-//   return TaskListItemList.fromJson(responseBody);
-// }
 
 class TaskListPage extends StatefulWidget {
   static const BottomNavigationBarItem navItem = BottomNavigationBarItem(
@@ -136,21 +120,7 @@ class TaskListItemBaseList extends StatelessWidget {
                     children: <Widget>[
                       Text('${tasks.items[index].status}'),
                       Text('${tasks.items[index].taskType}'),
-                      Text('${tasks.items[index].actor}'),
-                      StoreConnector<AppState,
-                          Dictionary<String, MinimalUserItem>>(
-                        distinct: true,
-                        converter: (store) => store.state.usersState.users,
-                        builder: (context, users) {
-                          if (users != null) {
-                            MinimalUserItem user =
-                                users ?? users["${tasks.items[index].actor}"];
-                            return Text('User: ${user.displayName}');
-                          } else {
-                            return CircularProgressIndicator();
-                          }
-                        },
-                      ),
+                      UserItem(userId: tasks.items[index].actor)
                     ],
                   ),
                 );

@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:myapp/src/models/User/minimaUserItem.dart';
 import 'package:myapp/src/redux/store.dart';
 import 'package:myapp/src/redux/users/users_state.dart';
-import 'package:queries/collections.dart';
 import 'package:redux/redux.dart';
 
 class SetUsersStateActions {
@@ -29,11 +28,16 @@ Future<void> fetchUsersAction(Store<AppState> store) async {
 
   try {
     String jsonString = await _loadUsers();
-    Dictionary<String, dynamic> users = jsonDecode(jsonString);
-
+    Map<String, dynamic> jsonUsers = jsonDecode(jsonString);
+    List<MinimalUserItem> userList = MinimalUserItem.listFromJson(
+        jsonUsers["data"]["serverInfo"]["allUsers"]);
+    userList.forEach((element) {
+      print(element);
+    });
     store.dispatch(
-        SetUsersStateActions(UsersState(isLoading: false, users: users)));
+        SetUsersStateActions(UsersState(isLoading: false, users: userList)));
   } catch (error) {
+    print(error);
     store.dispatch(SetUsersStateActions(UsersState(isLoading: true)));
   }
 }

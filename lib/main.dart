@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:myapp/src/pages/task-list.dart';
-import 'package:myapp/src/pages/user.dart';
+import 'package:myapp/src/pages/personal.dart';
 import 'package:myapp/src/redux/store.dart';
 import 'package:myapp/src/redux/users/users_actions.dart';
 

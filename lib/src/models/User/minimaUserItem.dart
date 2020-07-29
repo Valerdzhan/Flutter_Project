@@ -24,12 +24,12 @@ class MinimalUserItem {
             "a": "7e3a95564f204e22a72ba1cc0d309664",
              */
     return MinimalUserItem(
-        userId: json['id'] as String,
-        displayName: json['displayName'] as String,
-        lastActivity: json['lastActivity'] as DateTime,
-        isOnVacation: json['isOnVacation'] as bool,
-        isRetired: json['isRetired'] as bool,
-        identity: json['identity'] as String);
+        userId: json['i'] as String,
+        displayName: json['d'] as String,
+        lastActivity: json['l'] != null ? DateTime.parse(json['l']) : null,
+        isOnVacation: json['v'] as bool,
+        isRetired: json['r'] as bool,
+        identity: json['a'] as String);
   }
 
   static List<MinimalUserItem> listFromJson(List<dynamic> json) {

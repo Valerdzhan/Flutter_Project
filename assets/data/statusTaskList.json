@@ -1,0 +1,573 @@
+{
+    "AgreementTaskStatus": {
+        "name": "AgreementTaskStatus",
+        "fields": null,
+        "inputFields": null,
+        "enumValues": [
+            {
+                "name": "Initial",
+                "description": "Инициализирована"
+            },
+            {
+                "name": "Pending",
+                "description": "В ожидании"
+            },
+            {
+                "name": "InProgress",
+                "description": "Отправлено"
+            },
+            {
+                "name": "Accepted",
+                "description": "Принято в работу"
+            },
+            {
+                "name": "Approved",
+                "description": "Согласовано"
+            },
+            {
+                "name": "Resubmitted",
+                "description": "Отправлено повторно"
+            },
+            {
+                "name": "Rejected",
+                "description": "Отклонено"
+            },
+            {
+                "name": "Final",
+                "description": "Завершено"
+            },
+            {
+                "name": "Canceled",
+                "description": "Отменено"
+            }
+        ]
+    },
+    "Normative_controlTaskStatus": {
+        "name": "NormativeControlTaskStatus",
+        "fields": null,
+        "inputFields": null,
+        "enumValues": [
+            {
+                "name": "Initial",
+                "description": "Инициализирована"
+            },
+            {
+                "name": "Pending",
+                "description": "В ожидании"
+            },
+            {
+                "name": "InProgress",
+                "description": "Отправлено"
+            },
+            {
+                "name": "Accepted",
+                "description": "Принято в работу"
+            },
+            {
+                "name": "Approved",
+                "description": "Согласовано"
+            },
+            {
+                "name": "Resubmitted",
+                "description": "Отправлено повторно"
+            },
+            {
+                "name": "Rejected",
+                "description": "Отклонено"
+            },
+            {
+                "name": "Final",
+                "description": "Завершено"
+            },
+            {
+                "name": "Canceled",
+                "description": "Отменено"
+            }
+        ]
+    },
+    "RegistrationTaskStatus": {
+        "name": "AgreementTaskStatus",
+        "fields": null,
+        "inputFields": null,
+        "enumValues": [
+            {
+                "name": "Initial",
+                "description": "Инициализирована"
+            },
+            {
+                "name": "Pending",
+                "description": "В ожидании"
+            },
+            {
+                "name": "InProgress",
+                "description": "Отправлено"
+            },
+            {
+                "name": "Accepted",
+                "description": "Принято в работу"
+            },
+            {
+                "name": "Approved",
+                "description": "Согласовано"
+            },
+            {
+                "name": "Resubmitted",
+                "description": "Отправлено повторно"
+            },
+            {
+                "name": "Rejected",
+                "description": "Отклонено"
+            },
+            {
+                "name": "Final",
+                "description": "Завершено"
+            },
+            {
+                "name": "Canceled",
+                "description": "Отменено"
+            }
+        ]
+    },
+    "SigningTaskStatus": {
+        "name": "SigningTaskStatus",
+        "fields": null,
+        "inputFields": null,
+        "enumValues": [
+            {
+                "name": "Initial",
+                "description": "Инициализирована"
+            },
+            {
+                "name": "Pending",
+                "description": "В ожидании"
+            },
+            {
+                "name": "Accepted",
+                "description": "Принято в работу"
+            },
+            {
+                "name": "InProgress",
+                "description": "Отправлено"
+            },
+            {
+                "name": "Approved",
+                "description": "Подписано"
+            },
+            {
+                "name": "Resubmitted",
+                "description": "Отправлено повторно"
+            },
+            {
+                "name": "Rejected",
+                "description": "Отклонено"
+            },
+            {
+                "name": "Final",
+                "description": "Завершено"
+            },
+            {
+                "name": "Canceled",
+                "description": "Отменено"
+            }
+        ]
+    },
+    "ApprovalTaskStatus": {
+        "name": "ApprovalTaskStatus",
+        "fields": null,
+        "inputFields": null,
+        "enumValues": [
+            {
+                "name": "Initial",
+                "description": "Инициализирована"
+            },
+            {
+                "name": "Pending",
+                "description": "В ожидании"
+            },
+            {
+                "name": "Accepted",
+                "description": "Принято в работу"
+            },
+            {
+                "name": "InProgress",
+                "description": "Отправлено"
+            },
+            {
+                "name": "Resubmitted",
+                "description": "Отправлено повторно"
+            },
+            {
+                "name": "Rejected",
+                "description": "Отклонено"
+            },
+            {
+                "name": "Approved",
+                "description": "Утверждено"
+            },
+            {
+                "name": "Final",
+                "description": "Завершено"
+            },
+            {
+                "name": "Canceled",
+                "description": "Отменено"
+            }
+        ]
+    },
+    "For_performanceTaskStatus": {
+        "name": "For_performanceTaskStatus",
+        "fields": null,
+        "inputFields": null,
+        "enumValues": [
+            {
+                "name": "Initial",
+                "description": "Инициализирована"
+            },
+            {
+                "name": "InProgress",
+                "description": "Отправлено"
+            },
+            {
+                "name": "Accepted",
+                "description": "Принято в работу"
+            },
+            {
+                "name": "Resubmitted",
+                "description": "Отправлено повторно"
+            },
+            {
+                "name": "Rejected",
+                "description": "Отклонено"
+            },
+            {
+                "name": "Prepared",
+                "description": "Направлен отчет"
+            },
+            {
+                "name": "Solved",
+                "description": "Выполнено"
+            },
+            {
+                "name": "Final",
+                "description": "Выполнено"
+            },
+            {
+                "name": "Canceled",
+                "description": "Отменено"
+            }
+        ]
+    },
+    "For_considerationTaskStatus": {
+        "name": "For_considerationTaskStatus",
+        "fields": null,
+        "inputFields": null,
+        "enumValues": [
+            {
+                "name": "Initial",
+                "description": "Инициализирована"
+            },
+            {
+                "name": "InProgress",
+                "description": "Отправлено"
+            },
+            {
+                "name": "Accepted",
+                "description": "Принято в работу"
+            },
+            {
+                "name": "Resubmitted",
+                "description": "Отправлено повторно"
+            },
+            {
+                "name": "Rejected",
+                "description": "Отклонено"
+            },
+            {
+                "name": "Prepared",
+                "description": "Направлен отчет"
+            },
+            {
+                "name": "Solved",
+                "description": "Рассмотрено"
+            },
+            {
+                "name": "Final",
+                "description": "Рассмотрено"
+            },
+            {
+                "name": "Canceled",
+                "description": "Отменено"
+            }
+        ]
+    },
+    "For_agreementTaskStatus": {
+        "name": "For_agreementTaskStatus",
+        "fields": null,
+        "inputFields": null,
+        "enumValues": [
+            {
+                "name": "Initial",
+                "description": "Инициализирована"
+            },
+            {
+                "name": "InProgress",
+                "description": "Отправлено"
+            },
+            {
+                "name": "Accepted",
+                "description": "Принято в работу"
+            },
+            {
+                "name": "Prepared",
+                "description": "Направлен отчет"
+            },
+            {
+                "name": "Solved",
+                "description": "Согласовано"
+            },
+            {
+                "name": "Final",
+                "description": "Согласовано"
+            },
+            {
+                "name": "Resubmitted",
+                "description": "Отправлено повторно"
+            },
+            {
+                "name": "Rejected",
+                "description": "Отклонено"
+            },
+            {
+                "name": "Canceled",
+                "description": "Отменено"
+            }
+        ]
+    },
+    "For_informationTaskStatus": {
+        "name": "For_informationTaskStatus",
+        "fields": null,
+        "inputFields": null,
+        "enumValues": [
+            {
+                "name": "Initial",
+                "description": "Инициализирована"
+            },
+            {
+                "name": "InProgress",
+                "description": "Отправлено"
+            },
+            {
+                "name": "Accepted",
+                "description": "Принято в работу"
+            },
+            {
+                "name": "Resubmitted",
+                "description": "Отправлено повторно"
+            },
+            {
+                "name": "Rejected",
+                "description": "Отклонено"
+            },
+            {
+                "name": "Prepared",
+                "description": "Направлен отчет"
+            },
+            {
+                "name": "Solved",
+                "description": "Выполнено"
+            },
+            {
+                "name": "Final",
+                "description": "Выполнено"
+            },
+            {
+                "name": "Canceled",
+                "description": "Отменено"
+            }
+        ]
+    },
+    "For_internal_useTaskStatus": {
+        "name": "For_internal_useTaskStatus",
+        "fields": null,
+        "inputFields": null,
+        "enumValues": [
+            {
+                "name": "Initial",
+                "description": "Инициализирована"
+            },
+            {
+                "name": "Submitted",
+                "description": "Отправлено"
+            },
+            {
+                "name": "InProgress",
+                "description": "Отправлено"
+            },
+            {
+                "name": "Accepted",
+                "description": "Принято в работу"
+            },
+            {
+                "name": "Resubmitted",
+                "description": "Отправлено повторно"
+            },
+            {
+                "name": "Rejected",
+                "description": "Отклонено"
+            },
+            {
+                "name": "Prepared",
+                "description": "Направлен отчет"
+            },
+            {
+                "name": "Solved",
+                "description": "Рассмотрено"
+            },
+            {
+                "name": "Final",
+                "description": "Рассмотрено"
+            },
+            {
+                "name": "Canceled",
+                "description": "Отменено"
+            }
+        ]
+    },
+    "For_implementationTaskStatus": {
+        "name": "For_implementationTaskStatus",
+        "fields": null,
+        "inputFields": null,
+        "enumValues": [
+            {
+                "name": "Initial",
+                "description": "Инициализирована"
+            },
+            {
+                "name": "Submitted",
+                "description": "Отправлено"
+            },
+            {
+                "name": "InProgress",
+                "description": "Отправлено"
+            },
+            {
+                "name": "Accepted",
+                "description": "Принято в работу"
+            },
+            {
+                "name": "Resubmitted",
+                "description": "Отправлено повторно"
+            },
+            {
+                "name": "Rejected",
+                "description": "Отклонено"
+            },
+            {
+                "name": "Prepared",
+                "description": "Направлен отчет"
+            },
+            {
+                "name": "Solved",
+                "description": "Выполнено"
+            },
+            {
+                "name": "Final",
+                "description": "Выполнено"
+            },
+            {
+                "name": "Canceled",
+                "description": "Отменено"
+            }
+        ]
+    },
+    "For_hr_decisionTaskStatus": {
+        "name": "For_hr_decisionTaskStatus",
+        "fields": null,
+        "inputFields": null,
+        "enumValues": [
+            {
+                "name": "Initial",
+                "description": "Инициализирована"
+            },
+            {
+                "name": "Submitted",
+                "description": "Отправлено"
+            },
+            {
+                "name": "InProgress",
+                "description": "Отправлено"
+            },
+            {
+                "name": "Accepted",
+                "description": "Принято в работу"
+            },
+            {
+                "name": "Resubmitted",
+                "description": "Отправлено повторно"
+            },
+            {
+                "name": "Rejected",
+                "description": "Отклонено"
+            },
+            {
+                "name": "Approved",
+                "description": "Согласовано"
+            },
+            {
+                "name": "Final",
+                "description": "Согласовано"
+            },
+            {
+                "name": "Canceled",
+                "description": "Отменено"
+            }
+        ]
+    },
+    "ResolutionTaskStatus": {
+        "name": "ResolutionTaskStatus",
+        "fields": null,
+        "inputFields": null,
+        "enumValues": [
+            {
+                "name": "Created",
+                "description": "Создана"
+            },
+            {
+                "name": "Initial",
+                "description": "Инициализирована"
+            },
+            {
+                "name": "InProgress",
+                "description": "В работе"
+            },
+            {
+                "name": "Accepted",
+                "description": "Принято в работу"
+            },
+            {
+                "name": "Resubmitted",
+                "description": "Отправлено повторно"
+            },
+            {
+                "name": "Rejected",
+                "description": "Отклонено"
+            },
+            {
+                "name": "Prepared",
+                "description": "Направлен отчет"
+            },
+            {
+                "name": "Solved",
+                "description": "Направлен отчет"
+            },
+            {
+                "name": "Final",
+                "description": "Завершено"
+            },
+            {
+                "name": "Canceled",
+                "description": "Отменено"
+            }
+        ]
+    }
+}
