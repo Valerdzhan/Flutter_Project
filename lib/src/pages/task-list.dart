@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:myapp/src/components/myScaffold.dart';
+import 'package:myapp/src/layout/taskStatus.dart';
 import 'package:myapp/src/layout/user.dart';
 import 'package:myapp/src/models/ActivityTypes/TaskListItemList.dart';
 import 'package:myapp/src/redux/store.dart';
@@ -100,7 +101,9 @@ class TaskListItemBaseList extends StatelessWidget {
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text('${tasks.items[index].status}'),
+                      StatusTask(
+                        task: tasks.items[index],
+                      ),
                       Text('${tasks.items[index].taskType}'),
                       UserItem(userId: tasks.items[index].actor)
                     ],

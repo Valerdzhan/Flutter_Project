@@ -3,6 +3,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:myapp/src/pages/task-list.dart';
 import 'package:myapp/src/pages/personal.dart';
 import 'package:myapp/src/redux/store.dart';
+import 'package:myapp/src/redux/tasks/tasks_actions.dart';
 import 'package:myapp/src/redux/users/users_actions.dart';
 
 void main() async {
@@ -78,6 +79,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     Redux.store.dispatch(fetchUsersAction);
+    Redux.store.dispatch(initTaskStatus);
     return Scaffold(
       body: [TaskListPage(), UserPage()][_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(

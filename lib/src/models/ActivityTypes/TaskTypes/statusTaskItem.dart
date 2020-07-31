@@ -1,12 +1,13 @@
 class StatusTaskItem {
   final String name;
-  final String dictionary;
+  final String description;
 
-  StatusTaskItem({this.name, this.dictionary});
+  StatusTaskItem({this.name, this.description});
 
   factory StatusTaskItem.fromJson(Map<String, dynamic> json) {
     return StatusTaskItem(
-        name: json['name'] as String, dictionary: json['dictionary'] as String);
+        name: json['name'] as String,
+        description: json['description'] as String);
   }
 
   static List<StatusTaskItem> listFromJson(List<dynamic> json) {

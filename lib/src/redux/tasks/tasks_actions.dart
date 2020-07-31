@@ -14,7 +14,7 @@ class SetTasksStateAction {
 }
 
 class SetTaskStatusAction {
-  final Map<String, StatusTaskItem> statusTasks;
+  final Map<String, List<StatusTaskItem>> statusTasks;
 
   SetTaskStatusAction(this.statusTasks);
 }
@@ -47,7 +47,9 @@ Future<void> initTaskStatus(Store<AppState> store) async {
   try {
     String jsonString = await _loadStatusTasks();
     Map<String, dynamic> statusList = jsonDecode(jsonString);
-    // final jsonTasks = userTasks['userTasks'];
+    Map<String, List<StatusTaskItem>> list = statusList
+        .map((k, v) => MapEntry(k, StatusTaskItem.listFromJson(v as List)));
+    store.dispatch(SetTaskStatusAction(list));
   } catch (error) {
     print(error);
   }
