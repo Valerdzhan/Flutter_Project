@@ -1,0 +1,8 @@
+query allEventGroups {
+  allEventGroups {
+    id
+    title
+    documentType
+    events
+  }
+}

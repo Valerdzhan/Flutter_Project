@@ -1,0 +1,5 @@
+mutation unlockInDocument($documentId: DocumentId!, $files: [FileInstanceId!]!) {
+    lockFileMutationAPI {
+        unlockInDocument(documentId: $documentId, files: $files)
+    }
+}

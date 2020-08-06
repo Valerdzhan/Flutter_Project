@@ -1,10 +1,25 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:myapp/models/graphql/graphql_api.init.graphql.dart';
+import 'package:myapp/src/models/User/userItem.dart';
 import 'package:myapp/src/pages/task-list.dart';
 import 'package:myapp/src/pages/personal.dart';
 import 'package:myapp/src/redux/store.dart';
 import 'package:myapp/src/redux/tasks/tasks_actions.dart';
 import 'package:myapp/src/redux/users/users_actions.dart';
+
+import 'graphql_provider.dart';
+
+String get host {
+  if (Platform.isAndroid) {
+    return '10.0.2.2';
+  } else {
+    return 'localhost';
+  }
+}
 
 void main() async {
   await Redux.init();
@@ -17,7 +32,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GraphqlProvider(
+      uri: 'http://$host:9002/graphql',
+      child: MaterialApp(
         title: this._title,
         // initialRoute: '/',
         // routes: {
@@ -26,38 +43,14 @@ class MyApp extends StatelessWidget {
         // },
         theme: ThemeData(primarySwatch: Colors.blue),
         home: StoreProvider<AppState>(
-          store: Redux.store,
-          child: HomePage(
-            title: 'Главная',
-          ),
-        ));
+            store: Redux.store,
+            child: HomePage(
+              title: 'Главная',
+            )),
+      ),
+    );
   }
 }
-
-// class HomePage extends StatelessWidget {
-//   final String title;
-//   HomePage({Key key, this.title}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MyScaffold(title: this.title, body: HomePageBody());
-//   }
-// }
-
-// class HomePageBody extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Center(
-//         child: Column(
-//           children: <Widget>[
-//             Center(
-//               child: Text('Добро пожаловать в СЭД'),
-//             )
-//           ],
-//         ),
-//       );
-//   }
-// }
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
@@ -78,19 +71,41 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    Redux.store.dispatch(fetchUsersAction);
-    Redux.store.dispatch(initTaskStatus);
-    return Scaffold(
-      body: [TaskListPage(), UserPage()][_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          TaskListPage.navItem,
-          UserPage.navItem,
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _navigateTo,
-      ),
+    return Query(
+      options: QueryOptions(documentNode: InitQuery().document),
+      builder: (
+        QueryResult result, {
+        Future<QueryResult> Function() refetch,
+        FetchMore fetchMore,
+      }) {
+        if (result.hasException) {
+          return Text(result.exception.toString());
+        }
+
+        if (result.loading) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        }
+        final currentUser =
+            Init$DFSQuery$CurrentUser.fromJson(result.data["currentUser"]);
+        Redux.store.dispatch(SetCurrentUserActions(currentUser));
+
+        Redux.store.dispatch(fetchUsersAction);
+        Redux.store.dispatch(initTaskStatus);
+        return Scaffold(
+          body: [TaskListPage(), UserPage()][_selectedIndex],
+          bottomNavigationBar: BottomNavigationBar(
+            items: const <BottomNavigationBarItem>[
+              TaskListPage.navItem,
+              UserPage.navItem,
+            ],
+            currentIndex: _selectedIndex,
+            selectedItemColor: Colors.amber[800],
+            onTap: _navigateTo,
+          ),
+        );
+      },
     );
   }
 }

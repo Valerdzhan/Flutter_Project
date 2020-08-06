@@ -1,0 +1,7 @@
+#import "../fragments/fragment-task-internal.graphql"
+
+mutation editInternalTask($input: EditInternalTaskMutationInput!) {
+    editInternalTask(input: $input) {
+        ...internalTaskFragment
+    }
+}

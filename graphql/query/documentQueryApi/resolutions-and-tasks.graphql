@@ -1,0 +1,106 @@
+#import "../../fragments/fragment-resolution.graphql"
+#import "../../fragments/fragment-task-view.graphql"
+
+query getResolutionAndTaskInDocument($documentId: DocumentId!) {
+    documentQueryAPI(documentId: $documentId) {
+        resolutions {
+            id: resolutionId
+            documentLastVersion {
+                id
+                type: documentType
+            }
+            authorId
+            completeParentOption
+            description
+            dueDate
+            editorId
+            onlyResponsibleResultOption
+            originatorId
+            overseerId
+            ownerMark
+            people
+            actorIds
+            responsibleIds
+            requireSingleResultOption
+            resolutionId
+            sourceTaskId
+            state
+            status
+            type
+            whenCreated
+            whenEdited
+        }
+        tasks {
+            id
+            documentLastVersion: documentListItem {
+                id
+                type: documentType
+                compileTitle
+                responderId
+            }
+
+            actorId
+            state
+            status
+            statusEditorId
+            note
+            authorId
+            editorId
+            delegatedActorIds
+            delegations {
+                userId
+                date
+            }
+            dueDate
+            whenCreated
+            whenEdited
+            whenStatusEdited
+            whenSubmitted
+            isPersonalReview
+            hasChildren
+            readAuditList {
+                masters
+                userId
+                whenRead
+            }
+            resolutionsFinished
+            subTaskCount
+            subTaskRejectedCount
+            subTaskSolvedCount
+            lastActorPost
+            ... on RouteTaskListItemType {
+                document {
+                    id
+                    eventCount
+                    type
+                }
+                routeId
+                stageId
+                isObsolete
+                taskType
+            }
+            ... on ResolutionTaskListItemType {
+                hasControl
+                resolutionId
+                order
+                taskType
+                isResponsible
+                overseerId
+                originatorId
+            }
+            ... on ProcessingTaskListItemType {
+                senderId
+                taskType
+            }
+            ... on ForHRDecisionTaskListItemType {
+                sender {
+                    firstName
+                    lastName
+                    patronymic
+                    personalIdentifier
+                }
+                taskType
+            }
+        }
+    }
+}

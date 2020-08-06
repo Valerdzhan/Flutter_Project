@@ -1,0 +1,9 @@
+mutation DocumentPublish(
+    $documentId: DocumentId!
+    $users: [UserId!]!
+    $groups: [MailingGroupId!]!
+) {
+    documentMutationAPI(documentId: $documentId) {
+        publish(users: $users, groups: $groups)
+    }
+}

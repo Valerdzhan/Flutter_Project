@@ -1,0 +1,9 @@
+#import '../../fragments/fragment-correspondent.graphql'
+
+query correspondentChilds($id: ReferenceCorrespondentId) {
+    correspondentsAPI {
+        childs(id: $id) {
+            ...correspondentFragment
+        }
+    }
+}

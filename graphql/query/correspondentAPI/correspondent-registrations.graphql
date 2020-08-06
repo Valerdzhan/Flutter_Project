@@ -1,0 +1,5 @@
+query correspondentRegistrations($userId: UserId) {
+    correspondentsAPI {
+        registratorsBySender(userId: $userId)
+    }
+}

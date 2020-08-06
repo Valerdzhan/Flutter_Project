@@ -1,0 +1,34 @@
+query contracts(
+    $skip: Int!
+    $limit: Int!
+    $sort: SortInput_ContractsSortFieldEnumType
+    $attributeSearch: contractsAttributeSearch
+) {
+    contracts(
+        skip: $skip
+        limit: $limit
+        sort: $sort
+        attributeSearch: $attributeSearch
+    ) {
+        count
+        items {
+            id
+            title
+            contractorId
+            contractorName
+            sumAmountWithTax
+            departmentResponder
+            responderId
+            whenEdited
+            whenCreated
+            status
+            author: authorId
+            editor: editorId
+            preparationDate
+            registerNumber
+            documentStatus
+            scanCopy
+            documentStatusDescription
+        }
+    }
+}

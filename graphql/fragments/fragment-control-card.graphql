@@ -1,0 +1,24 @@
+#import './fragment-reference-value.graphql'
+
+fragment controlCardFragment on ControlCard {
+    id
+    hostDocumentId
+    date
+    deControlDate
+    period
+    responderIds
+    documentLastVersion {
+        compileTitle
+        documentType
+        whenCreated
+        whenEdited
+    }
+    type {
+        ...referenceValueFragment
+    }
+    isRemoved
+    authorId
+    remark
+    report
+    isControlRemovalRequested
+}

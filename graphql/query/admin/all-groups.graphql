@@ -1,0 +1,11 @@
+query allGroups {
+  allGroups {
+    id
+    name
+    userIds
+    authorId
+    editorId
+    whenCreated
+    whenEdited
+  }
+}

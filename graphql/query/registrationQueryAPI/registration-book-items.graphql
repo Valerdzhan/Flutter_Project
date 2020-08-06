@@ -1,0 +1,9 @@
+#import "../../fragments/fragment-registration-book-item.graphql"
+
+query registrationBookItems($skip: Int!, $limit: Int!, $search: String) {
+    registrationQueryAPI {
+      list(skip: $skip, limit: $limit, search: $search) {
+        ...registrationBookItemFragment
+      }
+    }
+}

@@ -1,0 +1,8 @@
+mutation PublishedDocumentSetFiles(
+    $documentId: DocumentId!
+    $files: [String!]!
+) {
+    documentMutationAPI(documentId: $documentId) {
+        publishedDocumentSetFiles(files: $files)
+    }
+}

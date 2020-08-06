@@ -1,0 +1,22 @@
+#import './fragment-reference-value.graphql'
+
+fragment massMailItemFragment on MassMailItem {
+    id
+    responderId
+    title
+    senderId
+    signature
+    mailingGroupsIds
+    body
+    isSent
+    sendingAuthor
+    sendingDate
+    massMailMailingGroups {
+        id
+        parentId
+        name
+        hasChildren
+        isDeleted
+        description
+    }
+}

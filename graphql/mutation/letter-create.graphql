@@ -1,0 +1,3 @@
+mutation createLetter($input: CreateLetterMutationInput!) {
+  createLetter(input:$input)
+}

@@ -1,0 +1,3 @@
+mutation editContract($input: EditContractMutationInput!) {
+  editContract(input: $input)
+}

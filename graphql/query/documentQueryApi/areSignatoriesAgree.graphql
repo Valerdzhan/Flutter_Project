@@ -1,0 +1,6 @@
+query getAreSignatoriesAgree($routeId: RouteId!) {
+  route(id: $routeId) {
+      routeId     
+      areSignatoriesAgree
+  }
+}

@@ -1,0 +1,18 @@
+#import "../fragments/fragment-resolution.graphql"
+#import "../fragments/fragment-task-view.graphql"
+#import "../fragments/fragment-document.graphql"
+
+subscription documentSubscription($documentId: DocumentId!) {
+    documentSubscription(documentId: $documentId) {
+        __typename
+        ... on Resolution {
+            ...resolutionFragment
+        }
+        ... on TaskListItemInterface {
+            ...TaskListItemInterfaceFragment
+        }
+        ... on IDocument {
+            ...IDocumentFragment
+        }
+    }
+}

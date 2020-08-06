@@ -1,0 +1,7 @@
+fragment attachmentsPostFragment on PostAttachmentType {
+    fileId
+    fileContent
+    fileName
+    fileType
+    fileLength
+}

@@ -1,0 +1,21 @@
+#import "./fragment-task-route.graphql"
+#import "./fragment-task-resolution.graphql"
+#import "./fragment-task-internal.graphql"
+#import "./fragment-task-hr-decision.graphql"
+#import './fragment-task-list-item-base.graphql'
+
+fragment TaskListItemInterfaceFragment on TaskListItemInterface {
+    ...taskListItemBaseFragment
+    ... on RouteTaskListItemType {
+        ...taskRouteFragment
+    }
+    ... on ResolutionTaskListItemType {
+        ...taskResolutionFragment
+    }
+    ... on ProcessingTaskListItemType {
+        ...internalTaskFragment
+    }
+    ... on ForHRDecisionTaskListItemType {
+        ...decisionTaskFragment
+    }
+}

@@ -1,0 +1,224 @@
+#import "./fragment-user-item.graphql"
+
+fragment journalFragment on DocumentJournalItemType {
+    whenCreated
+    version
+    authorId
+    properties {
+        key
+        field {
+            __typename
+            type
+            ... on BooleanPropertyType {
+                value
+            }
+            ... on DatePropertyType {
+                value
+            }
+            ... on DecimalPropertyType {
+                value
+            }
+            ... on FloatPropertyType {
+                value
+            }
+            ... on IdentityPropertyType {
+                value
+            }
+            ... on IntPropertyType {
+                value
+            }
+            ... on NullPropertyType {
+                type
+            }
+            ... on StringPropertyType {
+                value
+            }
+            ... on CommercialSecretPropertyType {
+                value
+            }
+            ... on TaxMoneyPropertyType {
+                value {
+                    id: code {
+                        key
+                    }
+                    amount
+                    amountWithTax
+                    code {
+                        catalog {
+                            key
+                            title
+                            isUsed
+                        }
+                        key
+                        value
+                    }
+                    tax
+                }
+            }
+            ... on UserPropertyType {
+                value
+            }
+            ... on MultiUserArrayPropertyType {
+                action
+                type
+                value
+            }
+            ... on MultiMailingGroupArrayPropertyValueType {
+                type
+                value {
+                    action
+                    groupName
+                    mailingGroupId
+                }
+            }
+            ... on HtmlPropertyType {
+                type
+                value
+            }
+            ... on MultiUserPropertyType {
+                type
+                value
+            }
+            ... on FileInstancePropertyType {
+                value {
+                    fileId
+                    fileName
+                    fileContent
+                    isLocked
+                }
+            }
+            ... on FileJournalPropertyType {
+                value {
+                    action
+                    fileId
+                    fileName
+                    fileContent
+                    isLocked
+                }
+            }
+            ... on SingleReferencePropertyType {
+                value {
+                    id: key
+                    catalog {
+                        id: key
+                        key
+                        title
+                        isUsed
+                    }
+                    key
+                    value
+                }
+            }
+            ... on MultiReferencePropertyType {
+                id: catalog {
+                    key
+                }
+                type
+                catalog {
+                    key
+                    title
+                    isUsed
+                }
+                value {
+                    id: key
+                    key
+                    value
+                    action
+                }
+            }
+            ... on CorrespondentPropertyType {
+                value {
+                    addressImported
+                    city
+                    correspondent
+                    email
+                    fullTitle
+                    hasChildren
+                    id
+                    index
+                    isDeleted
+                    organization
+                    parentId
+                    phone
+                    position
+                    region
+                    street
+                    title
+                }
+            }
+            ... on MultiCorrespondentArrayPropertyType {
+                action
+                type
+                value {
+                    addressImported
+                    city
+                    correspondent
+                    email
+                    fullTitle
+                    hasChildren
+                    id
+                    index
+                    isDeleted
+                    organization
+                    parentId
+                    phone
+                    position
+                    region
+                    street
+                    title
+                }
+            }
+            ... on personPropertyType {
+                type
+                value {
+                    firstName
+                    lastName
+                    patronymic
+                    personalIdentifier
+                }
+            }
+            ... on employeeDetailsPropertyType {
+                type
+                value {
+                    department
+                    jobTitle
+                    orgUnit
+                }
+            }
+            ... on orderDescriptorPropertyType {
+                type
+                value {
+                    issuedDate
+                    number
+                }
+            }
+            ... on TransferRequestTypePropertyType {
+                type
+                value
+            }
+            ... on revokedPropertyType {
+                type
+                value {
+                    isRevoked
+                    revokedNote
+                    isTaskCanceled
+                }
+            }
+        }
+    }
+
+    attachments {
+        fileId
+        fileName
+        fileContent
+        action
+        isLocked
+        __typename
+    }
+    traceId
+    subDocuments {
+        action
+        documentId
+    }
+    __typename
+}

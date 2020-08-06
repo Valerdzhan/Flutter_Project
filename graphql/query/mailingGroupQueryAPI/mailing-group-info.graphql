@@ -1,0 +1,29 @@
+query mailingGroupInfo($id: MailingGroupId) {
+    mailingGroupQueryAPI {
+        getComplexById(id: $id) {
+            mailingGroup {
+                id
+                parentId
+                name
+                hasChildren
+                isDeleted
+                type
+                aDgroup
+                description
+            }
+            mailingGroupUsers {
+                department
+                fio
+                incorrectInf
+                position
+                type
+                userGuid
+            }
+            mailingGroupOrgIds
+            mailingGroupADInfo {
+                cn
+                mail
+            }
+        }
+    }
+}

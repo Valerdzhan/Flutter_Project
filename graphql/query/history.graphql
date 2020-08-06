@@ -1,0 +1,158 @@
+#import "../fragments/fragment-journal.graphql"
+
+query getHistory($id: DocumentId!) {
+    document(id: $id) {
+        id
+        eventCount
+        history {
+            ...journalFragment
+        }
+        history {
+            whenCreated
+            version
+            author {
+                ...userItemFragment
+            }
+            properties {
+                key
+                field {
+                    __typename
+                    type
+                    ... on BooleanHistoryValue {
+                        value
+                    }
+                    ... on DateHistoryValue {
+                        value
+                    }
+                    ... on DecimalHistoryValue {
+                        value
+                    }
+                    ... on FloatHistoryValue {
+                        value
+                    }
+                    ... on IdHistoryValue {
+                        value
+                    }
+                    ... on IntHistoryValue {
+                        value
+                    }
+                    ... on NullHistoryValue {
+                        type
+                    }
+                    ... on StringHistoryValue {
+                        value
+                    }
+                    ... on TaxMoneyHistoryValue {
+                        value {
+                            id: code {
+                                key
+                            }
+                            amount
+                            amountWithTax
+                            code {
+                                catalog {
+                                    key
+                                    title
+                                    isUsed
+                                }
+                                key
+                                value
+                            }
+                            tax
+                            __typename
+                        }
+                    }
+                    ... on UserHistoryValue {
+                        value {
+                            id
+                            displayName
+                            jobTitle
+                            orgUnit
+                            department
+                            photoUrl
+                        }
+                    }
+                    ... on FileInstanceHistoryValue {
+                        value {
+                            fileId
+                            fileName
+                            fileContent
+                        }
+                    }
+                    ... on SingleReferenceHistoryValue {
+                        value {
+                            id: key
+                            catalog {
+                                id: key
+                                key
+                                title
+                                isUsed
+                            }
+                            key
+                            value
+                        }
+                    }
+                    ... on MultiReferenceHistoryValue {
+                        value {
+                            id: catalog {
+                                key
+                            }
+                            catalog {
+                                key
+                                title
+                                isUsed
+                            }
+                            values {
+                                key
+                                value
+                                isUsed
+                            }
+                        }
+                    }
+                    ... on MultiUserArrayHistoryValue {
+                        type
+                        value {
+                            ...userItemFragment
+                        }
+                        action
+                        __typename
+                    }
+                    ... on CorrespondentHistoryValue {
+                        value {
+                            addressImported
+                            city
+                            correspondent
+                            email
+                            fullTitle
+                            hasChildren
+                            id
+                            index
+                            isDeleted
+                            organization
+                            parentId
+                            phone
+                            position
+                            region
+                            street
+                            title
+                        }
+                    }
+                }
+            }
+
+            attachments {
+                fileId
+                fileName
+                fileContent
+
+                action
+                __typename
+            }
+
+            subDocuments {
+                action
+                documentId
+            }
+        }
+    }
+}

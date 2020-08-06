@@ -1,0 +1,5 @@
+mutation unlockInPost($postId: PostId!, $files: [FileInstanceId!]!) {
+    lockFileMutationAPI {
+        unlockInPost(postId: $postId, files: $files)
+    }
+}

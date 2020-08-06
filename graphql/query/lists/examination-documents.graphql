@@ -1,0 +1,33 @@
+query examinationDocuments(
+    $skip: Int!
+    $limit: Int!
+    $sort: SortInput_DocumentSortFieldEnumType
+    $attributeSearch: examinationDocumentsAttributeSearch
+) {
+    examinationDocuments(
+        skip: $skip
+        limit: $limit
+        sort: $sort
+        attributeSearch: $attributeSearch
+    ) {
+        count
+        items {
+            id
+            compileTitle
+            title
+            documentType
+            readAuditList: readAuditList {
+                userId
+                whenRead
+                masters
+            }
+            examinationAuditList {
+                userId
+                whenRead
+                masters
+            }
+            publisherId
+            whenPublished
+        }
+    }
+}

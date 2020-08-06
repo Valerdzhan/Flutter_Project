@@ -1,0 +1,5 @@
+mutation createCancellationRequestForDismissal(
+    $input: CreateCancellationRequestForDismissalMutationInput!
+) {
+    createCancellationRequestForDismissal(input: $input)
+}

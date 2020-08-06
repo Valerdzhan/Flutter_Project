@@ -1,0 +1,12 @@
+#import "../../fragments/fragment-attachments.graphql"
+
+query docAttachments($documentId: DocumentId!) {
+    documentQueryAPI(documentId: $documentId) {
+        document {
+            id
+            attachments {
+                ...attachmentsFragment
+            }
+        }
+    }
+}

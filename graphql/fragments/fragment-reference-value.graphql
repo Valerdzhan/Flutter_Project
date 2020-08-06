@@ -1,0 +1,5 @@
+fragment referenceValueFragment on ReferenceValue {
+      id: key       
+      key
+      value
+}

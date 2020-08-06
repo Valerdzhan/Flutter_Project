@@ -1,0 +1,14 @@
+#import "../fragments/fragment-user-item.graphql"
+#import "../fragments/fragment-attachments-post.graphql"
+
+mutation AppendPost($input: AppendPostMutationInput!) {
+  appendPost(input: $input){
+    id
+    body
+    when
+    authorId
+    attachments {
+      ...attachmentsPostFragment
+    }
+  }
+}

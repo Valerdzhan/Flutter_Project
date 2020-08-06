@@ -1,0 +1,7 @@
+#import "../fragments/fragment-resolution.graphql"
+
+mutation editResolution($input: EditResolutionMutationInput!) {
+    editResolution(input: $input) {
+        ...resolutionFragment
+    }
+}

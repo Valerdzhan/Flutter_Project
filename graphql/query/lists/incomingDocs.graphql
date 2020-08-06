@@ -1,0 +1,35 @@
+query incomingDocs(
+    $skip: Int!
+    $limit: Int!
+    $sort: SortInput_IncomingDocsSortFieldEnumType
+    $attributeSearch: incomingDocsAttributeSearch
+) {
+    incomingDocs(
+        skip: $skip
+        limit: $limit
+        sort: $sort
+        attributeSearch: $attributeSearch
+    ) {
+        count
+        items {
+            id
+            title
+            compileTitle
+            addresseeIds
+            sender
+            senderId
+            registrationDate
+            registrationNumber
+            registrationAuthorId
+            reservedRegistrationDate
+            reservedRegistrationNumber
+            reservedRegistrationAuthorId
+            senderOutgoingNumber
+            documentDate
+            documentStatus
+            controlCardsCount
+            controlCardsRemovedCount
+            documentStatusDescription
+        }
+    }
+}

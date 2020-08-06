@@ -1,0 +1,30 @@
+fragment genericItemFragment on GenericRequestItem {
+    id
+    addresseeId
+    applicant {
+        firstName
+        lastName
+        patronymic
+        personalIdentifier
+    }
+    applicantId
+    applicantDetails {
+        department
+        jobTitle
+        orgUnit
+    }
+    categoryId
+    compileTitle
+    curatorId
+    tasks
+    text
+    remark
+    responderId
+    scanCopyOriginal {
+        fileContent
+        fileId
+        fileName
+        isLocked
+    }
+    enableNetworkFolder
+}

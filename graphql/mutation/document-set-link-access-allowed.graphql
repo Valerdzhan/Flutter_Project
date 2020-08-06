@@ -1,0 +1,8 @@
+mutation SetLinkAccessAllowed(
+    $documentId: DocumentId!
+    $isLinkAccessAllowed: Boolean!
+) {
+    documentMutationAPI(documentId: $documentId) {
+        setLinkAccessAllowed(isLinkAccessAllowed: $isLinkAccessAllowed)
+    }
+}

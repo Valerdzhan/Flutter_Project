@@ -1,0 +1,36 @@
+#import "../fragments/fragment-user-item.graphql"
+
+query taskHistory($taskId: TaskId!, $skip: Int, $limit:Int) {
+  taskQueryAPI(taskId: $taskId) {
+    history(skip: $skip, limit:$limit) {
+      count
+      items {
+        actorId
+        occurredOn
+        taskId
+        ... on TaskDelegationBrokeHistoryItemType {
+          occurredOn
+          taskId
+          delegatedActorId
+        }
+        ... on TaskDelegatedHistoryItemType {
+          delegatedActorId
+        }
+      	... on TaskPostAppendedHistoryItemType {
+        postBody
+        }
+      	... on TaskResolutionCreatedHistoryItemType {
+        resolutionDescription
+        resolutionId
+        resolutionTaskType 
+        }
+      	... on TaskStateChangedHistoryItemType {
+          newState 
+        }
+        ... on TaskDueDateShiftedHistoryItemType {
+          dueDate
+        }
+      }
+    }
+  }
+}

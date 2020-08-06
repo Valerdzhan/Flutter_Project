@@ -1,0 +1,5 @@
+query version($documentId: DocumentId!, $eventCount: Long) {
+    documentQueryAPI(documentId: $documentId) {
+        version(eventCount: $eventCount)
+    }
+}

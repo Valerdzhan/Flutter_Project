@@ -1,0 +1,3 @@
+mutation editGenericRequestGQL($input: EditGenericRequestMutationInput!) {
+    editGenericRequest(input: $input)
+}

@@ -1,0 +1,29 @@
+query metaschema {
+    metaSchema {
+    types{
+      name
+      description
+      metadata{
+        key
+        value
+      }
+      fields{
+        name
+        description
+        type
+        metadata{
+          key
+          value
+        }
+      }
+      inputFields{
+        name
+        description
+      }
+      enumValues{
+        name
+        description
+      }
+    }
+  } 
+}

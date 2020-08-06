@@ -1,0 +1,38 @@
+query genericRequestDoc(
+    $skip: Int!
+    $limit: Int!
+    $sort: SortInput_GenericRequestDocsSortFieldEnumType
+    $attributeSearch: genericRequestDocAttributeSearch
+) {
+    genericRequestDoc(
+        skip: $skip
+        limit: $limit
+        sort: $sort
+        attributeSearch: $attributeSearch
+    ) {
+        count
+        items {
+            id
+            addressee
+            addresseeName
+            applicant {
+                firstName
+                lastName
+                patronymic
+                personalIdentifier
+            }
+            categoryId
+            compileTitle
+            title
+            documentType
+            responderId
+            curatorId
+            documentStatus
+            whenCreated
+            editorId
+            whenEdited
+            documentStatusDescription
+            scanCopy
+        }
+    }
+}

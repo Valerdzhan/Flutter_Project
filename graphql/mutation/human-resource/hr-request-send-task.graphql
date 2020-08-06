@@ -1,0 +1,5 @@
+mutation hRRequestDocMutationAPI($documentId: DocumentId!) {
+  hRRequestDocMutationAPI(documentId: $documentId) {
+    send
+  }
+}

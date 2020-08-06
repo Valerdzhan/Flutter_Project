@@ -1,0 +1,51 @@
+#import './fragment-reference-value.graphql'
+#import './fragment-multi-reference-value.graphql'
+
+fragment contractItemFragment on ContractItem {
+    id
+    type {
+        ...referenceValueFragment
+    }
+    conclusionDate
+    contractor
+    curatorId
+    departmentResponder
+    legalNumber
+    paymentEndDate
+    preparationDate
+    reasonToEnter
+    registerNumber
+    responderId
+    validityPeriod {
+        commencementDate
+        expirationDate
+    }
+    name
+    subject
+    sum {
+        amount
+        amountWithTax
+        code {
+            ...referenceValueFragment
+        }
+        tax
+    }
+    systemNumber
+    scanCopyOriginal {
+        fileId
+        fileContent
+        fileName
+    }
+    status {
+        ...referenceValueFragment
+    }
+    financialPositions {
+        ...multiReferenceValueFragment
+    }
+    budgetItems {
+        ...multiReferenceValueFragment
+    }
+    note
+    enableNetworkFolder
+    commercialSecret
+}

@@ -1,0 +1,11 @@
+fragment substitutionFragment on substitution {
+      substitutionId
+      masterId
+      slaveId
+      period {
+        startOnDate
+        endOffDate
+      }
+      asAssistant
+      note
+    }

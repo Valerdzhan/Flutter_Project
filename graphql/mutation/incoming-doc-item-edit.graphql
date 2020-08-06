@@ -1,0 +1,3 @@
+mutation editIncomingDoc($input: EditIncomingDocMutationInput!) {
+  editIncomingDoc(input: $input)
+}

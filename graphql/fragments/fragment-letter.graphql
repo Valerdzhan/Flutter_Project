@@ -1,0 +1,22 @@
+#import './fragment-reference-value.graphql'
+
+fragment letterItemFragment on LetterItem {
+      id
+      responderId
+      status 
+      {
+        ...referenceValueFragment
+      }
+      head
+      senderId
+      addresseeIds
+      actorId
+      personally
+      additionSheetsQuantity
+      sheetsQuantity
+      remark
+      text
+      tasks
+      commercialSecret
+      enableNetworkFolder
+    }

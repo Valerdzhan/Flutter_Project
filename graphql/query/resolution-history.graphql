@@ -1,0 +1,38 @@
+#import "../fragments/fragment-user-item.graphql"
+
+query resolutionHistory($resolutionId: ResolutionId!, $skip: Int, $limit: Int) {
+    resolutionQueryAPI(resolutionId: $resolutionId) {
+        history(skip: $skip, limit: $limit) {
+            count
+            items {
+                actorId
+                occurredOn
+                resolutionId
+                ... on ResolutionStateCreatedHistoryItem {
+                    description
+                }
+                ... on ResolutionStateChangedHistoryItem {
+                    newState
+                }
+                ... on ResolutionDescriptionChangedHistoryItem {
+                    newDescription
+                }
+                ... on ResolutionDueDateChangedHistoryItem {
+                    newDueDate
+                }
+                ... on ResolutionActorAddedHistoryItem {
+                    userId
+                }
+                ... on ResolutionActorRemovedHistoryItem {
+                    userId
+                }
+                ... on ResolutionOverseerSetHistoryItem {
+                    userId
+                }
+                ... on ResolutionOverseerClearedHistoryItem {
+                    __typename
+                }
+            }
+        }
+    }
+}

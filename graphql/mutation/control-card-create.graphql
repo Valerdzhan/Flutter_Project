@@ -1,0 +1,10 @@
+#import "../fragments/fragment-control-card.graphql"
+
+mutation createControlCard($documentId: DocumentId!, $input: ControlCardPropertiesInput!) {
+ incomingDocMutationAPI(documentId: $documentId){
+    createControlCard(input: $input)
+    {
+      ...controlCardFragment
+    }
+  }
+}

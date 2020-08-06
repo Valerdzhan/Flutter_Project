@@ -1,0 +1,20 @@
+#import "../fragments/fragment-task-view.graphql"
+
+query userTasks(
+    $skip: Int!
+    $limit: Int!
+    $sort: SortInput_UserTaskSortFieldEnumType
+    $attributeSearch: UserTasksAttributeSearchType
+) {
+    userTasks(
+        skip: $skip
+        limit: $limit
+        sort: $sort
+        attributeSearch: $attributeSearch
+    ) {
+        count
+        items {
+            ...TaskListItemInterfaceFragment
+        }
+    }
+}

@@ -1,0 +1,8 @@
+#import "../fragments/fragment-user-item.graphql"
+
+query multiUser($input: [UserId!]) {
+  multiUser(input: $input) {
+    id
+    ...userItemFragment
+  }
+}

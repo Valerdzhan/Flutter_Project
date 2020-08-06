@@ -1,0 +1,16 @@
+#import "../fragments/fragment-user-item.graphql"
+
+query getAttachments($id:DocumentId!) {
+  document(id: $id) {
+    id
+    attachments {
+      fileId
+      fileContent
+      fileName
+      fileType
+      fileLength
+      date: when
+      authorId
+    }
+  }
+}

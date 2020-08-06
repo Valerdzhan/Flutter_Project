@@ -1,0 +1,3 @@
+mutation editLNADirectiveMutation($input: EditLNADirectiveMutationInput!) {
+    editLNADirectiveMutation(input: $input)
+}

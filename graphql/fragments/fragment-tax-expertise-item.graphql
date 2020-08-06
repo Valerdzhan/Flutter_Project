@@ -1,0 +1,51 @@
+fragment taxExpertiseItemFragment on TaxExpertiseItem  {
+      id
+      eventCount
+      attachments {
+        fileId
+        fileContent
+        fileName
+      }
+      consequenceIncomeTax{
+        text
+        reason
+      }
+      contractorConsequenceIncomeTax {
+        text
+        reason
+      }
+      consequenceVAT {
+        text
+        reason
+      }
+      contractorConsequenceVAT {
+        text
+        reason
+      }
+      consequenceOtherTaxes {
+        text
+        reason
+      }
+      contractorConsequenceOtherTaxes {
+        text
+        reason
+      }
+      taxRisks {
+        reason
+        power
+        assessment
+      }
+      contractorTaxRisks {
+        reason
+        power
+        assessment
+      }
+      recommendations
+      notionTaxAuthorities
+      notionMinFin
+      notionTribunal
+      impactAssessmentKGN
+      conclusionResultContract
+      responderTaxId
+      responderAccountant
+    } 

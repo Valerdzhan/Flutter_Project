@@ -1,0 +1,16 @@
+query resolution($id: ResolutionId!) {
+      resolution(id: $id)  {
+        id: resolutionId
+        description    
+        dueDate
+        editorId
+        overseerId
+        responsibleIds
+        resolutionId
+        sourceTaskId        
+        state
+        status       
+        whenCreated
+        whenEdited   
+    }
+}

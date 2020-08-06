@@ -1,0 +1,3 @@
+mutation removeDocumentRelationMutation($input: RelationId!) {
+  removeDocumentRelationMutation(input: $input) 
+}

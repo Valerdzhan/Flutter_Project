@@ -1,0 +1,3 @@
+ mutation createResolution($input: CreateResolutionMutationInput!) {
+      createResolution(input: $input)
+    }

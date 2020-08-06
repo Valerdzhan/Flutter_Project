@@ -1,0 +1,5 @@
+mutation editTransferRequest(
+    $input: EditTransferRequestMutationInput!
+) {
+    editTransferRequest(input: $input)
+}

@@ -1,0 +1,5 @@
+mutation taskAPI($taskId: TaskId!, $isPersonal: Boolean!) {  
+  taskAPI(taskId: $taskId) {
+  	setPersonalReview(isPersonalReview: $isPersonal)    
+  }
+}

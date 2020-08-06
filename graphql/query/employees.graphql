@@ -1,0 +1,13 @@
+query employees($query: String!, $withoutRetired: Boolean) {
+    employees(query: $query, withoutRetired: $withoutRetired) {
+        personalIdentifier
+        firstName
+        lastName
+        patronymic
+        displayName
+        jobTitle
+        department
+        orgUnit
+        photoUrl
+    }
+}

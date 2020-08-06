@@ -1,0 +1,10 @@
+query allRouteOption {
+allRouteOption {
+    documentType
+    routeOptions {
+      defaultValue
+      description
+      optionId: id
+    }
+  }
+}

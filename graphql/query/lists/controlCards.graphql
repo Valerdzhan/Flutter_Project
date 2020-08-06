@@ -1,0 +1,20 @@
+#import "../../fragments/fragment-control-card.graphql"
+
+query controlCards(
+    $skip: Int!
+    $limit: Int!
+    $sort: SortInput_ControlCardsSortFieldEnumType
+    $attributeSearch: controlCardsAttributeSearch
+) {
+    controlCards(
+        skip: $skip
+        limit: $limit
+        sort: $sort
+        attributeSearch: $attributeSearch
+    ) {
+        count
+        items {
+            ...controlCardFragment
+        }
+    }
+}

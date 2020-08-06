@@ -1,0 +1,14 @@
+#import "./fragment-substitution.graphql"
+#import "./fragment-user-item.graphql"
+
+fragment userItemFragmentWithSubs on UserItem {
+    ...userItemFragment
+    #Список заместителей
+    slaves: slaves {
+        ...substitutionFragment
+    }
+    #Список кого замещаю/ассистирую
+    masters {
+        ...substitutionFragment
+    }
+}

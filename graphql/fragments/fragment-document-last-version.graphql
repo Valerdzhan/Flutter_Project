@@ -1,0 +1,12 @@
+fragment documentLastVersionFragment on LastDocumentVersion {
+  id
+  title
+  whenCreated
+  whenEdited
+  type: documentType
+  authorName
+  compileTitle
+  responderId
+  authorId
+  editorId
+}

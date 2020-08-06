@@ -1,0 +1,3 @@
+mutation cancelSubstitution($id: SubstitutionId!) {
+  cancelSubstitution(id: $id)
+}

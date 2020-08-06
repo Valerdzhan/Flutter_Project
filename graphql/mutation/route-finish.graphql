@@ -1,0 +1,3 @@
+mutation finishRoute($routeId: RouteId!) {
+  finishRoute(id:$routeId)
+}

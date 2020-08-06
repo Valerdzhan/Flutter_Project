@@ -1,0 +1,5 @@
+mutation renameGroup($groupId: GroupId!, $name: String!) {
+    groupMutationAPI(groupId: $groupId) {
+        rename(name: $name)
+    }
+}

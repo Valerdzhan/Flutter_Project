@@ -1,0 +1,5 @@
+mutation readdocument($documentId: DocumentId!) {
+  documentMutationAPI(documentId: $documentId){
+    read
+  }
+}

@@ -1,0 +1,9 @@
+mutation SetMailingAttributes(
+    $documentId: DocumentId!
+    $users: [UserId!]!
+    $groups: [MailingGroupId!]!
+) {
+    documentMutationAPI(documentId: $documentId) {
+        setMailingAttributes(users: $users, groups: $groups)
+    }
+}

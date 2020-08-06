@@ -1,0 +1,5 @@
+mutation userSettingSet($userId: UserId!, $key: String, $value: String) {
+    userSettingsByIdMutationAPI(userId: $userId) {
+        set(key: $key, value: $value)
+    }
+}

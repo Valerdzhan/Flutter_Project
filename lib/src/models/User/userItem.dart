@@ -2,7 +2,7 @@ import 'package:myapp/src/models/User/userActionItem.dart';
 import 'package:myapp/src/models/User/vacation.dart';
 import 'package:queries/collections.dart';
 
-class UserItem {
+class UserItemType {
   final String userId;
   final String displayName;
   final DateTime created;
@@ -24,7 +24,7 @@ class UserItem {
   final int employeeId;
   final int orgUnitId;
 
-  UserItem(
+  UserItemType(
       {this.userId,
       this.displayName,
       this.created,
@@ -45,8 +45,8 @@ class UserItem {
       this.employeeId,
       this.orgUnitId});
 
-  factory UserItem.fromJson(Map<String, dynamic> json) {
-    return UserItem(
+  factory UserItemType.fromJson(Map<String, dynamic> json) {
+    return UserItemType(
         userId: json['userId'] as String,
         displayName: json['displayName'] as String,
         created: json['created'] as DateTime,

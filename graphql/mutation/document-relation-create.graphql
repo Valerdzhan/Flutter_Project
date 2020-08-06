@@ -1,0 +1,16 @@
+mutation createDocumentRelationMutation(
+    $input: CreateDocumentRelationMutationInput!
+) {
+    createDocumentRelationMutation(input: $input) {
+        relationId
+        documentId
+        document {
+            id
+            documentType
+            title: compileTitle
+            hasAccess
+            adminIds
+        }
+        relationType
+    }
+}

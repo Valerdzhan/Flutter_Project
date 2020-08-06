@@ -1,0 +1,108 @@
+#import "../fragments/fragment-user-item-with-subs.graphql"
+
+query init {
+    currentUser {
+        ...userItemFragmentWithSubs
+        personalIdentifier
+    }
+    allEventGroups {
+        id
+        title
+        documentType
+        events
+    }
+    allRouteOption {
+        documentType
+        routeOptions {
+            defaultValue
+            description
+            optionId: id
+        }
+    }
+    orgUnits {
+        id
+        parentId
+        name
+        shortName
+    }
+    serverSettingsQueryAPI {
+        maintenanceMessage
+    }
+    # metaSchema {
+    #     types {
+    #         name
+    #         description
+    #         metadata {
+    #             key
+    #             value
+    #         }
+    #         fields {
+    #             name
+    #             description
+    #             type
+    #             metadata: metadata {
+    #                 key
+    #                 value
+    #             }
+    #         }
+    #         inputFields: inputFields {
+    #             name
+    #             description
+    #         }
+    #         enumValues {
+    #             name
+    #             description
+    #         }
+    #     }
+    # }
+    allGroups {
+        id
+        name
+        userIds
+        authorId
+        editorId
+        whenCreated
+        whenEdited
+    }
+    serverInfo {
+        allUsers {
+            d: displayName
+            i: id
+            v: isOnVacation
+            r: isRetired
+            l: lastActivity
+            a: adGuid
+        }
+    }
+    userSettingsQueryAPI(userId: "init") {
+        userSettings {
+            isPrintBtnResolutionActive
+            isIncomingNumberAndDatePDFInFileEnabled
+            isPrintReportEnabled
+        }
+        getCustomNotifies {
+            comment
+            hostId
+            hostType
+            notifyDate
+            whenCreated
+        }
+    }
+    mailingGroupQueryAPI {
+        all {
+            id
+            parentId
+            name
+            hasChildren
+            isDeleted
+            type
+        }
+    }
+    genericRequestCatalogQueryAPI {
+        allCategories {
+            id
+            title
+            parentId
+        }
+    }
+}

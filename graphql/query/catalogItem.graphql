@@ -1,0 +1,12 @@
+#import '../fragments/fragment-reference-value.graphql'
+
+query catalogItem($key: String!) {
+  catalogItem(key: $key) {
+    key
+    title
+    isUsed
+    values {
+      ...referenceValueFragment
+    }
+  }
+}

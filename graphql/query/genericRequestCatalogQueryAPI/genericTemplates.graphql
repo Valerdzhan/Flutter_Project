@@ -1,0 +1,17 @@
+query templates($categoryId: Guid!, $personalIdentifier: PersonalIdentifier) {
+    genericRequestCatalogQueryAPI {
+        templates(categoryId: $categoryId, personalIdentifier: $personalIdentifier) {
+            categoryId
+            id
+            text
+            orgId
+            orgUnit {
+                id
+                parentId
+                name
+                shortName
+            }
+            title
+        }
+    }
+}

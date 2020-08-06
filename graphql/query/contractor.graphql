@@ -1,0 +1,17 @@
+query contractor($id: ContractorId!) {
+      contractor(id: $id) {
+        id
+        iNN
+        kPP
+        country
+        name
+        region
+        index
+        area
+        city
+        street
+        oKPO
+        phone
+        isDeleted
+      }
+    }

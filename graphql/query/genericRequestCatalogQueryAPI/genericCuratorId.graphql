@@ -1,0 +1,5 @@
+query curatorId($categoryId: Guid!, $personalIdentifier: PersonalIdentifier) {
+    genericRequestCatalogQueryAPI {
+        curatorId(categoryId: $categoryId, personalIdentifier: $personalIdentifier)
+    }
+}

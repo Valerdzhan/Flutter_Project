@@ -1,0 +1,26 @@
+#import "../fragments/fragment-resolution.graphql"
+
+query resolutions(
+    $skip: Int
+    $limit: Int
+    $user: UserId
+    $statusFilter: [String!]
+    $filterType: ResolutionFilterEnum
+    $sort: SortInput_ResolutionsSortFieldEnumType
+    $contains: String
+) {
+    resolutions(
+        skip: $skip
+        limit: $limit
+        user: $user
+        statusFilter: $statusFilter
+        filterType: $filterType
+        sort: $sort
+        contains: $contains
+    ) {
+        count
+        items {
+            ...resolutionFragment
+        }
+    }
+}

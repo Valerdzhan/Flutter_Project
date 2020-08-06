@@ -1,0 +1,3 @@
+mutation deleteStage($routeId: RouteId!, $stageId: StageId!) {
+    deleteStage(routeId: $routeId, stageId: $stageId) 
+}

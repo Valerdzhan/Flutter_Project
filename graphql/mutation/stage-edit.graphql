@@ -1,0 +1,14 @@
+#import "../fragments/fragment-task-view.graphql"
+
+mutation editStage($input: EditStageMutationInput!) {
+    editStage(input: $input) {
+        stageId
+        defaultTaskType
+        state
+        duration
+        status
+        tasks  {
+            ...TaskListItemInterfaceFragment
+        }
+    }
+}

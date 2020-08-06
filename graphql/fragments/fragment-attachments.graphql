@@ -1,0 +1,13 @@
+#import "./fragment-user-item.graphql"
+
+fragment attachmentsFragment on FileVersionListItem {
+      fileId
+      fileContent
+      fileName
+      fileType
+      fileLength
+      date: when
+      authorId
+      isDeleted
+      isLocked
+}

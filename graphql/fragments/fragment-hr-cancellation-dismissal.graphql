@@ -1,0 +1,37 @@
+fragment requestCancellationForDismissalItemFragment on CancellationRequestForDismissalItem {
+    id
+    addresseeId
+    applicant {
+        firstName
+        lastName
+        patronymic
+        personalIdentifier
+    }
+    applicantId
+    applicantExternalUserId
+    applicantDetails {
+        department
+        jobTitle
+        orgUnit
+    }
+    clauseEmploymentLaw
+    compileTitle
+    departmentFrom
+    positionFrom
+    orderDescriptor {
+        issuedDate
+        number
+    }
+    tasks
+    remark
+    responderId
+    requestForDismissalId
+    scanCopyOriginal {
+        fileContent
+        fileId
+        fileName
+        isLocked
+    }
+    dismissalDate
+    enableNetworkFolder
+}

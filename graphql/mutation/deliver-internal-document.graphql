@@ -1,0 +1,3 @@
+mutation deliverInternalDocument($input: DeliverInternalDocument!) {
+  deliverInternalDocument(input: $input)
+}

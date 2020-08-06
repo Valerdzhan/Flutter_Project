@@ -1,0 +1,3 @@
+mutation editRoute($input: EditRouteMutationInput!){
+  editRoute(input: $input)
+}

@@ -1,0 +1,14 @@
+fragment multiReferenceValueFragment on MultiReferenceValue {
+    catalog {
+      id: key
+      key
+      title
+      isUsed         
+    }    
+    values {
+      id: key
+      key
+      value
+      isUsed  
+    }
+}

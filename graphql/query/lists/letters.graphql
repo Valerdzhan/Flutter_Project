@@ -1,0 +1,29 @@
+query letters(
+    $skip: Int!
+    $limit: Int!
+    $sort: SortInput_LettersSortFieldEnumType
+    $attributeSearch: letterAttributeSearch
+) {
+    letters(
+        skip: $skip
+        limit: $limit
+        sort: $sort
+        attributeSearch: $attributeSearch
+    ) {
+        count
+        items {
+            id
+            compileTitle
+            head
+            actorId
+            addresseeIds
+            isRegistered
+            registrationDate
+            registrationNumber
+            senderId
+            status
+            documentStatus
+            documentStatusDescription
+        }
+    }
+}

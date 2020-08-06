@@ -1,0 +1,3 @@
+mutation createTax($input: CreateTaxExpertiseMutationInput!) {
+  createTaxExpertise(input: $input)
+}

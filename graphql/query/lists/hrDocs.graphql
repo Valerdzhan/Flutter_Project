@@ -1,0 +1,41 @@
+query hrDocs(
+    $skip: Int!
+    $limit: Int!
+    $sort: SortInput_HRRequestDocsSortFieldEnumType
+    $attributeSearch: hrDocAttributeSearch
+) {
+    hRRequestDoc(
+        skip: $skip
+        limit: $limit
+        sort: $sort
+        attributeSearch: $attributeSearch
+    ) {
+        count
+        items {
+            id
+            compileTitle
+            title
+            documentType
+            applicant {
+                firstName
+                lastName
+                patronymic
+                personalIdentifier
+            }
+            responder: responderId
+            addresseeName
+            addressee
+            status
+            orderDescriptor {
+                issuedDate
+                number
+            }
+            whenCreated
+            editorId
+            whenEdited
+            documentStatus
+            scanCopy
+            documentStatusDescription
+        }
+    }
+}

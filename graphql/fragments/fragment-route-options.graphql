@@ -1,0 +1,6 @@
+fragment routeOptionsFragment on BooleanOptionType {
+    defaultValue
+    description
+    optionId
+    optionValue
+}

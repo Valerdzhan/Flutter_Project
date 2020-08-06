@@ -1,0 +1,3 @@
+mutation updateAssistant($id: SubstitutionId!, $input: AppointAssistantInput!) {
+  updateAssistant(id: $id,input: $input)
+}

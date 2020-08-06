@@ -1,0 +1,7 @@
+#import "../fragments/fragment-resolution.graphql"
+
+query resolution($id: ResolutionId!) {
+      resolution(id: $id)  {
+          ...resolutionFragment
+      }
+    }

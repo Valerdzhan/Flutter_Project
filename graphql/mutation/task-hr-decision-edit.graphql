@@ -1,0 +1,7 @@
+#import "../fragments/fragment-task-hr-decision.graphql"
+
+mutation editDecimalTask($input: EditInternalTaskMutationInput!) {
+    editForHRDecisionTask(input: $input) {
+        ...decisionTaskFragment
+    }
+}

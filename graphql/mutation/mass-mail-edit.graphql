@@ -1,0 +1,3 @@
+mutation editMassMail($input: EditMassMailMutationInput!) {
+  editMassMail(input: $input)
+}

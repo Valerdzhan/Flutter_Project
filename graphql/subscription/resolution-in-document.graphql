@@ -1,0 +1,7 @@
+#import "../fragments/fragment-resolution.graphql"
+
+subscription resolutionInDocument($documentId: DocumentId!) {
+    resolutionInDocument(documentId: $documentId) {
+        ...resolutionFragment
+    }
+}

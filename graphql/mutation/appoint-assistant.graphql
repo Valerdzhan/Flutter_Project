@@ -1,0 +1,3 @@
+mutation appointAssistant($input: AppointAssistantInput!) {
+  appointAssistant(input: $input)
+}

@@ -1,0 +1,9 @@
+#import "../fragments/fragment-registration-book-item.graphql"
+
+mutation documentRegistrationUnbook($documentId: DocumentId!) {
+    registrationMutationAPI {
+        unbook(documentId: $documentId) {
+            ...registrationBookItemFragment
+        }
+    }
+}

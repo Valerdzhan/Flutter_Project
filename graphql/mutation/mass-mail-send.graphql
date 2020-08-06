@@ -1,0 +1,5 @@
+mutation massMailSend($documentId: DocumentId!) {
+  massMailMutationAPI(documentId: $documentId) {
+    send
+  }
+}

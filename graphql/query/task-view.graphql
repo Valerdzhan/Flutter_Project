@@ -1,0 +1,7 @@
+#import "../fragments/fragment-task-view.graphql"
+
+query taskView($id: TaskId!) {
+      taskView(id: $id) {
+          ...TaskListItemInterfaceFragment
+      }
+    }

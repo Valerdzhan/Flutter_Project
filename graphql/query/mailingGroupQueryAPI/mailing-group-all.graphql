@@ -1,0 +1,12 @@
+query mailingGroupAll {
+    mailingGroupQueryAPI {
+        all {
+            id
+            parentId
+            name
+            hasChildren
+            isDeleted
+            type
+        }
+    }
+}

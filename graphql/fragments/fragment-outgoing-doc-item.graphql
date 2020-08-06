@@ -1,0 +1,37 @@
+#import './fragment-reference-value.graphql'
+#import './fragment-correspondent.graphql'
+
+fragment OutgoingDocItemFragment on OutgoingDocItem {
+    id
+    actor
+    addressees {
+        ...correspondentFragment
+    }
+    head
+    remark
+    sender
+    responder
+    status {
+        ...referenceValueFragment
+    }
+    type {
+        ...referenceValueFragment
+    }
+    registrationInfo {
+        isRegistered
+        registerNumber
+        registrationDate
+    }
+    reservationInfo {
+        isRegistered
+        registerNumber
+        registrationDate
+    }
+    scanCopyOriginal {
+        fileId
+        fileContent
+        fileName
+    }
+    commercialSecret
+    enableNetworkFolder
+}

@@ -1,0 +1,32 @@
+#import "../fragments/fragment-task-view.graphql"
+#import "../fragments/fragment-route-options.graphql"
+
+query getRoute($id: RouteId!) {
+    route(id: $id) {
+        routeId
+        options {
+            ...routeOptionsFragment
+        }
+        title
+        documentId
+        state
+        status
+        targets {
+            documentId
+            groups
+            attachments
+        }
+        stages {
+            stageId
+            defaultTaskType
+            index
+            duration
+            state
+            status
+            tasks {
+                ...TaskListItemInterfaceFragment
+            }
+        }
+        areSignatoriesAgree
+    }
+}

@@ -1,0 +1,3 @@
+mutation appendStage($stage: AppendStageMutationInput!) {
+  appendStage(input: $stage)
+}

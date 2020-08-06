@@ -1,0 +1,12 @@
+query mailingGroupSearch($searchString: String) {
+    mailingGroupQueryAPI {
+        search(searchString: $searchString) {
+            id
+            parentId
+            name
+            hasChildren
+            isDeleted
+            type
+        }
+    }
+}

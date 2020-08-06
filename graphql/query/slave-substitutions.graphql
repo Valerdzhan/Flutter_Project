@@ -1,0 +1,7 @@
+#import '../fragments/fragment-substitution.graphql'
+
+query slaveSubstitutions($id: UserId!) {
+  slaveSubstitutions(id: $id) {
+    ...substitutionFragment
+  }
+}

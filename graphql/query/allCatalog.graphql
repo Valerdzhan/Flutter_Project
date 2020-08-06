@@ -1,0 +1,12 @@
+#import '../fragments/fragment-reference-value.graphql'
+
+query allCatalog {
+  allCatalog {
+    key
+    title
+    isUsed
+    values {
+      ...referenceValueFragment
+    }
+  }
+}

@@ -1,0 +1,37 @@
+#import './fragment-reference-value.graphql'
+#import './fragment-multi-reference-value.graphql'
+#import './fragment-task-internal.graphql'
+#import './fragment-correspondent.graphql'
+
+fragment incomingDocItemFragment on IncomingDocItem {
+    id
+    sender {
+        ...correspondentFragment
+    }
+    status {
+        ...referenceValueFragment
+    }
+    actor
+    documentDate
+    type {
+        ...referenceValueFragment
+    }
+    head
+    addresseeIds
+    senderOutgoingNumber
+    specialControls {
+        ...multiReferenceValueFragment
+    }
+    controlDate
+    controlMark
+    remark
+    commercialSecret
+    registrationInfo {
+        isRegistered
+        registerNumber
+        registrationDate
+    }
+    tasks
+    controlCardsCount
+    enableNetworkFolder
+}

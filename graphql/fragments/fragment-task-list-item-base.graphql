@@ -1,0 +1,75 @@
+fragment taskListItemBaseFragment on TaskListItemInterface {
+    id
+    actorId
+    documentLastVersion: documentListItem {
+        id
+        compileTitle
+        type: documentType
+        title
+        controlCardsCount
+        controlCardsRemovedCount
+        responderId
+        whenCreated
+        whenEdited
+        ... on ContractListItem {
+            contractorId
+            contractorName
+        }
+        ... on HRRequestDocListItem {
+            addressee
+            addresseeName
+            applicantId
+            applicantExternalUserId
+        }
+        ... on IncomingDocListItem {
+            addresseeIds
+            sender
+            senderId
+            actor
+        }
+        ... on LetterListItem {
+            addresseeIds
+            senderId
+            actorId
+        }
+        ... on LNAListItem {
+            signerId
+            actorId
+            overseerId
+        }
+        ... on OutgoingDocListItem {
+            addressees
+            addresseeIds
+            senderId
+            actorId
+        }
+    }
+    state
+    status
+    statusEditorId
+    note
+    authorId
+    editorId
+    delegatedActorIds
+    delegations {
+        userId
+        date
+    }
+    dueDate
+    whenCreated
+    whenEdited
+    whenStatusEdited
+    whenSubmitted
+    isPersonalReview
+    hasChildren
+    readAuditList {
+        masters
+        userId
+        whenRead
+    }
+    resolutionsFinished
+    subTaskCount
+    subTaskRejectedCount
+    subTaskSolvedCount
+    lastActorPost
+}

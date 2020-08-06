@@ -1,0 +1,5 @@
+mutation finishResolution($resolutionId: ResolutionId!, $isCancelTasks: Boolean){
+  resolutionMutationAPI(resolutionId: $resolutionId){
+    finishResolution(isCancelTasks: $isCancelTasks)
+  }
+}

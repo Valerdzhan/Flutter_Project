@@ -1,0 +1,11 @@
+query allUsers {
+    serverInfo {
+        allUsers {
+            d: displayName
+            i: id
+            v: isOnVacation
+            l: lastActivity
+            a: adGuid
+        }
+    }
+}

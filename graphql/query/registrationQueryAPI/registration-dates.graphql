@@ -1,0 +1,8 @@
+query dates($place: String!, $number: ULong) {
+    registrationQueryAPI {
+        dates(place: $place, number: $number) {
+            left
+            right
+        }
+    }
+}

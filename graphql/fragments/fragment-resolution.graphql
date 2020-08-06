@@ -1,0 +1,29 @@
+#import './fragment-document-last-version.graphql'
+
+fragment resolutionFragment on Resolution {
+    id: resolutionId
+    authorId
+    completeParentOption
+    description
+    documentLastVersion {
+        ...documentLastVersionFragment
+    }
+    dueDate
+    editorId
+    onlyResponsibleResultOption
+    originatorId
+    overseerId
+    ownerMark
+    people
+    actorIds
+    responsibleIds
+    requireSingleResultOption
+    resolutionId
+    sourceTaskId
+    state
+    status
+    type
+    whenCreated
+    whenEdited
+} 
+

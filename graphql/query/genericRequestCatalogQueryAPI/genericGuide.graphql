@@ -1,0 +1,5 @@
+query guide($categoryId: Guid!, $personalIdentifier: PersonalIdentifier) {
+    genericRequestCatalogQueryAPI {
+        guide(categoryId: $categoryId, personalIdentifier: $personalIdentifier)
+    }
+}

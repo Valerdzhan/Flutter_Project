@@ -1,0 +1,28 @@
+query massMails(
+    $skip: Int!
+    $limit: Int!
+    $sort: SortInput_MassMailsSortFieldEnumType
+    $attributeSearch: massMailAttributeSearch
+) {
+    massMails(
+        skip: $skip
+        limit: $limit
+        sort: $sort
+        attributeSearch: $attributeSearch
+    ) {
+        count
+        items {
+            id
+            compileTitle
+            title
+            senderId
+            responderId
+            mailingGroupsIds
+            documentStatus
+            documentStatusDescription
+            isSent
+            sendingAuthor
+            sendingDate
+        }
+    }
+}

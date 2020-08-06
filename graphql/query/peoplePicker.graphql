@@ -1,0 +1,8 @@
+#import "../fragments/fragment-user-item.graphql"
+
+query peoplePicker($query: String!, $includeRetired: Boolean) {
+    users(query: $query, includeRetired: $includeRetired) {
+        id
+        ...userItemFragment
+    }
+}

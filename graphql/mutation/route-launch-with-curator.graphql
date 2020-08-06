@@ -1,0 +1,3 @@
+mutation launchRouteWithCurator($routeId: RouteId!, $curatorId: Curator!) {
+    launchRouteWithCurator(id: $routeId, curatorId: $curatorId)
+}

@@ -1,0 +1,23 @@
+#import '../../fragments/fragment-document-list-item.graphql'
+
+query documents(
+    $skip: Int!
+    $limit: Int!
+    $attributeSearch: BaseAttributeSearch
+    $sort: SortInput_DocumentSortFieldEnumType
+    $onRegisterFilter: Boolean
+) {
+    documents(
+        skip: $skip
+        limit: $limit
+        attributeSearch: $attributeSearch
+        sort: $sort
+        onRegisterFilter: $onRegisterFilter
+    ) {
+        count
+        items {
+            documentType
+            ...documentListItemFragment
+        }
+    }
+}

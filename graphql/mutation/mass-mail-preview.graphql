@@ -1,0 +1,5 @@
+mutation massMailPreview($documentId: DocumentId!) {
+  massMailMutationAPI(documentId: $documentId) {
+    preview
+  }
+}

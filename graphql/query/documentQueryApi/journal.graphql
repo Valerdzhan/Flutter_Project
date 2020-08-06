@@ -1,0 +1,10 @@
+#import "../../fragments/fragment-journal.graphql"
+
+query journal($documentId: DocumentId!) {
+  documentQueryAPI(documentId: $documentId) {
+    documentType
+    journal {
+         ...journalFragment
+    }
+  }
+}

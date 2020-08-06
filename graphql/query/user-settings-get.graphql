@@ -1,0 +1,5 @@
+query userSettingGet($userId: UserId!, $key: String) {
+    userSettingsQueryAPI(userId: $userId) {
+        get(key: $key)
+    }
+}

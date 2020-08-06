@@ -1,0 +1,3 @@
+mutation createLNAOrderMutation($input: CreateLNAOrderMutationInput!) {
+    createLNAOrderMutation(input: $input)
+}

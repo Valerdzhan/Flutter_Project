@@ -1,0 +1,9 @@
+#import "../../fragments/fragment-registration-book-item.graphql"
+
+query registrationBookItem($documentId: DocumentId!) {
+    registrationQueryAPI {
+        get(documentId: $documentId) {
+            ...registrationBookItemFragment
+        }
+    }
+}

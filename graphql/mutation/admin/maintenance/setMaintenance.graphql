@@ -1,0 +1,5 @@
+mutation setMaintenanceMessage($message: String!) {
+    serverSettingsMutationAPI {
+        setMaintenanceMessage(message: $message)
+    }
+}

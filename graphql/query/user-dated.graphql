@@ -1,0 +1,15 @@
+#import "../fragments/fragment-user-item.graphql"
+
+query userDated($id: UserId!, $onDate: DateTime!) {
+    user(id: $id) {
+        id
+        ...userItemFragment
+    }
+    userDated(id: $id, onDate: $onDate) {
+        department
+        jobTitle
+        name
+        displayName: name
+        orgUnit
+    }
+}

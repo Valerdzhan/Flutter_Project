@@ -1,0 +1,14 @@
+#import "../fragments/fragment-task-view.graphql"
+
+query stage($routeId: RouteId!, $id: StageId!) {
+    stage(routeId:$routeId, id:$id) {    
+      stageId
+      defaultTaskType
+      duration
+      state
+      status
+      tasks {
+          ...TaskListItemInterfaceFragment
+      }
+    } 
+  }

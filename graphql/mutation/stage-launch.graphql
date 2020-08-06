@@ -1,0 +1,3 @@
+mutation launchStage($routeId: RouteId!, $stageId: StageId!) {
+  launchStage(routeId: $routeId, stageId: $stageId)
+}

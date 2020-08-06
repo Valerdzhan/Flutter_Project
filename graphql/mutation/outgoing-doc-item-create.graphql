@@ -1,0 +1,3 @@
+mutation createOutgoingDoc($input: CreateOutgoingDocMutationInput!) {
+  createOutgoingDoc(input: $input)
+}

@@ -1,0 +1,9 @@
+#import "../../fragments/fragment-task-view.graphql"
+
+query getTasksInDocument ($documentId: DocumentId!) {
+    documentQueryAPI(documentId: $documentId) {
+      tasks {
+          ...TaskListItemInterfaceFragment
+      }
+    }
+}

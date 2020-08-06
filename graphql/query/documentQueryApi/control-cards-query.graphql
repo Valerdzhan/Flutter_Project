@@ -1,0 +1,9 @@
+#import "../../fragments/fragment-control-card.graphql"
+
+query controlCards($documentId: DocumentId!) {
+  documentQueryAPI(documentId: $documentId){
+    controlCards {
+        ...controlCardFragment
+    }
+  }
+}

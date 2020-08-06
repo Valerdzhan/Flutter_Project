@@ -1,0 +1,5 @@
+mutation letterDocRegisterAndSend($documentId: DocumentId!) {
+  letterMutationAPI(documentId: $documentId) {
+    registerAndSend
+  }
+}

@@ -1,0 +1,5 @@
+mutation setMembersGroup($groupId: GroupId!, $users: [UserId!]!) {
+    groupMutationAPI(groupId: $groupId) {
+        setMembers(users: $users)
+    }
+}

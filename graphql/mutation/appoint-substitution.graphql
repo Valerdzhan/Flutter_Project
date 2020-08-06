@@ -1,0 +1,3 @@
+mutation appointSubstitution($input: AppointSubstitutionInput!) {
+  appointSubstitution(input: $input)
+}

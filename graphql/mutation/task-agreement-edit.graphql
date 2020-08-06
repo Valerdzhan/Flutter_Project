@@ -1,0 +1,7 @@
+#import "../fragments/fragment-task-route.graphql"
+
+mutation editAgreementTask($input: EditTaskMutationInput!) {
+      editAgreementTask(input: $input) {
+            ...taskRouteFragment
+      }
+}

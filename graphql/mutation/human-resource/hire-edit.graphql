@@ -1,0 +1,3 @@
+mutation editRequestToHire($input: EditRequestToHireMutationInput!) {
+    editRequestToHire(input: $input)
+}

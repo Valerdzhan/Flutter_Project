@@ -1,0 +1,9 @@
+query categories {
+    genericRequestCatalogQueryAPI {
+        allCategories {
+            id
+            title
+            parentId
+        }
+    }
+}

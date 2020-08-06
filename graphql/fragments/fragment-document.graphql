@@ -1,0 +1,147 @@
+#import "./fragment-user-item.graphql"
+#import "./fragment-document-description.graphql"
+#import "./fragment-attachments.graphql"
+#import "./fragment-contract-item.graphql"
+#import "./fragment-letter.graphql"
+#import "./fragment-outgoing-doc-item.graphql"
+#import "./fragment-incoming-doc-item.graphql"
+#import "./fragment-tax-expertise-item.graphql"
+#import "./fragment-correspondent.graphql"
+#import "./fragment-hr-hire.graphql"
+#import "./fragment-hr-transfer.graphql"
+#import "./fragment-hr-dismissal.graphql"
+#import "./fragment-hr-cancellation-dismissal.graphql"
+#import "./fragment-lna-directive.graphql"
+#import "./fragment-lna-order.graphql"
+#import "./fragment-mass-mail.graphql"
+
+fragment IDocumentFragment on IDocument {
+    id
+    eventCount
+    version
+    subDocuments {
+        ...documentDescriptorFragment
+    }
+    attachments {
+        ...attachmentsFragment
+    }
+    documentType
+    adminIds
+    readerIds
+    registrationInfo {
+        isRegistered
+        registerNumber
+        registrationDate
+    }
+    registrationBookItem {
+        authorId
+        date
+        documentId
+        isPermanent
+        number
+        registrationBookId
+        registrationBook {
+            name
+        }
+    }
+    revoked {
+        isRevoked
+        revokedNote
+        isTaskCanceled
+    }
+    relations {
+        relationId
+        documentId
+        document {
+            id
+            documentType
+            title: compileTitle
+            hasAccess
+            adminIds
+            ... on ContractItem {
+                responderId
+            }
+            ... on LetterItem {
+                responderId
+            }
+            ... on OutgoingDocItem {
+                responderId: responder
+            }
+        }
+        relationType
+    }
+    examinationAuditList {
+        masters
+        userId
+        whenRead
+    }
+    # readAuditList {
+    #     masters
+    #     userId
+    #     whenRead
+    # }
+    authorId
+    editorId
+    whenCreated
+    whenEdited
+    documentSerialNumber
+    documentSystemNumber
+    documentStatus
+    isLinkAccessAllowed
+    isPublished
+    publisherId
+    whenPublished
+    mailingGroups {
+        id
+        authorId
+        hasChildren
+        isDeleted
+        name
+        parentId
+        state
+        when
+    }
+    mailingUsers {
+        authorId
+        state
+        userId
+        when
+    }
+    userRoles
+    ... on ContractItem {
+        ...contractItemFragment
+    }
+    ... on LetterItem {
+        ...letterItemFragment
+    }
+    ... on IncomingDocItem {
+        ...incomingDocItemFragment
+    }
+    ... on OutgoingDocItem {
+        ...OutgoingDocItemFragment
+    }
+    ... on TaxExpertiseItem {
+        ...taxExpertiseItemFragment
+    }
+    ... on RequestToHireItem {
+        ...requestToHireItemFragment
+    }
+    ... on RequestForDismissalItem {
+        ...requestForDismissalItemFragment
+    }
+    ... on TransferRequestItem {
+        ...transferRequestItemFragment
+    }
+    ... on CancellationRequestForDismissalItem {
+        ...requestCancellationForDismissalItemFragment
+    }
+    ... on LNADirectiveItem {
+        ...lnaDirectiveItemFragment
+    }
+    ... on LNAOrderItem {
+        ...lnaOrderItemFragment
+    }
+    ... on MassMailItem {
+        ...massMailItemFragment
+    }
+}

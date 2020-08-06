@@ -1,0 +1,12 @@
+#import './fragment-task-list-item-base.graphql'
+
+fragment taskResolutionFragment on ResolutionTaskListItemType {
+    ...taskListItemBaseFragment
+    hasControl
+    resolutionId
+    order
+    taskType
+    isResponsible
+    overseerId
+    originatorId
+}

@@ -1,0 +1,3 @@
+mutation launchRoute($routeId: RouteId!) {
+  launchRoute(id: $routeId)
+}

@@ -1,0 +1,22 @@
+fragment userItemFragment on UserItem {
+    id
+    #adLogin
+    displayName
+    jobTitle
+    orgUnit
+    department
+    photoUrl
+    identity
+    email
+    lastActivity
+    activityCount
+    isRetired
+    retiredDate
+    phone
+    vacation {
+        description
+        from
+        to
+    }
+    userAgent
+}

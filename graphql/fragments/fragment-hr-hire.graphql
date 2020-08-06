@@ -1,0 +1,46 @@
+#import './fragment-reference-value.graphql'
+
+fragment requestToHireItemFragment on RequestToHireItem {
+    id
+    addresseeId
+    applicant {
+        firstName
+        lastName
+        patronymic
+        personalIdentifier
+    }
+    applicantId
+    applicantExternalUserId
+    applicantDetails {
+        department
+        jobTitle
+        orgUnit
+    }
+    compileTitle
+    dateOfVacancy
+    departmentTo
+    positionTo
+    hireDate
+    orderDescriptor {
+        issuedDate
+        number
+    }
+    recruitmentSource {
+        ...referenceValueFragment
+    }
+    registrationInfo {
+        isRegistered
+        registerNumber
+        registrationDate
+    }
+    tasks
+    remark
+    responderId
+    scanCopyOriginal {
+        fileContent
+        fileId
+        fileName
+        isLocked
+    }
+    enableNetworkFolder
+}

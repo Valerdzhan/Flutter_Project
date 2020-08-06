@@ -1,0 +1,9 @@
+#import "../fragments/fragment-registration-book-item.graphql"
+
+mutation documentRegistrationMakePermanent($documentId: DocumentId!) {
+    registrationMutationAPI {
+        makePermanent(documentId: $documentId) {
+            ...registrationBookItemFragment
+        }
+    }
+}

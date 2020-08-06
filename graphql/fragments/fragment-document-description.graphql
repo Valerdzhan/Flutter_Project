@@ -1,0 +1,5 @@
+fragment documentDescriptorFragment on DocumentDescriptor {
+    id
+    eventCount
+    type
+}

@@ -1,0 +1,3 @@
+mutation setPermissions($input: GodPermissionsMutationInput!){
+  setPermissions(input: $input)
+}

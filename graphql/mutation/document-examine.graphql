@@ -1,0 +1,5 @@
+mutation examinedocument($documentId: DocumentId!) {
+  documentMutationAPI(documentId: $documentId){
+    examine
+  }
+}

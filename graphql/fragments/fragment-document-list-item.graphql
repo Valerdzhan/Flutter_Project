@@ -1,0 +1,119 @@
+fragment documentListItemFragment on IDocumentListItem {
+    id
+    title
+    whenCreated
+    whenEdited
+    type: documentType
+    documentStatus
+    documentStatusDescription
+    authorName
+    compileTitle
+    responderId
+    authorId
+    editorId
+    controlCardsCount
+    controlCardsRemovedCount
+    scanCopy
+    isPublished
+    publisherId
+    whenPublished
+    ... on ContractListItem {
+        contractorId
+        contractorName
+        sumAmountWithTax
+        departmentResponder
+        status
+        registerNumber
+        preparationDate
+    }
+    ... on HRRequestDocListItem {
+        addressee
+        addresseeName
+        applicant: applicant {
+            firstName
+            lastName
+            patronymic
+            personalIdentifier
+        }
+        orderDescriptor {
+            issuedDate
+            number
+        }
+        status
+        applicantId
+        applicantExternalUserId
+    }
+    ... on GenericRequestListItem {
+        addressee
+        addresseeName
+        applicant: applicant {
+            firstName
+            lastName
+            patronymic
+            personalIdentifier
+        }
+        categoryId
+        responderId
+        curatorId
+        documentStatus
+        documentStatusDescription
+        scanCopy
+    }
+    ... on IncomingDocListItem {
+        addresseeIds
+        sender
+        senderId
+        senderOutgoingNumber
+        documentDate
+        registrationDate
+        registrationNumber
+        registrationAuthorId
+        actor
+    }
+    ... on LetterListItem {
+        head
+        addresseeIds
+        senderId
+        actorId
+        isRegistered
+        registrationDate
+        registrationNumber
+        status
+    }
+    ... on LNAListItem {
+        documentType
+        placeOfRegistrationValue
+        placeOfRegistrationKey
+        validStatusValue
+        isRegistered
+        registrationBookItem {
+            authorId
+            date
+            documentId
+            isPermanent
+            number
+            registrationBookId
+            registrationBook {
+                name
+            }
+        }
+        signerId
+        actorId
+        overseerId
+    }
+    ... on OutgoingDocListItem {
+        addressees
+        addresseeIds
+        senderId
+        registrationDate
+        registrationNumber
+        actorId
+    }
+    ... on MassMailListItem {
+        isSent
+        senderId
+        sendingDate
+        sendingAuthor
+        mailingGroupsIds
+    }
+}

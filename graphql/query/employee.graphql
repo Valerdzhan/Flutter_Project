@@ -1,0 +1,13 @@
+query employees($personalIdentifier: PersonalIdentifier!) {
+    employee(personalIdentifier: $personalIdentifier) {
+        personalIdentifier
+        firstName
+        lastName
+        patronymic
+        displayName
+        jobTitle
+        department
+        orgUnit
+        photoUrl
+    }
+}

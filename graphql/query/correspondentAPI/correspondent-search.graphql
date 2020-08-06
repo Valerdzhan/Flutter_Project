@@ -1,0 +1,9 @@
+#import '../../fragments/fragment-correspondent.graphql'
+
+query correspondentSearch($searchString: String, $includeDeleted: Boolean) {
+    correspondentsAPI {
+        search(searchString: $searchString, includeDeleted: $includeDeleted) {
+            ...correspondentFragment
+        }
+    }
+}

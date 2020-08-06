@@ -1,0 +1,17 @@
+query contractors($filter: String, $skip: Int, $limit: Int) {
+      contractors(filter: $filter, skip: $skip, limit: $limit) {
+        id
+        iNN
+        kPP
+        country
+        name
+        region
+        index
+        area
+        city
+        street
+        oKPO
+        phone
+        isDeleted
+      }
+    }

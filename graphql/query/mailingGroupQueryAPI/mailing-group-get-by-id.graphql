@@ -1,0 +1,12 @@
+query mailingGroupSearch($id: MailingGroupId) {
+    mailingGroupQueryAPI {
+        getById(id: $id) {
+            id
+            parentId
+            name
+            hasChildren
+            isDeleted
+            type
+        }
+    }
+}

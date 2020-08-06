@@ -1,0 +1,5 @@
+mutation readTask($taskId: TaskId!) {
+  taskAPI(taskId: $taskId){
+    read
+  }
+}

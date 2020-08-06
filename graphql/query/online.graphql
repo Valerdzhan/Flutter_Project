@@ -1,0 +1,13 @@
+#import "../fragments/fragment-user-item.graphql"
+
+query online($skip: Int, $limit: Int, $sort: OnlineUsersSort, $contains: String) {
+  serverInfo{
+    onlineUsers(skip: $skip, limit: $limit, sort: $sort, contains: $contains) {
+      count
+      items {
+        id
+        ...userItemFragment
+      }
+    }
+  }
+}

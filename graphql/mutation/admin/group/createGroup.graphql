@@ -1,0 +1,5 @@
+mutation createGroup($groupId: GroupId!, $name: String!, $users: [UserId!]!) {
+    groupMutationAPI(groupId: $groupId) {
+        create(name: $name, users: $users)
+    }
+}

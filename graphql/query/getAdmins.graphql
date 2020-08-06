@@ -1,0 +1,8 @@
+#import "../fragments/fragment-user-item.graphql"
+
+query getAdmins($id:DocumentId!) {
+  document(id: $id) {
+    id
+    adminIds
+  }
+}

@@ -1,0 +1,8 @@
+#import "../../fragments/fragment-user-item-with-subs.graphql"
+
+query currentUser {
+    currentUser {
+        ...userItemFragmentWithSubs
+        personalIdentifier
+    }
+}

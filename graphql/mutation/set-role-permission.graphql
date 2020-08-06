@@ -1,0 +1,3 @@
+mutation setDocumentRoleMutation($documentId: DocumentId!, $users: [UserId!]!, $role: DocumentRoleEnumType) {
+    setDocumentRoleMutation(documentId: $documentId, users: $users, role: $role)
+}

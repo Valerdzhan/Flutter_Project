@@ -1,0 +1,3 @@
+ mutation documentRevoked($input: RevokeDocumentMutationInput!) {
+    documentRevoked(input: $input)
+ }

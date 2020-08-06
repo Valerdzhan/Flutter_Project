@@ -1,0 +1,42 @@
+query lNADocs(
+    $skip: Int!
+    $limit: Int!
+    $sort: SortInput_LNADocsSortFieldEnumType
+    $attributeSearch: LNAAttributeSearch
+) {
+    lNADocs(
+        skip: $skip
+        limit: $limit
+        sort: $sort
+        attributeSearch: $attributeSearch
+    ) {
+        count
+        items {
+            id
+            documentType
+            title
+            compileTitle
+            isRegistered
+            placeOfRegistrationValue
+            placeOfRegistrationKey
+            validStatusValue
+            isPublished
+            publisherId
+            whenPublished
+            registrationBookItem {
+                authorId
+                date
+                documentId
+                isPermanent
+                number
+                registrationBookId
+            }
+            signerId
+            actorId
+            documentStatus
+            overseerId
+            documentStatusDescription
+            scanCopy
+        }
+    }
+}

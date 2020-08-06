@@ -1,7 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
+import 'package:myapp/models/graphql/graphql_api.init.graphql.dart';
 import 'package:myapp/src/models/User/minimaUserItem.dart';
+import 'package:myapp/src/models/User/userItem.dart';
 import 'package:myapp/src/redux/store.dart';
 import 'package:myapp/src/redux/users/users_state.dart';
 import 'package:redux/redux.dart';
@@ -10,6 +12,12 @@ class SetUsersStateActions {
   final UsersState usersState;
 
   SetUsersStateActions(this.usersState);
+}
+
+class SetCurrentUserActions {
+  final Init$DFSQuery$CurrentUser currentUser;
+
+  SetCurrentUserActions(this.currentUser);
 }
 
 class GetUserByIdAction {

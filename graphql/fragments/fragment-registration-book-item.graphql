@@ -1,0 +1,11 @@
+fragment registrationBookItemFragment on RegistrationBookItem {
+    date
+    documentId
+    isPermanent
+    number
+    registrationBookId
+    registrationBook {
+        id: registrationBookId
+        name
+    }
+}

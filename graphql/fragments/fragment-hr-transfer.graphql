@@ -1,0 +1,44 @@
+#import './fragment-reference-value.graphql'
+
+fragment transferRequestItemFragment on TransferRequestItem {
+    id
+    addresseeId
+    applicant {
+        firstName
+        lastName
+        patronymic
+        personalIdentifier
+    }
+    applicantId
+    applicantExternalUserId
+    applicantDetails {
+        department
+        jobTitle
+        orgUnit
+    }
+    compileTitle
+    dateOfVacancy
+    departmentFrom
+    departmentTo
+    positionFrom
+    positionTo
+    orderDescriptor {
+        issuedDate
+        number
+    }
+    recruitmentSource {
+        ...referenceValueFragment
+    }
+    tasks
+    remark
+    responderId
+    scanCopyOriginal {
+        fileContent
+        fileId
+        fileName
+        isLocked
+    }
+    transferDate
+    transferType
+    enableNetworkFolder
+}

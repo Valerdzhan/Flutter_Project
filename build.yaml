@@ -1,0 +1,108 @@
+targets:
+  $default:
+    sources:
+      - lib/**
+      - graphql/**
+      - my.schema.graphql
+    builders:
+      artemis:
+        options:
+          fragments_glob: graphql/fragments/*.graphql
+          schema_mapping:
+            # Инициализация
+            - schema: my.schema.graphql
+              queries_glob: graphql/query/init.graphql
+              output: lib/models/graphql/graphql_api.init.dart
+              naming_scheme: pathedWithFields
+            # Тест текущего пользователя
+            - schema: my.schema.graphql
+              queries_glob: graphql/query/init/currentUser.graphql
+              output: lib/models/graphql/graphql_api.current_user.dart
+              naming_scheme: pathedWithFields
+            # Запросы листов
+            - schema: my.schema.graphql
+              queries_glob: graphql/query/lists/**.graphql
+              output: lib/models/graphql/graphql_api.lists.dart
+              naming_scheme: pathedWithFields
+            # - schema: my.schema.graphql
+            #   queries_glob: graphql/mutation/**.graphql
+            #   output: lib/graphql/graphql_api.mutatuion.dart
+              # naming_scheme: pathedWithFields
+            # - schema: my.schema.graphql
+            #   queries_glob: graphql/subscription/**.graphql
+            #   output: lib/graphql/graphql_api.subscription.dart
+              # naming_scheme: pathedWithFields
+          custom_parser_import: 'package:myapp/lib/coercers.dart'
+          scalar_mapping:
+          - graphql_type: UserId
+            dart_type: String
+          - graphql_type: SubstitutionId
+            dart_type: String
+          - graphql_type: PersonalIdentifier
+            dart_type: String
+          - graphql_type: EventGroupId
+            dart_type: String
+          - graphql_type: Guid
+            dart_type: String
+          - graphql_type: MetaValue
+            dart_type: String
+          - graphql_type: __EnumValue
+            dart_type: List
+          - graphql_type: GroupId
+            dart_type: String
+          - graphql_type: RouteId
+            dart_type: String
+          - graphql_type: TaskActor
+            dart_type: String
+          - graphql_type: UInt
+            dart_type: BigInt
+          - graphql_type: DateTime
+            dart_type: DateTime
+          - graphql_type: Addressee
+            dart_type: String
+          - graphql_type: DepartmentId
+            dart_type: String
+          - graphql_type: Responder
+            dart_type: String
+          - graphql_type: ContractorId
+            dart_type: int
+          - graphql_type: Curator
+            dart_type: String
+          - graphql_type: Float
+            dart_type: float
+          - graphql_type: Decimal
+            dart_type: float
+          - graphql_type: DocumentId
+            dart_type: String
+          - graphql_type: TaskId
+            dart_type: String
+          - graphql_type: StageId
+            dart_type: String
+          - graphql_type: ResolutionId
+            dart_type: String
+          - graphql_type: ReferenceCorrespondentId
+            dart_type: int
+          - graphql_type: Sender
+            dart_type: String
+          - graphql_type: DocumentActor
+            dart_type: String
+          - graphql_type: Signer
+            dart_type: String
+          - graphql_type: Overseer
+            dart_type: String
+          - graphql_type: MailingGroupId
+            dart_type: String
+          - graphql_type: FileInstanceId
+            dart_type: String
+          - graphql_type: Date
+            dart_type: DateTime
+          - graphql_type: ULong
+            dart_type: int
+          - graphql_type: RegistrationBookId
+            dart_type: String
+          
+          
+
+          
+         
+            

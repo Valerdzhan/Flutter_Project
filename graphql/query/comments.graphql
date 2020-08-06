@@ -1,0 +1,17 @@
+#import "../fragments/fragment-user-item.graphql"
+#import "../fragments/fragment-attachments-post.graphql"
+
+query Comments($id:String!, $skip:Int!, $limit: Int!) {
+      comments(ownerId:$id, skip:$skip, limit: $limit) {
+        count
+        items {
+          id
+          body
+          when
+          authorId
+          attachments {
+            ...attachmentsPostFragment
+          }
+        }
+      }
+    }

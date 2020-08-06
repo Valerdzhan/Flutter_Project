@@ -1,0 +1,8 @@
+query numbers($place: String!, $date: DateTime) {
+    registrationQueryAPI {
+        numbers(place: $place, date: $date) {
+            left
+            right
+        }
+    }
+}

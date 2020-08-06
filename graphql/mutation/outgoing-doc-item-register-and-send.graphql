@@ -1,0 +1,8 @@
+mutation outgoingDocDocRegisterAndSend(
+    $documentId: DocumentId!
+    $prefix: String!
+) {
+    outgoingDocMutationAPI {
+        registerAndSend(documentId: $documentId, prefix: $prefix)
+    }
+}

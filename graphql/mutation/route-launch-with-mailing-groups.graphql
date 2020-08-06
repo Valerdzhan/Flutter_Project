@@ -1,0 +1,6 @@
+mutation launchRouteWithMailingGroups(
+    $routeId: RouteId!
+    $mailingGroups: [MailingGroupId!]!
+) {
+    launchRouteWithMailingGroups(id: $routeId, mailingGroups: $mailingGroups)
+}

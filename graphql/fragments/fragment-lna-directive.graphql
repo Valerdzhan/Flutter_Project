@@ -1,0 +1,40 @@
+#import './fragment-reference-value.graphql'
+
+fragment lnaDirectiveItemFragment on LNADirectiveItem {
+    title
+    signer
+    actor
+    responder
+    overseer
+    placeOfRegistration {
+        ...referenceValueFragment
+    }
+    validStatus {
+        ...referenceValueFragment
+    }
+    scanCopyOriginal {
+        fileId
+        fileContent
+        fileName
+    }
+    remark
+    enableNetworkFolder
+    mailingGroups {
+        id
+        name
+        parentId
+        hasChildren
+        isDeleted
+        state
+        authorId
+        when
+    }
+    mailingUsers {
+        userId
+        state
+        authorId
+        when
+    }
+    tasks
+    examinationFiles
+}

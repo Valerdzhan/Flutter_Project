@@ -1,0 +1,3 @@
+mutation createLNAResolutionMutation($input: CreateParentlessResolutionMutationInput!) {
+    createLNAResolutionMutation(input: $input)
+}

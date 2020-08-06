@@ -1,0 +1,3 @@
+mutation updateSubstitution($id: SubstitutionId!, $input: AppointSubstitutionInput!) {
+  updateSubstitution(id: $id, input: $input)
+}

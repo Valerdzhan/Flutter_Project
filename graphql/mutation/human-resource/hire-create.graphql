@@ -1,0 +1,3 @@
+mutation createRequestToHire($input: CreateRequestToHireMutationInput!) {
+    createRequestToHire(input: $input)
+}

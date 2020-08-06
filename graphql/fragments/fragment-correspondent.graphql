@@ -1,0 +1,18 @@
+fragment correspondentFragment on Correspondent {
+      addressImported
+      city
+      correspondent
+      email
+      fullTitle
+      hasChildren
+      id
+      index
+      isDeleted
+      organization
+      parentId
+      phone
+      position
+      region
+      street
+      title
+}

@@ -1,0 +1,21 @@
+#import "../fragments/fragment-registration-book-item.graphql"
+
+mutation documentRegistrationBook(
+    $documentId: DocumentId!
+    $place: String!
+    $number: ULong
+    $date: DateTime
+    $permanent: Boolean
+) {
+    registrationMutationAPI {
+        book(
+            documentId: $documentId,
+            place: $place
+            number: $number
+            date: $date
+            permanent: $permanent
+        ) {
+            ...registrationBookItemFragment
+        }
+    }
+}

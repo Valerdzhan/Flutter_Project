@@ -1,0 +1,3 @@
+mutation createMassMail($input: CreateMassMailMutationInput!) {
+  createMassMail(input:$input)
+}

@@ -1,0 +1,3 @@
+mutation createLNADirectiveMutation($input: CreateLNADirectiveMutationInput!) {
+    createLNADirectiveMutation(input: $input)
+}

@@ -1,0 +1,7 @@
+#import "../fragments/fragment-task-resolution.graphql"
+
+mutation editResolutionTask($input: EditTaskMutationInput!) {
+      editResolutionTask(input: $input) {
+            ...taskResolutionFragment 
+      }
+    }

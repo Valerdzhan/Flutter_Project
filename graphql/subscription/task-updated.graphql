@@ -1,0 +1,7 @@
+#import "../fragments/fragment-task-view.graphql"
+
+subscription task($userId: UserId) {
+    task(userId: $userId) {
+        ...TaskListItemInterfaceFragment
+    }
+}
