@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:myapp/business/app_state_store.dart';
 import 'package:myapp/src/components/myScaffold.dart';
 import 'package:myapp/src/layout/taskStatus.dart';
-import 'package:myapp/src/layout/user.dart';
+import 'package:myapp/client/user/user.dart';
 import 'package:myapp/src/models/ActivityTypes/TaskListItemList.dart';
-import 'package:myapp/src/redux/store.dart';
-import 'package:myapp/src/redux/tasks/tasks_actions.dart';
 
 class TaskListPage extends StatefulWidget {
   static const BottomNavigationBarItem navItem = BottomNavigationBarItem(
@@ -29,44 +28,45 @@ class _TaskListState extends State<TaskListPage> {
 class TaskListBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Redux.store.dispatch(fetchTastsAction);
+    // Redux.store.dispatch(fetchTastsAction);
     return Container(
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: <Widget>[
           Center(
-            child: StoreConnector<AppState, bool>(
-              distinct: true,
-              converter: (store) => store.state.tasksState.isLoading,
-              builder: (context, isLoading) {
-                if (isLoading) {
-                  return CircularProgressIndicator();
-                } else {
-                  return SizedBox.shrink();
-                }
-              },
-            ),
+            child: Text('bla bla bla'),
+            // StoreConnector<AppState, bool>(
+            //   distinct: true,
+            //   converter: (store) => store.state.tasksState.isLoading,
+            //   builder: (context, isLoading) {
+            //     if (isLoading) {
+            //       return CircularProgressIndicator();
+            //     } else {
+            //       return SizedBox.shrink();
+            //     }
+            //   },
+            // ),
           ),
-          StoreConnector<AppState, bool>(
-            distinct: true,
-            converter: (store) => store.state.tasksState.isError,
-            builder: (context, isLoading) {
-              if (isLoading) {
-                return Text('Failed');
-              } else {
-                return SizedBox.shrink();
-              }
-            },
-          ),
-          Expanded(
-            child: StoreConnector<AppState, TaskListItemList>(
-              distinct: true,
-              converter: (store) => store.state.tasksState.taskList,
-              builder: (context, tasks) {
-                return TaskListItemBaseList(tasks: tasks);
-              },
-            ),
-          ),
+          // StoreConnector<AppState, bool>(
+          //   distinct: true,
+          //   converter: (store) => store.state.tasksState.isError,
+          //   builder: (context, isLoading) {
+          //     if (isLoading) {
+          //       return Text('Failed');
+          //     } else {
+          //       return SizedBox.shrink();
+          //     }
+          //   },
+          // ),
+          // Expanded(
+          //   child: StoreConnector<AppState, TaskListItemList>(
+          //     distinct: true,
+          //     converter: (store) => store.state.tasksState.taskList,
+          //     builder: (context, tasks) {
+          //       return TaskListItemBaseList(tasks: tasks);
+          //     },
+          //   ),
+          // ),
         ],
       ),
     );

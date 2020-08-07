@@ -1,8 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_redux/flutter_redux.dart';
 import 'package:myapp/src/models/ActivityTypes/TaskTypes/TaskListItemBase.dart';
-import 'package:myapp/src/redux/store.dart';
-import 'package:myapp/src/redux/tasks/tasks_state.dart';
 
 class StatusTask extends StatefulWidget {
   final TaskListItemBase task;
@@ -25,14 +22,15 @@ class _StatusTaskState extends State<StatusTask> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: StoreConnector<AppState, String>(
-        distinct: true,
-        converter: (store) =>
-            TasksState.getStatusName(store.state.tasksState, _task),
-        builder: (context, status) {
-          return Text(status);
-        },
-      ),
+      child: Text("bla bla"),
+      // StoreConnector<AppState, String>(
+      //   distinct: true,
+      //   converter: (store) =>
+      //       TasksState.getStatusName(store.state.tasksState, _task),
+      //   builder: (context, status) {
+      //     return Text(status);
+      //   },
+      // ),
     );
   }
 }

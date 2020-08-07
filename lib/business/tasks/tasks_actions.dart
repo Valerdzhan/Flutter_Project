@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
+import 'package:myapp/business/app_state_store.dart';
+import 'package:myapp/business/tasks/tasks_state.dart';
 import 'package:myapp/src/models/ActivityTypes/TaskListItemList.dart';
 import 'package:myapp/src/models/ActivityTypes/TaskTypes/statusTaskItem.dart';
-import 'package:myapp/src/redux/store.dart';
-import 'package:myapp/src/redux/tasks/tasks_state.dart';
 import 'package:redux/redux.dart';
 
 class SetTasksStateAction {

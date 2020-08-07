@@ -31,8 +31,6 @@ dependencies:
   queries: ^0.1.14
   redux: ^4.0.0+3
   flutter_redux: ^0.6.0
-  redux_thunk: ^0.3.0
-  async_redux: ^3.0.0
   http: ^0.12.2
   simple_tooltip: ^0.1.13
   path_provider: ^1.6.11

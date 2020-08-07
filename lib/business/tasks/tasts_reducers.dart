@@ -1,5 +1,5 @@
-import 'package:myapp/src/redux/tasks/tasks_actions.dart';
-import 'package:myapp/src/redux/tasks/tasks_state.dart';
+import 'package:myapp/business/tasks/tasks_actions.dart';
+import 'package:myapp/business/tasks/tasks_state.dart';
 import 'package:redux/redux.dart';
 
 final tasksReducer = combineReducers<TasksState>([
