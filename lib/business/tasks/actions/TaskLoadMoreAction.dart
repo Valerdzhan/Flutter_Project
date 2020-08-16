@@ -4,7 +4,6 @@ import 'package:myapp/business/app_state_store.dart';
 import 'package:myapp/business/graphql_client.dart';
 import 'package:myapp/business/tasks/actions/SetTaskStateAction.dart';
 import 'package:myapp/business/tasks/models/TaskListItemList.dart';
-import 'package:myapp/business/Base/BarrierAction.dart';
 import 'package:myapp/models/graphql/graphql_api.tasks.graphql.dart';
 import 'package:myapp/business/tasks/actions/TasksActions.dart';
 
@@ -45,6 +44,7 @@ class TaskLoadMoreAction extends ReduxAction<AppState> {
         return state;
       },
     );
+    return state;
   }
 
   @override

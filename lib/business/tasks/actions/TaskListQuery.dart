@@ -5,7 +5,6 @@ import 'package:myapp/business/graphql_client.dart';
 import 'package:myapp/business/Base/BaseActions.dart';
 import 'package:myapp/business/tasks/actions/SetTaskStateAction.dart';
 import 'package:myapp/business/tasks/models/TaskListItemList.dart';
-import 'package:myapp/business/tasks/actions/TasksActions.dart';
 import 'package:myapp/models/graphql/graphql_api.tasks.graphql.dart';
 
 class TaskListQuery extends BaseActions {
@@ -40,6 +39,7 @@ class TaskListQuery extends BaseActions {
         return state;
       },
     );
+    return state;
   }
 
   @override
