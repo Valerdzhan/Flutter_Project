@@ -7,11 +7,6 @@ import 'package:equatable/equatable.dart';
 import 'package:gql/ast.dart';
 part 'graphql_api.tasks.graphql.g.dart';
 
-mixin TaskListItemInterfaceFragmentMixin {
-  @override
-  @JsonKey(name: '__typename')
-  String $$typename;
-}
 mixin TaskRouteFragmentMixin {
   TaskRouteFragmentMixin$Document document;
   String routeId;
@@ -26,32 +21,6 @@ mixin DocumentDescriptorFragmentMixin {
   @JsonKey(unknownEnumValue: DocumentType.artemisUnknown)
   DocumentType type;
 }
-mixin TaskListItemBaseFragmentMixin {
-  String id;
-  String actorId;
-  TaskListItemBaseFragmentMixin$DocumentLastVersion documentLastVersion;
-  String state;
-  String status;
-  String statusEditorId;
-  String note;
-  String authorId;
-  String editorId;
-  List<String> delegatedActorIds;
-  List<TaskListItemBaseFragmentMixin$Delegations> delegations;
-  DateTime dueDate;
-  DateTime whenCreated;
-  DateTime whenEdited;
-  DateTime whenStatusEdited;
-  DateTime whenSubmitted;
-  bool isPersonalReview;
-  bool hasChildren;
-  List<TaskListItemBaseFragmentMixin$ReadAuditList> readAuditList;
-  bool resolutionsFinished;
-  int subTaskCount;
-  int subTaskRejectedCount;
-  int subTaskSolvedCount;
-  String lastActorPost;
-}
 mixin TaskResolutionFragmentMixin {
   bool hasControl;
   String resolutionId;
@@ -61,338 +30,27 @@ mixin TaskResolutionFragmentMixin {
   bool isResponsible;
   String overseerId;
   String originatorId;
-  String id;
-  String actorId;
-  TaskListItemBaseFragmentMixin$DocumentLastVersion documentLastVersion;
-  String state;
-  String status;
-  String statusEditorId;
-  String note;
-  String authorId;
-  String editorId;
-  List<String> delegatedActorIds;
-  List<TaskListItemBaseFragmentMixin$Delegations> delegations;
-  DateTime dueDate;
-  DateTime whenCreated;
-  DateTime whenEdited;
-  DateTime whenStatusEdited;
-  DateTime whenSubmitted;
-  bool isPersonalReview;
-  bool hasChildren;
-  List<TaskListItemBaseFragmentMixin$ReadAuditList> readAuditList;
-  bool resolutionsFinished;
-  int subTaskCount;
-  int subTaskRejectedCount;
-  int subTaskSolvedCount;
-  String lastActorPost;
 }
 mixin InternalTaskFragmentMixin {
   String senderId;
   @JsonKey(unknownEnumValue: ProcessingTaskType.artemisUnknown)
   ProcessingTaskType internalTaskType;
-  String id;
-  String actorId;
-  TaskListItemBaseFragmentMixin$DocumentLastVersion documentLastVersion;
-  String state;
-  String status;
-  String statusEditorId;
-  String note;
-  String authorId;
-  String editorId;
-  List<String> delegatedActorIds;
-  List<TaskListItemBaseFragmentMixin$Delegations> delegations;
-  DateTime dueDate;
-  DateTime whenCreated;
-  DateTime whenEdited;
-  DateTime whenStatusEdited;
-  DateTime whenSubmitted;
-  bool isPersonalReview;
-  bool hasChildren;
-  List<TaskListItemBaseFragmentMixin$ReadAuditList> readAuditList;
-  bool resolutionsFinished;
-  int subTaskCount;
-  int subTaskRejectedCount;
-  int subTaskSolvedCount;
-  String lastActorPost;
 }
 mixin DecisionTaskFragmentMixin {
   DecisionTaskFragmentMixin$Sender sender;
   @JsonKey(unknownEnumValue: ProcessingTaskType.artemisUnknown)
   ProcessingTaskType decisionTaskType;
-  String id;
-  String actorId;
-  TaskListItemBaseFragmentMixin$DocumentLastVersion documentLastVersion;
-  String state;
-  String status;
-  String statusEditorId;
-  String note;
-  String authorId;
-  String editorId;
-  List<String> delegatedActorIds;
-  List<TaskListItemBaseFragmentMixin$Delegations> delegations;
-  DateTime dueDate;
-  DateTime whenCreated;
-  DateTime whenEdited;
-  DateTime whenStatusEdited;
-  DateTime whenSubmitted;
-  bool isPersonalReview;
-  bool hasChildren;
-  List<TaskListItemBaseFragmentMixin$ReadAuditList> readAuditList;
-  bool resolutionsFinished;
-  int subTaskCount;
-  int subTaskRejectedCount;
-  int subTaskSolvedCount;
-  String lastActorPost;
 }
 
 @JsonSerializable(explicitToJson: true)
-class UserTasks$DFSQuery$UserTasks$Items
-    with EquatableMixin, TaskListItemInterfaceFragmentMixin {
-  UserTasks$DFSQuery$UserTasks$Items();
-
-  factory UserTasks$DFSQuery$UserTasks$Items.fromJson(
-          Map<String, dynamic> json) =>
-      _$UserTasks$DFSQuery$UserTasks$ItemsFromJson(json);
-
-  @override
-  @JsonKey(name: '__typename')
-  String $$typename;
-
-  @override
-  List<Object> get props => [$$typename, $$typename];
-  Map<String, dynamic> toJson() =>
-      _$UserTasks$DFSQuery$UserTasks$ItemsToJson(this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class UserTasks$DFSQuery$UserTasks with EquatableMixin {
-  UserTasks$DFSQuery$UserTasks();
-
-  factory UserTasks$DFSQuery$UserTasks.fromJson(Map<String, dynamic> json) =>
-      _$UserTasks$DFSQuery$UserTasksFromJson(json);
-
-  int count;
-
-  List<UserTasks$DFSQuery$UserTasks$Items> items;
-
-  @override
-  List<Object> get props => [count, items];
-  Map<String, dynamic> toJson() => _$UserTasks$DFSQuery$UserTasksToJson(this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class UserTasks$DFSQuery with EquatableMixin {
-  UserTasks$DFSQuery();
-
-  factory UserTasks$DFSQuery.fromJson(Map<String, dynamic> json) =>
-      _$UserTasks$DFSQueryFromJson(json);
-
-  UserTasks$DFSQuery$UserTasks userTasks;
-
-  @override
-  List<Object> get props => [userTasks];
-  Map<String, dynamic> toJson() => _$UserTasks$DFSQueryToJson(this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class TaskListItemInterfaceFragmentMixin$RouteTaskListItemType
-    extends TaskListItemInterfaceFragmentMixin
-    with EquatableMixin, TaskRouteFragmentMixin {
-  TaskListItemInterfaceFragmentMixin$RouteTaskListItemType();
-
-  factory TaskListItemInterfaceFragmentMixin$RouteTaskListItemType.fromJson(
-          Map<String, dynamic> json) =>
-      _$TaskListItemInterfaceFragmentMixin$RouteTaskListItemTypeFromJson(json);
-
-  @override
-  @JsonKey(name: '__typename')
-  String $$typename;
-
-  @override
-  List<Object> get props =>
-      [document, routeId, stageId, isObsolete, routeTaskType, $$typename];
-  Map<String, dynamic> toJson() =>
-      _$TaskListItemInterfaceFragmentMixin$RouteTaskListItemTypeToJson(this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class TaskListItemInterfaceFragmentMixin$ResolutionTaskListItemType
-    extends TaskListItemInterfaceFragmentMixin
-    with EquatableMixin, TaskResolutionFragmentMixin {
-  TaskListItemInterfaceFragmentMixin$ResolutionTaskListItemType();
-
-  factory TaskListItemInterfaceFragmentMixin$ResolutionTaskListItemType.fromJson(
-          Map<String, dynamic> json) =>
-      _$TaskListItemInterfaceFragmentMixin$ResolutionTaskListItemTypeFromJson(
-          json);
-
-  @override
-  @JsonKey(name: '__typename')
-  String $$typename;
-
-  @override
-  List<Object> get props => [
-        hasControl,
-        resolutionId,
-        order,
-        resolutionTaskType,
-        isResponsible,
-        overseerId,
-        originatorId,
-        id,
-        actorId,
-        documentLastVersion,
-        state,
-        status,
-        statusEditorId,
-        note,
-        authorId,
-        editorId,
-        delegatedActorIds,
-        delegations,
-        dueDate,
-        whenCreated,
-        whenEdited,
-        whenStatusEdited,
-        whenSubmitted,
-        isPersonalReview,
-        hasChildren,
-        readAuditList,
-        resolutionsFinished,
-        subTaskCount,
-        subTaskRejectedCount,
-        subTaskSolvedCount,
-        lastActorPost,
-        $$typename
-      ];
-  Map<String, dynamic> toJson() =>
-      _$TaskListItemInterfaceFragmentMixin$ResolutionTaskListItemTypeToJson(
-          this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class TaskListItemInterfaceFragmentMixin$ProcessingTaskListItemType
-    extends TaskListItemInterfaceFragmentMixin
-    with EquatableMixin, InternalTaskFragmentMixin {
-  TaskListItemInterfaceFragmentMixin$ProcessingTaskListItemType();
-
-  factory TaskListItemInterfaceFragmentMixin$ProcessingTaskListItemType.fromJson(
-          Map<String, dynamic> json) =>
-      _$TaskListItemInterfaceFragmentMixin$ProcessingTaskListItemTypeFromJson(
-          json);
-
-  @override
-  @JsonKey(name: '__typename')
-  String $$typename;
-
-  @override
-  List<Object> get props => [
-        senderId,
-        internalTaskType,
-        id,
-        actorId,
-        documentLastVersion,
-        state,
-        status,
-        statusEditorId,
-        note,
-        authorId,
-        editorId,
-        delegatedActorIds,
-        delegations,
-        dueDate,
-        whenCreated,
-        whenEdited,
-        whenStatusEdited,
-        whenSubmitted,
-        isPersonalReview,
-        hasChildren,
-        readAuditList,
-        resolutionsFinished,
-        subTaskCount,
-        subTaskRejectedCount,
-        subTaskSolvedCount,
-        lastActorPost,
-        $$typename
-      ];
-  Map<String, dynamic> toJson() =>
-      _$TaskListItemInterfaceFragmentMixin$ProcessingTaskListItemTypeToJson(
-          this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class TaskListItemInterfaceFragmentMixin$ForHRDecisionTaskListItemType
-    extends TaskListItemInterfaceFragmentMixin
-    with EquatableMixin, DecisionTaskFragmentMixin {
-  TaskListItemInterfaceFragmentMixin$ForHRDecisionTaskListItemType();
-
-  factory TaskListItemInterfaceFragmentMixin$ForHRDecisionTaskListItemType.fromJson(
-          Map<String, dynamic> json) =>
-      _$TaskListItemInterfaceFragmentMixin$ForHRDecisionTaskListItemTypeFromJson(
-          json);
-
-  @override
-  @JsonKey(name: '__typename')
-  String $$typename;
-
-  @override
-  List<Object> get props => [
-        sender,
-        decisionTaskType,
-        id,
-        actorId,
-        documentLastVersion,
-        state,
-        status,
-        statusEditorId,
-        note,
-        authorId,
-        editorId,
-        delegatedActorIds,
-        delegations,
-        dueDate,
-        whenCreated,
-        whenEdited,
-        whenStatusEdited,
-        whenSubmitted,
-        isPersonalReview,
-        hasChildren,
-        readAuditList,
-        resolutionsFinished,
-        subTaskCount,
-        subTaskRejectedCount,
-        subTaskSolvedCount,
-        lastActorPost,
-        $$typename
-      ];
-  Map<String, dynamic> toJson() =>
-      _$TaskListItemInterfaceFragmentMixin$ForHRDecisionTaskListItemTypeToJson(
-          this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class TaskRouteFragmentMixin$Document
-    with EquatableMixin, DocumentDescriptorFragmentMixin {
-  TaskRouteFragmentMixin$Document();
-
-  factory TaskRouteFragmentMixin$Document.fromJson(Map<String, dynamic> json) =>
-      _$TaskRouteFragmentMixin$DocumentFromJson(json);
-
-  @override
-  List<Object> get props => [id, eventCount, type];
-  Map<String, dynamic> toJson() =>
-      _$TaskRouteFragmentMixin$DocumentToJson(this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class TaskListItemBaseFragmentMixin$DocumentLastVersion$ContractListItem
-    extends TaskListItemBaseFragmentMixin$DocumentLastVersion
+class UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$ContractListItem
+    extends UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion
     with EquatableMixin {
-  TaskListItemBaseFragmentMixin$DocumentLastVersion$ContractListItem();
+  UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$ContractListItem();
 
-  factory TaskListItemBaseFragmentMixin$DocumentLastVersion$ContractListItem.fromJson(
+  factory UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$ContractListItem.fromJson(
           Map<String, dynamic> json) =>
-      _$TaskListItemBaseFragmentMixin$DocumentLastVersion$ContractListItemFromJson(
+      _$UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$ContractListItemFromJson(
           json);
 
   String contractorId;
@@ -402,19 +60,19 @@ class TaskListItemBaseFragmentMixin$DocumentLastVersion$ContractListItem
   @override
   List<Object> get props => [contractorId, contractorName];
   Map<String, dynamic> toJson() =>
-      _$TaskListItemBaseFragmentMixin$DocumentLastVersion$ContractListItemToJson(
+      _$UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$ContractListItemToJson(
           this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class TaskListItemBaseFragmentMixin$DocumentLastVersion$HRRequestDocListItem
-    extends TaskListItemBaseFragmentMixin$DocumentLastVersion
+class UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$HRRequestDocListItem
+    extends UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion
     with EquatableMixin {
-  TaskListItemBaseFragmentMixin$DocumentLastVersion$HRRequestDocListItem();
+  UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$HRRequestDocListItem();
 
-  factory TaskListItemBaseFragmentMixin$DocumentLastVersion$HRRequestDocListItem.fromJson(
+  factory UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$HRRequestDocListItem.fromJson(
           Map<String, dynamic> json) =>
-      _$TaskListItemBaseFragmentMixin$DocumentLastVersion$HRRequestDocListItemFromJson(
+      _$UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$HRRequestDocListItemFromJson(
           json);
 
   String addressee;
@@ -429,19 +87,19 @@ class TaskListItemBaseFragmentMixin$DocumentLastVersion$HRRequestDocListItem
   List<Object> get props =>
       [addressee, addresseeName, applicantId, applicantExternalUserId];
   Map<String, dynamic> toJson() =>
-      _$TaskListItemBaseFragmentMixin$DocumentLastVersion$HRRequestDocListItemToJson(
+      _$UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$HRRequestDocListItemToJson(
           this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class TaskListItemBaseFragmentMixin$DocumentLastVersion$IncomingDocListItem
-    extends TaskListItemBaseFragmentMixin$DocumentLastVersion
+class UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$IncomingDocListItem
+    extends UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion
     with EquatableMixin {
-  TaskListItemBaseFragmentMixin$DocumentLastVersion$IncomingDocListItem();
+  UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$IncomingDocListItem();
 
-  factory TaskListItemBaseFragmentMixin$DocumentLastVersion$IncomingDocListItem.fromJson(
+  factory UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$IncomingDocListItem.fromJson(
           Map<String, dynamic> json) =>
-      _$TaskListItemBaseFragmentMixin$DocumentLastVersion$IncomingDocListItemFromJson(
+      _$UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$IncomingDocListItemFromJson(
           json);
 
   List<String> incomingDocAddresseeIds;
@@ -456,19 +114,19 @@ class TaskListItemBaseFragmentMixin$DocumentLastVersion$IncomingDocListItem
   List<Object> get props =>
       [incomingDocAddresseeIds, sender, incomingDocSenderId, actor];
   Map<String, dynamic> toJson() =>
-      _$TaskListItemBaseFragmentMixin$DocumentLastVersion$IncomingDocListItemToJson(
+      _$UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$IncomingDocListItemToJson(
           this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class TaskListItemBaseFragmentMixin$DocumentLastVersion$LetterListItem
-    extends TaskListItemBaseFragmentMixin$DocumentLastVersion
+class UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$LetterListItem
+    extends UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion
     with EquatableMixin {
-  TaskListItemBaseFragmentMixin$DocumentLastVersion$LetterListItem();
+  UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$LetterListItem();
 
-  factory TaskListItemBaseFragmentMixin$DocumentLastVersion$LetterListItem.fromJson(
+  factory UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$LetterListItem.fromJson(
           Map<String, dynamic> json) =>
-      _$TaskListItemBaseFragmentMixin$DocumentLastVersion$LetterListItemFromJson(
+      _$UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$LetterListItemFromJson(
           json);
 
   List<String> letterAddresseeIds;
@@ -480,19 +138,19 @@ class TaskListItemBaseFragmentMixin$DocumentLastVersion$LetterListItem
   @override
   List<Object> get props => [letterAddresseeIds, senderId, actorId];
   Map<String, dynamic> toJson() =>
-      _$TaskListItemBaseFragmentMixin$DocumentLastVersion$LetterListItemToJson(
+      _$UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$LetterListItemToJson(
           this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class TaskListItemBaseFragmentMixin$DocumentLastVersion$LNAListItem
-    extends TaskListItemBaseFragmentMixin$DocumentLastVersion
+class UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$LNAListItem
+    extends UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion
     with EquatableMixin {
-  TaskListItemBaseFragmentMixin$DocumentLastVersion$LNAListItem();
+  UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$LNAListItem();
 
-  factory TaskListItemBaseFragmentMixin$DocumentLastVersion$LNAListItem.fromJson(
+  factory UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$LNAListItem.fromJson(
           Map<String, dynamic> json) =>
-      _$TaskListItemBaseFragmentMixin$DocumentLastVersion$LNAListItemFromJson(
+      _$UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$LNAListItemFromJson(
           json);
 
   String signerId;
@@ -504,19 +162,19 @@ class TaskListItemBaseFragmentMixin$DocumentLastVersion$LNAListItem
   @override
   List<Object> get props => [signerId, actorId, overseerId];
   Map<String, dynamic> toJson() =>
-      _$TaskListItemBaseFragmentMixin$DocumentLastVersion$LNAListItemToJson(
+      _$UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$LNAListItemToJson(
           this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class TaskListItemBaseFragmentMixin$DocumentLastVersion$OutgoingDocListItem
-    extends TaskListItemBaseFragmentMixin$DocumentLastVersion
+class UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$OutgoingDocListItem
+    extends UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion
     with EquatableMixin {
-  TaskListItemBaseFragmentMixin$DocumentLastVersion$OutgoingDocListItem();
+  UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$OutgoingDocListItem();
 
-  factory TaskListItemBaseFragmentMixin$DocumentLastVersion$OutgoingDocListItem.fromJson(
+  factory UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$OutgoingDocListItem.fromJson(
           Map<String, dynamic> json) =>
-      _$TaskListItemBaseFragmentMixin$DocumentLastVersion$OutgoingDocListItemFromJson(
+      _$UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$OutgoingDocListItemFromJson(
           json);
 
   List<String> addressees;
@@ -530,38 +188,40 @@ class TaskListItemBaseFragmentMixin$DocumentLastVersion$OutgoingDocListItem
   @override
   List<Object> get props => [addressees, addresseeIds, senderId, actorId];
   Map<String, dynamic> toJson() =>
-      _$TaskListItemBaseFragmentMixin$DocumentLastVersion$OutgoingDocListItemToJson(
+      _$UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$OutgoingDocListItemToJson(
           this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class TaskListItemBaseFragmentMixin$DocumentLastVersion with EquatableMixin {
-  TaskListItemBaseFragmentMixin$DocumentLastVersion();
+class UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion
+    with EquatableMixin {
+  UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion();
 
-  factory TaskListItemBaseFragmentMixin$DocumentLastVersion.fromJson(
+  factory UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion.fromJson(
       Map<String, dynamic> json) {
     switch (json['__typename'].toString()) {
       case r'ContractListItem':
-        return TaskListItemBaseFragmentMixin$DocumentLastVersion$ContractListItem
+        return UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$ContractListItem
             .fromJson(json);
       case r'HRRequestDocListItem':
-        return TaskListItemBaseFragmentMixin$DocumentLastVersion$HRRequestDocListItem
+        return UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$HRRequestDocListItem
             .fromJson(json);
       case r'IncomingDocListItem':
-        return TaskListItemBaseFragmentMixin$DocumentLastVersion$IncomingDocListItem
+        return UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$IncomingDocListItem
             .fromJson(json);
       case r'LetterListItem':
-        return TaskListItemBaseFragmentMixin$DocumentLastVersion$LetterListItem
+        return UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$LetterListItem
             .fromJson(json);
       case r'LNAListItem':
-        return TaskListItemBaseFragmentMixin$DocumentLastVersion$LNAListItem
+        return UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$LNAListItem
             .fromJson(json);
       case r'OutgoingDocListItem':
-        return TaskListItemBaseFragmentMixin$DocumentLastVersion$OutgoingDocListItem
+        return UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$OutgoingDocListItem
             .fromJson(json);
       default:
     }
-    return _$TaskListItemBaseFragmentMixin$DocumentLastVersionFromJson(json);
+    return _$UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersionFromJson(
+        json);
   }
 
   String id;
@@ -604,41 +264,41 @@ class TaskListItemBaseFragmentMixin$DocumentLastVersion with EquatableMixin {
     switch ($$typename) {
       case r'ContractListItem':
         return (this
-                as TaskListItemBaseFragmentMixin$DocumentLastVersion$ContractListItem)
+                as UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$ContractListItem)
             .toJson();
       case r'HRRequestDocListItem':
         return (this
-                as TaskListItemBaseFragmentMixin$DocumentLastVersion$HRRequestDocListItem)
+                as UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$HRRequestDocListItem)
             .toJson();
       case r'IncomingDocListItem':
         return (this
-                as TaskListItemBaseFragmentMixin$DocumentLastVersion$IncomingDocListItem)
+                as UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$IncomingDocListItem)
             .toJson();
       case r'LetterListItem':
         return (this
-                as TaskListItemBaseFragmentMixin$DocumentLastVersion$LetterListItem)
+                as UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$LetterListItem)
             .toJson();
       case r'LNAListItem':
         return (this
-                as TaskListItemBaseFragmentMixin$DocumentLastVersion$LNAListItem)
+                as UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$LNAListItem)
             .toJson();
       case r'OutgoingDocListItem':
         return (this
-                as TaskListItemBaseFragmentMixin$DocumentLastVersion$OutgoingDocListItem)
+                as UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion$OutgoingDocListItem)
             .toJson();
       default:
     }
-    return _$TaskListItemBaseFragmentMixin$DocumentLastVersionToJson(this);
+    return _$UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersionToJson(this);
   }
 }
 
 @JsonSerializable(explicitToJson: true)
-class TaskListItemBaseFragmentMixin$Delegations with EquatableMixin {
-  TaskListItemBaseFragmentMixin$Delegations();
+class UserTasks$DFSQuery$UserTasks$Items$Delegations with EquatableMixin {
+  UserTasks$DFSQuery$UserTasks$Items$Delegations();
 
-  factory TaskListItemBaseFragmentMixin$Delegations.fromJson(
+  factory UserTasks$DFSQuery$UserTasks$Items$Delegations.fromJson(
           Map<String, dynamic> json) =>
-      _$TaskListItemBaseFragmentMixin$DelegationsFromJson(json);
+      _$UserTasks$DFSQuery$UserTasks$Items$DelegationsFromJson(json);
 
   String userId;
 
@@ -647,16 +307,16 @@ class TaskListItemBaseFragmentMixin$Delegations with EquatableMixin {
   @override
   List<Object> get props => [userId, date];
   Map<String, dynamic> toJson() =>
-      _$TaskListItemBaseFragmentMixin$DelegationsToJson(this);
+      _$UserTasks$DFSQuery$UserTasks$Items$DelegationsToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class TaskListItemBaseFragmentMixin$ReadAuditList with EquatableMixin {
-  TaskListItemBaseFragmentMixin$ReadAuditList();
+class UserTasks$DFSQuery$UserTasks$Items$ReadAuditList with EquatableMixin {
+  UserTasks$DFSQuery$UserTasks$Items$ReadAuditList();
 
-  factory TaskListItemBaseFragmentMixin$ReadAuditList.fromJson(
+  factory UserTasks$DFSQuery$UserTasks$Items$ReadAuditList.fromJson(
           Map<String, dynamic> json) =>
-      _$TaskListItemBaseFragmentMixin$ReadAuditListFromJson(json);
+      _$UserTasks$DFSQuery$UserTasks$Items$ReadAuditListFromJson(json);
 
   List<String> masters;
 
@@ -667,7 +327,258 @@ class TaskListItemBaseFragmentMixin$ReadAuditList with EquatableMixin {
   @override
   List<Object> get props => [masters, userId, whenRead];
   Map<String, dynamic> toJson() =>
-      _$TaskListItemBaseFragmentMixin$ReadAuditListToJson(this);
+      _$UserTasks$DFSQuery$UserTasks$Items$ReadAuditListToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class UserTasks$DFSQuery$UserTasks$Items$RouteTaskListItemType
+    extends UserTasks$DFSQuery$UserTasks$Items
+    with EquatableMixin, TaskRouteFragmentMixin {
+  UserTasks$DFSQuery$UserTasks$Items$RouteTaskListItemType();
+
+  factory UserTasks$DFSQuery$UserTasks$Items$RouteTaskListItemType.fromJson(
+          Map<String, dynamic> json) =>
+      _$UserTasks$DFSQuery$UserTasks$Items$RouteTaskListItemTypeFromJson(json);
+
+  @override
+  List<Object> get props =>
+      [document, routeId, stageId, isObsolete, routeTaskType];
+  Map<String, dynamic> toJson() =>
+      _$UserTasks$DFSQuery$UserTasks$Items$RouteTaskListItemTypeToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class UserTasks$DFSQuery$UserTasks$Items$ResolutionTaskListItemType
+    extends UserTasks$DFSQuery$UserTasks$Items
+    with EquatableMixin, TaskResolutionFragmentMixin {
+  UserTasks$DFSQuery$UserTasks$Items$ResolutionTaskListItemType();
+
+  factory UserTasks$DFSQuery$UserTasks$Items$ResolutionTaskListItemType.fromJson(
+          Map<String, dynamic> json) =>
+      _$UserTasks$DFSQuery$UserTasks$Items$ResolutionTaskListItemTypeFromJson(
+          json);
+
+  @override
+  List<Object> get props => [
+        hasControl,
+        resolutionId,
+        order,
+        resolutionTaskType,
+        isResponsible,
+        overseerId,
+        originatorId
+      ];
+  Map<String, dynamic> toJson() =>
+      _$UserTasks$DFSQuery$UserTasks$Items$ResolutionTaskListItemTypeToJson(
+          this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class UserTasks$DFSQuery$UserTasks$Items$ProcessingTaskListItemType
+    extends UserTasks$DFSQuery$UserTasks$Items
+    with EquatableMixin, InternalTaskFragmentMixin {
+  UserTasks$DFSQuery$UserTasks$Items$ProcessingTaskListItemType();
+
+  factory UserTasks$DFSQuery$UserTasks$Items$ProcessingTaskListItemType.fromJson(
+          Map<String, dynamic> json) =>
+      _$UserTasks$DFSQuery$UserTasks$Items$ProcessingTaskListItemTypeFromJson(
+          json);
+
+  @override
+  List<Object> get props => [senderId, internalTaskType];
+  Map<String, dynamic> toJson() =>
+      _$UserTasks$DFSQuery$UserTasks$Items$ProcessingTaskListItemTypeToJson(
+          this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class UserTasks$DFSQuery$UserTasks$Items$ForHRDecisionTaskListItemType
+    extends UserTasks$DFSQuery$UserTasks$Items
+    with EquatableMixin, DecisionTaskFragmentMixin {
+  UserTasks$DFSQuery$UserTasks$Items$ForHRDecisionTaskListItemType();
+
+  factory UserTasks$DFSQuery$UserTasks$Items$ForHRDecisionTaskListItemType.fromJson(
+          Map<String, dynamic> json) =>
+      _$UserTasks$DFSQuery$UserTasks$Items$ForHRDecisionTaskListItemTypeFromJson(
+          json);
+
+  @override
+  List<Object> get props => [sender, decisionTaskType];
+  Map<String, dynamic> toJson() =>
+      _$UserTasks$DFSQuery$UserTasks$Items$ForHRDecisionTaskListItemTypeToJson(
+          this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class UserTasks$DFSQuery$UserTasks$Items with EquatableMixin {
+  UserTasks$DFSQuery$UserTasks$Items();
+
+  factory UserTasks$DFSQuery$UserTasks$Items.fromJson(
+      Map<String, dynamic> json) {
+    switch (json['__typename'].toString()) {
+      case r'RouteTaskListItemType':
+        return UserTasks$DFSQuery$UserTasks$Items$RouteTaskListItemType
+            .fromJson(json);
+      case r'ResolutionTaskListItemType':
+        return UserTasks$DFSQuery$UserTasks$Items$ResolutionTaskListItemType
+            .fromJson(json);
+      case r'ProcessingTaskListItemType':
+        return UserTasks$DFSQuery$UserTasks$Items$ProcessingTaskListItemType
+            .fromJson(json);
+      case r'ForHRDecisionTaskListItemType':
+        return UserTasks$DFSQuery$UserTasks$Items$ForHRDecisionTaskListItemType
+            .fromJson(json);
+      default:
+    }
+    return _$UserTasks$DFSQuery$UserTasks$ItemsFromJson(json);
+  }
+
+  String id;
+
+  String actorId;
+
+  UserTasks$DFSQuery$UserTasks$Items$DocumentLastVersion documentLastVersion;
+
+  String state;
+
+  String status;
+
+  String statusEditorId;
+
+  String note;
+
+  String authorId;
+
+  String editorId;
+
+  List<String> delegatedActorIds;
+
+  List<UserTasks$DFSQuery$UserTasks$Items$Delegations> delegations;
+
+  DateTime dueDate;
+
+  DateTime whenCreated;
+
+  DateTime whenEdited;
+
+  DateTime whenStatusEdited;
+
+  DateTime whenSubmitted;
+
+  bool isPersonalReview;
+
+  bool hasChildren;
+
+  List<UserTasks$DFSQuery$UserTasks$Items$ReadAuditList> readAuditList;
+
+  bool resolutionsFinished;
+
+  int subTaskCount;
+
+  int subTaskRejectedCount;
+
+  int subTaskSolvedCount;
+
+  String lastActorPost;
+
+  @override
+  @JsonKey(name: '__typename')
+  String $$typename;
+
+  @override
+  List<Object> get props => [
+        id,
+        actorId,
+        documentLastVersion,
+        state,
+        status,
+        statusEditorId,
+        note,
+        authorId,
+        editorId,
+        delegatedActorIds,
+        delegations,
+        dueDate,
+        whenCreated,
+        whenEdited,
+        whenStatusEdited,
+        whenSubmitted,
+        isPersonalReview,
+        hasChildren,
+        readAuditList,
+        resolutionsFinished,
+        subTaskCount,
+        subTaskRejectedCount,
+        subTaskSolvedCount,
+        lastActorPost,
+        $$typename
+      ];
+  Map<String, dynamic> toJson() {
+    switch ($$typename) {
+      case r'RouteTaskListItemType':
+        return (this
+                as UserTasks$DFSQuery$UserTasks$Items$RouteTaskListItemType)
+            .toJson();
+      case r'ResolutionTaskListItemType':
+        return (this
+                as UserTasks$DFSQuery$UserTasks$Items$ResolutionTaskListItemType)
+            .toJson();
+      case r'ProcessingTaskListItemType':
+        return (this
+                as UserTasks$DFSQuery$UserTasks$Items$ProcessingTaskListItemType)
+            .toJson();
+      case r'ForHRDecisionTaskListItemType':
+        return (this
+                as UserTasks$DFSQuery$UserTasks$Items$ForHRDecisionTaskListItemType)
+            .toJson();
+      default:
+    }
+    return _$UserTasks$DFSQuery$UserTasks$ItemsToJson(this);
+  }
+}
+
+@JsonSerializable(explicitToJson: true)
+class UserTasks$DFSQuery$UserTasks with EquatableMixin {
+  UserTasks$DFSQuery$UserTasks();
+
+  factory UserTasks$DFSQuery$UserTasks.fromJson(Map<String, dynamic> json) =>
+      _$UserTasks$DFSQuery$UserTasksFromJson(json);
+
+  int count;
+
+  List<UserTasks$DFSQuery$UserTasks$Items> items;
+
+  @override
+  List<Object> get props => [count, items];
+  Map<String, dynamic> toJson() => _$UserTasks$DFSQuery$UserTasksToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class UserTasks$DFSQuery with EquatableMixin {
+  UserTasks$DFSQuery();
+
+  factory UserTasks$DFSQuery.fromJson(Map<String, dynamic> json) =>
+      _$UserTasks$DFSQueryFromJson(json);
+
+  UserTasks$DFSQuery$UserTasks userTasks;
+
+  @override
+  List<Object> get props => [userTasks];
+  Map<String, dynamic> toJson() => _$UserTasks$DFSQueryToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class TaskRouteFragmentMixin$Document
+    with EquatableMixin, DocumentDescriptorFragmentMixin {
+  TaskRouteFragmentMixin$Document();
+
+  factory TaskRouteFragmentMixin$Document.fromJson(Map<String, dynamic> json) =>
+      _$TaskRouteFragmentMixin$DocumentFromJson(json);
+
+  @override
+  List<Object> get props => [id, eventCount, type];
+  Map<String, dynamic> toJson() =>
+      _$TaskRouteFragmentMixin$DocumentToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -1023,10 +934,468 @@ class UserTasksQuery
                     arguments: [],
                     directives: [],
                     selectionSet: SelectionSetNode(selections: [
-                      FragmentSpreadNode(
-                          name:
-                              NameNode(value: 'TaskListItemInterfaceFragment'),
-                          directives: []),
+                      FieldNode(
+                          name: NameNode(value: 'id'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'actorId'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'documentListItem'),
+                          alias: NameNode(value: 'documentLastVersion'),
+                          arguments: [],
+                          directives: [],
+                          selectionSet: SelectionSetNode(selections: [
+                            FieldNode(
+                                name: NameNode(value: 'id'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'compileTitle'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'documentType'),
+                                alias: NameNode(value: 'type'),
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'title'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'controlCardsCount'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name:
+                                    NameNode(value: 'controlCardsRemovedCount'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'responderId'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'whenCreated'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'whenEdited'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            InlineFragmentNode(
+                                typeCondition: TypeConditionNode(
+                                    on: NamedTypeNode(
+                                        name:
+                                            NameNode(value: 'ContractListItem'),
+                                        isNonNull: false)),
+                                directives: [],
+                                selectionSet: SelectionSetNode(selections: [
+                                  FieldNode(
+                                      name: NameNode(value: 'contractorId'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'contractorName'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null)
+                                ])),
+                            InlineFragmentNode(
+                                typeCondition: TypeConditionNode(
+                                    on: NamedTypeNode(
+                                        name: NameNode(
+                                            value: 'HRRequestDocListItem'),
+                                        isNonNull: false)),
+                                directives: [],
+                                selectionSet: SelectionSetNode(selections: [
+                                  FieldNode(
+                                      name: NameNode(value: 'addressee'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'addresseeName'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'applicantId'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(
+                                          value: 'applicantExternalUserId'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null)
+                                ])),
+                            InlineFragmentNode(
+                                typeCondition: TypeConditionNode(
+                                    on: NamedTypeNode(
+                                        name: NameNode(
+                                            value: 'IncomingDocListItem'),
+                                        isNonNull: false)),
+                                directives: [],
+                                selectionSet: SelectionSetNode(selections: [
+                                  FieldNode(
+                                      name: NameNode(value: 'addresseeIds'),
+                                      alias: NameNode(
+                                          value: 'incomingDocAddresseeIds'),
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'sender'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'senderId'),
+                                      alias: NameNode(
+                                          value: 'incomingDocSenderId'),
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'actor'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null)
+                                ])),
+                            InlineFragmentNode(
+                                typeCondition: TypeConditionNode(
+                                    on: NamedTypeNode(
+                                        name: NameNode(value: 'LetterListItem'),
+                                        isNonNull: false)),
+                                directives: [],
+                                selectionSet: SelectionSetNode(selections: [
+                                  FieldNode(
+                                      name: NameNode(value: 'addresseeIds'),
+                                      alias:
+                                          NameNode(value: 'letterAddresseeIds'),
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'senderId'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'actorId'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null)
+                                ])),
+                            InlineFragmentNode(
+                                typeCondition: TypeConditionNode(
+                                    on: NamedTypeNode(
+                                        name: NameNode(value: 'LNAListItem'),
+                                        isNonNull: false)),
+                                directives: [],
+                                selectionSet: SelectionSetNode(selections: [
+                                  FieldNode(
+                                      name: NameNode(value: 'signerId'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'actorId'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'overseerId'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null)
+                                ])),
+                            InlineFragmentNode(
+                                typeCondition: TypeConditionNode(
+                                    on: NamedTypeNode(
+                                        name: NameNode(
+                                            value: 'OutgoingDocListItem'),
+                                        isNonNull: false)),
+                                directives: [],
+                                selectionSet: SelectionSetNode(selections: [
+                                  FieldNode(
+                                      name: NameNode(value: 'addressees'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'addresseeIds'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'senderId'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'actorId'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null)
+                                ])),
+                            FieldNode(
+                                name: NameNode(value: '__typename'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null)
+                          ])),
+                      FieldNode(
+                          name: NameNode(value: 'state'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'status'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'statusEditorId'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'note'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'authorId'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'editorId'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'delegatedActorIds'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'delegations'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: SelectionSetNode(selections: [
+                            FieldNode(
+                                name: NameNode(value: 'userId'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'date'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null)
+                          ])),
+                      FieldNode(
+                          name: NameNode(value: 'dueDate'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'whenCreated'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'whenEdited'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'whenStatusEdited'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'whenSubmitted'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'isPersonalReview'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'hasChildren'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'readAuditList'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: SelectionSetNode(selections: [
+                            FieldNode(
+                                name: NameNode(value: 'masters'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'userId'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'whenRead'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null)
+                          ])),
+                      FieldNode(
+                          name: NameNode(value: 'resolutionsFinished'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'subTaskCount'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'subTaskRejectedCount'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'subTaskSolvedCount'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'lastActorPost'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      InlineFragmentNode(
+                          typeCondition: TypeConditionNode(
+                              on: NamedTypeNode(
+                                  name:
+                                      NameNode(value: 'RouteTaskListItemType'),
+                                  isNonNull: false)),
+                          directives: [],
+                          selectionSet: SelectionSetNode(selections: [
+                            FragmentSpreadNode(
+                                name: NameNode(value: 'taskRouteFragment'),
+                                directives: [])
+                          ])),
+                      InlineFragmentNode(
+                          typeCondition: TypeConditionNode(
+                              on: NamedTypeNode(
+                                  name: NameNode(
+                                      value: 'ResolutionTaskListItemType'),
+                                  isNonNull: false)),
+                          directives: [],
+                          selectionSet: SelectionSetNode(selections: [
+                            FragmentSpreadNode(
+                                name: NameNode(value: 'taskResolutionFragment'),
+                                directives: [])
+                          ])),
+                      InlineFragmentNode(
+                          typeCondition: TypeConditionNode(
+                              on: NamedTypeNode(
+                                  name: NameNode(
+                                      value: 'ProcessingTaskListItemType'),
+                                  isNonNull: false)),
+                          directives: [],
+                          selectionSet: SelectionSetNode(selections: [
+                            FragmentSpreadNode(
+                                name: NameNode(value: 'internalTaskFragment'),
+                                directives: [])
+                          ])),
+                      InlineFragmentNode(
+                          typeCondition: TypeConditionNode(
+                              on: NamedTypeNode(
+                                  name: NameNode(
+                                      value: 'ForHRDecisionTaskListItemType'),
+                                  isNonNull: false)),
+                          directives: [],
+                          selectionSet: SelectionSetNode(selections: [
+                            FragmentSpreadNode(
+                                name: NameNode(value: 'decisionTaskFragment'),
+                                directives: [])
+                          ])),
                       FieldNode(
                           name: NameNode(value: '__typename'),
                           alias: null,
@@ -1037,88 +1406,6 @@ class UserTasksQuery
               ]))
         ])),
     FragmentDefinitionNode(
-        name: NameNode(value: 'TaskListItemInterfaceFragment'),
-        typeCondition: TypeConditionNode(
-            on: NamedTypeNode(
-                name: NameNode(value: 'TaskListItemInterface'),
-                isNonNull: false)),
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
-          InlineFragmentNode(
-              typeCondition: TypeConditionNode(
-                  on: NamedTypeNode(
-                      name: NameNode(value: 'RouteTaskListItemType'),
-                      isNonNull: false)),
-              directives: [],
-              selectionSet: SelectionSetNode(selections: [
-                FragmentSpreadNode(
-                    name: NameNode(value: 'taskRouteFragment'), directives: []),
-                FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null)
-              ])),
-          InlineFragmentNode(
-              typeCondition: TypeConditionNode(
-                  on: NamedTypeNode(
-                      name: NameNode(value: 'ResolutionTaskListItemType'),
-                      isNonNull: false)),
-              directives: [],
-              selectionSet: SelectionSetNode(selections: [
-                FragmentSpreadNode(
-                    name: NameNode(value: 'taskResolutionFragment'),
-                    directives: []),
-                FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null)
-              ])),
-          InlineFragmentNode(
-              typeCondition: TypeConditionNode(
-                  on: NamedTypeNode(
-                      name: NameNode(value: 'ProcessingTaskListItemType'),
-                      isNonNull: false)),
-              directives: [],
-              selectionSet: SelectionSetNode(selections: [
-                FragmentSpreadNode(
-                    name: NameNode(value: 'internalTaskFragment'),
-                    directives: []),
-                FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null)
-              ])),
-          InlineFragmentNode(
-              typeCondition: TypeConditionNode(
-                  on: NamedTypeNode(
-                      name: NameNode(value: 'ForHRDecisionTaskListItemType'),
-                      isNonNull: false)),
-              directives: [],
-              selectionSet: SelectionSetNode(selections: [
-                FragmentSpreadNode(
-                    name: NameNode(value: 'decisionTaskFragment'),
-                    directives: []),
-                FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null)
-              ])),
-          FieldNode(
-              name: NameNode(value: '__typename'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null)
-        ])),
-    FragmentDefinitionNode(
         name: NameNode(value: 'taskRouteFragment'),
         typeCondition: TypeConditionNode(
             on: NamedTypeNode(
@@ -1126,9 +1413,6 @@ class UserTasksQuery
                 isNonNull: false)),
         directives: [],
         selectionSet: SelectionSetNode(selections: [
-          FragmentSpreadNode(
-              name: NameNode(value: 'taskListItemBaseFragment'),
-              directives: []),
           FieldNode(
               name: NameNode(value: 'document'),
               alias: null,
@@ -1191,420 +1475,6 @@ class UserTasksQuery
               selectionSet: null)
         ])),
     FragmentDefinitionNode(
-        name: NameNode(value: 'taskListItemBaseFragment'),
-        typeCondition: TypeConditionNode(
-            on: NamedTypeNode(
-                name: NameNode(value: 'TaskListItemInterface'),
-                isNonNull: false)),
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
-          FieldNode(
-              name: NameNode(value: 'id'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'actorId'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'documentListItem'),
-              alias: NameNode(value: 'documentLastVersion'),
-              arguments: [],
-              directives: [],
-              selectionSet: SelectionSetNode(selections: [
-                FieldNode(
-                    name: NameNode(value: 'id'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'compileTitle'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'documentType'),
-                    alias: NameNode(value: 'type'),
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'title'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'controlCardsCount'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'controlCardsRemovedCount'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'responderId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'whenCreated'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'whenEdited'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                InlineFragmentNode(
-                    typeCondition: TypeConditionNode(
-                        on: NamedTypeNode(
-                            name: NameNode(value: 'ContractListItem'),
-                            isNonNull: false)),
-                    directives: [],
-                    selectionSet: SelectionSetNode(selections: [
-                      FieldNode(
-                          name: NameNode(value: 'contractorId'),
-                          alias: null,
-                          arguments: [],
-                          directives: [],
-                          selectionSet: null),
-                      FieldNode(
-                          name: NameNode(value: 'contractorName'),
-                          alias: null,
-                          arguments: [],
-                          directives: [],
-                          selectionSet: null)
-                    ])),
-                InlineFragmentNode(
-                    typeCondition: TypeConditionNode(
-                        on: NamedTypeNode(
-                            name: NameNode(value: 'HRRequestDocListItem'),
-                            isNonNull: false)),
-                    directives: [],
-                    selectionSet: SelectionSetNode(selections: [
-                      FieldNode(
-                          name: NameNode(value: 'addressee'),
-                          alias: null,
-                          arguments: [],
-                          directives: [],
-                          selectionSet: null),
-                      FieldNode(
-                          name: NameNode(value: 'addresseeName'),
-                          alias: null,
-                          arguments: [],
-                          directives: [],
-                          selectionSet: null),
-                      FieldNode(
-                          name: NameNode(value: 'applicantId'),
-                          alias: null,
-                          arguments: [],
-                          directives: [],
-                          selectionSet: null),
-                      FieldNode(
-                          name: NameNode(value: 'applicantExternalUserId'),
-                          alias: null,
-                          arguments: [],
-                          directives: [],
-                          selectionSet: null)
-                    ])),
-                InlineFragmentNode(
-                    typeCondition: TypeConditionNode(
-                        on: NamedTypeNode(
-                            name: NameNode(value: 'IncomingDocListItem'),
-                            isNonNull: false)),
-                    directives: [],
-                    selectionSet: SelectionSetNode(selections: [
-                      FieldNode(
-                          name: NameNode(value: 'addresseeIds'),
-                          alias: NameNode(value: 'incomingDocAddresseeIds'),
-                          arguments: [],
-                          directives: [],
-                          selectionSet: null),
-                      FieldNode(
-                          name: NameNode(value: 'sender'),
-                          alias: null,
-                          arguments: [],
-                          directives: [],
-                          selectionSet: null),
-                      FieldNode(
-                          name: NameNode(value: 'senderId'),
-                          alias: NameNode(value: 'incomingDocSenderId'),
-                          arguments: [],
-                          directives: [],
-                          selectionSet: null),
-                      FieldNode(
-                          name: NameNode(value: 'actor'),
-                          alias: null,
-                          arguments: [],
-                          directives: [],
-                          selectionSet: null)
-                    ])),
-                InlineFragmentNode(
-                    typeCondition: TypeConditionNode(
-                        on: NamedTypeNode(
-                            name: NameNode(value: 'LetterListItem'),
-                            isNonNull: false)),
-                    directives: [],
-                    selectionSet: SelectionSetNode(selections: [
-                      FieldNode(
-                          name: NameNode(value: 'addresseeIds'),
-                          alias: NameNode(value: 'letterAddresseeIds'),
-                          arguments: [],
-                          directives: [],
-                          selectionSet: null),
-                      FieldNode(
-                          name: NameNode(value: 'senderId'),
-                          alias: null,
-                          arguments: [],
-                          directives: [],
-                          selectionSet: null),
-                      FieldNode(
-                          name: NameNode(value: 'actorId'),
-                          alias: null,
-                          arguments: [],
-                          directives: [],
-                          selectionSet: null)
-                    ])),
-                InlineFragmentNode(
-                    typeCondition: TypeConditionNode(
-                        on: NamedTypeNode(
-                            name: NameNode(value: 'LNAListItem'),
-                            isNonNull: false)),
-                    directives: [],
-                    selectionSet: SelectionSetNode(selections: [
-                      FieldNode(
-                          name: NameNode(value: 'signerId'),
-                          alias: null,
-                          arguments: [],
-                          directives: [],
-                          selectionSet: null),
-                      FieldNode(
-                          name: NameNode(value: 'actorId'),
-                          alias: null,
-                          arguments: [],
-                          directives: [],
-                          selectionSet: null),
-                      FieldNode(
-                          name: NameNode(value: 'overseerId'),
-                          alias: null,
-                          arguments: [],
-                          directives: [],
-                          selectionSet: null)
-                    ])),
-                InlineFragmentNode(
-                    typeCondition: TypeConditionNode(
-                        on: NamedTypeNode(
-                            name: NameNode(value: 'OutgoingDocListItem'),
-                            isNonNull: false)),
-                    directives: [],
-                    selectionSet: SelectionSetNode(selections: [
-                      FieldNode(
-                          name: NameNode(value: 'addressees'),
-                          alias: null,
-                          arguments: [],
-                          directives: [],
-                          selectionSet: null),
-                      FieldNode(
-                          name: NameNode(value: 'addresseeIds'),
-                          alias: null,
-                          arguments: [],
-                          directives: [],
-                          selectionSet: null),
-                      FieldNode(
-                          name: NameNode(value: 'senderId'),
-                          alias: null,
-                          arguments: [],
-                          directives: [],
-                          selectionSet: null),
-                      FieldNode(
-                          name: NameNode(value: 'actorId'),
-                          alias: null,
-                          arguments: [],
-                          directives: [],
-                          selectionSet: null)
-                    ])),
-                FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null)
-              ])),
-          FieldNode(
-              name: NameNode(value: 'state'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'status'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'statusEditorId'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'note'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'authorId'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'editorId'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'delegatedActorIds'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'delegations'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: SelectionSetNode(selections: [
-                FieldNode(
-                    name: NameNode(value: 'userId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'date'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null)
-              ])),
-          FieldNode(
-              name: NameNode(value: 'dueDate'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'whenCreated'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'whenEdited'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'whenStatusEdited'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'whenSubmitted'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'isPersonalReview'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'hasChildren'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'readAuditList'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: SelectionSetNode(selections: [
-                FieldNode(
-                    name: NameNode(value: 'masters'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'userId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'whenRead'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null)
-              ])),
-          FieldNode(
-              name: NameNode(value: 'resolutionsFinished'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'subTaskCount'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'subTaskRejectedCount'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'subTaskSolvedCount'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'lastActorPost'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null)
-        ])),
-    FragmentDefinitionNode(
         name: NameNode(value: 'taskResolutionFragment'),
         typeCondition: TypeConditionNode(
             on: NamedTypeNode(
@@ -1612,9 +1482,6 @@ class UserTasksQuery
                 isNonNull: false)),
         directives: [],
         selectionSet: SelectionSetNode(selections: [
-          FragmentSpreadNode(
-              name: NameNode(value: 'taskListItemBaseFragment'),
-              directives: []),
           FieldNode(
               name: NameNode(value: 'hasControl'),
               alias: null,
@@ -1666,9 +1533,6 @@ class UserTasksQuery
                 isNonNull: false)),
         directives: [],
         selectionSet: SelectionSetNode(selections: [
-          FragmentSpreadNode(
-              name: NameNode(value: 'taskListItemBaseFragment'),
-              directives: []),
           FieldNode(
               name: NameNode(value: 'senderId'),
               alias: null,
@@ -1690,9 +1554,6 @@ class UserTasksQuery
                 isNonNull: false)),
         directives: [],
         selectionSet: SelectionSetNode(selections: [
-          FragmentSpreadNode(
-              name: NameNode(value: 'taskListItemBaseFragment'),
-              directives: []),
           FieldNode(
               name: NameNode(value: 'sender'),
               alias: null,

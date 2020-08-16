@@ -1,12 +1,9 @@
-#import './fragment-task-list-item-base.graphql'
-
 fragment decisionTaskFragment on ForHRDecisionTaskListItemType {
-    ...taskListItemBaseFragment
     sender {
         firstName
         lastName
         patronymic
         personalIdentifier
     }
-    taskType
+    decisionTaskType: taskType
 }

@@ -11,7 +11,7 @@ Contracts$DFSQuery$Contracts$Items _$Contracts$DFSQuery$Contracts$ItemsFromJson(
   return Contracts$DFSQuery$Contracts$Items()
     ..id = json['id'] as String
     ..title = json['title'] as String
-    ..contractorId = json['contractorId'] as int
+    ..contractorId = json['contractorId'] as String
     ..contractorName = json['contractorName'] as String
     ..sumAmountWithTax = json['sumAmountWithTax']
     ..departmentResponder = json['departmentResponder'] as String
@@ -175,7 +175,7 @@ ContractsAttributeSearch _$ContractsAttributeSearchFromJson(
     isScanCopyExists: json['isScanCopyExists'] as bool,
     amountFrom: json['amountFrom'],
     amountTo: json['amountTo'],
-    contractorId: json['contractorId'] as int,
+    contractorId: json['contractorId'] as String,
     contractor: json['contractor'] as String,
     documentStatus: json['documentStatus'] as String,
     statusFilter:
@@ -555,7 +555,7 @@ DocumentListItemFragmentMixin$ContractListItem
     _$DocumentListItemFragmentMixin$ContractListItemFromJson(
         Map<String, dynamic> json) {
   return DocumentListItemFragmentMixin$ContractListItem()
-    ..contractorId = json['contractorId'] as int
+    ..contractorId = json['contractorId'] as String
     ..contractorName = json['contractorName'] as String
     ..sumAmountWithTax = json['sumAmountWithTax']
     ..departmentResponder = json['departmentResponder'] as String
@@ -777,7 +777,7 @@ DocumentListItemFragmentMixin$IncomingDocListItem
     ..addresseeIds =
         (json['addresseeIds'] as List)?.map((e) => e as String)?.toList()
     ..sender = json['sender'] as String
-    ..senderId = json['senderId'] as int
+    ..senderId = json['senderId'] as String
     ..senderOutgoingNumber = json['senderOutgoingNumber'] as String
     ..documentDate = json['documentDate'] == null
         ? null
@@ -985,7 +985,7 @@ DocumentListItemFragmentMixin$OutgoingDocListItem
     ..addressees =
         (json['addressees'] as List)?.map((e) => e as String)?.toList()
     ..addresseeIds =
-        (json['addresseeIds'] as List)?.map((e) => e as int)?.toList()
+        (json['addresseeIds'] as List)?.map((e) => e as String)?.toList()
     ..senderId = json['senderId'] as String
     ..registrationDate = json['registrationDate'] == null
         ? null
@@ -1671,7 +1671,7 @@ IncomingDocs$DFSQuery$IncomingDocs$Items
     ..addresseeIds =
         (json['addresseeIds'] as List)?.map((e) => e as String)?.toList()
     ..sender = json['sender'] as String
-    ..senderId = json['senderId'] as int
+    ..senderId = json['senderId'] as String
     ..registrationDate = json['registrationDate'] == null
         ? null
         : DateTime.parse(json['registrationDate'] as String)
@@ -1783,7 +1783,7 @@ IncomingDocsAttributeSearch _$IncomingDocsAttributeSearchFromJson(
     toDocumentDate: json['toDocumentDate'] == null
         ? null
         : DateTime.parse(json['toDocumentDate'] as String),
-    correspondentId: json['correspondentId'] as int,
+    correspondentId: json['correspondentId'] as String,
   );
 }
 
@@ -2338,7 +2338,7 @@ OutgoingDocs$DFSQuery$OutgoingDocs$Items
         (json['addressees'] as List)?.map((e) => e as String)?.toList()
     ..senderId = json['senderId'] as String
     ..addresseeIds =
-        (json['addresseeIds'] as List)?.map((e) => e as int)?.toList()
+        (json['addresseeIds'] as List)?.map((e) => e as String)?.toList()
     ..registrationDate = json['registrationDate'] == null
         ? null
         : DateTime.parse(json['registrationDate'] as String)
@@ -2437,7 +2437,7 @@ OutgoingAttributeSearch _$OutgoingAttributeSearchFromJson(
     responderId: json['responderId'] as String,
     actorId: json['actorId'] as String,
     senderId: json['senderId'] as String,
-    correspondentId: json['correspondentId'] as int,
+    correspondentId: json['correspondentId'] as String,
   );
 }
 

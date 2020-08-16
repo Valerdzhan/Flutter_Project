@@ -1,21 +1,89 @@
-#import "./fragment-task-route.graphql"
-#import "./fragment-task-resolution.graphql"
-#import "./fragment-task-internal.graphql"
-#import "./fragment-task-hr-decision.graphql"
-#import './fragment-task-list-item-base.graphql'
-
 fragment TaskListItemInterfaceFragment on TaskListItemInterface {
-    ...taskListItemBaseFragment
-    ... on RouteTaskListItemType {
-        ...taskRouteFragment
+  id
+  actorId
+  documentLastVersion: documentListItem {
+    id
+    compileTitle
+    type: documentType
+    title
+    controlCardsCount
+    controlCardsRemovedCount
+    responderId
+    whenCreated
+    whenEdited
+    ... on ContractListItem {
+      contractorId
+      contractorName
     }
-    ... on ResolutionTaskListItemType {
-        ...taskResolutionFragment
+    ... on HRRequestDocListItem {
+      addressee
+      addresseeName
+      applicantId
+      applicantExternalUserId
     }
-    ... on ProcessingTaskListItemType {
-        ...internalTaskFragment
+    ... on IncomingDocListItem {
+      incomingDocAddresseeIds: addresseeIds
+      sender
+      incomingDocSenderId: senderId
+      actor
     }
-    ... on ForHRDecisionTaskListItemType {
-        ...decisionTaskFragment
+    ... on LetterListItem {
+      letterAddresseeIds: addresseeIds
+      senderId
+      actorId
     }
+    ... on LNAListItem {
+      signerId
+      actorId
+      overseerId
+    }
+    ... on OutgoingDocListItem {
+      addressees
+      addresseeIds
+      senderId
+      actorId
+    }
+    __typename
+  }
+  state
+  status
+  statusEditorId
+  note
+  authorId
+  editorId
+  delegatedActorIds
+  delegations {
+    userId
+    date
+  }
+  dueDate
+  whenCreated
+  whenEdited
+  whenStatusEdited
+  whenSubmitted
+  isPersonalReview
+  hasChildren
+  readAuditList {
+    masters
+    userId
+    whenRead
+  }
+  resolutionsFinished
+  subTaskCount
+  subTaskRejectedCount
+  subTaskSolvedCount
+  lastActorPost
+  ... on RouteTaskListItemType {
+    ...taskRouteFragment
+  }
+  ... on ResolutionTaskListItemType {
+    ...taskResolutionFragment
+  }
+  ... on ProcessingTaskListItemType {
+    ...internalTaskFragment
+  }
+  ... on ForHRDecisionTaskListItemType {
+    ...decisionTaskFragment
+  }
+  __typename
 }

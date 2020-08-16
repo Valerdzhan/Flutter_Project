@@ -1,20 +1,105 @@
-#import "../fragments/fragment-task-view.graphql"
-
 query userTasks(
-    $skip: Int!
-    $limit: Int!
-    $sort: SortInput_UserTaskSortFieldEnumType
-    $attributeSearch: UserTasksAttributeSearchType
+  $skip: Int!
+  $limit: Int!
+  $sort: SortInput_UserTaskSortFieldEnumType
+  $attributeSearch: UserTasksAttributeSearchType
 ) {
-    userTasks(
-        skip: $skip
-        limit: $limit
-        sort: $sort
-        attributeSearch: $attributeSearch
-    ) {
-        count
-        items {
-            ...TaskListItemInterfaceFragment
+  userTasks(
+    skip: $skip
+    limit: $limit
+    sort: $sort
+    attributeSearch: $attributeSearch
+  ) {
+    #TaskListItemInterfaceCollection
+    count
+    items {
+      id
+      actorId
+      documentLastVersion: documentListItem {
+        id
+        compileTitle
+        type: documentType
+        title
+        controlCardsCount
+        controlCardsRemovedCount
+        responderId
+        whenCreated
+        whenEdited
+        ... on ContractListItem {
+          contractorId
+          contractorName
         }
+        ... on HRRequestDocListItem {
+          addressee
+          addresseeName
+          applicantId
+          applicantExternalUserId
+        }
+        ... on IncomingDocListItem {
+          incomingDocAddresseeIds: addresseeIds
+          sender
+          incomingDocSenderId: senderId
+          actor
+        }
+        ... on LetterListItem {
+          letterAddresseeIds: addresseeIds
+          senderId
+          actorId
+        }
+        ... on LNAListItem {
+          signerId
+          actorId
+          overseerId
+        }
+        ... on OutgoingDocListItem {
+          addressees
+          addresseeIds
+          senderId
+          actorId
+        }
+        __typename
+      }
+      state
+      status
+      statusEditorId
+      note
+      authorId
+      editorId
+      delegatedActorIds
+      delegations {
+        userId
+        date
+      }
+      dueDate
+      whenCreated
+      whenEdited
+      whenStatusEdited
+      whenSubmitted
+      isPersonalReview
+      hasChildren
+      readAuditList {
+        masters
+        userId
+        whenRead
+      }
+      resolutionsFinished
+      subTaskCount
+      subTaskRejectedCount
+      subTaskSolvedCount
+      lastActorPost
+      ... on RouteTaskListItemType {
+        ...taskRouteFragment
+      }
+      ... on ResolutionTaskListItemType {
+        ...taskResolutionFragment
+      }
+      ... on ProcessingTaskListItemType {
+        ...internalTaskFragment
+      }
+      ... on ForHRDecisionTaskListItemType {
+        ...decisionTaskFragment
+      }
+      __typename
     }
+  }
 }

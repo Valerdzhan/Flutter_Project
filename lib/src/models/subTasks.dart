@@ -1,3 +1,0 @@
-class SubTasks {
-  SubTasks();
-}

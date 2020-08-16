@@ -16,7 +16,7 @@ class CurrentUserModel extends BaseModel<AppState> {
 
   @override
   CurrentUserModel fromStore() => CurrentUserModel.build(
-        currentUser: state.usersState.currentUser,
+        currentUser: state.userState.currentUser,
         onQuery: null,
       );
 }

@@ -26,6 +26,7 @@ class RemoveAction extends ReduxAction<AppState> {
     GraphQLClient _client = graphQLConfiguration.clientToQuery();
 
     final MutationOptions options = MutationOptions(
+      // ignore: deprecated_member_use
       document: removeTodo,
       variables: <String, dynamic>{'id': id},
     );

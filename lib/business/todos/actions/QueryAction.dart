@@ -26,6 +26,7 @@ class QueryAction extends ReduxAction<AppState> {
     GraphQLClient _client = graphQLConfiguration.clientToQuery();
 
     final QueryOptions options = QueryOptions(
+      // ignore: deprecated_member_use
       document: todosQuery,
       variables: <String, dynamic>{
         'title': '',

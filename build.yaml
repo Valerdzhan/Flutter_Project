@@ -7,7 +7,7 @@ targets:
     builders:
       artemis:
         options:
-          fragments_glob: graphql/fragments/*.graphql
+          fragments_glob: graphql/fragments/**.graphql
           schema_mapping:
             # Инициализация
             - schema: my.schema.graphql
@@ -23,6 +23,11 @@ targets:
             - schema: my.schema.graphql
               queries_glob: graphql/query/lists/**.graphql
               output: lib/models/graphql/graphql_api.lists.dart
+              naming_scheme: pathedWithFields
+            # UserTasks список задачи
+            - schema: my.schema.graphql
+              queries_glob: graphql/query/userTasks.graphql
+              output: lib/models/graphql/graphql_api.tasks.dart
               naming_scheme: pathedWithFields
             # - schema: my.schema.graphql
             #   queries_glob: graphql/mutation/**.graphql
@@ -65,7 +70,7 @@ targets:
           - graphql_type: Responder
             dart_type: String
           - graphql_type: ContractorId
-            dart_type: int
+            dart_type: String
           - graphql_type: Curator
             dart_type: String
           - graphql_type: Float
@@ -81,7 +86,7 @@ targets:
           - graphql_type: ResolutionId
             dart_type: String
           - graphql_type: ReferenceCorrespondentId
-            dart_type: int
+            dart_type: String
           - graphql_type: Sender
             dart_type: String
           - graphql_type: DocumentActor
@@ -99,6 +104,8 @@ targets:
           - graphql_type: ULong
             dart_type: int
           - graphql_type: RegistrationBookId
+            dart_type: String
+          - graphql_type: incomingDocSenderId,
             dart_type: String
           
           

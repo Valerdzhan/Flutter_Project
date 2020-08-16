@@ -26,7 +26,6 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  analyzer: ^0.39.16
   cupertino_icons: ^0.1.3
   queries: ^0.1.14
   redux: ^4.0.0+3
@@ -41,13 +40,21 @@ dependencies:
   async_redux: ^3.0.0
   dart_style: ^1.3.6
   universal_platform: ^0.1.3
-
-
+  flutter_native_splash: ^0.1.9
+  flutter_launcher_icons: ^0.7.5
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^1.8.1
   artemis: ^6.6.4-beta.1
+  build_runner:
+  freezed:
+  analyzer: 0.39.14
+
+
+flutter_native_splash:
+  image: assets/images/splash.png
+  color: 2561ba
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -66,7 +73,7 @@ flutter:
     - assets/data/userTasks.json
     - assets/data/users.json
     - assets/data/statusTaskList.json
-    - graphql/
+    - assets/images/splash.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -94,6 +101,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+
+
 analyzer:
   strong-mode: true
   language:

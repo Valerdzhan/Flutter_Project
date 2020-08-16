@@ -1,38 +1,44 @@
 import 'package:async_redux/async_redux.dart';
+import 'package:myapp/business/tasks/tasks_state.dart';
 import 'package:myapp/business/todos/models/todo.dart';
 import 'package:myapp/business/users/users_state.dart';
-import 'package:myapp/models/graphql/graphql_api.init.graphql.dart';
 
 class AppState {
+  final bool waiting;
+  final bool isInitLoad;
   final List<Todo> todoList;
-  // final TasksState tasksState;
-  final UsersState usersState;
-  final Init$DFSQuery$CurrentUser currentUser;
+  final TaskState taskState;
+  final UserState userState;
 
   AppState({
     this.todoList,
-    // this.tasksState,
-    this.usersState,
-    this.currentUser,
+    this.taskState,
+    this.userState,
+    this.isInitLoad,
+    this.waiting,
   });
 
-  AppState copy(
-          {List<Todo> todoList,
-          // TasksState tasksState,
-          UsersState usersState,
-          Init$DFSQuery$CurrentUser currentUser}) =>
+  AppState copy({
+    List<Todo> todoList,
+    TaskState taskState,
+    UserState userState,
+    bool isInitLoad,
+    bool waiting,
+  }) =>
       AppState(
         todoList: todoList ?? this.todoList,
-        // tasksState: tasksState ?? this.tasksState,
-        usersState: usersState ?? this.usersState,
-        currentUser: currentUser ?? this.currentUser,
+        taskState: taskState ?? this.taskState,
+        userState: userState ?? this.userState,
+        isInitLoad: isInitLoad ?? this.isInitLoad,
+        waiting: waiting ?? this.waiting,
       );
 
   static AppState initialState() => AppState(
         todoList: <Todo>[],
-        // tasksState: TasksState.initial(),
-        usersState: UsersState.initial(),
-        currentUser: null,
+        taskState: TaskState.initial(),
+        userState: UserState.initial(),
+        isInitLoad: false,
+        waiting: false,
       );
 
   @override
@@ -41,12 +47,22 @@ class AppState {
       other is AppState &&
           runtimeType == other.runtimeType &&
           todoList == other.todoList &&
-          currentUser == other.currentUser;
+          userState == other.userState &&
+          taskState == other.taskState &&
+          isInitLoad == other.isInitLoad &&
+          waiting == other.waiting;
 
   @override
-  int get hashCode => todoList.hashCode ^ currentUser.hashCode;
+  int get hashCode =>
+      todoList.hashCode ^
+      userState.hashCode ^
+      taskState.hashCode ^
+      isInitLoad.hashCode ^
+      waiting.hashCode;
 }
 
 var store = Store<AppState>(
   initialState: AppState.initialState(),
+  // actionObservers: [Log<AppState>.printer()],
+  // modelObserver: DefaultModelObserver(),
 );

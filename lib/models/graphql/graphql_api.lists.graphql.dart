@@ -65,7 +65,7 @@ class Contracts$DFSQuery$Contracts$Items with EquatableMixin {
 
   String title;
 
-  int contractorId;
+  String contractorId;
 
   String contractorName;
 
@@ -197,7 +197,7 @@ class ContractsAttributeSearch with EquatableMixin {
 
   Float amountTo;
 
-  int contractorId;
+  String contractorId;
 
   String contractor;
 
@@ -493,7 +493,7 @@ class DocumentListItemFragmentMixin$ContractListItem
           Map<String, dynamic> json) =>
       _$DocumentListItemFragmentMixin$ContractListItemFromJson(json);
 
-  int contractorId;
+  String contractorId;
 
   String contractorName;
 
@@ -692,7 +692,7 @@ class DocumentListItemFragmentMixin$IncomingDocListItem
 
   String sender;
 
-  int senderId;
+  String senderId;
 
   String senderOutgoingNumber;
 
@@ -878,7 +878,7 @@ class DocumentListItemFragmentMixin$OutgoingDocListItem
 
   List<String> addressees;
 
-  List<int> addresseeIds;
+  List<String> addresseeIds;
 
   String senderId;
 
@@ -1676,7 +1676,7 @@ class IncomingDocs$DFSQuery$IncomingDocs$Items with EquatableMixin {
 
   String sender;
 
-  int senderId;
+  String senderId;
 
   DateTime registrationDate;
 
@@ -1813,7 +1813,7 @@ class IncomingDocsAttributeSearch with EquatableMixin {
 
   DateTime toDocumentDate;
 
-  int correspondentId;
+  String correspondentId;
 
   @override
   List<Object> get props => [
@@ -2448,7 +2448,7 @@ class OutgoingDocs$DFSQuery$OutgoingDocs$Items with EquatableMixin {
 
   String senderId;
 
-  List<int> addresseeIds;
+  List<String> addresseeIds;
 
   DateTime registrationDate;
 
@@ -2576,7 +2576,7 @@ class OutgoingAttributeSearch with EquatableMixin {
 
   String senderId;
 
-  int correspondentId;
+  String correspondentId;
 
   @override
   List<Object> get props => [

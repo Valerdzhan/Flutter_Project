@@ -27,8 +27,8 @@ class TaskListQuery extends BaseActions {
         final QueryResult result = await _client.query(options);
 
         if (!result.hasException) {
-          var userTasks =
-              UserTasks$DFSQuery$UserTasks.fromJson(result.data["userTasks"]);
+          var userTasks = TaskListItemInterfaceCollection.fromJson(
+              result.data["userTasks"]);
 
           var newTaskState = taskState.copy(
             taskList: userTasks,

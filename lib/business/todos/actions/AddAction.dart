@@ -27,6 +27,7 @@ class AddAction extends ReduxAction<AppState> {
     GraphQLClient _client = graphQLConfiguration.clientToQuery();
 
     final MutationOptions options = MutationOptions(
+      // ignore: deprecated_member_use
       document: addTodo,
       variables: <String, dynamic>{
         'title': title,

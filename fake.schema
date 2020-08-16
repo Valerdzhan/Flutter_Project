@@ -518,7 +518,7 @@ type CancellationRequestForDismissalItem implements IDocument {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Подразделение, с которого производится увольнение
@@ -1264,7 +1264,7 @@ type ContractItem implements IDocument {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Дата заключения договора
@@ -1529,7 +1529,7 @@ type ContractListItem implements IDocumentListItem {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Id контрагента
@@ -5652,7 +5652,7 @@ type ForHRDecisionTaskListItemType implements TaskListItemInterface {
   """
   Текстовое описание состояние задачи
   """
-  status: String!
+  status: String! @examples(values: ["Initial","InProgress","Accepted","Approved","Resubmitted","Rejected","Final","Canceled"])
 
   """
   Пользователь который изменил статус
@@ -5677,7 +5677,7 @@ type ForHRDecisionTaskListItemType implements TaskListItemInterface {
   """
   Тип задачи
   """
-  taskType: ProcessingTaskType!
+  taskType: ProcessingTaskType! @examples(values: ["FOR_INCOMING", "FOR_OUTCOMING","FOR_INTERNAL_USE","FOR_HR_DECISION","FOR_IMPLEMENTATION"])
 
   """
   Дата создания задачи
@@ -5922,7 +5922,7 @@ type GenericRequestItem implements IDocument {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Куратор-ответственный
@@ -6142,7 +6142,7 @@ type GenericRequestListItem implements IDocumentListItem {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Контрольные карты
@@ -6552,7 +6552,7 @@ type HRRequestDocListItem implements IDocumentListItem {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Контрольные карты
@@ -6756,7 +6756,7 @@ interface IDocument {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Серийный номер документа
@@ -6916,7 +6916,7 @@ interface IDocumentListItem {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Контрольные карты количество
@@ -7119,7 +7119,7 @@ type IncomingDocItem implements IDocument {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Количество контрольных карт
@@ -7354,7 +7354,7 @@ type IncomingDocListItem implements IDocumentListItem {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Контрольные карты
@@ -7470,7 +7470,7 @@ type IncomingDocListItem implements IDocumentListItem {
   """
   ID Отправителя
   """
-  senderId: ReferenceCorrespondentId
+  senderId: ReferenceCorrespondentId @fake(type:uuid)
 
   """
   Исх. №
@@ -7840,7 +7840,7 @@ type LastDocumentVersion {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Контрольные карты
@@ -8107,7 +8107,7 @@ type LetterItem implements IDocument {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Серийный номер документа
@@ -8327,7 +8327,7 @@ type LetterListItem implements IDocumentListItem {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Контрольные карты
@@ -8655,7 +8655,7 @@ type LNADirectiveItem implements IDocument {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Серийный номер документа
@@ -8962,7 +8962,7 @@ type LNAListItem implements IDocumentListItem {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Контрольные карты
@@ -9128,7 +9128,7 @@ type LNAOrderItem implements IDocument {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Серийный номер документа
@@ -9846,7 +9846,7 @@ type MassMailItem implements IDocument {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Серийный номер документа
@@ -10056,7 +10056,7 @@ type MassMailListItem implements IDocumentListItem {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Контрольные карты
@@ -10683,7 +10683,7 @@ type OutgoingDocItem implements IDocument {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Серийный номер документа
@@ -10898,7 +10898,7 @@ type OutgoingDocListItem implements IDocumentListItem {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Контрольные карты
@@ -11364,7 +11364,7 @@ type ProcessingTaskListItemType implements TaskListItemInterface {
   """
   Текстовое описание состояние задачи
   """
-  status: String!
+  status: String! @examples(values: ["Initial","InProgress","Accepted","Approved","Resubmitted","Rejected","Final","Canceled"])
 
   """
   Пользователь который изменил статус
@@ -11389,7 +11389,7 @@ type ProcessingTaskListItemType implements TaskListItemInterface {
   """
   Тип задачи
   """
-  taskType: ProcessingTaskType!
+  taskType: ProcessingTaskType! @examples(values: ["FOR_INCOMING", "FOR_OUTCOMING","FOR_INTERNAL_USE","FOR_HR_DECISION","FOR_IMPLEMENTATION"])
 
   """
   Дата создания задачи
@@ -11467,7 +11467,7 @@ type ReadAuditType {
 """
 Корреспондент. Строка - id
 """
-scalar ReferenceCorrespondentId @fake(type: number)
+scalar ReferenceCorrespondentId @fake(type: uuid)
 
 """
 Ссылочное значение на справочник. Json-строка пример: {
@@ -12128,7 +12128,7 @@ type RequestDocListItem implements IDocumentListItem {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Контрольные карты
@@ -12334,7 +12334,7 @@ type RequestForDismissalItem implements IDocument {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Подразделение, с которого производится увольнение
@@ -12676,7 +12676,7 @@ type RequestToHireItem implements IDocument {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Дата появления вакансии
@@ -13529,7 +13529,7 @@ type ResolutionTaskListItemType implements TaskListItemInterface {
   """
   Текстовое описание состояние задачи
   """
-  status: String!
+  status: String! @examples(values: ["Initial","InProgress","Accepted","Approved","Resubmitted","Rejected","Final","Canceled"])
 
   """
   Пользователь который изменил статус
@@ -13554,7 +13554,7 @@ type ResolutionTaskListItemType implements TaskListItemInterface {
   """
   Тип задачи
   """
-  taskType: ResolutionTaskType!
+  taskType: ResolutionTaskType! @examples(values: ["FOR_PERFORMANCE","FOR_CONSIDERATION","FOR_AGREEMENT","FOR_INFORMATION","FOR_TAX_EXPERTISE"])
 
   """
   Когда подтвердили задачу
@@ -13869,7 +13869,7 @@ type RouteTaskListItemType implements TaskListItemInterface {
   """
   Текстовое описание состояние задачи
   """
-  status: String!
+  status: String! @examples(values: ["Initial","InProgress","Accepted","Approved","Resubmitted","Rejected","Final","Canceled"])
 
   """
   Пользователь который изменил статус
@@ -13894,7 +13894,7 @@ type RouteTaskListItemType implements TaskListItemInterface {
   """
   Тип задачи
   """
-  taskType: TaskType!
+  taskType: TaskType! @examples(values: ["AGREEMENT","SIGNING","APPROVAL","REGISTRATION","NORMATIVE_CONTROL"])
 
   """
   Дата создания задачи
@@ -13931,7 +13931,7 @@ type SearchResultItem {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   ID документа
@@ -15049,7 +15049,7 @@ type TaskListItemInterfaceCollection {
   """
   Коллекция элементов
   """
-  items: [TaskListItemInterface]!
+  items: [TaskListItemInterface]! @listLength(min: 20, max: 25)
 }
 
 type TaskPostAppendedHistoryItemType implements TaskHistoryItemInterface {
@@ -15199,7 +15199,7 @@ type TaxExpertiseItem implements IDocument {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Вывод по результатам анализа сделки (договора)
@@ -15582,7 +15582,7 @@ type TransferRequestItem implements IDocument {
   """
   Название
   """
-  compileTitle: String
+  compileTitle: String @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Дата появления вакансии
@@ -16047,7 +16047,7 @@ type UserItem {
   """
   ФИО
   """
-  displayName: String @fake(type: currencyName)
+  displayName: String @examples(values: ["Иванов Валерий Олегович", "Ivanov Valeriy Olegovich"])
 
   """
   Тэги, которыми пользователь помечает документы

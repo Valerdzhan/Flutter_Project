@@ -36,7 +36,7 @@
             "description": "Отменено"
         }
     ],
-    "Normative_controlTaskStatus": [{
+    "NormativecontrolTaskStatus": [{
             "name": "Initial",
             "description": "Инициализирована"
         },
@@ -186,7 +186,91 @@
             "description": "Отменено"
         }
     ],
-    "For_performanceTaskStatus": [{
+    "ForoutcomingTaskStatus": [
+        {
+            "name": "Initial",
+            "description": "Инициализирована"
+        },
+        {
+            "name": "Pending",
+            "description": "В ожидании"
+        },
+        {
+            "name": "InProgress",
+            "description": "Отправлено"
+        },
+        {
+            "name": "Accepted",
+            "description": "Принято в работу"
+        },
+        {
+            "name": "Resubmitted",
+            "description": "Отправлено повторно"
+        },
+        {
+            "name": "Rejected",
+            "description": "Отклонено"
+        },
+        {
+            "name": "Prepared",
+            "description": "Направлен отчет"
+        },
+        {
+            "name": "Solved",
+            "description": "Выполнено"
+        },
+        {
+            "name": "Final",
+            "description": "Выполнено"
+        },
+        {
+            "name": "Canceled",
+            "description": "Отменено"
+        }
+    ],
+    "ForincomingTaskStatus": [
+        {
+            "name": "Initial",
+            "description": "Инициализирована"
+        },
+        {
+            "name": "Pending",
+            "description": "В ожидании"
+        },
+        {
+            "name": "InProgress",
+            "description": "Отправлено"
+        },
+        {
+            "name": "Accepted",
+            "description": "Принято в работу"
+        },
+        {
+            "name": "Resubmitted",
+            "description": "Отправлено повторно"
+        },
+        {
+            "name": "Rejected",
+            "description": "Отклонено"
+        },
+        {
+            "name": "Prepared",
+            "description": "Направлен отчет"
+        },
+        {
+            "name": "Solved",
+            "description": "Выполнено"
+        },
+        {
+            "name": "Final",
+            "description": "Выполнено"
+        },
+        {
+            "name": "Canceled",
+            "description": "Отменено"
+        }
+    ],
+    "ForperformanceTaskStatus": [{
             "name": "Initial",
             "description": "Инициализирована"
         },
@@ -223,7 +307,7 @@
             "description": "Отменено"
         }
     ],
-    "For_considerationTaskStatus": [{
+    "ForconsiderationTaskStatus": [{
             "name": "Initial",
             "description": "Инициализирована"
         },
@@ -260,7 +344,7 @@
             "description": "Отменено"
         }
     ],
-    "For_agreementTaskStatus": [{
+    "ForagreementTaskStatus": [{
             "name": "Initial",
             "description": "Инициализирована"
         },
@@ -297,7 +381,7 @@
             "description": "Отменено"
         }
     ],
-    "For_informationTaskStatus": [{
+    "ForinformationTaskStatus": [{
             "name": "Initial",
             "description": "Инициализирована"
         },
@@ -334,7 +418,7 @@
             "description": "Отменено"
         }
     ],
-    "For_internal_useTaskStatus": [{
+    "ForinternaluseTaskStatus": [{
             "name": "Initial",
             "description": "Инициализирована"
         },
@@ -375,7 +459,7 @@
             "description": "Отменено"
         }
     ],
-    "For_implementationTaskStatus": [{
+    "ForimplementationTaskStatus": [{
             "name": "Initial",
             "description": "Инициализирована"
         },
@@ -416,7 +500,7 @@
             "description": "Отменено"
         }
     ],
-    "For_hr_decisionTaskStatus": [{
+    "ForhrdecisionTaskStatus": [{
             "name": "Initial",
             "description": "Инициализирована"
         },

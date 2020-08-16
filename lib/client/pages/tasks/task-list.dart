@@ -143,28 +143,25 @@ class _TaskListState extends State<TaskListPage> {
                             ),
                             title: Row(
                               children: [
-                                Text('bla bla bla')
-                                // Expanded(
-                                //     child: Text(
-                                //         '${widget.tasks.items[index].documentLastVersion.compileTitle}')),
-                                // Text(
-                                //   DateFormat('dd.MM.yyyy')
-                                //       .format(widget.tasks.items[index].dueDate)
-                                //       .toString(),
-                                // ),
+                                Expanded(
+                                    child: Text(
+                                        '${widget.tasks.items[index].documentLastVersion.compileTitle}')),
+                                Text(
+                                  DateFormat('dd.MM.yyyy')
+                                      .format(widget.tasks.items[index].dueDate)
+                                      .toString(),
+                                ),
                               ],
                             ),
                             subtitle: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                // StatusTask(
-                                //   task: widget.tasks.items[index],
-                                // ),
-                                Text('bla bla bla')
-
-                                // Text('${widget.tasks.items[index].status}'),
-                                // UserItem(
-                                //     userId: widget.tasks.items[index].actorId)
+                                StatusTask(
+                                  task: widget.tasks.items[index],
+                                ),
+                                Text('${widget.tasks.items[index].status}'),
+                                UserItem(
+                                    userId: widget.tasks.items[index].actorId)
                               ],
                             ),
                           );

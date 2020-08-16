@@ -29,6 +29,7 @@ class UpdateAction extends ReduxAction<AppState> {
     GraphQLClient _client = graphQLConfiguration.clientToQuery();
 
     final MutationOptions options = MutationOptions(
+      // ignore: deprecated_member_use
       document: updateTodo,
       variables: <String, dynamic>{
         'id': this.id,

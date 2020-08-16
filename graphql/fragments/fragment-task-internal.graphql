@@ -1,7 +1,4 @@
-#import './fragment-task-list-item-base.graphql'
-
 fragment internalTaskFragment on ProcessingTaskListItemType {
-    ...taskListItemBaseFragment
     senderId
-    taskType
+    internalTaskType: taskType
 }    

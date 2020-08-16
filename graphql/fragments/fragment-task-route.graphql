@@ -1,14 +1,10 @@
-#import "./fragment-document-description.graphql"
-#import './fragment-task-list-item-base.graphql'
-
 fragment taskRouteFragment on RouteTaskListItemType {
-    ...taskListItemBaseFragment
     document {
         ...documentDescriptorFragment
     }
     routeId
     stageId
     isObsolete
-    taskType
+    routeTaskType: taskType
 }
 
