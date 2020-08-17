@@ -20,7 +20,7 @@ final OptimisticCache cache = OptimisticCache(
 String get host {
 // https://github.com/flutter/flutter/issues/36126#issuecomment-596215587
   if (UniversalPlatform.isAndroid) {
-    return '10.0.2.2';
+    return '192.168.0.15';
   } else {
     return '192.168.0.15';
   }

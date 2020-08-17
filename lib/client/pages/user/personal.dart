@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/client/src/components/myScaffold.dart';
+import 'package:myapp/client/src/components/my_scaffold.dart';
 import 'package:myapp/models/graphql/graphql_api.init.graphql.dart';
 
 class PersonalPage extends StatefulWidget {

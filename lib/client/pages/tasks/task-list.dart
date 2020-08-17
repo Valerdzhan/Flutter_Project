@@ -6,8 +6,8 @@ import 'package:myapp/business/app_state_store.dart';
 import 'package:myapp/business/tasks/models/TaskListItemList.dart';
 import 'package:myapp/business/tasks/models/tasks_model.dart';
 import 'package:myapp/client/pages/user/user.dart';
-import 'package:myapp/client/src/components/myScaffold.dart';
-import 'package:myapp/client/src/layout/taskStatus.dart';
+import 'package:myapp/client/src/components/my_scaffold.dart';
+import 'package:myapp/client/src/layout/task_status.dart';
 
 class TaskListConnector extends StatelessWidget {
   TaskListConnector({Key key}) : super(key: key);
@@ -161,7 +161,8 @@ class _TaskListState extends State<TaskListPage> {
                                 ),
                                 Text('${widget.tasks.items[index].status}'),
                                 UserItem(
-                                    userId: widget.tasks.items[index].actorId)
+                                  userId: widget.tasks.items[index].actorId,
+                                )
                               ],
                             ),
                           );
