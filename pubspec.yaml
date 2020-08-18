@@ -48,13 +48,23 @@ dev_dependencies:
     sdk: flutter
   artemis: ^6.6.4-beta.1
   build_runner:
-  freezed:
   analyzer: 0.39.14
 
-
+# Экран при запуске приложения
+# flutter pub pub run flutter_native_splash:create
+# 
 flutter_native_splash:
   image: assets/images/splash.png
   color: 2561ba
+
+# Настройка иконки приложения
+# запутить в терминале
+# flutter pub run flutter_launcher_icons:main
+# 
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -74,6 +84,7 @@ flutter:
     - assets/data/users.json
     - assets/data/statusTaskList.json
     - assets/images/splash.png
+    - assets/images/logo.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
