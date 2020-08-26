@@ -14,31 +14,32 @@ class TaskListQuery extends BaseActions {
 
   @override
   Future<AppState> reduce() async {
-    await Future.delayed(
-      Duration(milliseconds: 5000),
-      () async {
-        GraphQLClient _client = graphQLConfiguration.clientToQuery();
+    // await Future.delayed(
+    //   Duration(milliseconds: 5000),
+    //   () async {
+    GraphQLClient _client = graphQLConfiguration.clientToQuery();
 
-        final QueryOptions options = QueryOptions(
-            documentNode: UserTasksQuery().document,
-            variables: <String, dynamic>{'skip': 0, 'limit': 20});
+    final QueryOptions options = QueryOptions(
+        documentNode: UserTasksQuery().document,
+        variables: <String, dynamic>{'skip': 0, 'limit': 20});
 
-        final QueryResult result = await _client.query(options);
+    final QueryResult result = await _client.query(options);
 
-        if (!result.hasException) {
-          var userTasks = TaskListItemInterfaceCollection.fromJson(
-              result.data["userTasks"]);
+    if (!result.hasException) {
+      var userTasks =
+          TaskListItemInterfaceCollection.fromJson(result.data["userTasks"]);
 
-          var newTaskState = taskState.copy(
-            taskList: userTasks,
-          );
+      var newTaskState = taskState.copy(
+        taskList: userTasks,
+      );
 
-          await dispatchFuture(SetTaskStateAction(newTaskState));
-        }
+      await dispatchFuture(SetTaskStateAction(newTaskState));
+      await dispatchFuture(SetTaskToMapAction(userTasks.items));
+    }
 
-        return state;
-      },
-    );
+    //     return state;
+    //   },
+    // );
     return state;
   }
 
@@ -47,6 +48,25 @@ class TaskListQuery extends BaseActions {
 
   @override
   void after() => dispatch(IsLoadingTaskAction(false));
+}
+
+class SetTaskToMapAction extends ReduxAction<AppState> {
+  SetTaskToMapAction(this.tasks);
+  final List<UserTasks$DFSQuery$UserTasks$Items> tasks;
+
+  @override
+  Future<AppState> reduce() async {
+    var dictTasks =
+        Map<String, UserTasks$DFSQuery$UserTasks$Items>.fromIterable(tasks,
+            key: (task) => task.id.toString(), value: (task) => task);
+
+    var newTaskState = state.taskState.copy(
+      tasks: dictTasks,
+    );
+
+    await dispatchFuture(SetTaskStateAction(newTaskState));
+    return state;
+  }
 }
 
 class IsLoadingTaskAction extends ReduxAction<AppState> {

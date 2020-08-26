@@ -29,8 +29,38 @@ class _PersonalPageState extends State<PersonalPage> {
 
   @override
   Widget build(BuildContext context) {
-    return MyScaffold(
-      title: this._title,
+    return Scaffold(
+      appBar: new AppBar(
+        title: RichText(
+          textAlign: TextAlign.start,
+          text: TextSpan(
+            text: this._title,
+            style: TextStyle(fontSize: 20),
+          ),
+        ),
+        flexibleSpace: Container(
+          decoration: new BoxDecoration(
+            gradient: new LinearGradient(
+              colors: [
+                Color(0xff0e5cad),
+                // Color(0xFF3366FF),
+                Color(0xff029cf5),
+                // Color(0xFF00CCFF),
+                // Color(0xff15eded),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+        ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            tooltip: 'Поиск',
+            onPressed: () => {print('click search')},
+          ),
+        ],
+      ),
       body: Container(
         padding: EdgeInsets.all(8.0),
         child: Column(
@@ -39,9 +69,17 @@ class _PersonalPageState extends State<PersonalPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Container(
-                    padding: const EdgeInsets.only(right: 10.0),
-                    child: Image.asset('assets/images/NonameUser.png',
-                        height: 100.0, width: 100.0)),
+                  padding: const EdgeInsets.only(right: 10.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(4),
+                    child: Image.asset(
+                      'assets/images/NonameUser.png',
+                      fit: BoxFit.cover,
+                      width: 76,
+                      height: 76,
+                    ),
+                  ),
+                ),
                 Flexible(
                   child: Container(
                     child: widget.currentUser == null
@@ -64,7 +102,7 @@ class _PersonalPageState extends State<PersonalPage> {
           ],
         ),
       ),
-      isDrawer: false,
+      // isDrawer: false,
     );
   }
 }

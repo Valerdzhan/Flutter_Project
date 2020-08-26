@@ -1,7 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:ffi';
-
 import 'package:meta/meta.dart';
 import 'package:artemis/artemis.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -30,28 +28,6 @@ mixin ReferenceValueFragmentMixin {
   String key;
   String value;
 }
-mixin DocumentListItemFragmentMixin {
-  String id;
-  String title;
-  DateTime whenCreated;
-  DateTime whenEdited;
-  @JsonKey(unknownEnumValue: DocumentType.artemisUnknown)
-  DocumentType type;
-  @JsonKey(unknownEnumValue: DocumentStatusEnumType.artemisUnknown)
-  DocumentStatusEnumType documentStatus;
-  String documentStatusDescription;
-  String authorName;
-  String compileTitle;
-  String responderId;
-  String authorId;
-  String editorId;
-  int controlCardsCount;
-  int controlCardsRemovedCount;
-  String scanCopy;
-  bool isPublished;
-  String publisherId;
-  DateTime whenPublished;
-}
 
 @JsonSerializable(explicitToJson: true)
 class Contracts$DFSQuery$Contracts$Items with EquatableMixin {
@@ -69,7 +45,7 @@ class Contracts$DFSQuery$Contracts$Items with EquatableMixin {
 
   String contractorName;
 
-  Float sumAmountWithTax;
+  double sumAmountWithTax;
 
   String departmentResponder;
 
@@ -193,9 +169,9 @@ class ContractsAttributeSearch with EquatableMixin {
 
   bool isScanCopyExists;
 
-  Float amountFrom;
+  double amountFrom;
 
-  Float amountTo;
+  double amountTo;
 
   String contractorId;
 
@@ -417,24 +393,531 @@ class SortInputControlCardsSortFieldEnumType with EquatableMixin {
 }
 
 @JsonSerializable(explicitToJson: true)
-class Documents$DFSQuery$Documents$Items
-    with EquatableMixin, DocumentListItemFragmentMixin {
+class Documents$DFSQuery$Documents$Items$ContractListItem
+    extends Documents$DFSQuery$Documents$Items with EquatableMixin {
+  Documents$DFSQuery$Documents$Items$ContractListItem();
+
+  factory Documents$DFSQuery$Documents$Items$ContractListItem.fromJson(
+          Map<String, dynamic> json) =>
+      _$Documents$DFSQuery$Documents$Items$ContractListItemFromJson(json);
+
+  String contractorId;
+
+  String contractorName;
+
+  double sumAmountWithTax;
+
+  String departmentResponder;
+
+  String status;
+
+  String registerNumber;
+
+  DateTime preparationDate;
+
+  @override
+  List<Object> get props => [
+        contractorId,
+        contractorName,
+        sumAmountWithTax,
+        departmentResponder,
+        status,
+        registerNumber,
+        preparationDate
+      ];
+  Map<String, dynamic> toJson() =>
+      _$Documents$DFSQuery$Documents$Items$ContractListItemToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class Documents$DFSQuery$Documents$Items$HRRequestDocListItem$Applicant
+    extends Documents$DFSQuery$Documents$Items$HRRequestDocListItem
+    with EquatableMixin {
+  Documents$DFSQuery$Documents$Items$HRRequestDocListItem$Applicant();
+
+  factory Documents$DFSQuery$Documents$Items$HRRequestDocListItem$Applicant.fromJson(
+          Map<String, dynamic> json) =>
+      _$Documents$DFSQuery$Documents$Items$HRRequestDocListItem$ApplicantFromJson(
+          json);
+
+  String firstName;
+
+  String lastName;
+
+  String patronymic;
+
+  String personalIdentifier;
+
+  @override
+  List<Object> get props =>
+      [firstName, lastName, patronymic, personalIdentifier];
+  Map<String, dynamic> toJson() =>
+      _$Documents$DFSQuery$Documents$Items$HRRequestDocListItem$ApplicantToJson(
+          this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class Documents$DFSQuery$Documents$Items$HRRequestDocListItem$OrderDescriptor
+    extends Documents$DFSQuery$Documents$Items$HRRequestDocListItem
+    with EquatableMixin {
+  Documents$DFSQuery$Documents$Items$HRRequestDocListItem$OrderDescriptor();
+
+  factory Documents$DFSQuery$Documents$Items$HRRequestDocListItem$OrderDescriptor.fromJson(
+          Map<String, dynamic> json) =>
+      _$Documents$DFSQuery$Documents$Items$HRRequestDocListItem$OrderDescriptorFromJson(
+          json);
+
+  DateTime issuedDate;
+
+  String number;
+
+  @override
+  List<Object> get props => [issuedDate, number];
+  Map<String, dynamic> toJson() =>
+      _$Documents$DFSQuery$Documents$Items$HRRequestDocListItem$OrderDescriptorToJson(
+          this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class Documents$DFSQuery$Documents$Items$HRRequestDocListItem
+    extends Documents$DFSQuery$Documents$Items with EquatableMixin {
+  Documents$DFSQuery$Documents$Items$HRRequestDocListItem();
+
+  factory Documents$DFSQuery$Documents$Items$HRRequestDocListItem.fromJson(
+          Map<String, dynamic> json) =>
+      _$Documents$DFSQuery$Documents$Items$HRRequestDocListItemFromJson(json);
+
+  String addressee;
+
+  String addresseeName;
+
+  Documents$DFSQuery$Documents$Items$HRRequestDocListItem$Applicant applicant;
+
+  Documents$DFSQuery$Documents$Items$HRRequestDocListItem$OrderDescriptor
+      orderDescriptor;
+
+  String status;
+
+  String applicantId;
+
+  String applicantExternalUserId;
+
+  @override
+  List<Object> get props => [
+        addressee,
+        addresseeName,
+        applicant,
+        orderDescriptor,
+        status,
+        applicantId,
+        applicantExternalUserId
+      ];
+  Map<String, dynamic> toJson() =>
+      _$Documents$DFSQuery$Documents$Items$HRRequestDocListItemToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class Documents$DFSQuery$Documents$Items$GenericRequestListItem$Applicant
+    extends Documents$DFSQuery$Documents$Items$GenericRequestListItem
+    with EquatableMixin {
+  Documents$DFSQuery$Documents$Items$GenericRequestListItem$Applicant();
+
+  factory Documents$DFSQuery$Documents$Items$GenericRequestListItem$Applicant.fromJson(
+          Map<String, dynamic> json) =>
+      _$Documents$DFSQuery$Documents$Items$GenericRequestListItem$ApplicantFromJson(
+          json);
+
+  String firstName;
+
+  String lastName;
+
+  String patronymic;
+
+  String personalIdentifier;
+
+  @override
+  List<Object> get props =>
+      [firstName, lastName, patronymic, personalIdentifier];
+  Map<String, dynamic> toJson() =>
+      _$Documents$DFSQuery$Documents$Items$GenericRequestListItem$ApplicantToJson(
+          this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class Documents$DFSQuery$Documents$Items$GenericRequestListItem
+    extends Documents$DFSQuery$Documents$Items with EquatableMixin {
+  Documents$DFSQuery$Documents$Items$GenericRequestListItem();
+
+  factory Documents$DFSQuery$Documents$Items$GenericRequestListItem.fromJson(
+          Map<String, dynamic> json) =>
+      _$Documents$DFSQuery$Documents$Items$GenericRequestListItemFromJson(json);
+
+  String addressee;
+
+  String addresseeName;
+
+  Documents$DFSQuery$Documents$Items$GenericRequestListItem$Applicant applicant;
+
+  String categoryId;
+
+  String responderId;
+
+  String curatorId;
+
+  @JsonKey(unknownEnumValue: DocumentStatusEnumType.artemisUnknown)
+  DocumentStatusEnumType documentStatus;
+
+  String documentStatusDescription;
+
+  String scanCopy;
+
+  @override
+  List<Object> get props => [
+        addressee,
+        addresseeName,
+        applicant,
+        categoryId,
+        responderId,
+        curatorId,
+        documentStatus,
+        documentStatusDescription,
+        scanCopy
+      ];
+  Map<String, dynamic> toJson() =>
+      _$Documents$DFSQuery$Documents$Items$GenericRequestListItemToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class Documents$DFSQuery$Documents$Items$IncomingDocListItem
+    extends Documents$DFSQuery$Documents$Items with EquatableMixin {
+  Documents$DFSQuery$Documents$Items$IncomingDocListItem();
+
+  factory Documents$DFSQuery$Documents$Items$IncomingDocListItem.fromJson(
+          Map<String, dynamic> json) =>
+      _$Documents$DFSQuery$Documents$Items$IncomingDocListItemFromJson(json);
+
+  List<String> incomingDocAddresseeId;
+
+  String sender;
+
+  String incomingDocSenderId;
+
+  String senderOutgoingNumber;
+
+  DateTime documentDate;
+
+  DateTime registrationDate;
+
+  String registrationNumber;
+
+  String registrationAuthorId;
+
+  String actor;
+
+  @override
+  List<Object> get props => [
+        incomingDocAddresseeId,
+        sender,
+        incomingDocSenderId,
+        senderOutgoingNumber,
+        documentDate,
+        registrationDate,
+        registrationNumber,
+        registrationAuthorId,
+        actor
+      ];
+  Map<String, dynamic> toJson() =>
+      _$Documents$DFSQuery$Documents$Items$IncomingDocListItemToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class Documents$DFSQuery$Documents$Items$LetterListItem
+    extends Documents$DFSQuery$Documents$Items with EquatableMixin {
+  Documents$DFSQuery$Documents$Items$LetterListItem();
+
+  factory Documents$DFSQuery$Documents$Items$LetterListItem.fromJson(
+          Map<String, dynamic> json) =>
+      _$Documents$DFSQuery$Documents$Items$LetterListItemFromJson(json);
+
+  String head;
+
+  List<String> letterAddresseeId;
+
+  String senderId;
+
+  String actorId;
+
+  bool isRegistered;
+
+  DateTime registrationDate;
+
+  String registrationNumber;
+
+  String status;
+
+  @override
+  List<Object> get props => [
+        head,
+        letterAddresseeId,
+        senderId,
+        actorId,
+        isRegistered,
+        registrationDate,
+        registrationNumber,
+        status
+      ];
+  Map<String, dynamic> toJson() =>
+      _$Documents$DFSQuery$Documents$Items$LetterListItemToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItem$RegistrationBook
+    extends Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItem
+    with EquatableMixin {
+  Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItem$RegistrationBook();
+
+  factory Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItem$RegistrationBook.fromJson(
+          Map<String, dynamic> json) =>
+      _$Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItem$RegistrationBookFromJson(
+          json);
+
+  String name;
+
+  @override
+  List<Object> get props => [name];
+  Map<String, dynamic> toJson() =>
+      _$Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItem$RegistrationBookToJson(
+          this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItem
+    extends Documents$DFSQuery$Documents$Items$LNAListItem with EquatableMixin {
+  Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItem();
+
+  factory Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItem.fromJson(
+          Map<String, dynamic> json) =>
+      _$Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItemFromJson(
+          json);
+
+  String authorId;
+
+  DateTime date;
+
+  String documentId;
+
+  bool isPermanent;
+
+  int number;
+
+  String registrationBookId;
+
+  Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItem$RegistrationBook
+      registrationBook;
+
+  @override
+  List<Object> get props => [
+        authorId,
+        date,
+        documentId,
+        isPermanent,
+        number,
+        registrationBookId,
+        registrationBook
+      ];
+  Map<String, dynamic> toJson() =>
+      _$Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItemToJson(
+          this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class Documents$DFSQuery$Documents$Items$LNAListItem
+    extends Documents$DFSQuery$Documents$Items with EquatableMixin {
+  Documents$DFSQuery$Documents$Items$LNAListItem();
+
+  factory Documents$DFSQuery$Documents$Items$LNAListItem.fromJson(
+          Map<String, dynamic> json) =>
+      _$Documents$DFSQuery$Documents$Items$LNAListItemFromJson(json);
+
+  String placeOfRegistrationValue;
+
+  String placeOfRegistrationKey;
+
+  String validStatusValue;
+
+  bool isRegistered;
+
+  Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItem
+      registrationBookItem;
+
+  String signerId;
+
+  String actorId;
+
+  String overseerId;
+
+  @override
+  List<Object> get props => [
+        placeOfRegistrationValue,
+        placeOfRegistrationKey,
+        validStatusValue,
+        isRegistered,
+        registrationBookItem,
+        signerId,
+        actorId,
+        overseerId
+      ];
+  Map<String, dynamic> toJson() =>
+      _$Documents$DFSQuery$Documents$Items$LNAListItemToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class Documents$DFSQuery$Documents$Items$OutgoingDocListItem
+    extends Documents$DFSQuery$Documents$Items with EquatableMixin {
+  Documents$DFSQuery$Documents$Items$OutgoingDocListItem();
+
+  factory Documents$DFSQuery$Documents$Items$OutgoingDocListItem.fromJson(
+          Map<String, dynamic> json) =>
+      _$Documents$DFSQuery$Documents$Items$OutgoingDocListItemFromJson(json);
+
+  List<String> addressees;
+
+  List<String> addresseeIds;
+
+  String senderId;
+
+  DateTime registrationDate;
+
+  String registrationNumber;
+
+  String actorId;
+
+  @override
+  List<Object> get props => [
+        addressees,
+        addresseeIds,
+        senderId,
+        registrationDate,
+        registrationNumber,
+        actorId
+      ];
+  Map<String, dynamic> toJson() =>
+      _$Documents$DFSQuery$Documents$Items$OutgoingDocListItemToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class Documents$DFSQuery$Documents$Items$MassMailListItem
+    extends Documents$DFSQuery$Documents$Items with EquatableMixin {
+  Documents$DFSQuery$Documents$Items$MassMailListItem();
+
+  factory Documents$DFSQuery$Documents$Items$MassMailListItem.fromJson(
+          Map<String, dynamic> json) =>
+      _$Documents$DFSQuery$Documents$Items$MassMailListItemFromJson(json);
+
+  bool isSent;
+
+  String senderId;
+
+  DateTime sendingDate;
+
+  String sendingAuthor;
+
+  List<String> mailingGroupsIds;
+
+  @override
+  List<Object> get props =>
+      [isSent, senderId, sendingDate, sendingAuthor, mailingGroupsIds];
+  Map<String, dynamic> toJson() =>
+      _$Documents$DFSQuery$Documents$Items$MassMailListItemToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class Documents$DFSQuery$Documents$Items with EquatableMixin {
   Documents$DFSQuery$Documents$Items();
 
   factory Documents$DFSQuery$Documents$Items.fromJson(
-          Map<String, dynamic> json) =>
-      _$Documents$DFSQuery$Documents$ItemsFromJson(json);
+      Map<String, dynamic> json) {
+    switch (json['__typename'].toString()) {
+      case r'ContractListItem':
+        return Documents$DFSQuery$Documents$Items$ContractListItem.fromJson(
+            json);
+      case r'HRRequestDocListItem':
+        return Documents$DFSQuery$Documents$Items$HRRequestDocListItem.fromJson(
+            json);
+      case r'GenericRequestListItem':
+        return Documents$DFSQuery$Documents$Items$GenericRequestListItem
+            .fromJson(json);
+      case r'IncomingDocListItem':
+        return Documents$DFSQuery$Documents$Items$IncomingDocListItem.fromJson(
+            json);
+      case r'LetterListItem':
+        return Documents$DFSQuery$Documents$Items$LetterListItem.fromJson(json);
+      case r'LNAListItem':
+        return Documents$DFSQuery$Documents$Items$LNAListItem.fromJson(json);
+      case r'OutgoingDocListItem':
+        return Documents$DFSQuery$Documents$Items$OutgoingDocListItem.fromJson(
+            json);
+      case r'MassMailListItem':
+        return Documents$DFSQuery$Documents$Items$MassMailListItem.fromJson(
+            json);
+      default:
+    }
+    return _$Documents$DFSQuery$Documents$ItemsFromJson(json);
+  }
 
   @JsonKey(unknownEnumValue: DocumentType.artemisUnknown)
   DocumentType documentType;
 
+  @JsonKey(unknownEnumValue: DocumentType.artemisUnknown)
+  DocumentType type;
+
+  String id;
+
+  String title;
+
+  DateTime whenCreated;
+
+  DateTime whenEdited;
+
+  @JsonKey(unknownEnumValue: DocumentStatusEnumType.artemisUnknown)
+  DocumentStatusEnumType documentStatus;
+
+  String documentStatusDescription;
+
+  String authorName;
+
+  String compileTitle;
+
+  String responderId;
+
+  String authorId;
+
+  String editorId;
+
+  int controlCardsCount;
+
+  int controlCardsRemovedCount;
+
+  String scanCopy;
+
+  bool isPublished;
+
+  String publisherId;
+
+  DateTime whenPublished;
+
+  @override
+  @JsonKey(name: '__typename')
+  String $$typename;
+
   @override
   List<Object> get props => [
+        documentType,
+        type,
         id,
         title,
         whenCreated,
         whenEdited,
-        type,
         documentStatus,
         documentStatusDescription,
         authorName,
@@ -448,10 +931,39 @@ class Documents$DFSQuery$Documents$Items
         isPublished,
         publisherId,
         whenPublished,
-        documentType
+        $$typename
       ];
-  Map<String, dynamic> toJson() =>
-      _$Documents$DFSQuery$Documents$ItemsToJson(this);
+  Map<String, dynamic> toJson() {
+    switch ($$typename) {
+      case r'ContractListItem':
+        return (this as Documents$DFSQuery$Documents$Items$ContractListItem)
+            .toJson();
+      case r'HRRequestDocListItem':
+        return (this as Documents$DFSQuery$Documents$Items$HRRequestDocListItem)
+            .toJson();
+      case r'GenericRequestListItem':
+        return (this
+                as Documents$DFSQuery$Documents$Items$GenericRequestListItem)
+            .toJson();
+      case r'IncomingDocListItem':
+        return (this as Documents$DFSQuery$Documents$Items$IncomingDocListItem)
+            .toJson();
+      case r'LetterListItem':
+        return (this as Documents$DFSQuery$Documents$Items$LetterListItem)
+            .toJson();
+      case r'LNAListItem':
+        return (this as Documents$DFSQuery$Documents$Items$LNAListItem)
+            .toJson();
+      case r'OutgoingDocListItem':
+        return (this as Documents$DFSQuery$Documents$Items$OutgoingDocListItem)
+            .toJson();
+      case r'MassMailListItem':
+        return (this as Documents$DFSQuery$Documents$Items$MassMailListItem)
+            .toJson();
+      default:
+    }
+    return _$Documents$DFSQuery$Documents$ItemsToJson(this);
+  }
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -482,449 +994,6 @@ class Documents$DFSQuery with EquatableMixin {
   @override
   List<Object> get props => [documents];
   Map<String, dynamic> toJson() => _$Documents$DFSQueryToJson(this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class DocumentListItemFragmentMixin$ContractListItem
-    extends DocumentListItemFragmentMixin with EquatableMixin {
-  DocumentListItemFragmentMixin$ContractListItem();
-
-  factory DocumentListItemFragmentMixin$ContractListItem.fromJson(
-          Map<String, dynamic> json) =>
-      _$DocumentListItemFragmentMixin$ContractListItemFromJson(json);
-
-  String contractorId;
-
-  String contractorName;
-
-  Float sumAmountWithTax;
-
-  String departmentResponder;
-
-  String status;
-
-  String registerNumber;
-
-  DateTime preparationDate;
-
-  @override
-  List<Object> get props => [
-        contractorId,
-        contractorName,
-        sumAmountWithTax,
-        departmentResponder,
-        status,
-        registerNumber,
-        preparationDate
-      ];
-  Map<String, dynamic> toJson() =>
-      _$DocumentListItemFragmentMixin$ContractListItemToJson(this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class DocumentListItemFragmentMixin$HRRequestDocListItem$Applicant
-    extends DocumentListItemFragmentMixin$HRRequestDocListItem
-    with EquatableMixin {
-  DocumentListItemFragmentMixin$HRRequestDocListItem$Applicant();
-
-  factory DocumentListItemFragmentMixin$HRRequestDocListItem$Applicant.fromJson(
-          Map<String, dynamic> json) =>
-      _$DocumentListItemFragmentMixin$HRRequestDocListItem$ApplicantFromJson(
-          json);
-
-  String firstName;
-
-  String lastName;
-
-  String patronymic;
-
-  String personalIdentifier;
-
-  @override
-  List<Object> get props =>
-      [firstName, lastName, patronymic, personalIdentifier];
-  Map<String, dynamic> toJson() =>
-      _$DocumentListItemFragmentMixin$HRRequestDocListItem$ApplicantToJson(
-          this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class DocumentListItemFragmentMixin$HRRequestDocListItem$OrderDescriptor
-    extends DocumentListItemFragmentMixin$HRRequestDocListItem
-    with EquatableMixin {
-  DocumentListItemFragmentMixin$HRRequestDocListItem$OrderDescriptor();
-
-  factory DocumentListItemFragmentMixin$HRRequestDocListItem$OrderDescriptor.fromJson(
-          Map<String, dynamic> json) =>
-      _$DocumentListItemFragmentMixin$HRRequestDocListItem$OrderDescriptorFromJson(
-          json);
-
-  DateTime issuedDate;
-
-  String number;
-
-  @override
-  List<Object> get props => [issuedDate, number];
-  Map<String, dynamic> toJson() =>
-      _$DocumentListItemFragmentMixin$HRRequestDocListItem$OrderDescriptorToJson(
-          this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class DocumentListItemFragmentMixin$HRRequestDocListItem
-    extends DocumentListItemFragmentMixin with EquatableMixin {
-  DocumentListItemFragmentMixin$HRRequestDocListItem();
-
-  factory DocumentListItemFragmentMixin$HRRequestDocListItem.fromJson(
-          Map<String, dynamic> json) =>
-      _$DocumentListItemFragmentMixin$HRRequestDocListItemFromJson(json);
-
-  String addressee;
-
-  String addresseeName;
-
-  DocumentListItemFragmentMixin$HRRequestDocListItem$Applicant applicant;
-
-  DocumentListItemFragmentMixin$HRRequestDocListItem$OrderDescriptor
-      orderDescriptor;
-
-  String status;
-
-  String applicantId;
-
-  String applicantExternalUserId;
-
-  @override
-  List<Object> get props => [
-        addressee,
-        addresseeName,
-        applicant,
-        orderDescriptor,
-        status,
-        applicantId,
-        applicantExternalUserId
-      ];
-  Map<String, dynamic> toJson() =>
-      _$DocumentListItemFragmentMixin$HRRequestDocListItemToJson(this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class DocumentListItemFragmentMixin$GenericRequestListItem$Applicant
-    extends DocumentListItemFragmentMixin$GenericRequestListItem
-    with EquatableMixin {
-  DocumentListItemFragmentMixin$GenericRequestListItem$Applicant();
-
-  factory DocumentListItemFragmentMixin$GenericRequestListItem$Applicant.fromJson(
-          Map<String, dynamic> json) =>
-      _$DocumentListItemFragmentMixin$GenericRequestListItem$ApplicantFromJson(
-          json);
-
-  String firstName;
-
-  String lastName;
-
-  String patronymic;
-
-  String personalIdentifier;
-
-  @override
-  List<Object> get props =>
-      [firstName, lastName, patronymic, personalIdentifier];
-  Map<String, dynamic> toJson() =>
-      _$DocumentListItemFragmentMixin$GenericRequestListItem$ApplicantToJson(
-          this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class DocumentListItemFragmentMixin$GenericRequestListItem
-    extends DocumentListItemFragmentMixin with EquatableMixin {
-  DocumentListItemFragmentMixin$GenericRequestListItem();
-
-  factory DocumentListItemFragmentMixin$GenericRequestListItem.fromJson(
-          Map<String, dynamic> json) =>
-      _$DocumentListItemFragmentMixin$GenericRequestListItemFromJson(json);
-
-  String addressee;
-
-  String addresseeName;
-
-  DocumentListItemFragmentMixin$GenericRequestListItem$Applicant applicant;
-
-  String categoryId;
-
-  String responderId;
-
-  String curatorId;
-
-  @JsonKey(unknownEnumValue: DocumentStatusEnumType.artemisUnknown)
-  DocumentStatusEnumType documentStatus;
-
-  String documentStatusDescription;
-
-  String scanCopy;
-
-  @override
-  List<Object> get props => [
-        addressee,
-        addresseeName,
-        applicant,
-        categoryId,
-        responderId,
-        curatorId,
-        documentStatus,
-        documentStatusDescription,
-        scanCopy
-      ];
-  Map<String, dynamic> toJson() =>
-      _$DocumentListItemFragmentMixin$GenericRequestListItemToJson(this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class DocumentListItemFragmentMixin$IncomingDocListItem
-    extends DocumentListItemFragmentMixin with EquatableMixin {
-  DocumentListItemFragmentMixin$IncomingDocListItem();
-
-  factory DocumentListItemFragmentMixin$IncomingDocListItem.fromJson(
-          Map<String, dynamic> json) =>
-      _$DocumentListItemFragmentMixin$IncomingDocListItemFromJson(json);
-
-  List<String> addresseeIds;
-
-  String sender;
-
-  String senderId;
-
-  String senderOutgoingNumber;
-
-  DateTime documentDate;
-
-  DateTime registrationDate;
-
-  String registrationNumber;
-
-  String registrationAuthorId;
-
-  String actor;
-
-  @override
-  List<Object> get props => [
-        addresseeIds,
-        sender,
-        senderId,
-        senderOutgoingNumber,
-        documentDate,
-        registrationDate,
-        registrationNumber,
-        registrationAuthorId,
-        actor
-      ];
-  Map<String, dynamic> toJson() =>
-      _$DocumentListItemFragmentMixin$IncomingDocListItemToJson(this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class DocumentListItemFragmentMixin$LetterListItem
-    extends DocumentListItemFragmentMixin with EquatableMixin {
-  DocumentListItemFragmentMixin$LetterListItem();
-
-  factory DocumentListItemFragmentMixin$LetterListItem.fromJson(
-          Map<String, dynamic> json) =>
-      _$DocumentListItemFragmentMixin$LetterListItemFromJson(json);
-
-  String head;
-
-  List<String> addresseeIds;
-
-  String senderId;
-
-  String actorId;
-
-  bool isRegistered;
-
-  DateTime registrationDate;
-
-  String registrationNumber;
-
-  String status;
-
-  @override
-  List<Object> get props => [
-        head,
-        addresseeIds,
-        senderId,
-        actorId,
-        isRegistered,
-        registrationDate,
-        registrationNumber,
-        status
-      ];
-  Map<String, dynamic> toJson() =>
-      _$DocumentListItemFragmentMixin$LetterListItemToJson(this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItem$RegistrationBook
-    extends DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItem
-    with EquatableMixin {
-  DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItem$RegistrationBook();
-
-  factory DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItem$RegistrationBook.fromJson(
-          Map<String, dynamic> json) =>
-      _$DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItem$RegistrationBookFromJson(
-          json);
-
-  String name;
-
-  @override
-  List<Object> get props => [name];
-  Map<String, dynamic> toJson() =>
-      _$DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItem$RegistrationBookToJson(
-          this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItem
-    extends DocumentListItemFragmentMixin$LNAListItem with EquatableMixin {
-  DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItem();
-
-  factory DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItem.fromJson(
-          Map<String, dynamic> json) =>
-      _$DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItemFromJson(
-          json);
-
-  String authorId;
-
-  DateTime date;
-
-  String documentId;
-
-  bool isPermanent;
-
-  int number;
-
-  String registrationBookId;
-
-  DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItem$RegistrationBook
-      registrationBook;
-
-  @override
-  List<Object> get props => [
-        authorId,
-        date,
-        documentId,
-        isPermanent,
-        number,
-        registrationBookId,
-        registrationBook
-      ];
-  Map<String, dynamic> toJson() =>
-      _$DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItemToJson(
-          this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class DocumentListItemFragmentMixin$LNAListItem
-    extends DocumentListItemFragmentMixin with EquatableMixin {
-  DocumentListItemFragmentMixin$LNAListItem();
-
-  factory DocumentListItemFragmentMixin$LNAListItem.fromJson(
-          Map<String, dynamic> json) =>
-      _$DocumentListItemFragmentMixin$LNAListItemFromJson(json);
-
-  @JsonKey(unknownEnumValue: DocumentType.artemisUnknown)
-  DocumentType documentType;
-
-  String placeOfRegistrationValue;
-
-  String placeOfRegistrationKey;
-
-  String validStatusValue;
-
-  bool isRegistered;
-
-  DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItem
-      registrationBookItem;
-
-  String signerId;
-
-  String actorId;
-
-  String overseerId;
-
-  @override
-  List<Object> get props => [
-        documentType,
-        placeOfRegistrationValue,
-        placeOfRegistrationKey,
-        validStatusValue,
-        isRegistered,
-        registrationBookItem,
-        signerId,
-        actorId,
-        overseerId
-      ];
-  Map<String, dynamic> toJson() =>
-      _$DocumentListItemFragmentMixin$LNAListItemToJson(this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class DocumentListItemFragmentMixin$OutgoingDocListItem
-    extends DocumentListItemFragmentMixin with EquatableMixin {
-  DocumentListItemFragmentMixin$OutgoingDocListItem();
-
-  factory DocumentListItemFragmentMixin$OutgoingDocListItem.fromJson(
-          Map<String, dynamic> json) =>
-      _$DocumentListItemFragmentMixin$OutgoingDocListItemFromJson(json);
-
-  List<String> addressees;
-
-  List<String> addresseeIds;
-
-  String senderId;
-
-  DateTime registrationDate;
-
-  String registrationNumber;
-
-  String actorId;
-
-  @override
-  List<Object> get props => [
-        addressees,
-        addresseeIds,
-        senderId,
-        registrationDate,
-        registrationNumber,
-        actorId
-      ];
-  Map<String, dynamic> toJson() =>
-      _$DocumentListItemFragmentMixin$OutgoingDocListItemToJson(this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class DocumentListItemFragmentMixin$MassMailListItem
-    extends DocumentListItemFragmentMixin with EquatableMixin {
-  DocumentListItemFragmentMixin$MassMailListItem();
-
-  factory DocumentListItemFragmentMixin$MassMailListItem.fromJson(
-          Map<String, dynamic> json) =>
-      _$DocumentListItemFragmentMixin$MassMailListItemFromJson(json);
-
-  bool isSent;
-
-  String senderId;
-
-  DateTime sendingDate;
-
-  String sendingAuthor;
-
-  List<String> mailingGroupsIds;
-
-  @override
-  List<Object> get props =>
-      [isSent, senderId, sendingDate, sendingAuthor, mailingGroupsIds];
-  Map<String, dynamic> toJson() =>
-      _$DocumentListItemFragmentMixin$MassMailListItemToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -2837,265 +2906,265 @@ class SortInputRequestDocsSortFieldEnumType with EquatableMixin {
 }
 
 enum ContractsSortFieldEnumType {
-  @JsonValue("title")
+  @JsonValue('title')
   title,
-  @JsonValue("contractor")
+  @JsonValue('contractor')
   contractor,
-  @JsonValue("amount")
+  @JsonValue('amount')
   amount,
-  @JsonValue("department")
+  @JsonValue('department')
   department,
-  @JsonValue("responder")
+  @JsonValue('responder')
   responder,
-  @JsonValue("whenCreated")
+  @JsonValue('whenCreated')
   whenCreated,
-  @JsonValue("whenEdited")
+  @JsonValue('whenEdited')
   whenEdited,
-  @JsonValue("status")
+  @JsonValue('status')
   status,
-  @JsonValue("ARTEMIS_UNKNOWN")
+  @JsonValue('ARTEMIS_UNKNOWN')
   artemisUnknown,
 }
 enum DocumentStatusEnumType {
-  @JsonValue("UNKNOWN")
+  @JsonValue('UNKNOWN')
   unknown,
-  @JsonValue("NOT_SUPPORTED")
+  @JsonValue('NOT_SUPPORTED')
   notSupported,
-  @JsonValue("DRAFT")
+  @JsonValue('DRAFT')
   draft,
-  @JsonValue("IN_PROGRESS")
+  @JsonValue('IN_PROGRESS')
   inProgress,
-  @JsonValue("EXPIRED")
+  @JsonValue('EXPIRED')
   expired,
-  @JsonValue("REJECTED")
+  @JsonValue('REJECTED')
   rejected,
-  @JsonValue("COMPLETED")
+  @JsonValue('COMPLETED')
   completed,
-  @JsonValue("REVIEWED")
+  @JsonValue('REVIEWED')
   reviewed,
-  @JsonValue("SENDED")
+  @JsonValue('SENDED')
   sended,
-  @JsonValue("ON_AGREEMENT")
+  @JsonValue('ON_AGREEMENT')
   onAgreement,
-  @JsonValue("REVOKED")
+  @JsonValue('REVOKED')
   revoked,
-  @JsonValue("AGREED")
+  @JsonValue('AGREED')
   agreed,
-  @JsonValue("SIGNED")
+  @JsonValue('SIGNED')
   signed,
-  @JsonValue("SOLVED")
+  @JsonValue('SOLVED')
   solved,
-  @JsonValue("ON_PERFORMANCE")
+  @JsonValue('ON_PERFORMANCE')
   onPerformance,
-  @JsonValue("AGREED_BY_ADDRESSEE")
+  @JsonValue('AGREED_BY_ADDRESSEE')
   agreedByAddressee,
-  @JsonValue("AGREED_BY_ADDRESSEE_IN_PROGRESS")
+  @JsonValue('AGREED_BY_ADDRESSEE_IN_PROGRESS')
   agreedByAddresseeInProgress,
-  @JsonValue("REJECTED_BY_ADDRESSEE")
+  @JsonValue('REJECTED_BY_ADDRESSEE')
   rejectedByAddressee,
-  @JsonValue("REJECTED_BY_ADDRESSEE_IN_PROGRESS")
+  @JsonValue('REJECTED_BY_ADDRESSEE_IN_PROGRESS')
   rejectedByAddresseeInProgress,
-  @JsonValue("REJECTED_BY_ADDRESSEE_BY_PERFORMER")
+  @JsonValue('REJECTED_BY_ADDRESSEE_BY_PERFORMER')
   rejectedByAddresseeByPerformer,
-  @JsonValue("REJECTED_BY_ADDRESSEE_EXECUTED_BY_PERFORMER")
+  @JsonValue('REJECTED_BY_ADDRESSEE_EXECUTED_BY_PERFORMER')
   rejectedByAddresseeExecutedByPerformer,
-  @JsonValue("AGREED_BY_ADDRESSEE_REJECTED_BY_PERFORMER")
+  @JsonValue('AGREED_BY_ADDRESSEE_REJECTED_BY_PERFORMER')
   agreedByAddresseeRejectedByPerformer,
-  @JsonValue("ARTEMIS_UNKNOWN")
+  @JsonValue('ARTEMIS_UNKNOWN')
   artemisUnknown,
 }
 enum DocumentType {
-  @JsonValue("UNKNOWN")
+  @JsonValue('UNKNOWN')
   unknown,
-  @JsonValue("CONTRACT")
+  @JsonValue('CONTRACT')
   contract,
-  @JsonValue("TAX_EXPERTISE")
+  @JsonValue('TAX_EXPERTISE')
   taxExpertise,
-  @JsonValue("LETTER")
+  @JsonValue('LETTER')
   letter,
-  @JsonValue("INCOMING_DOC")
+  @JsonValue('INCOMING_DOC')
   incomingDoc,
-  @JsonValue("OUTGOING_DOC")
+  @JsonValue('OUTGOING_DOC')
   outgoingDoc,
-  @JsonValue("CONTROL_CARD")
+  @JsonValue('CONTROL_CARD')
   controlCard,
-  @JsonValue("REQUEST_TO_HIRE")
+  @JsonValue('REQUEST_TO_HIRE')
   requestToHire,
-  @JsonValue("TRANSFER_REQUEST")
+  @JsonValue('TRANSFER_REQUEST')
   transferRequest,
-  @JsonValue("REQUEST_FOR_DISMISSAL")
+  @JsonValue('REQUEST_FOR_DISMISSAL')
   requestForDismissal,
-  @JsonValue("CANCELLATION_REQUEST_FOR_DISMISSAL")
+  @JsonValue('CANCELLATION_REQUEST_FOR_DISMISSAL')
   cancellationRequestForDismissal,
-  @JsonValue("ORDER")
+  @JsonValue('ORDER')
   order,
-  @JsonValue("DIRECTIVE")
+  @JsonValue('DIRECTIVE')
   directive,
-  @JsonValue("GENERIC_REQUEST")
+  @JsonValue('GENERIC_REQUEST')
   genericRequest,
-  @JsonValue("MASS_MAIL")
+  @JsonValue('MASS_MAIL')
   massMail,
-  @JsonValue("ARTEMIS_UNKNOWN")
+  @JsonValue('ARTEMIS_UNKNOWN')
   artemisUnknown,
 }
 enum ControlCardPeriodEnumType {
-  @JsonValue("NO")
+  @JsonValue('NO')
   no,
-  @JsonValue("DAILY")
+  @JsonValue('DAILY')
   daily,
-  @JsonValue("WEEKLY")
+  @JsonValue('WEEKLY')
   weekly,
-  @JsonValue("TWO_TIMES_IN_MONTH")
+  @JsonValue('TWO_TIMES_IN_MONTH')
   twoTimesInMonth,
-  @JsonValue("MONTHLY")
+  @JsonValue('MONTHLY')
   monthly,
-  @JsonValue("QUARTERLY")
+  @JsonValue('QUARTERLY')
   quarterly,
-  @JsonValue("SEMIANNUALLY")
+  @JsonValue('SEMIANNUALLY')
   semiannually,
-  @JsonValue("YEARLY")
+  @JsonValue('YEARLY')
   yearly,
-  @JsonValue("ONCE_IN_TWO_YEARS")
+  @JsonValue('ONCE_IN_TWO_YEARS')
   onceInTwoYears,
-  @JsonValue("ONCE_EVERY_THREE_YEARS")
+  @JsonValue('ONCE_EVERY_THREE_YEARS')
   onceEveryThreeYears,
-  @JsonValue("CONTINUOUSLY")
+  @JsonValue('CONTINUOUSLY')
   continuously,
-  @JsonValue("ARTEMIS_UNKNOWN")
+  @JsonValue('ARTEMIS_UNKNOWN')
   artemisUnknown,
 }
 enum ControlCardsSortFieldEnumType {
-  @JsonValue("documentTitle")
+  @JsonValue('documentTitle')
   documentTitle,
-  @JsonValue("date")
+  @JsonValue('date')
   date,
-  @JsonValue("whenCreated")
+  @JsonValue('whenCreated')
   whenCreated,
-  @JsonValue("ARTEMIS_UNKNOWN")
+  @JsonValue('ARTEMIS_UNKNOWN')
   artemisUnknown,
 }
 enum DocumentSortFieldEnumType {
-  @JsonValue("whenCreated")
+  @JsonValue('whenCreated')
   whenCreated,
-  @JsonValue("title")
+  @JsonValue('title')
   title,
-  @JsonValue("whenEdited")
+  @JsonValue('whenEdited')
   whenEdited,
-  @JsonValue("author")
+  @JsonValue('author')
   author,
-  @JsonValue("type")
+  @JsonValue('type')
   type,
-  @JsonValue("ARTEMIS_UNKNOWN")
+  @JsonValue('ARTEMIS_UNKNOWN')
   artemisUnknown,
 }
 enum GenericRequestDocsSortFieldEnumType {
-  @JsonValue("applicant")
+  @JsonValue('applicant')
   applicant,
-  @JsonValue("categoryId")
+  @JsonValue('categoryId')
   categoryId,
-  @JsonValue("whenCreated")
+  @JsonValue('whenCreated')
   whenCreated,
-  @JsonValue("whenEdited")
+  @JsonValue('whenEdited')
   whenEdited,
-  @JsonValue("ARTEMIS_UNKNOWN")
+  @JsonValue('ARTEMIS_UNKNOWN')
   artemisUnknown,
 }
 enum HRRequestDocsSortFieldEnumType {
-  @JsonValue("applicant")
+  @JsonValue('applicant')
   applicant,
-  @JsonValue("type")
+  @JsonValue('type')
   type,
-  @JsonValue("whenCreated")
+  @JsonValue('whenCreated')
   whenCreated,
-  @JsonValue("whenEdited")
+  @JsonValue('whenEdited')
   whenEdited,
-  @JsonValue("ARTEMIS_UNKNOWN")
+  @JsonValue('ARTEMIS_UNKNOWN')
   artemisUnknown,
 }
 enum IncomingDocsSortFieldEnumType {
-  @JsonValue("title")
+  @JsonValue('title')
   title,
-  @JsonValue("sender")
+  @JsonValue('sender')
   sender,
-  @JsonValue("outNum")
+  @JsonValue('outNum')
   outNum,
-  @JsonValue("docDate")
+  @JsonValue('docDate')
   docDate,
-  @JsonValue("regnum")
+  @JsonValue('regnum')
   regnum,
-  @JsonValue("regdate")
+  @JsonValue('regdate')
   regdate,
-  @JsonValue("whenCreated")
+  @JsonValue('whenCreated')
   whenCreated,
-  @JsonValue("whenEdited")
+  @JsonValue('whenEdited')
   whenEdited,
-  @JsonValue("ARTEMIS_UNKNOWN")
+  @JsonValue('ARTEMIS_UNKNOWN')
   artemisUnknown,
 }
 enum LettersSortFieldEnumType {
-  @JsonValue("title")
+  @JsonValue('title')
   title,
-  @JsonValue("sender")
+  @JsonValue('sender')
   sender,
-  @JsonValue("actor")
+  @JsonValue('actor')
   actor,
-  @JsonValue("regnum")
+  @JsonValue('regnum')
   regnum,
-  @JsonValue("regdate")
+  @JsonValue('regdate')
   regdate,
-  @JsonValue("whenCreated")
+  @JsonValue('whenCreated')
   whenCreated,
-  @JsonValue("whenEdited")
+  @JsonValue('whenEdited')
   whenEdited,
-  @JsonValue("ARTEMIS_UNKNOWN")
+  @JsonValue('ARTEMIS_UNKNOWN')
   artemisUnknown,
 }
 enum LNADocsSortFieldEnumType {
-  @JsonValue("registrationDate")
+  @JsonValue('registrationDate')
   registrationDate,
-  @JsonValue("whenCreated")
+  @JsonValue('whenCreated')
   whenCreated,
-  @JsonValue("whenEdited")
+  @JsonValue('whenEdited')
   whenEdited,
-  @JsonValue("ARTEMIS_UNKNOWN")
+  @JsonValue('ARTEMIS_UNKNOWN')
   artemisUnknown,
 }
 enum MassMailsSortFieldEnumType {
-  @JsonValue("title")
+  @JsonValue('title')
   title,
-  @JsonValue("sender")
+  @JsonValue('sender')
   sender,
-  @JsonValue("whenCreated")
+  @JsonValue('whenCreated')
   whenCreated,
-  @JsonValue("whenEdited")
+  @JsonValue('whenEdited')
   whenEdited,
-  @JsonValue("ARTEMIS_UNKNOWN")
+  @JsonValue('ARTEMIS_UNKNOWN')
   artemisUnknown,
 }
 enum OutgoingDocsSortFieldEnumType {
-  @JsonValue("title")
+  @JsonValue('title')
   title,
-  @JsonValue("sender")
+  @JsonValue('sender')
   sender,
-  @JsonValue("docDate")
+  @JsonValue('docDate')
   docDate,
-  @JsonValue("whenCreated")
+  @JsonValue('whenCreated')
   whenCreated,
-  @JsonValue("whenEdited")
+  @JsonValue('whenEdited')
   whenEdited,
-  @JsonValue("ARTEMIS_UNKNOWN")
+  @JsonValue('ARTEMIS_UNKNOWN')
   artemisUnknown,
 }
 enum RequestDocsSortFieldEnumType {
-  @JsonValue("applicant")
+  @JsonValue('applicant')
   applicant,
-  @JsonValue("type")
+  @JsonValue('type')
   type,
-  @JsonValue("whenCreated")
+  @JsonValue('whenCreated')
   whenCreated,
-  @JsonValue("whenEdited")
+  @JsonValue('whenEdited')
   whenEdited,
-  @JsonValue("ARTEMIS_UNKNOWN")
+  @JsonValue('ARTEMIS_UNKNOWN')
   artemisUnknown,
 }
 
@@ -3107,6 +3176,7 @@ class ContractsArguments extends JsonSerializable with EquatableMixin {
       this.sort,
       this.attributeSearch});
 
+  @override
   factory ContractsArguments.fromJson(Map<String, dynamic> json) =>
       _$ContractsArgumentsFromJson(json);
 
@@ -3120,6 +3190,7 @@ class ContractsArguments extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object> get props => [skip, limit, sort, attributeSearch];
+  @override
   Map<String, dynamic> toJson() => _$ContractsArgumentsToJson(this);
 }
 
@@ -3322,6 +3393,7 @@ class ControlCardsArguments extends JsonSerializable with EquatableMixin {
       this.sort,
       this.attributeSearch});
 
+  @override
   factory ControlCardsArguments.fromJson(Map<String, dynamic> json) =>
       _$ControlCardsArgumentsFromJson(json);
 
@@ -3335,6 +3407,7 @@ class ControlCardsArguments extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object> get props => [skip, limit, sort, attributeSearch];
+  @override
   Map<String, dynamic> toJson() => _$ControlCardsArgumentsToJson(this);
 }
 
@@ -3581,6 +3654,7 @@ class DocumentsArguments extends JsonSerializable with EquatableMixin {
       this.sort,
       this.onRegisterFilter});
 
+  @override
   factory DocumentsArguments.fromJson(Map<String, dynamic> json) =>
       _$DocumentsArgumentsFromJson(json);
 
@@ -3597,6 +3671,7 @@ class DocumentsArguments extends JsonSerializable with EquatableMixin {
   @override
   List<Object> get props =>
       [skip, limit, attributeSearch, sort, onRegisterFilter];
+  @override
   Map<String, dynamic> toJson() => _$DocumentsArgumentsToJson(this);
 }
 
@@ -3687,512 +3762,66 @@ class DocumentsQuery
                           arguments: [],
                           directives: [],
                           selectionSet: null),
-                      FragmentSpreadNode(
-                          name: NameNode(value: 'documentListItemFragment'),
-                          directives: [])
-                    ]))
-              ]))
-        ])),
-    FragmentDefinitionNode(
-        name: NameNode(value: 'documentListItemFragment'),
-        typeCondition: TypeConditionNode(
-            on: NamedTypeNode(
-                name: NameNode(value: 'IDocumentListItem'), isNonNull: false)),
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
-          FieldNode(
-              name: NameNode(value: 'id'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'title'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'whenCreated'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'whenEdited'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'documentType'),
-              alias: NameNode(value: 'type'),
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'documentStatus'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'documentStatusDescription'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'authorName'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'compileTitle'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'responderId'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'authorId'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'editorId'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'controlCardsCount'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'controlCardsRemovedCount'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'scanCopy'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'isPublished'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'publisherId'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          FieldNode(
-              name: NameNode(value: 'whenPublished'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null),
-          InlineFragmentNode(
-              typeCondition: TypeConditionNode(
-                  on: NamedTypeNode(
-                      name: NameNode(value: 'ContractListItem'),
-                      isNonNull: false)),
-              directives: [],
-              selectionSet: SelectionSetNode(selections: [
-                FieldNode(
-                    name: NameNode(value: 'contractorId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'contractorName'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'sumAmountWithTax'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'departmentResponder'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'status'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'registerNumber'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'preparationDate'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null)
-              ])),
-          InlineFragmentNode(
-              typeCondition: TypeConditionNode(
-                  on: NamedTypeNode(
-                      name: NameNode(value: 'HRRequestDocListItem'),
-                      isNonNull: false)),
-              directives: [],
-              selectionSet: SelectionSetNode(selections: [
-                FieldNode(
-                    name: NameNode(value: 'addressee'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'addresseeName'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'applicant'),
-                    alias: NameNode(value: 'applicant'),
-                    arguments: [],
-                    directives: [],
-                    selectionSet: SelectionSetNode(selections: [
                       FieldNode(
-                          name: NameNode(value: 'firstName'),
+                          name: NameNode(value: 'documentType'),
+                          alias: NameNode(value: 'type'),
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'id'),
                           alias: null,
                           arguments: [],
                           directives: [],
                           selectionSet: null),
                       FieldNode(
-                          name: NameNode(value: 'lastName'),
+                          name: NameNode(value: 'title'),
                           alias: null,
                           arguments: [],
                           directives: [],
                           selectionSet: null),
                       FieldNode(
-                          name: NameNode(value: 'patronymic'),
+                          name: NameNode(value: 'whenCreated'),
                           alias: null,
                           arguments: [],
                           directives: [],
                           selectionSet: null),
                       FieldNode(
-                          name: NameNode(value: 'personalIdentifier'),
-                          alias: null,
-                          arguments: [],
-                          directives: [],
-                          selectionSet: null)
-                    ])),
-                FieldNode(
-                    name: NameNode(value: 'orderDescriptor'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: SelectionSetNode(selections: [
-                      FieldNode(
-                          name: NameNode(value: 'issuedDate'),
+                          name: NameNode(value: 'whenEdited'),
                           alias: null,
                           arguments: [],
                           directives: [],
                           selectionSet: null),
                       FieldNode(
-                          name: NameNode(value: 'number'),
-                          alias: null,
-                          arguments: [],
-                          directives: [],
-                          selectionSet: null)
-                    ])),
-                FieldNode(
-                    name: NameNode(value: 'status'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'applicantId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'applicantExternalUserId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null)
-              ])),
-          InlineFragmentNode(
-              typeCondition: TypeConditionNode(
-                  on: NamedTypeNode(
-                      name: NameNode(value: 'GenericRequestListItem'),
-                      isNonNull: false)),
-              directives: [],
-              selectionSet: SelectionSetNode(selections: [
-                FieldNode(
-                    name: NameNode(value: 'addressee'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'addresseeName'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'applicant'),
-                    alias: NameNode(value: 'applicant'),
-                    arguments: [],
-                    directives: [],
-                    selectionSet: SelectionSetNode(selections: [
-                      FieldNode(
-                          name: NameNode(value: 'firstName'),
+                          name: NameNode(value: 'documentStatus'),
                           alias: null,
                           arguments: [],
                           directives: [],
                           selectionSet: null),
                       FieldNode(
-                          name: NameNode(value: 'lastName'),
+                          name: NameNode(value: 'documentStatusDescription'),
                           alias: null,
                           arguments: [],
                           directives: [],
                           selectionSet: null),
                       FieldNode(
-                          name: NameNode(value: 'patronymic'),
+                          name: NameNode(value: 'authorName'),
                           alias: null,
                           arguments: [],
                           directives: [],
                           selectionSet: null),
                       FieldNode(
-                          name: NameNode(value: 'personalIdentifier'),
+                          name: NameNode(value: 'compileTitle'),
                           alias: null,
                           arguments: [],
                           directives: [],
-                          selectionSet: null)
-                    ])),
-                FieldNode(
-                    name: NameNode(value: 'categoryId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'responderId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'curatorId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'documentStatus'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'documentStatusDescription'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'scanCopy'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null)
-              ])),
-          InlineFragmentNode(
-              typeCondition: TypeConditionNode(
-                  on: NamedTypeNode(
-                      name: NameNode(value: 'IncomingDocListItem'),
-                      isNonNull: false)),
-              directives: [],
-              selectionSet: SelectionSetNode(selections: [
-                FieldNode(
-                    name: NameNode(value: 'addresseeIds'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'sender'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'senderId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'senderOutgoingNumber'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'documentDate'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'registrationDate'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'registrationNumber'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'registrationAuthorId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'actor'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null)
-              ])),
-          InlineFragmentNode(
-              typeCondition: TypeConditionNode(
-                  on: NamedTypeNode(
-                      name: NameNode(value: 'LetterListItem'),
-                      isNonNull: false)),
-              directives: [],
-              selectionSet: SelectionSetNode(selections: [
-                FieldNode(
-                    name: NameNode(value: 'head'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'addresseeIds'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'senderId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'actorId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'isRegistered'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'registrationDate'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'registrationNumber'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'status'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null)
-              ])),
-          InlineFragmentNode(
-              typeCondition: TypeConditionNode(
-                  on: NamedTypeNode(
-                      name: NameNode(value: 'LNAListItem'), isNonNull: false)),
-              directives: [],
-              selectionSet: SelectionSetNode(selections: [
-                FieldNode(
-                    name: NameNode(value: 'documentType'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'placeOfRegistrationValue'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'placeOfRegistrationKey'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'validStatusValue'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'isRegistered'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'registrationBookItem'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: SelectionSetNode(selections: [
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'responderId'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
                       FieldNode(
                           name: NameNode(value: 'authorId'),
                           alias: null,
@@ -4200,149 +3829,594 @@ class DocumentsQuery
                           directives: [],
                           selectionSet: null),
                       FieldNode(
-                          name: NameNode(value: 'date'),
+                          name: NameNode(value: 'editorId'),
                           alias: null,
                           arguments: [],
                           directives: [],
                           selectionSet: null),
                       FieldNode(
-                          name: NameNode(value: 'documentId'),
+                          name: NameNode(value: 'controlCardsCount'),
                           alias: null,
                           arguments: [],
                           directives: [],
                           selectionSet: null),
                       FieldNode(
-                          name: NameNode(value: 'isPermanent'),
+                          name: NameNode(value: 'controlCardsRemovedCount'),
                           alias: null,
                           arguments: [],
                           directives: [],
                           selectionSet: null),
                       FieldNode(
-                          name: NameNode(value: 'number'),
+                          name: NameNode(value: 'scanCopy'),
                           alias: null,
                           arguments: [],
                           directives: [],
                           selectionSet: null),
                       FieldNode(
-                          name: NameNode(value: 'registrationBookId'),
+                          name: NameNode(value: 'isPublished'),
                           alias: null,
                           arguments: [],
                           directives: [],
                           selectionSet: null),
                       FieldNode(
-                          name: NameNode(value: 'registrationBook'),
+                          name: NameNode(value: 'publisherId'),
                           alias: null,
                           arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'whenPublished'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: '__typename'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      InlineFragmentNode(
+                          typeCondition: TypeConditionNode(
+                              on: NamedTypeNode(
+                                  name: NameNode(value: 'ContractListItem'),
+                                  isNonNull: false)),
                           directives: [],
                           selectionSet: SelectionSetNode(selections: [
                             FieldNode(
-                                name: NameNode(value: 'name'),
+                                name: NameNode(value: 'contractorId'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'contractorName'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'sumAmountWithTax'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'departmentResponder'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'status'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'registerNumber'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'preparationDate'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null)
+                          ])),
+                      InlineFragmentNode(
+                          typeCondition: TypeConditionNode(
+                              on: NamedTypeNode(
+                                  name: NameNode(value: 'HRRequestDocListItem'),
+                                  isNonNull: false)),
+                          directives: [],
+                          selectionSet: SelectionSetNode(selections: [
+                            FieldNode(
+                                name: NameNode(value: 'addressee'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'addresseeName'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'applicant'),
+                                alias: NameNode(value: 'applicant'),
+                                arguments: [],
+                                directives: [],
+                                selectionSet: SelectionSetNode(selections: [
+                                  FieldNode(
+                                      name: NameNode(value: 'firstName'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'lastName'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'patronymic'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name:
+                                          NameNode(value: 'personalIdentifier'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null)
+                                ])),
+                            FieldNode(
+                                name: NameNode(value: 'orderDescriptor'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: SelectionSetNode(selections: [
+                                  FieldNode(
+                                      name: NameNode(value: 'issuedDate'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'number'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null)
+                                ])),
+                            FieldNode(
+                                name: NameNode(value: 'status'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'applicantId'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name:
+                                    NameNode(value: 'applicantExternalUserId'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null)
+                          ])),
+                      InlineFragmentNode(
+                          typeCondition: TypeConditionNode(
+                              on: NamedTypeNode(
+                                  name:
+                                      NameNode(value: 'GenericRequestListItem'),
+                                  isNonNull: false)),
+                          directives: [],
+                          selectionSet: SelectionSetNode(selections: [
+                            FieldNode(
+                                name: NameNode(value: 'addressee'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'addresseeName'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'applicant'),
+                                alias: NameNode(value: 'applicant'),
+                                arguments: [],
+                                directives: [],
+                                selectionSet: SelectionSetNode(selections: [
+                                  FieldNode(
+                                      name: NameNode(value: 'firstName'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'lastName'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'patronymic'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name:
+                                          NameNode(value: 'personalIdentifier'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null)
+                                ])),
+                            FieldNode(
+                                name: NameNode(value: 'categoryId'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'responderId'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'curatorId'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'documentStatus'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(
+                                    value: 'documentStatusDescription'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'scanCopy'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null)
+                          ])),
+                      InlineFragmentNode(
+                          typeCondition: TypeConditionNode(
+                              on: NamedTypeNode(
+                                  name: NameNode(value: 'IncomingDocListItem'),
+                                  isNonNull: false)),
+                          directives: [],
+                          selectionSet: SelectionSetNode(selections: [
+                            FieldNode(
+                                name: NameNode(value: 'addresseeIds'),
+                                alias:
+                                    NameNode(value: 'incomingDocAddresseeId'),
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'sender'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'senderId'),
+                                alias: NameNode(value: 'incomingDocSenderId'),
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'senderOutgoingNumber'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'documentDate'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'registrationDate'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'registrationNumber'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'registrationAuthorId'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'actor'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null)
+                          ])),
+                      InlineFragmentNode(
+                          typeCondition: TypeConditionNode(
+                              on: NamedTypeNode(
+                                  name: NameNode(value: 'LetterListItem'),
+                                  isNonNull: false)),
+                          directives: [],
+                          selectionSet: SelectionSetNode(selections: [
+                            FieldNode(
+                                name: NameNode(value: 'head'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'addresseeIds'),
+                                alias: NameNode(value: 'letterAddresseeId'),
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'senderId'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'actorId'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'isRegistered'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'registrationDate'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'registrationNumber'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'status'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null)
+                          ])),
+                      InlineFragmentNode(
+                          typeCondition: TypeConditionNode(
+                              on: NamedTypeNode(
+                                  name: NameNode(value: 'LNAListItem'),
+                                  isNonNull: false)),
+                          directives: [],
+                          selectionSet: SelectionSetNode(selections: [
+                            FieldNode(
+                                name:
+                                    NameNode(value: 'placeOfRegistrationValue'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'placeOfRegistrationKey'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'validStatusValue'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'isRegistered'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'registrationBookItem'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: SelectionSetNode(selections: [
+                                  FieldNode(
+                                      name: NameNode(value: 'authorId'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'date'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'documentId'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'isPermanent'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'number'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name:
+                                          NameNode(value: 'registrationBookId'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null),
+                                  FieldNode(
+                                      name: NameNode(value: 'registrationBook'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet:
+                                          SelectionSetNode(selections: [
+                                        FieldNode(
+                                            name: NameNode(value: 'name'),
+                                            alias: null,
+                                            arguments: [],
+                                            directives: [],
+                                            selectionSet: null)
+                                      ]))
+                                ])),
+                            FieldNode(
+                                name: NameNode(value: 'signerId'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'actorId'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'overseerId'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null)
+                          ])),
+                      InlineFragmentNode(
+                          typeCondition: TypeConditionNode(
+                              on: NamedTypeNode(
+                                  name: NameNode(value: 'OutgoingDocListItem'),
+                                  isNonNull: false)),
+                          directives: [],
+                          selectionSet: SelectionSetNode(selections: [
+                            FieldNode(
+                                name: NameNode(value: 'addressees'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'addresseeIds'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'senderId'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'registrationDate'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'registrationNumber'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'actorId'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null)
+                          ])),
+                      InlineFragmentNode(
+                          typeCondition: TypeConditionNode(
+                              on: NamedTypeNode(
+                                  name: NameNode(value: 'MassMailListItem'),
+                                  isNonNull: false)),
+                          directives: [],
+                          selectionSet: SelectionSetNode(selections: [
+                            FieldNode(
+                                name: NameNode(value: 'isSent'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'senderId'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'sendingDate'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'sendingAuthor'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'mailingGroupsIds'),
                                 alias: null,
                                 arguments: [],
                                 directives: [],
                                 selectionSet: null)
                           ]))
-                    ])),
-                FieldNode(
-                    name: NameNode(value: 'signerId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'actorId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'overseerId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null)
-              ])),
-          InlineFragmentNode(
-              typeCondition: TypeConditionNode(
-                  on: NamedTypeNode(
-                      name: NameNode(value: 'OutgoingDocListItem'),
-                      isNonNull: false)),
-              directives: [],
-              selectionSet: SelectionSetNode(selections: [
-                FieldNode(
-                    name: NameNode(value: 'addressees'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'addresseeIds'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'senderId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'registrationDate'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'registrationNumber'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'actorId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null)
-              ])),
-          InlineFragmentNode(
-              typeCondition: TypeConditionNode(
-                  on: NamedTypeNode(
-                      name: NameNode(value: 'MassMailListItem'),
-                      isNonNull: false)),
-              directives: [],
-              selectionSet: SelectionSetNode(selections: [
-                FieldNode(
-                    name: NameNode(value: 'isSent'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'senderId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'sendingDate'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'sendingAuthor'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'mailingGroupsIds'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null)
+                    ]))
               ]))
         ]))
   ]);
@@ -4369,6 +4443,7 @@ class ExaminationDocumentsArguments extends JsonSerializable
       this.sort,
       this.attributeSearch});
 
+  @override
   factory ExaminationDocumentsArguments.fromJson(Map<String, dynamic> json) =>
       _$ExaminationDocumentsArgumentsFromJson(json);
 
@@ -4382,6 +4457,7 @@ class ExaminationDocumentsArguments extends JsonSerializable
 
   @override
   List<Object> get props => [skip, limit, sort, attributeSearch];
+  @override
   Map<String, dynamic> toJson() => _$ExaminationDocumentsArgumentsToJson(this);
 }
 
@@ -4568,6 +4644,7 @@ class GenericRequestDocArguments extends JsonSerializable with EquatableMixin {
       this.sort,
       this.attributeSearch});
 
+  @override
   factory GenericRequestDocArguments.fromJson(Map<String, dynamic> json) =>
       _$GenericRequestDocArgumentsFromJson(json);
 
@@ -4581,6 +4658,7 @@ class GenericRequestDocArguments extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object> get props => [skip, limit, sort, attributeSearch];
+  @override
   Map<String, dynamic> toJson() => _$GenericRequestDocArgumentsToJson(this);
 }
 
@@ -4803,6 +4881,7 @@ class HrDocsArguments extends JsonSerializable with EquatableMixin {
       this.sort,
       this.attributeSearch});
 
+  @override
   factory HrDocsArguments.fromJson(Map<String, dynamic> json) =>
       _$HrDocsArgumentsFromJson(json);
 
@@ -4816,6 +4895,7 @@ class HrDocsArguments extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object> get props => [skip, limit, sort, attributeSearch];
+  @override
   Map<String, dynamic> toJson() => _$HrDocsArgumentsToJson(this);
 }
 
@@ -5050,6 +5130,7 @@ class IncomingDocsArguments extends JsonSerializable with EquatableMixin {
       this.sort,
       this.attributeSearch});
 
+  @override
   factory IncomingDocsArguments.fromJson(Map<String, dynamic> json) =>
       _$IncomingDocsArgumentsFromJson(json);
 
@@ -5063,6 +5144,7 @@ class IncomingDocsArguments extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object> get props => [skip, limit, sort, attributeSearch];
+  @override
   Map<String, dynamic> toJson() => _$IncomingDocsArgumentsToJson(this);
 }
 
@@ -5272,6 +5354,7 @@ class LettersArguments extends JsonSerializable with EquatableMixin {
       this.sort,
       this.attributeSearch});
 
+  @override
   factory LettersArguments.fromJson(Map<String, dynamic> json) =>
       _$LettersArgumentsFromJson(json);
 
@@ -5285,6 +5368,7 @@ class LettersArguments extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object> get props => [skip, limit, sort, attributeSearch];
+  @override
   Map<String, dynamic> toJson() => _$LettersArgumentsToJson(this);
 }
 
@@ -5456,6 +5540,7 @@ class LNADocsArguments extends JsonSerializable with EquatableMixin {
       this.sort,
       this.attributeSearch});
 
+  @override
   factory LNADocsArguments.fromJson(Map<String, dynamic> json) =>
       _$LNADocsArgumentsFromJson(json);
 
@@ -5469,6 +5554,7 @@ class LNADocsArguments extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object> get props => [skip, limit, sort, attributeSearch];
+  @override
   Map<String, dynamic> toJson() => _$LNADocsArgumentsToJson(this);
 }
 
@@ -5713,6 +5799,7 @@ class MassMailsArguments extends JsonSerializable with EquatableMixin {
       this.sort,
       this.attributeSearch});
 
+  @override
   factory MassMailsArguments.fromJson(Map<String, dynamic> json) =>
       _$MassMailsArgumentsFromJson(json);
 
@@ -5726,6 +5813,7 @@ class MassMailsArguments extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object> get props => [skip, limit, sort, attributeSearch];
+  @override
   Map<String, dynamic> toJson() => _$MassMailsArgumentsToJson(this);
 }
 
@@ -5892,6 +5980,7 @@ class OutgoingDocsArguments extends JsonSerializable with EquatableMixin {
       this.sort,
       this.attributeSearch});
 
+  @override
   factory OutgoingDocsArguments.fromJson(Map<String, dynamic> json) =>
       _$OutgoingDocsArgumentsFromJson(json);
 
@@ -5905,6 +5994,7 @@ class OutgoingDocsArguments extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object> get props => [skip, limit, sort, attributeSearch];
+  @override
   Map<String, dynamic> toJson() => _$OutgoingDocsArgumentsToJson(this);
 }
 
@@ -6096,6 +6186,7 @@ class RequestDocArguments extends JsonSerializable with EquatableMixin {
       this.sort,
       this.attributeSearch});
 
+  @override
   factory RequestDocArguments.fromJson(Map<String, dynamic> json) =>
       _$RequestDocArgumentsFromJson(json);
 
@@ -6109,6 +6200,7 @@ class RequestDocArguments extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object> get props => [skip, limit, sort, attributeSearch];
+  @override
   Map<String, dynamic> toJson() => _$RequestDocArgumentsToJson(this);
 }
 

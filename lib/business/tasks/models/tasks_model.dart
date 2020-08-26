@@ -1,5 +1,5 @@
 import 'package:async_redux/async_redux.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:myapp/business/app_state_store.dart';
 import 'package:myapp/business/tasks/actions/TaskListQuery.dart';
 import 'package:myapp/business/tasks/actions/TaskLoadMoreAction.dart';

@@ -13,7 +13,7 @@ Contracts$DFSQuery$Contracts$Items _$Contracts$DFSQuery$Contracts$ItemsFromJson(
     ..title = json['title'] as String
     ..contractorId = json['contractorId'] as String
     ..contractorName = json['contractorName'] as String
-    ..sumAmountWithTax = json['sumAmountWithTax']
+    ..sumAmountWithTax = (json['sumAmountWithTax'] as num)?.toDouble()
     ..departmentResponder = json['departmentResponder'] as String
     ..responderId = json['responderId'] as String
     ..whenEdited = json['whenEdited'] == null
@@ -173,8 +173,8 @@ ContractsAttributeSearch _$ContractsAttributeSearchFromJson(
         ?.map((e) => _$enumDecodeNullable(_$DocumentTypeEnumMap, e))
         ?.toList(),
     isScanCopyExists: json['isScanCopyExists'] as bool,
-    amountFrom: json['amountFrom'],
-    amountTo: json['amountTo'],
+    amountFrom: (json['amountFrom'] as num)?.toDouble(),
+    amountTo: (json['amountTo'] as num)?.toDouble(),
     contractorId: json['contractorId'] as String,
     contractor: json['contractor'] as String,
     documentStatus: json['documentStatus'] as String,
@@ -459,9 +459,15 @@ const _$ControlCardsSortFieldEnumTypeEnumMap = {
   ControlCardsSortFieldEnumType.artemisUnknown: 'ARTEMIS_UNKNOWN',
 };
 
-Documents$DFSQuery$Documents$Items _$Documents$DFSQuery$Documents$ItemsFromJson(
-    Map<String, dynamic> json) {
-  return Documents$DFSQuery$Documents$Items()
+Documents$DFSQuery$Documents$Items$ContractListItem
+    _$Documents$DFSQuery$Documents$Items$ContractListItemFromJson(
+        Map<String, dynamic> json) {
+  return Documents$DFSQuery$Documents$Items$ContractListItem()
+    ..documentType = _$enumDecodeNullable(
+        _$DocumentTypeEnumMap, json['documentType'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..type = _$enumDecodeNullable(_$DocumentTypeEnumMap, json['type'],
+        unknownValue: DocumentType.artemisUnknown)
     ..id = json['id'] as String
     ..title = json['title'] as String
     ..whenCreated = json['whenCreated'] == null
@@ -470,8 +476,6 @@ Documents$DFSQuery$Documents$Items _$Documents$DFSQuery$Documents$ItemsFromJson(
     ..whenEdited = json['whenEdited'] == null
         ? null
         : DateTime.parse(json['whenEdited'] as String)
-    ..type = _$enumDecodeNullable(_$DocumentTypeEnumMap, json['type'],
-        unknownValue: DocumentType.artemisUnknown)
     ..documentStatus = _$enumDecodeNullable(
         _$DocumentStatusEnumTypeEnumMap, json['documentStatus'],
         unknownValue: DocumentStatusEnumType.artemisUnknown)
@@ -489,19 +493,628 @@ Documents$DFSQuery$Documents$Items _$Documents$DFSQuery$Documents$ItemsFromJson(
     ..whenPublished = json['whenPublished'] == null
         ? null
         : DateTime.parse(json['whenPublished'] as String)
-    ..documentType = _$enumDecodeNullable(
-        _$DocumentTypeEnumMap, json['documentType'],
-        unknownValue: DocumentType.artemisUnknown);
+    ..$$typename = json['__typename'] as String
+    ..contractorId = json['contractorId'] as String
+    ..contractorName = json['contractorName'] as String
+    ..sumAmountWithTax = (json['sumAmountWithTax'] as num)?.toDouble()
+    ..departmentResponder = json['departmentResponder'] as String
+    ..status = json['status'] as String
+    ..registerNumber = json['registerNumber'] as String
+    ..preparationDate = json['preparationDate'] == null
+        ? null
+        : DateTime.parse(json['preparationDate'] as String);
 }
 
-Map<String, dynamic> _$Documents$DFSQuery$Documents$ItemsToJson(
-        Documents$DFSQuery$Documents$Items instance) =>
+Map<String, dynamic>
+    _$Documents$DFSQuery$Documents$Items$ContractListItemToJson(
+            Documents$DFSQuery$Documents$Items$ContractListItem instance) =>
+        <String, dynamic>{
+          'documentType': _$DocumentTypeEnumMap[instance.documentType],
+          'type': _$DocumentTypeEnumMap[instance.type],
+          'id': instance.id,
+          'title': instance.title,
+          'whenCreated': instance.whenCreated?.toIso8601String(),
+          'whenEdited': instance.whenEdited?.toIso8601String(),
+          'documentStatus':
+              _$DocumentStatusEnumTypeEnumMap[instance.documentStatus],
+          'documentStatusDescription': instance.documentStatusDescription,
+          'authorName': instance.authorName,
+          'compileTitle': instance.compileTitle,
+          'responderId': instance.responderId,
+          'authorId': instance.authorId,
+          'editorId': instance.editorId,
+          'controlCardsCount': instance.controlCardsCount,
+          'controlCardsRemovedCount': instance.controlCardsRemovedCount,
+          'scanCopy': instance.scanCopy,
+          'isPublished': instance.isPublished,
+          'publisherId': instance.publisherId,
+          'whenPublished': instance.whenPublished?.toIso8601String(),
+          '__typename': instance.$$typename,
+          'contractorId': instance.contractorId,
+          'contractorName': instance.contractorName,
+          'sumAmountWithTax': instance.sumAmountWithTax,
+          'departmentResponder': instance.departmentResponder,
+          'status': instance.status,
+          'registerNumber': instance.registerNumber,
+          'preparationDate': instance.preparationDate?.toIso8601String(),
+        };
+
+Documents$DFSQuery$Documents$Items$HRRequestDocListItem$Applicant
+    _$Documents$DFSQuery$Documents$Items$HRRequestDocListItem$ApplicantFromJson(
+        Map<String, dynamic> json) {
+  return Documents$DFSQuery$Documents$Items$HRRequestDocListItem$Applicant()
+    ..documentType = _$enumDecodeNullable(
+        _$DocumentTypeEnumMap, json['documentType'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..type = _$enumDecodeNullable(_$DocumentTypeEnumMap, json['type'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..id = json['id'] as String
+    ..title = json['title'] as String
+    ..whenCreated = json['whenCreated'] == null
+        ? null
+        : DateTime.parse(json['whenCreated'] as String)
+    ..whenEdited = json['whenEdited'] == null
+        ? null
+        : DateTime.parse(json['whenEdited'] as String)
+    ..documentStatus = _$enumDecodeNullable(
+        _$DocumentStatusEnumTypeEnumMap, json['documentStatus'],
+        unknownValue: DocumentStatusEnumType.artemisUnknown)
+    ..documentStatusDescription = json['documentStatusDescription'] as String
+    ..authorName = json['authorName'] as String
+    ..compileTitle = json['compileTitle'] as String
+    ..responderId = json['responderId'] as String
+    ..authorId = json['authorId'] as String
+    ..editorId = json['editorId'] as String
+    ..controlCardsCount = json['controlCardsCount'] as int
+    ..controlCardsRemovedCount = json['controlCardsRemovedCount'] as int
+    ..scanCopy = json['scanCopy'] as String
+    ..isPublished = json['isPublished'] as bool
+    ..publisherId = json['publisherId'] as String
+    ..whenPublished = json['whenPublished'] == null
+        ? null
+        : DateTime.parse(json['whenPublished'] as String)
+    ..$$typename = json['__typename'] as String
+    ..addressee = json['addressee'] as String
+    ..addresseeName = json['addresseeName'] as String
+    ..applicant = json['applicant'] == null
+        ? null
+        : Documents$DFSQuery$Documents$Items$HRRequestDocListItem$Applicant
+            .fromJson(json['applicant'] as Map<String, dynamic>)
+    ..orderDescriptor = json['orderDescriptor'] == null
+        ? null
+        : Documents$DFSQuery$Documents$Items$HRRequestDocListItem$OrderDescriptor
+            .fromJson(json['orderDescriptor'] as Map<String, dynamic>)
+    ..status = json['status'] as String
+    ..applicantId = json['applicantId'] as String
+    ..applicantExternalUserId = json['applicantExternalUserId'] as String
+    ..firstName = json['firstName'] as String
+    ..lastName = json['lastName'] as String
+    ..patronymic = json['patronymic'] as String
+    ..personalIdentifier = json['personalIdentifier'] as String;
+}
+
+Map<String, dynamic>
+    _$Documents$DFSQuery$Documents$Items$HRRequestDocListItem$ApplicantToJson(
+            Documents$DFSQuery$Documents$Items$HRRequestDocListItem$Applicant
+                instance) =>
+        <String, dynamic>{
+          'documentType': _$DocumentTypeEnumMap[instance.documentType],
+          'type': _$DocumentTypeEnumMap[instance.type],
+          'id': instance.id,
+          'title': instance.title,
+          'whenCreated': instance.whenCreated?.toIso8601String(),
+          'whenEdited': instance.whenEdited?.toIso8601String(),
+          'documentStatus':
+              _$DocumentStatusEnumTypeEnumMap[instance.documentStatus],
+          'documentStatusDescription': instance.documentStatusDescription,
+          'authorName': instance.authorName,
+          'compileTitle': instance.compileTitle,
+          'responderId': instance.responderId,
+          'authorId': instance.authorId,
+          'editorId': instance.editorId,
+          'controlCardsCount': instance.controlCardsCount,
+          'controlCardsRemovedCount': instance.controlCardsRemovedCount,
+          'scanCopy': instance.scanCopy,
+          'isPublished': instance.isPublished,
+          'publisherId': instance.publisherId,
+          'whenPublished': instance.whenPublished?.toIso8601String(),
+          '__typename': instance.$$typename,
+          'addressee': instance.addressee,
+          'addresseeName': instance.addresseeName,
+          'applicant': instance.applicant?.toJson(),
+          'orderDescriptor': instance.orderDescriptor?.toJson(),
+          'status': instance.status,
+          'applicantId': instance.applicantId,
+          'applicantExternalUserId': instance.applicantExternalUserId,
+          'firstName': instance.firstName,
+          'lastName': instance.lastName,
+          'patronymic': instance.patronymic,
+          'personalIdentifier': instance.personalIdentifier,
+        };
+
+Documents$DFSQuery$Documents$Items$HRRequestDocListItem$OrderDescriptor
+    _$Documents$DFSQuery$Documents$Items$HRRequestDocListItem$OrderDescriptorFromJson(
+        Map<String, dynamic> json) {
+  return Documents$DFSQuery$Documents$Items$HRRequestDocListItem$OrderDescriptor()
+    ..documentType = _$enumDecodeNullable(
+        _$DocumentTypeEnumMap, json['documentType'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..type = _$enumDecodeNullable(_$DocumentTypeEnumMap, json['type'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..id = json['id'] as String
+    ..title = json['title'] as String
+    ..whenCreated = json['whenCreated'] == null
+        ? null
+        : DateTime.parse(json['whenCreated'] as String)
+    ..whenEdited = json['whenEdited'] == null
+        ? null
+        : DateTime.parse(json['whenEdited'] as String)
+    ..documentStatus = _$enumDecodeNullable(
+        _$DocumentStatusEnumTypeEnumMap, json['documentStatus'],
+        unknownValue: DocumentStatusEnumType.artemisUnknown)
+    ..documentStatusDescription = json['documentStatusDescription'] as String
+    ..authorName = json['authorName'] as String
+    ..compileTitle = json['compileTitle'] as String
+    ..responderId = json['responderId'] as String
+    ..authorId = json['authorId'] as String
+    ..editorId = json['editorId'] as String
+    ..controlCardsCount = json['controlCardsCount'] as int
+    ..controlCardsRemovedCount = json['controlCardsRemovedCount'] as int
+    ..scanCopy = json['scanCopy'] as String
+    ..isPublished = json['isPublished'] as bool
+    ..publisherId = json['publisherId'] as String
+    ..whenPublished = json['whenPublished'] == null
+        ? null
+        : DateTime.parse(json['whenPublished'] as String)
+    ..$$typename = json['__typename'] as String
+    ..addressee = json['addressee'] as String
+    ..addresseeName = json['addresseeName'] as String
+    ..applicant = json['applicant'] == null
+        ? null
+        : Documents$DFSQuery$Documents$Items$HRRequestDocListItem$Applicant
+            .fromJson(json['applicant'] as Map<String, dynamic>)
+    ..orderDescriptor = json['orderDescriptor'] == null
+        ? null
+        : Documents$DFSQuery$Documents$Items$HRRequestDocListItem$OrderDescriptor
+            .fromJson(json['orderDescriptor'] as Map<String, dynamic>)
+    ..status = json['status'] as String
+    ..applicantId = json['applicantId'] as String
+    ..applicantExternalUserId = json['applicantExternalUserId'] as String
+    ..issuedDate = json['issuedDate'] == null
+        ? null
+        : DateTime.parse(json['issuedDate'] as String)
+    ..number = json['number'] as String;
+}
+
+Map<String, dynamic>
+    _$Documents$DFSQuery$Documents$Items$HRRequestDocListItem$OrderDescriptorToJson(
+            Documents$DFSQuery$Documents$Items$HRRequestDocListItem$OrderDescriptor
+                instance) =>
+        <String, dynamic>{
+          'documentType': _$DocumentTypeEnumMap[instance.documentType],
+          'type': _$DocumentTypeEnumMap[instance.type],
+          'id': instance.id,
+          'title': instance.title,
+          'whenCreated': instance.whenCreated?.toIso8601String(),
+          'whenEdited': instance.whenEdited?.toIso8601String(),
+          'documentStatus':
+              _$DocumentStatusEnumTypeEnumMap[instance.documentStatus],
+          'documentStatusDescription': instance.documentStatusDescription,
+          'authorName': instance.authorName,
+          'compileTitle': instance.compileTitle,
+          'responderId': instance.responderId,
+          'authorId': instance.authorId,
+          'editorId': instance.editorId,
+          'controlCardsCount': instance.controlCardsCount,
+          'controlCardsRemovedCount': instance.controlCardsRemovedCount,
+          'scanCopy': instance.scanCopy,
+          'isPublished': instance.isPublished,
+          'publisherId': instance.publisherId,
+          'whenPublished': instance.whenPublished?.toIso8601String(),
+          '__typename': instance.$$typename,
+          'addressee': instance.addressee,
+          'addresseeName': instance.addresseeName,
+          'applicant': instance.applicant?.toJson(),
+          'orderDescriptor': instance.orderDescriptor?.toJson(),
+          'status': instance.status,
+          'applicantId': instance.applicantId,
+          'applicantExternalUserId': instance.applicantExternalUserId,
+          'issuedDate': instance.issuedDate?.toIso8601String(),
+          'number': instance.number,
+        };
+
+Documents$DFSQuery$Documents$Items$HRRequestDocListItem
+    _$Documents$DFSQuery$Documents$Items$HRRequestDocListItemFromJson(
+        Map<String, dynamic> json) {
+  return Documents$DFSQuery$Documents$Items$HRRequestDocListItem()
+    ..documentType = _$enumDecodeNullable(
+        _$DocumentTypeEnumMap, json['documentType'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..type = _$enumDecodeNullable(_$DocumentTypeEnumMap, json['type'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..id = json['id'] as String
+    ..title = json['title'] as String
+    ..whenCreated = json['whenCreated'] == null
+        ? null
+        : DateTime.parse(json['whenCreated'] as String)
+    ..whenEdited = json['whenEdited'] == null
+        ? null
+        : DateTime.parse(json['whenEdited'] as String)
+    ..documentStatus = _$enumDecodeNullable(
+        _$DocumentStatusEnumTypeEnumMap, json['documentStatus'],
+        unknownValue: DocumentStatusEnumType.artemisUnknown)
+    ..documentStatusDescription = json['documentStatusDescription'] as String
+    ..authorName = json['authorName'] as String
+    ..compileTitle = json['compileTitle'] as String
+    ..responderId = json['responderId'] as String
+    ..authorId = json['authorId'] as String
+    ..editorId = json['editorId'] as String
+    ..controlCardsCount = json['controlCardsCount'] as int
+    ..controlCardsRemovedCount = json['controlCardsRemovedCount'] as int
+    ..scanCopy = json['scanCopy'] as String
+    ..isPublished = json['isPublished'] as bool
+    ..publisherId = json['publisherId'] as String
+    ..whenPublished = json['whenPublished'] == null
+        ? null
+        : DateTime.parse(json['whenPublished'] as String)
+    ..$$typename = json['__typename'] as String
+    ..addressee = json['addressee'] as String
+    ..addresseeName = json['addresseeName'] as String
+    ..applicant = json['applicant'] == null
+        ? null
+        : Documents$DFSQuery$Documents$Items$HRRequestDocListItem$Applicant
+            .fromJson(json['applicant'] as Map<String, dynamic>)
+    ..orderDescriptor = json['orderDescriptor'] == null
+        ? null
+        : Documents$DFSQuery$Documents$Items$HRRequestDocListItem$OrderDescriptor
+            .fromJson(json['orderDescriptor'] as Map<String, dynamic>)
+    ..status = json['status'] as String
+    ..applicantId = json['applicantId'] as String
+    ..applicantExternalUserId = json['applicantExternalUserId'] as String;
+}
+
+Map<String, dynamic>
+    _$Documents$DFSQuery$Documents$Items$HRRequestDocListItemToJson(
+            Documents$DFSQuery$Documents$Items$HRRequestDocListItem instance) =>
+        <String, dynamic>{
+          'documentType': _$DocumentTypeEnumMap[instance.documentType],
+          'type': _$DocumentTypeEnumMap[instance.type],
+          'id': instance.id,
+          'title': instance.title,
+          'whenCreated': instance.whenCreated?.toIso8601String(),
+          'whenEdited': instance.whenEdited?.toIso8601String(),
+          'documentStatus':
+              _$DocumentStatusEnumTypeEnumMap[instance.documentStatus],
+          'documentStatusDescription': instance.documentStatusDescription,
+          'authorName': instance.authorName,
+          'compileTitle': instance.compileTitle,
+          'responderId': instance.responderId,
+          'authorId': instance.authorId,
+          'editorId': instance.editorId,
+          'controlCardsCount': instance.controlCardsCount,
+          'controlCardsRemovedCount': instance.controlCardsRemovedCount,
+          'scanCopy': instance.scanCopy,
+          'isPublished': instance.isPublished,
+          'publisherId': instance.publisherId,
+          'whenPublished': instance.whenPublished?.toIso8601String(),
+          '__typename': instance.$$typename,
+          'addressee': instance.addressee,
+          'addresseeName': instance.addresseeName,
+          'applicant': instance.applicant?.toJson(),
+          'orderDescriptor': instance.orderDescriptor?.toJson(),
+          'status': instance.status,
+          'applicantId': instance.applicantId,
+          'applicantExternalUserId': instance.applicantExternalUserId,
+        };
+
+Documents$DFSQuery$Documents$Items$GenericRequestListItem$Applicant
+    _$Documents$DFSQuery$Documents$Items$GenericRequestListItem$ApplicantFromJson(
+        Map<String, dynamic> json) {
+  return Documents$DFSQuery$Documents$Items$GenericRequestListItem$Applicant()
+    ..documentType = _$enumDecodeNullable(
+        _$DocumentTypeEnumMap, json['documentType'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..type = _$enumDecodeNullable(_$DocumentTypeEnumMap, json['type'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..id = json['id'] as String
+    ..title = json['title'] as String
+    ..whenCreated = json['whenCreated'] == null
+        ? null
+        : DateTime.parse(json['whenCreated'] as String)
+    ..whenEdited = json['whenEdited'] == null
+        ? null
+        : DateTime.parse(json['whenEdited'] as String)
+    ..authorName = json['authorName'] as String
+    ..compileTitle = json['compileTitle'] as String
+    ..authorId = json['authorId'] as String
+    ..editorId = json['editorId'] as String
+    ..controlCardsCount = json['controlCardsCount'] as int
+    ..controlCardsRemovedCount = json['controlCardsRemovedCount'] as int
+    ..isPublished = json['isPublished'] as bool
+    ..publisherId = json['publisherId'] as String
+    ..whenPublished = json['whenPublished'] == null
+        ? null
+        : DateTime.parse(json['whenPublished'] as String)
+    ..$$typename = json['__typename'] as String
+    ..addressee = json['addressee'] as String
+    ..addresseeName = json['addresseeName'] as String
+    ..applicant = json['applicant'] == null
+        ? null
+        : Documents$DFSQuery$Documents$Items$GenericRequestListItem$Applicant
+            .fromJson(json['applicant'] as Map<String, dynamic>)
+    ..categoryId = json['categoryId'] as String
+    ..responderId = json['responderId'] as String
+    ..curatorId = json['curatorId'] as String
+    ..documentStatus = _$enumDecodeNullable(
+        _$DocumentStatusEnumTypeEnumMap, json['documentStatus'],
+        unknownValue: DocumentStatusEnumType.artemisUnknown)
+    ..documentStatusDescription = json['documentStatusDescription'] as String
+    ..scanCopy = json['scanCopy'] as String
+    ..firstName = json['firstName'] as String
+    ..lastName = json['lastName'] as String
+    ..patronymic = json['patronymic'] as String
+    ..personalIdentifier = json['personalIdentifier'] as String;
+}
+
+Map<String, dynamic>
+    _$Documents$DFSQuery$Documents$Items$GenericRequestListItem$ApplicantToJson(
+            Documents$DFSQuery$Documents$Items$GenericRequestListItem$Applicant
+                instance) =>
+        <String, dynamic>{
+          'documentType': _$DocumentTypeEnumMap[instance.documentType],
+          'type': _$DocumentTypeEnumMap[instance.type],
+          'id': instance.id,
+          'title': instance.title,
+          'whenCreated': instance.whenCreated?.toIso8601String(),
+          'whenEdited': instance.whenEdited?.toIso8601String(),
+          'authorName': instance.authorName,
+          'compileTitle': instance.compileTitle,
+          'authorId': instance.authorId,
+          'editorId': instance.editorId,
+          'controlCardsCount': instance.controlCardsCount,
+          'controlCardsRemovedCount': instance.controlCardsRemovedCount,
+          'isPublished': instance.isPublished,
+          'publisherId': instance.publisherId,
+          'whenPublished': instance.whenPublished?.toIso8601String(),
+          '__typename': instance.$$typename,
+          'addressee': instance.addressee,
+          'addresseeName': instance.addresseeName,
+          'applicant': instance.applicant?.toJson(),
+          'categoryId': instance.categoryId,
+          'responderId': instance.responderId,
+          'curatorId': instance.curatorId,
+          'documentStatus':
+              _$DocumentStatusEnumTypeEnumMap[instance.documentStatus],
+          'documentStatusDescription': instance.documentStatusDescription,
+          'scanCopy': instance.scanCopy,
+          'firstName': instance.firstName,
+          'lastName': instance.lastName,
+          'patronymic': instance.patronymic,
+          'personalIdentifier': instance.personalIdentifier,
+        };
+
+Documents$DFSQuery$Documents$Items$GenericRequestListItem
+    _$Documents$DFSQuery$Documents$Items$GenericRequestListItemFromJson(
+        Map<String, dynamic> json) {
+  return Documents$DFSQuery$Documents$Items$GenericRequestListItem()
+    ..documentType = _$enumDecodeNullable(
+        _$DocumentTypeEnumMap, json['documentType'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..type = _$enumDecodeNullable(_$DocumentTypeEnumMap, json['type'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..id = json['id'] as String
+    ..title = json['title'] as String
+    ..whenCreated = json['whenCreated'] == null
+        ? null
+        : DateTime.parse(json['whenCreated'] as String)
+    ..whenEdited = json['whenEdited'] == null
+        ? null
+        : DateTime.parse(json['whenEdited'] as String)
+    ..authorName = json['authorName'] as String
+    ..compileTitle = json['compileTitle'] as String
+    ..authorId = json['authorId'] as String
+    ..editorId = json['editorId'] as String
+    ..controlCardsCount = json['controlCardsCount'] as int
+    ..controlCardsRemovedCount = json['controlCardsRemovedCount'] as int
+    ..isPublished = json['isPublished'] as bool
+    ..publisherId = json['publisherId'] as String
+    ..whenPublished = json['whenPublished'] == null
+        ? null
+        : DateTime.parse(json['whenPublished'] as String)
+    ..$$typename = json['__typename'] as String
+    ..addressee = json['addressee'] as String
+    ..addresseeName = json['addresseeName'] as String
+    ..applicant = json['applicant'] == null
+        ? null
+        : Documents$DFSQuery$Documents$Items$GenericRequestListItem$Applicant
+            .fromJson(json['applicant'] as Map<String, dynamic>)
+    ..categoryId = json['categoryId'] as String
+    ..responderId = json['responderId'] as String
+    ..curatorId = json['curatorId'] as String
+    ..documentStatus = _$enumDecodeNullable(
+        _$DocumentStatusEnumTypeEnumMap, json['documentStatus'],
+        unknownValue: DocumentStatusEnumType.artemisUnknown)
+    ..documentStatusDescription = json['documentStatusDescription'] as String
+    ..scanCopy = json['scanCopy'] as String;
+}
+
+Map<String,
+    dynamic> _$Documents$DFSQuery$Documents$Items$GenericRequestListItemToJson(
+        Documents$DFSQuery$Documents$Items$GenericRequestListItem instance) =>
     <String, dynamic>{
+      'documentType': _$DocumentTypeEnumMap[instance.documentType],
+      'type': _$DocumentTypeEnumMap[instance.type],
       'id': instance.id,
       'title': instance.title,
       'whenCreated': instance.whenCreated?.toIso8601String(),
       'whenEdited': instance.whenEdited?.toIso8601String(),
+      'authorName': instance.authorName,
+      'compileTitle': instance.compileTitle,
+      'authorId': instance.authorId,
+      'editorId': instance.editorId,
+      'controlCardsCount': instance.controlCardsCount,
+      'controlCardsRemovedCount': instance.controlCardsRemovedCount,
+      'isPublished': instance.isPublished,
+      'publisherId': instance.publisherId,
+      'whenPublished': instance.whenPublished?.toIso8601String(),
+      '__typename': instance.$$typename,
+      'addressee': instance.addressee,
+      'addresseeName': instance.addresseeName,
+      'applicant': instance.applicant?.toJson(),
+      'categoryId': instance.categoryId,
+      'responderId': instance.responderId,
+      'curatorId': instance.curatorId,
+      'documentStatus':
+          _$DocumentStatusEnumTypeEnumMap[instance.documentStatus],
+      'documentStatusDescription': instance.documentStatusDescription,
+      'scanCopy': instance.scanCopy,
+    };
+
+Documents$DFSQuery$Documents$Items$IncomingDocListItem
+    _$Documents$DFSQuery$Documents$Items$IncomingDocListItemFromJson(
+        Map<String, dynamic> json) {
+  return Documents$DFSQuery$Documents$Items$IncomingDocListItem()
+    ..documentType = _$enumDecodeNullable(
+        _$DocumentTypeEnumMap, json['documentType'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..type = _$enumDecodeNullable(_$DocumentTypeEnumMap, json['type'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..id = json['id'] as String
+    ..title = json['title'] as String
+    ..whenCreated = json['whenCreated'] == null
+        ? null
+        : DateTime.parse(json['whenCreated'] as String)
+    ..whenEdited = json['whenEdited'] == null
+        ? null
+        : DateTime.parse(json['whenEdited'] as String)
+    ..documentStatus = _$enumDecodeNullable(
+        _$DocumentStatusEnumTypeEnumMap, json['documentStatus'],
+        unknownValue: DocumentStatusEnumType.artemisUnknown)
+    ..documentStatusDescription = json['documentStatusDescription'] as String
+    ..authorName = json['authorName'] as String
+    ..compileTitle = json['compileTitle'] as String
+    ..responderId = json['responderId'] as String
+    ..authorId = json['authorId'] as String
+    ..editorId = json['editorId'] as String
+    ..controlCardsCount = json['controlCardsCount'] as int
+    ..controlCardsRemovedCount = json['controlCardsRemovedCount'] as int
+    ..scanCopy = json['scanCopy'] as String
+    ..isPublished = json['isPublished'] as bool
+    ..publisherId = json['publisherId'] as String
+    ..whenPublished = json['whenPublished'] == null
+        ? null
+        : DateTime.parse(json['whenPublished'] as String)
+    ..$$typename = json['__typename'] as String
+    ..incomingDocAddresseeId = (json['incomingDocAddresseeId'] as List)
+        ?.map((e) => e as String)
+        ?.toList()
+    ..sender = json['sender'] as String
+    ..incomingDocSenderId = json['incomingDocSenderId'] as String
+    ..senderOutgoingNumber = json['senderOutgoingNumber'] as String
+    ..documentDate = json['documentDate'] == null
+        ? null
+        : DateTime.parse(json['documentDate'] as String)
+    ..registrationDate = json['registrationDate'] == null
+        ? null
+        : DateTime.parse(json['registrationDate'] as String)
+    ..registrationNumber = json['registrationNumber'] as String
+    ..registrationAuthorId = json['registrationAuthorId'] as String
+    ..actor = json['actor'] as String;
+}
+
+Map<String, dynamic>
+    _$Documents$DFSQuery$Documents$Items$IncomingDocListItemToJson(
+            Documents$DFSQuery$Documents$Items$IncomingDocListItem instance) =>
+        <String, dynamic>{
+          'documentType': _$DocumentTypeEnumMap[instance.documentType],
+          'type': _$DocumentTypeEnumMap[instance.type],
+          'id': instance.id,
+          'title': instance.title,
+          'whenCreated': instance.whenCreated?.toIso8601String(),
+          'whenEdited': instance.whenEdited?.toIso8601String(),
+          'documentStatus':
+              _$DocumentStatusEnumTypeEnumMap[instance.documentStatus],
+          'documentStatusDescription': instance.documentStatusDescription,
+          'authorName': instance.authorName,
+          'compileTitle': instance.compileTitle,
+          'responderId': instance.responderId,
+          'authorId': instance.authorId,
+          'editorId': instance.editorId,
+          'controlCardsCount': instance.controlCardsCount,
+          'controlCardsRemovedCount': instance.controlCardsRemovedCount,
+          'scanCopy': instance.scanCopy,
+          'isPublished': instance.isPublished,
+          'publisherId': instance.publisherId,
+          'whenPublished': instance.whenPublished?.toIso8601String(),
+          '__typename': instance.$$typename,
+          'incomingDocAddresseeId': instance.incomingDocAddresseeId,
+          'sender': instance.sender,
+          'incomingDocSenderId': instance.incomingDocSenderId,
+          'senderOutgoingNumber': instance.senderOutgoingNumber,
+          'documentDate': instance.documentDate?.toIso8601String(),
+          'registrationDate': instance.registrationDate?.toIso8601String(),
+          'registrationNumber': instance.registrationNumber,
+          'registrationAuthorId': instance.registrationAuthorId,
+          'actor': instance.actor,
+        };
+
+Documents$DFSQuery$Documents$Items$LetterListItem
+    _$Documents$DFSQuery$Documents$Items$LetterListItemFromJson(
+        Map<String, dynamic> json) {
+  return Documents$DFSQuery$Documents$Items$LetterListItem()
+    ..documentType = _$enumDecodeNullable(
+        _$DocumentTypeEnumMap, json['documentType'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..type = _$enumDecodeNullable(_$DocumentTypeEnumMap, json['type'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..id = json['id'] as String
+    ..title = json['title'] as String
+    ..whenCreated = json['whenCreated'] == null
+        ? null
+        : DateTime.parse(json['whenCreated'] as String)
+    ..whenEdited = json['whenEdited'] == null
+        ? null
+        : DateTime.parse(json['whenEdited'] as String)
+    ..documentStatus = _$enumDecodeNullable(
+        _$DocumentStatusEnumTypeEnumMap, json['documentStatus'],
+        unknownValue: DocumentStatusEnumType.artemisUnknown)
+    ..documentStatusDescription = json['documentStatusDescription'] as String
+    ..authorName = json['authorName'] as String
+    ..compileTitle = json['compileTitle'] as String
+    ..responderId = json['responderId'] as String
+    ..authorId = json['authorId'] as String
+    ..editorId = json['editorId'] as String
+    ..controlCardsCount = json['controlCardsCount'] as int
+    ..controlCardsRemovedCount = json['controlCardsRemovedCount'] as int
+    ..scanCopy = json['scanCopy'] as String
+    ..isPublished = json['isPublished'] as bool
+    ..publisherId = json['publisherId'] as String
+    ..whenPublished = json['whenPublished'] == null
+        ? null
+        : DateTime.parse(json['whenPublished'] as String)
+    ..$$typename = json['__typename'] as String
+    ..head = json['head'] as String
+    ..letterAddresseeId =
+        (json['letterAddresseeId'] as List)?.map((e) => e as String)?.toList()
+    ..senderId = json['senderId'] as String
+    ..actorId = json['actorId'] as String
+    ..isRegistered = json['isRegistered'] as bool
+    ..registrationDate = json['registrationDate'] == null
+        ? null
+        : DateTime.parse(json['registrationDate'] as String)
+    ..registrationNumber = json['registrationNumber'] as String
+    ..status = json['status'] as String;
+}
+
+Map<String, dynamic> _$Documents$DFSQuery$Documents$Items$LetterListItemToJson(
+        Documents$DFSQuery$Documents$Items$LetterListItem instance) =>
+    <String, dynamic>{
+      'documentType': _$DocumentTypeEnumMap[instance.documentType],
       'type': _$DocumentTypeEnumMap[instance.type],
+      'id': instance.id,
+      'title': instance.title,
+      'whenCreated': instance.whenCreated?.toIso8601String(),
+      'whenEdited': instance.whenEdited?.toIso8601String(),
       'documentStatus':
           _$DocumentStatusEnumTypeEnumMap[instance.documentStatus],
       'documentStatusDescription': instance.documentStatusDescription,
@@ -516,7 +1129,518 @@ Map<String, dynamic> _$Documents$DFSQuery$Documents$ItemsToJson(
       'isPublished': instance.isPublished,
       'publisherId': instance.publisherId,
       'whenPublished': instance.whenPublished?.toIso8601String(),
+      '__typename': instance.$$typename,
+      'head': instance.head,
+      'letterAddresseeId': instance.letterAddresseeId,
+      'senderId': instance.senderId,
+      'actorId': instance.actorId,
+      'isRegistered': instance.isRegistered,
+      'registrationDate': instance.registrationDate?.toIso8601String(),
+      'registrationNumber': instance.registrationNumber,
+      'status': instance.status,
+    };
+
+Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItem$RegistrationBook
+    _$Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItem$RegistrationBookFromJson(
+        Map<String, dynamic> json) {
+  return Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItem$RegistrationBook()
+    ..documentType = _$enumDecodeNullable(
+        _$DocumentTypeEnumMap, json['documentType'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..type = _$enumDecodeNullable(_$DocumentTypeEnumMap, json['type'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..id = json['id'] as String
+    ..title = json['title'] as String
+    ..whenCreated = json['whenCreated'] == null
+        ? null
+        : DateTime.parse(json['whenCreated'] as String)
+    ..whenEdited = json['whenEdited'] == null
+        ? null
+        : DateTime.parse(json['whenEdited'] as String)
+    ..documentStatus = _$enumDecodeNullable(
+        _$DocumentStatusEnumTypeEnumMap, json['documentStatus'],
+        unknownValue: DocumentStatusEnumType.artemisUnknown)
+    ..documentStatusDescription = json['documentStatusDescription'] as String
+    ..authorName = json['authorName'] as String
+    ..compileTitle = json['compileTitle'] as String
+    ..responderId = json['responderId'] as String
+    ..editorId = json['editorId'] as String
+    ..controlCardsCount = json['controlCardsCount'] as int
+    ..controlCardsRemovedCount = json['controlCardsRemovedCount'] as int
+    ..scanCopy = json['scanCopy'] as String
+    ..isPublished = json['isPublished'] as bool
+    ..publisherId = json['publisherId'] as String
+    ..whenPublished = json['whenPublished'] == null
+        ? null
+        : DateTime.parse(json['whenPublished'] as String)
+    ..$$typename = json['__typename'] as String
+    ..placeOfRegistrationValue = json['placeOfRegistrationValue'] as String
+    ..placeOfRegistrationKey = json['placeOfRegistrationKey'] as String
+    ..validStatusValue = json['validStatusValue'] as String
+    ..isRegistered = json['isRegistered'] as bool
+    ..registrationBookItem = json['registrationBookItem'] == null
+        ? null
+        : Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItem
+            .fromJson(json['registrationBookItem'] as Map<String, dynamic>)
+    ..signerId = json['signerId'] as String
+    ..actorId = json['actorId'] as String
+    ..overseerId = json['overseerId'] as String
+    ..authorId = json['authorId'] as String
+    ..date =
+        json['date'] == null ? null : DateTime.parse(json['date'] as String)
+    ..documentId = json['documentId'] as String
+    ..isPermanent = json['isPermanent'] as bool
+    ..number = json['number'] as int
+    ..registrationBookId = json['registrationBookId'] as String
+    ..registrationBook = json['registrationBook'] == null
+        ? null
+        : Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItem$RegistrationBook
+            .fromJson(json['registrationBook'] as Map<String, dynamic>)
+    ..name = json['name'] as String;
+}
+
+Map<String, dynamic>
+    _$Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItem$RegistrationBookToJson(
+            Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItem$RegistrationBook
+                instance) =>
+        <String, dynamic>{
+          'documentType': _$DocumentTypeEnumMap[instance.documentType],
+          'type': _$DocumentTypeEnumMap[instance.type],
+          'id': instance.id,
+          'title': instance.title,
+          'whenCreated': instance.whenCreated?.toIso8601String(),
+          'whenEdited': instance.whenEdited?.toIso8601String(),
+          'documentStatus':
+              _$DocumentStatusEnumTypeEnumMap[instance.documentStatus],
+          'documentStatusDescription': instance.documentStatusDescription,
+          'authorName': instance.authorName,
+          'compileTitle': instance.compileTitle,
+          'responderId': instance.responderId,
+          'editorId': instance.editorId,
+          'controlCardsCount': instance.controlCardsCount,
+          'controlCardsRemovedCount': instance.controlCardsRemovedCount,
+          'scanCopy': instance.scanCopy,
+          'isPublished': instance.isPublished,
+          'publisherId': instance.publisherId,
+          'whenPublished': instance.whenPublished?.toIso8601String(),
+          '__typename': instance.$$typename,
+          'placeOfRegistrationValue': instance.placeOfRegistrationValue,
+          'placeOfRegistrationKey': instance.placeOfRegistrationKey,
+          'validStatusValue': instance.validStatusValue,
+          'isRegistered': instance.isRegistered,
+          'registrationBookItem': instance.registrationBookItem?.toJson(),
+          'signerId': instance.signerId,
+          'actorId': instance.actorId,
+          'overseerId': instance.overseerId,
+          'authorId': instance.authorId,
+          'date': instance.date?.toIso8601String(),
+          'documentId': instance.documentId,
+          'isPermanent': instance.isPermanent,
+          'number': instance.number,
+          'registrationBookId': instance.registrationBookId,
+          'registrationBook': instance.registrationBook?.toJson(),
+          'name': instance.name,
+        };
+
+Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItem
+    _$Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItemFromJson(
+        Map<String, dynamic> json) {
+  return Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItem()
+    ..documentType = _$enumDecodeNullable(
+        _$DocumentTypeEnumMap, json['documentType'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..type = _$enumDecodeNullable(_$DocumentTypeEnumMap, json['type'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..id = json['id'] as String
+    ..title = json['title'] as String
+    ..whenCreated = json['whenCreated'] == null
+        ? null
+        : DateTime.parse(json['whenCreated'] as String)
+    ..whenEdited = json['whenEdited'] == null
+        ? null
+        : DateTime.parse(json['whenEdited'] as String)
+    ..documentStatus = _$enumDecodeNullable(
+        _$DocumentStatusEnumTypeEnumMap, json['documentStatus'],
+        unknownValue: DocumentStatusEnumType.artemisUnknown)
+    ..documentStatusDescription = json['documentStatusDescription'] as String
+    ..authorName = json['authorName'] as String
+    ..compileTitle = json['compileTitle'] as String
+    ..responderId = json['responderId'] as String
+    ..editorId = json['editorId'] as String
+    ..controlCardsCount = json['controlCardsCount'] as int
+    ..controlCardsRemovedCount = json['controlCardsRemovedCount'] as int
+    ..scanCopy = json['scanCopy'] as String
+    ..isPublished = json['isPublished'] as bool
+    ..publisherId = json['publisherId'] as String
+    ..whenPublished = json['whenPublished'] == null
+        ? null
+        : DateTime.parse(json['whenPublished'] as String)
+    ..$$typename = json['__typename'] as String
+    ..placeOfRegistrationValue = json['placeOfRegistrationValue'] as String
+    ..placeOfRegistrationKey = json['placeOfRegistrationKey'] as String
+    ..validStatusValue = json['validStatusValue'] as String
+    ..isRegistered = json['isRegistered'] as bool
+    ..registrationBookItem = json['registrationBookItem'] == null
+        ? null
+        : Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItem
+            .fromJson(json['registrationBookItem'] as Map<String, dynamic>)
+    ..signerId = json['signerId'] as String
+    ..actorId = json['actorId'] as String
+    ..overseerId = json['overseerId'] as String
+    ..authorId = json['authorId'] as String
+    ..date =
+        json['date'] == null ? null : DateTime.parse(json['date'] as String)
+    ..documentId = json['documentId'] as String
+    ..isPermanent = json['isPermanent'] as bool
+    ..number = json['number'] as int
+    ..registrationBookId = json['registrationBookId'] as String
+    ..registrationBook = json['registrationBook'] == null
+        ? null
+        : Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItem$RegistrationBook
+            .fromJson(json['registrationBook'] as Map<String, dynamic>);
+}
+
+Map<String, dynamic>
+    _$Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItemToJson(
+            Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItem
+                instance) =>
+        <String, dynamic>{
+          'documentType': _$DocumentTypeEnumMap[instance.documentType],
+          'type': _$DocumentTypeEnumMap[instance.type],
+          'id': instance.id,
+          'title': instance.title,
+          'whenCreated': instance.whenCreated?.toIso8601String(),
+          'whenEdited': instance.whenEdited?.toIso8601String(),
+          'documentStatus':
+              _$DocumentStatusEnumTypeEnumMap[instance.documentStatus],
+          'documentStatusDescription': instance.documentStatusDescription,
+          'authorName': instance.authorName,
+          'compileTitle': instance.compileTitle,
+          'responderId': instance.responderId,
+          'editorId': instance.editorId,
+          'controlCardsCount': instance.controlCardsCount,
+          'controlCardsRemovedCount': instance.controlCardsRemovedCount,
+          'scanCopy': instance.scanCopy,
+          'isPublished': instance.isPublished,
+          'publisherId': instance.publisherId,
+          'whenPublished': instance.whenPublished?.toIso8601String(),
+          '__typename': instance.$$typename,
+          'placeOfRegistrationValue': instance.placeOfRegistrationValue,
+          'placeOfRegistrationKey': instance.placeOfRegistrationKey,
+          'validStatusValue': instance.validStatusValue,
+          'isRegistered': instance.isRegistered,
+          'registrationBookItem': instance.registrationBookItem?.toJson(),
+          'signerId': instance.signerId,
+          'actorId': instance.actorId,
+          'overseerId': instance.overseerId,
+          'authorId': instance.authorId,
+          'date': instance.date?.toIso8601String(),
+          'documentId': instance.documentId,
+          'isPermanent': instance.isPermanent,
+          'number': instance.number,
+          'registrationBookId': instance.registrationBookId,
+          'registrationBook': instance.registrationBook?.toJson(),
+        };
+
+Documents$DFSQuery$Documents$Items$LNAListItem
+    _$Documents$DFSQuery$Documents$Items$LNAListItemFromJson(
+        Map<String, dynamic> json) {
+  return Documents$DFSQuery$Documents$Items$LNAListItem()
+    ..documentType = _$enumDecodeNullable(
+        _$DocumentTypeEnumMap, json['documentType'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..type = _$enumDecodeNullable(_$DocumentTypeEnumMap, json['type'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..id = json['id'] as String
+    ..title = json['title'] as String
+    ..whenCreated = json['whenCreated'] == null
+        ? null
+        : DateTime.parse(json['whenCreated'] as String)
+    ..whenEdited = json['whenEdited'] == null
+        ? null
+        : DateTime.parse(json['whenEdited'] as String)
+    ..documentStatus = _$enumDecodeNullable(
+        _$DocumentStatusEnumTypeEnumMap, json['documentStatus'],
+        unknownValue: DocumentStatusEnumType.artemisUnknown)
+    ..documentStatusDescription = json['documentStatusDescription'] as String
+    ..authorName = json['authorName'] as String
+    ..compileTitle = json['compileTitle'] as String
+    ..responderId = json['responderId'] as String
+    ..authorId = json['authorId'] as String
+    ..editorId = json['editorId'] as String
+    ..controlCardsCount = json['controlCardsCount'] as int
+    ..controlCardsRemovedCount = json['controlCardsRemovedCount'] as int
+    ..scanCopy = json['scanCopy'] as String
+    ..isPublished = json['isPublished'] as bool
+    ..publisherId = json['publisherId'] as String
+    ..whenPublished = json['whenPublished'] == null
+        ? null
+        : DateTime.parse(json['whenPublished'] as String)
+    ..$$typename = json['__typename'] as String
+    ..placeOfRegistrationValue = json['placeOfRegistrationValue'] as String
+    ..placeOfRegistrationKey = json['placeOfRegistrationKey'] as String
+    ..validStatusValue = json['validStatusValue'] as String
+    ..isRegistered = json['isRegistered'] as bool
+    ..registrationBookItem = json['registrationBookItem'] == null
+        ? null
+        : Documents$DFSQuery$Documents$Items$LNAListItem$RegistrationBookItem
+            .fromJson(json['registrationBookItem'] as Map<String, dynamic>)
+    ..signerId = json['signerId'] as String
+    ..actorId = json['actorId'] as String
+    ..overseerId = json['overseerId'] as String;
+}
+
+Map<String, dynamic> _$Documents$DFSQuery$Documents$Items$LNAListItemToJson(
+        Documents$DFSQuery$Documents$Items$LNAListItem instance) =>
+    <String, dynamic>{
       'documentType': _$DocumentTypeEnumMap[instance.documentType],
+      'type': _$DocumentTypeEnumMap[instance.type],
+      'id': instance.id,
+      'title': instance.title,
+      'whenCreated': instance.whenCreated?.toIso8601String(),
+      'whenEdited': instance.whenEdited?.toIso8601String(),
+      'documentStatus':
+          _$DocumentStatusEnumTypeEnumMap[instance.documentStatus],
+      'documentStatusDescription': instance.documentStatusDescription,
+      'authorName': instance.authorName,
+      'compileTitle': instance.compileTitle,
+      'responderId': instance.responderId,
+      'authorId': instance.authorId,
+      'editorId': instance.editorId,
+      'controlCardsCount': instance.controlCardsCount,
+      'controlCardsRemovedCount': instance.controlCardsRemovedCount,
+      'scanCopy': instance.scanCopy,
+      'isPublished': instance.isPublished,
+      'publisherId': instance.publisherId,
+      'whenPublished': instance.whenPublished?.toIso8601String(),
+      '__typename': instance.$$typename,
+      'placeOfRegistrationValue': instance.placeOfRegistrationValue,
+      'placeOfRegistrationKey': instance.placeOfRegistrationKey,
+      'validStatusValue': instance.validStatusValue,
+      'isRegistered': instance.isRegistered,
+      'registrationBookItem': instance.registrationBookItem?.toJson(),
+      'signerId': instance.signerId,
+      'actorId': instance.actorId,
+      'overseerId': instance.overseerId,
+    };
+
+Documents$DFSQuery$Documents$Items$OutgoingDocListItem
+    _$Documents$DFSQuery$Documents$Items$OutgoingDocListItemFromJson(
+        Map<String, dynamic> json) {
+  return Documents$DFSQuery$Documents$Items$OutgoingDocListItem()
+    ..documentType = _$enumDecodeNullable(
+        _$DocumentTypeEnumMap, json['documentType'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..type = _$enumDecodeNullable(_$DocumentTypeEnumMap, json['type'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..id = json['id'] as String
+    ..title = json['title'] as String
+    ..whenCreated = json['whenCreated'] == null
+        ? null
+        : DateTime.parse(json['whenCreated'] as String)
+    ..whenEdited = json['whenEdited'] == null
+        ? null
+        : DateTime.parse(json['whenEdited'] as String)
+    ..documentStatus = _$enumDecodeNullable(
+        _$DocumentStatusEnumTypeEnumMap, json['documentStatus'],
+        unknownValue: DocumentStatusEnumType.artemisUnknown)
+    ..documentStatusDescription = json['documentStatusDescription'] as String
+    ..authorName = json['authorName'] as String
+    ..compileTitle = json['compileTitle'] as String
+    ..responderId = json['responderId'] as String
+    ..authorId = json['authorId'] as String
+    ..editorId = json['editorId'] as String
+    ..controlCardsCount = json['controlCardsCount'] as int
+    ..controlCardsRemovedCount = json['controlCardsRemovedCount'] as int
+    ..scanCopy = json['scanCopy'] as String
+    ..isPublished = json['isPublished'] as bool
+    ..publisherId = json['publisherId'] as String
+    ..whenPublished = json['whenPublished'] == null
+        ? null
+        : DateTime.parse(json['whenPublished'] as String)
+    ..$$typename = json['__typename'] as String
+    ..addressees =
+        (json['addressees'] as List)?.map((e) => e as String)?.toList()
+    ..addresseeIds =
+        (json['addresseeIds'] as List)?.map((e) => e as String)?.toList()
+    ..senderId = json['senderId'] as String
+    ..registrationDate = json['registrationDate'] == null
+        ? null
+        : DateTime.parse(json['registrationDate'] as String)
+    ..registrationNumber = json['registrationNumber'] as String
+    ..actorId = json['actorId'] as String;
+}
+
+Map<String, dynamic>
+    _$Documents$DFSQuery$Documents$Items$OutgoingDocListItemToJson(
+            Documents$DFSQuery$Documents$Items$OutgoingDocListItem instance) =>
+        <String, dynamic>{
+          'documentType': _$DocumentTypeEnumMap[instance.documentType],
+          'type': _$DocumentTypeEnumMap[instance.type],
+          'id': instance.id,
+          'title': instance.title,
+          'whenCreated': instance.whenCreated?.toIso8601String(),
+          'whenEdited': instance.whenEdited?.toIso8601String(),
+          'documentStatus':
+              _$DocumentStatusEnumTypeEnumMap[instance.documentStatus],
+          'documentStatusDescription': instance.documentStatusDescription,
+          'authorName': instance.authorName,
+          'compileTitle': instance.compileTitle,
+          'responderId': instance.responderId,
+          'authorId': instance.authorId,
+          'editorId': instance.editorId,
+          'controlCardsCount': instance.controlCardsCount,
+          'controlCardsRemovedCount': instance.controlCardsRemovedCount,
+          'scanCopy': instance.scanCopy,
+          'isPublished': instance.isPublished,
+          'publisherId': instance.publisherId,
+          'whenPublished': instance.whenPublished?.toIso8601String(),
+          '__typename': instance.$$typename,
+          'addressees': instance.addressees,
+          'addresseeIds': instance.addresseeIds,
+          'senderId': instance.senderId,
+          'registrationDate': instance.registrationDate?.toIso8601String(),
+          'registrationNumber': instance.registrationNumber,
+          'actorId': instance.actorId,
+        };
+
+Documents$DFSQuery$Documents$Items$MassMailListItem
+    _$Documents$DFSQuery$Documents$Items$MassMailListItemFromJson(
+        Map<String, dynamic> json) {
+  return Documents$DFSQuery$Documents$Items$MassMailListItem()
+    ..documentType = _$enumDecodeNullable(
+        _$DocumentTypeEnumMap, json['documentType'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..type = _$enumDecodeNullable(_$DocumentTypeEnumMap, json['type'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..id = json['id'] as String
+    ..title = json['title'] as String
+    ..whenCreated = json['whenCreated'] == null
+        ? null
+        : DateTime.parse(json['whenCreated'] as String)
+    ..whenEdited = json['whenEdited'] == null
+        ? null
+        : DateTime.parse(json['whenEdited'] as String)
+    ..documentStatus = _$enumDecodeNullable(
+        _$DocumentStatusEnumTypeEnumMap, json['documentStatus'],
+        unknownValue: DocumentStatusEnumType.artemisUnknown)
+    ..documentStatusDescription = json['documentStatusDescription'] as String
+    ..authorName = json['authorName'] as String
+    ..compileTitle = json['compileTitle'] as String
+    ..responderId = json['responderId'] as String
+    ..authorId = json['authorId'] as String
+    ..editorId = json['editorId'] as String
+    ..controlCardsCount = json['controlCardsCount'] as int
+    ..controlCardsRemovedCount = json['controlCardsRemovedCount'] as int
+    ..scanCopy = json['scanCopy'] as String
+    ..isPublished = json['isPublished'] as bool
+    ..publisherId = json['publisherId'] as String
+    ..whenPublished = json['whenPublished'] == null
+        ? null
+        : DateTime.parse(json['whenPublished'] as String)
+    ..$$typename = json['__typename'] as String
+    ..isSent = json['isSent'] as bool
+    ..senderId = json['senderId'] as String
+    ..sendingDate = json['sendingDate'] == null
+        ? null
+        : DateTime.parse(json['sendingDate'] as String)
+    ..sendingAuthor = json['sendingAuthor'] as String
+    ..mailingGroupsIds =
+        (json['mailingGroupsIds'] as List)?.map((e) => e as String)?.toList();
+}
+
+Map<String, dynamic>
+    _$Documents$DFSQuery$Documents$Items$MassMailListItemToJson(
+            Documents$DFSQuery$Documents$Items$MassMailListItem instance) =>
+        <String, dynamic>{
+          'documentType': _$DocumentTypeEnumMap[instance.documentType],
+          'type': _$DocumentTypeEnumMap[instance.type],
+          'id': instance.id,
+          'title': instance.title,
+          'whenCreated': instance.whenCreated?.toIso8601String(),
+          'whenEdited': instance.whenEdited?.toIso8601String(),
+          'documentStatus':
+              _$DocumentStatusEnumTypeEnumMap[instance.documentStatus],
+          'documentStatusDescription': instance.documentStatusDescription,
+          'authorName': instance.authorName,
+          'compileTitle': instance.compileTitle,
+          'responderId': instance.responderId,
+          'authorId': instance.authorId,
+          'editorId': instance.editorId,
+          'controlCardsCount': instance.controlCardsCount,
+          'controlCardsRemovedCount': instance.controlCardsRemovedCount,
+          'scanCopy': instance.scanCopy,
+          'isPublished': instance.isPublished,
+          'publisherId': instance.publisherId,
+          'whenPublished': instance.whenPublished?.toIso8601String(),
+          '__typename': instance.$$typename,
+          'isSent': instance.isSent,
+          'senderId': instance.senderId,
+          'sendingDate': instance.sendingDate?.toIso8601String(),
+          'sendingAuthor': instance.sendingAuthor,
+          'mailingGroupsIds': instance.mailingGroupsIds,
+        };
+
+Documents$DFSQuery$Documents$Items _$Documents$DFSQuery$Documents$ItemsFromJson(
+    Map<String, dynamic> json) {
+  return Documents$DFSQuery$Documents$Items()
+    ..documentType = _$enumDecodeNullable(
+        _$DocumentTypeEnumMap, json['documentType'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..type = _$enumDecodeNullable(_$DocumentTypeEnumMap, json['type'],
+        unknownValue: DocumentType.artemisUnknown)
+    ..id = json['id'] as String
+    ..title = json['title'] as String
+    ..whenCreated = json['whenCreated'] == null
+        ? null
+        : DateTime.parse(json['whenCreated'] as String)
+    ..whenEdited = json['whenEdited'] == null
+        ? null
+        : DateTime.parse(json['whenEdited'] as String)
+    ..documentStatus = _$enumDecodeNullable(
+        _$DocumentStatusEnumTypeEnumMap, json['documentStatus'],
+        unknownValue: DocumentStatusEnumType.artemisUnknown)
+    ..documentStatusDescription = json['documentStatusDescription'] as String
+    ..authorName = json['authorName'] as String
+    ..compileTitle = json['compileTitle'] as String
+    ..responderId = json['responderId'] as String
+    ..authorId = json['authorId'] as String
+    ..editorId = json['editorId'] as String
+    ..controlCardsCount = json['controlCardsCount'] as int
+    ..controlCardsRemovedCount = json['controlCardsRemovedCount'] as int
+    ..scanCopy = json['scanCopy'] as String
+    ..isPublished = json['isPublished'] as bool
+    ..publisherId = json['publisherId'] as String
+    ..whenPublished = json['whenPublished'] == null
+        ? null
+        : DateTime.parse(json['whenPublished'] as String)
+    ..$$typename = json['__typename'] as String;
+}
+
+Map<String, dynamic> _$Documents$DFSQuery$Documents$ItemsToJson(
+        Documents$DFSQuery$Documents$Items instance) =>
+    <String, dynamic>{
+      'documentType': _$DocumentTypeEnumMap[instance.documentType],
+      'type': _$DocumentTypeEnumMap[instance.type],
+      'id': instance.id,
+      'title': instance.title,
+      'whenCreated': instance.whenCreated?.toIso8601String(),
+      'whenEdited': instance.whenEdited?.toIso8601String(),
+      'documentStatus':
+          _$DocumentStatusEnumTypeEnumMap[instance.documentStatus],
+      'documentStatusDescription': instance.documentStatusDescription,
+      'authorName': instance.authorName,
+      'compileTitle': instance.compileTitle,
+      'responderId': instance.responderId,
+      'authorId': instance.authorId,
+      'editorId': instance.editorId,
+      'controlCardsCount': instance.controlCardsCount,
+      'controlCardsRemovedCount': instance.controlCardsRemovedCount,
+      'scanCopy': instance.scanCopy,
+      'isPublished': instance.isPublished,
+      'publisherId': instance.publisherId,
+      'whenPublished': instance.whenPublished?.toIso8601String(),
+      '__typename': instance.$$typename,
     };
 
 Documents$DFSQuery$Documents _$Documents$DFSQuery$DocumentsFromJson(
@@ -549,484 +1673,6 @@ Documents$DFSQuery _$Documents$DFSQueryFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$Documents$DFSQueryToJson(Documents$DFSQuery instance) =>
     <String, dynamic>{
       'documents': instance.documents?.toJson(),
-    };
-
-DocumentListItemFragmentMixin$ContractListItem
-    _$DocumentListItemFragmentMixin$ContractListItemFromJson(
-        Map<String, dynamic> json) {
-  return DocumentListItemFragmentMixin$ContractListItem()
-    ..contractorId = json['contractorId'] as String
-    ..contractorName = json['contractorName'] as String
-    ..sumAmountWithTax = json['sumAmountWithTax']
-    ..departmentResponder = json['departmentResponder'] as String
-    ..status = json['status'] as String
-    ..registerNumber = json['registerNumber'] as String
-    ..preparationDate = json['preparationDate'] == null
-        ? null
-        : DateTime.parse(json['preparationDate'] as String);
-}
-
-Map<String, dynamic> _$DocumentListItemFragmentMixin$ContractListItemToJson(
-        DocumentListItemFragmentMixin$ContractListItem instance) =>
-    <String, dynamic>{
-      'contractorId': instance.contractorId,
-      'contractorName': instance.contractorName,
-      'sumAmountWithTax': instance.sumAmountWithTax,
-      'departmentResponder': instance.departmentResponder,
-      'status': instance.status,
-      'registerNumber': instance.registerNumber,
-      'preparationDate': instance.preparationDate?.toIso8601String(),
-    };
-
-DocumentListItemFragmentMixin$HRRequestDocListItem$Applicant
-    _$DocumentListItemFragmentMixin$HRRequestDocListItem$ApplicantFromJson(
-        Map<String, dynamic> json) {
-  return DocumentListItemFragmentMixin$HRRequestDocListItem$Applicant()
-    ..addressee = json['addressee'] as String
-    ..addresseeName = json['addresseeName'] as String
-    ..applicant = json['applicant'] == null
-        ? null
-        : DocumentListItemFragmentMixin$HRRequestDocListItem$Applicant.fromJson(
-            json['applicant'] as Map<String, dynamic>)
-    ..orderDescriptor = json['orderDescriptor'] == null
-        ? null
-        : DocumentListItemFragmentMixin$HRRequestDocListItem$OrderDescriptor
-            .fromJson(json['orderDescriptor'] as Map<String, dynamic>)
-    ..status = json['status'] as String
-    ..applicantId = json['applicantId'] as String
-    ..applicantExternalUserId = json['applicantExternalUserId'] as String
-    ..firstName = json['firstName'] as String
-    ..lastName = json['lastName'] as String
-    ..patronymic = json['patronymic'] as String
-    ..personalIdentifier = json['personalIdentifier'] as String;
-}
-
-Map<String, dynamic>
-    _$DocumentListItemFragmentMixin$HRRequestDocListItem$ApplicantToJson(
-            DocumentListItemFragmentMixin$HRRequestDocListItem$Applicant
-                instance) =>
-        <String, dynamic>{
-          'addressee': instance.addressee,
-          'addresseeName': instance.addresseeName,
-          'applicant': instance.applicant?.toJson(),
-          'orderDescriptor': instance.orderDescriptor?.toJson(),
-          'status': instance.status,
-          'applicantId': instance.applicantId,
-          'applicantExternalUserId': instance.applicantExternalUserId,
-          'firstName': instance.firstName,
-          'lastName': instance.lastName,
-          'patronymic': instance.patronymic,
-          'personalIdentifier': instance.personalIdentifier,
-        };
-
-DocumentListItemFragmentMixin$HRRequestDocListItem$OrderDescriptor
-    _$DocumentListItemFragmentMixin$HRRequestDocListItem$OrderDescriptorFromJson(
-        Map<String, dynamic> json) {
-  return DocumentListItemFragmentMixin$HRRequestDocListItem$OrderDescriptor()
-    ..addressee = json['addressee'] as String
-    ..addresseeName = json['addresseeName'] as String
-    ..applicant = json['applicant'] == null
-        ? null
-        : DocumentListItemFragmentMixin$HRRequestDocListItem$Applicant.fromJson(
-            json['applicant'] as Map<String, dynamic>)
-    ..orderDescriptor = json['orderDescriptor'] == null
-        ? null
-        : DocumentListItemFragmentMixin$HRRequestDocListItem$OrderDescriptor
-            .fromJson(json['orderDescriptor'] as Map<String, dynamic>)
-    ..status = json['status'] as String
-    ..applicantId = json['applicantId'] as String
-    ..applicantExternalUserId = json['applicantExternalUserId'] as String
-    ..issuedDate = json['issuedDate'] == null
-        ? null
-        : DateTime.parse(json['issuedDate'] as String)
-    ..number = json['number'] as String;
-}
-
-Map<String, dynamic>
-    _$DocumentListItemFragmentMixin$HRRequestDocListItem$OrderDescriptorToJson(
-            DocumentListItemFragmentMixin$HRRequestDocListItem$OrderDescriptor
-                instance) =>
-        <String, dynamic>{
-          'addressee': instance.addressee,
-          'addresseeName': instance.addresseeName,
-          'applicant': instance.applicant?.toJson(),
-          'orderDescriptor': instance.orderDescriptor?.toJson(),
-          'status': instance.status,
-          'applicantId': instance.applicantId,
-          'applicantExternalUserId': instance.applicantExternalUserId,
-          'issuedDate': instance.issuedDate?.toIso8601String(),
-          'number': instance.number,
-        };
-
-DocumentListItemFragmentMixin$HRRequestDocListItem
-    _$DocumentListItemFragmentMixin$HRRequestDocListItemFromJson(
-        Map<String, dynamic> json) {
-  return DocumentListItemFragmentMixin$HRRequestDocListItem()
-    ..addressee = json['addressee'] as String
-    ..addresseeName = json['addresseeName'] as String
-    ..applicant = json['applicant'] == null
-        ? null
-        : DocumentListItemFragmentMixin$HRRequestDocListItem$Applicant.fromJson(
-            json['applicant'] as Map<String, dynamic>)
-    ..orderDescriptor = json['orderDescriptor'] == null
-        ? null
-        : DocumentListItemFragmentMixin$HRRequestDocListItem$OrderDescriptor
-            .fromJson(json['orderDescriptor'] as Map<String, dynamic>)
-    ..status = json['status'] as String
-    ..applicantId = json['applicantId'] as String
-    ..applicantExternalUserId = json['applicantExternalUserId'] as String;
-}
-
-Map<String, dynamic> _$DocumentListItemFragmentMixin$HRRequestDocListItemToJson(
-        DocumentListItemFragmentMixin$HRRequestDocListItem instance) =>
-    <String, dynamic>{
-      'addressee': instance.addressee,
-      'addresseeName': instance.addresseeName,
-      'applicant': instance.applicant?.toJson(),
-      'orderDescriptor': instance.orderDescriptor?.toJson(),
-      'status': instance.status,
-      'applicantId': instance.applicantId,
-      'applicantExternalUserId': instance.applicantExternalUserId,
-    };
-
-DocumentListItemFragmentMixin$GenericRequestListItem$Applicant
-    _$DocumentListItemFragmentMixin$GenericRequestListItem$ApplicantFromJson(
-        Map<String, dynamic> json) {
-  return DocumentListItemFragmentMixin$GenericRequestListItem$Applicant()
-    ..addressee = json['addressee'] as String
-    ..addresseeName = json['addresseeName'] as String
-    ..applicant = json['applicant'] == null
-        ? null
-        : DocumentListItemFragmentMixin$GenericRequestListItem$Applicant
-            .fromJson(json['applicant'] as Map<String, dynamic>)
-    ..categoryId = json['categoryId'] as String
-    ..responderId = json['responderId'] as String
-    ..curatorId = json['curatorId'] as String
-    ..documentStatus = _$enumDecodeNullable(
-        _$DocumentStatusEnumTypeEnumMap, json['documentStatus'],
-        unknownValue: DocumentStatusEnumType.artemisUnknown)
-    ..documentStatusDescription = json['documentStatusDescription'] as String
-    ..scanCopy = json['scanCopy'] as String
-    ..firstName = json['firstName'] as String
-    ..lastName = json['lastName'] as String
-    ..patronymic = json['patronymic'] as String
-    ..personalIdentifier = json['personalIdentifier'] as String;
-}
-
-Map<String, dynamic>
-    _$DocumentListItemFragmentMixin$GenericRequestListItem$ApplicantToJson(
-            DocumentListItemFragmentMixin$GenericRequestListItem$Applicant
-                instance) =>
-        <String, dynamic>{
-          'addressee': instance.addressee,
-          'addresseeName': instance.addresseeName,
-          'applicant': instance.applicant?.toJson(),
-          'categoryId': instance.categoryId,
-          'responderId': instance.responderId,
-          'curatorId': instance.curatorId,
-          'documentStatus':
-              _$DocumentStatusEnumTypeEnumMap[instance.documentStatus],
-          'documentStatusDescription': instance.documentStatusDescription,
-          'scanCopy': instance.scanCopy,
-          'firstName': instance.firstName,
-          'lastName': instance.lastName,
-          'patronymic': instance.patronymic,
-          'personalIdentifier': instance.personalIdentifier,
-        };
-
-DocumentListItemFragmentMixin$GenericRequestListItem
-    _$DocumentListItemFragmentMixin$GenericRequestListItemFromJson(
-        Map<String, dynamic> json) {
-  return DocumentListItemFragmentMixin$GenericRequestListItem()
-    ..addressee = json['addressee'] as String
-    ..addresseeName = json['addresseeName'] as String
-    ..applicant = json['applicant'] == null
-        ? null
-        : DocumentListItemFragmentMixin$GenericRequestListItem$Applicant
-            .fromJson(json['applicant'] as Map<String, dynamic>)
-    ..categoryId = json['categoryId'] as String
-    ..responderId = json['responderId'] as String
-    ..curatorId = json['curatorId'] as String
-    ..documentStatus = _$enumDecodeNullable(
-        _$DocumentStatusEnumTypeEnumMap, json['documentStatus'],
-        unknownValue: DocumentStatusEnumType.artemisUnknown)
-    ..documentStatusDescription = json['documentStatusDescription'] as String
-    ..scanCopy = json['scanCopy'] as String;
-}
-
-Map<String, dynamic>
-    _$DocumentListItemFragmentMixin$GenericRequestListItemToJson(
-            DocumentListItemFragmentMixin$GenericRequestListItem instance) =>
-        <String, dynamic>{
-          'addressee': instance.addressee,
-          'addresseeName': instance.addresseeName,
-          'applicant': instance.applicant?.toJson(),
-          'categoryId': instance.categoryId,
-          'responderId': instance.responderId,
-          'curatorId': instance.curatorId,
-          'documentStatus':
-              _$DocumentStatusEnumTypeEnumMap[instance.documentStatus],
-          'documentStatusDescription': instance.documentStatusDescription,
-          'scanCopy': instance.scanCopy,
-        };
-
-DocumentListItemFragmentMixin$IncomingDocListItem
-    _$DocumentListItemFragmentMixin$IncomingDocListItemFromJson(
-        Map<String, dynamic> json) {
-  return DocumentListItemFragmentMixin$IncomingDocListItem()
-    ..addresseeIds =
-        (json['addresseeIds'] as List)?.map((e) => e as String)?.toList()
-    ..sender = json['sender'] as String
-    ..senderId = json['senderId'] as String
-    ..senderOutgoingNumber = json['senderOutgoingNumber'] as String
-    ..documentDate = json['documentDate'] == null
-        ? null
-        : DateTime.parse(json['documentDate'] as String)
-    ..registrationDate = json['registrationDate'] == null
-        ? null
-        : DateTime.parse(json['registrationDate'] as String)
-    ..registrationNumber = json['registrationNumber'] as String
-    ..registrationAuthorId = json['registrationAuthorId'] as String
-    ..actor = json['actor'] as String;
-}
-
-Map<String, dynamic> _$DocumentListItemFragmentMixin$IncomingDocListItemToJson(
-        DocumentListItemFragmentMixin$IncomingDocListItem instance) =>
-    <String, dynamic>{
-      'addresseeIds': instance.addresseeIds,
-      'sender': instance.sender,
-      'senderId': instance.senderId,
-      'senderOutgoingNumber': instance.senderOutgoingNumber,
-      'documentDate': instance.documentDate?.toIso8601String(),
-      'registrationDate': instance.registrationDate?.toIso8601String(),
-      'registrationNumber': instance.registrationNumber,
-      'registrationAuthorId': instance.registrationAuthorId,
-      'actor': instance.actor,
-    };
-
-DocumentListItemFragmentMixin$LetterListItem
-    _$DocumentListItemFragmentMixin$LetterListItemFromJson(
-        Map<String, dynamic> json) {
-  return DocumentListItemFragmentMixin$LetterListItem()
-    ..head = json['head'] as String
-    ..addresseeIds =
-        (json['addresseeIds'] as List)?.map((e) => e as String)?.toList()
-    ..senderId = json['senderId'] as String
-    ..actorId = json['actorId'] as String
-    ..isRegistered = json['isRegistered'] as bool
-    ..registrationDate = json['registrationDate'] == null
-        ? null
-        : DateTime.parse(json['registrationDate'] as String)
-    ..registrationNumber = json['registrationNumber'] as String
-    ..status = json['status'] as String;
-}
-
-Map<String, dynamic> _$DocumentListItemFragmentMixin$LetterListItemToJson(
-        DocumentListItemFragmentMixin$LetterListItem instance) =>
-    <String, dynamic>{
-      'head': instance.head,
-      'addresseeIds': instance.addresseeIds,
-      'senderId': instance.senderId,
-      'actorId': instance.actorId,
-      'isRegistered': instance.isRegistered,
-      'registrationDate': instance.registrationDate?.toIso8601String(),
-      'registrationNumber': instance.registrationNumber,
-      'status': instance.status,
-    };
-
-DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItem$RegistrationBook
-    _$DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItem$RegistrationBookFromJson(
-        Map<String, dynamic> json) {
-  return DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItem$RegistrationBook()
-    ..documentType = _$enumDecodeNullable(
-        _$DocumentTypeEnumMap, json['documentType'],
-        unknownValue: DocumentType.artemisUnknown)
-    ..placeOfRegistrationValue = json['placeOfRegistrationValue'] as String
-    ..placeOfRegistrationKey = json['placeOfRegistrationKey'] as String
-    ..validStatusValue = json['validStatusValue'] as String
-    ..isRegistered = json['isRegistered'] as bool
-    ..registrationBookItem = json['registrationBookItem'] == null
-        ? null
-        : DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItem
-            .fromJson(json['registrationBookItem'] as Map<String, dynamic>)
-    ..signerId = json['signerId'] as String
-    ..actorId = json['actorId'] as String
-    ..overseerId = json['overseerId'] as String
-    ..authorId = json['authorId'] as String
-    ..date =
-        json['date'] == null ? null : DateTime.parse(json['date'] as String)
-    ..documentId = json['documentId'] as String
-    ..isPermanent = json['isPermanent'] as bool
-    ..number = json['number'] as int
-    ..registrationBookId = json['registrationBookId'] as String
-    ..registrationBook = json['registrationBook'] == null
-        ? null
-        : DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItem$RegistrationBook
-            .fromJson(json['registrationBook'] as Map<String, dynamic>)
-    ..name = json['name'] as String;
-}
-
-Map<String, dynamic>
-    _$DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItem$RegistrationBookToJson(
-            DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItem$RegistrationBook
-                instance) =>
-        <String, dynamic>{
-          'documentType': _$DocumentTypeEnumMap[instance.documentType],
-          'placeOfRegistrationValue': instance.placeOfRegistrationValue,
-          'placeOfRegistrationKey': instance.placeOfRegistrationKey,
-          'validStatusValue': instance.validStatusValue,
-          'isRegistered': instance.isRegistered,
-          'registrationBookItem': instance.registrationBookItem?.toJson(),
-          'signerId': instance.signerId,
-          'actorId': instance.actorId,
-          'overseerId': instance.overseerId,
-          'authorId': instance.authorId,
-          'date': instance.date?.toIso8601String(),
-          'documentId': instance.documentId,
-          'isPermanent': instance.isPermanent,
-          'number': instance.number,
-          'registrationBookId': instance.registrationBookId,
-          'registrationBook': instance.registrationBook?.toJson(),
-          'name': instance.name,
-        };
-
-DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItem
-    _$DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItemFromJson(
-        Map<String, dynamic> json) {
-  return DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItem()
-    ..documentType = _$enumDecodeNullable(
-        _$DocumentTypeEnumMap, json['documentType'],
-        unknownValue: DocumentType.artemisUnknown)
-    ..placeOfRegistrationValue = json['placeOfRegistrationValue'] as String
-    ..placeOfRegistrationKey = json['placeOfRegistrationKey'] as String
-    ..validStatusValue = json['validStatusValue'] as String
-    ..isRegistered = json['isRegistered'] as bool
-    ..registrationBookItem = json['registrationBookItem'] == null
-        ? null
-        : DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItem
-            .fromJson(json['registrationBookItem'] as Map<String, dynamic>)
-    ..signerId = json['signerId'] as String
-    ..actorId = json['actorId'] as String
-    ..overseerId = json['overseerId'] as String
-    ..authorId = json['authorId'] as String
-    ..date =
-        json['date'] == null ? null : DateTime.parse(json['date'] as String)
-    ..documentId = json['documentId'] as String
-    ..isPermanent = json['isPermanent'] as bool
-    ..number = json['number'] as int
-    ..registrationBookId = json['registrationBookId'] as String
-    ..registrationBook = json['registrationBook'] == null
-        ? null
-        : DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItem$RegistrationBook
-            .fromJson(json['registrationBook'] as Map<String, dynamic>);
-}
-
-Map<String, dynamic>
-    _$DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItemToJson(
-            DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItem
-                instance) =>
-        <String, dynamic>{
-          'documentType': _$DocumentTypeEnumMap[instance.documentType],
-          'placeOfRegistrationValue': instance.placeOfRegistrationValue,
-          'placeOfRegistrationKey': instance.placeOfRegistrationKey,
-          'validStatusValue': instance.validStatusValue,
-          'isRegistered': instance.isRegistered,
-          'registrationBookItem': instance.registrationBookItem?.toJson(),
-          'signerId': instance.signerId,
-          'actorId': instance.actorId,
-          'overseerId': instance.overseerId,
-          'authorId': instance.authorId,
-          'date': instance.date?.toIso8601String(),
-          'documentId': instance.documentId,
-          'isPermanent': instance.isPermanent,
-          'number': instance.number,
-          'registrationBookId': instance.registrationBookId,
-          'registrationBook': instance.registrationBook?.toJson(),
-        };
-
-DocumentListItemFragmentMixin$LNAListItem
-    _$DocumentListItemFragmentMixin$LNAListItemFromJson(
-        Map<String, dynamic> json) {
-  return DocumentListItemFragmentMixin$LNAListItem()
-    ..documentType = _$enumDecodeNullable(
-        _$DocumentTypeEnumMap, json['documentType'],
-        unknownValue: DocumentType.artemisUnknown)
-    ..placeOfRegistrationValue = json['placeOfRegistrationValue'] as String
-    ..placeOfRegistrationKey = json['placeOfRegistrationKey'] as String
-    ..validStatusValue = json['validStatusValue'] as String
-    ..isRegistered = json['isRegistered'] as bool
-    ..registrationBookItem = json['registrationBookItem'] == null
-        ? null
-        : DocumentListItemFragmentMixin$LNAListItem$RegistrationBookItem
-            .fromJson(json['registrationBookItem'] as Map<String, dynamic>)
-    ..signerId = json['signerId'] as String
-    ..actorId = json['actorId'] as String
-    ..overseerId = json['overseerId'] as String;
-}
-
-Map<String, dynamic> _$DocumentListItemFragmentMixin$LNAListItemToJson(
-        DocumentListItemFragmentMixin$LNAListItem instance) =>
-    <String, dynamic>{
-      'documentType': _$DocumentTypeEnumMap[instance.documentType],
-      'placeOfRegistrationValue': instance.placeOfRegistrationValue,
-      'placeOfRegistrationKey': instance.placeOfRegistrationKey,
-      'validStatusValue': instance.validStatusValue,
-      'isRegistered': instance.isRegistered,
-      'registrationBookItem': instance.registrationBookItem?.toJson(),
-      'signerId': instance.signerId,
-      'actorId': instance.actorId,
-      'overseerId': instance.overseerId,
-    };
-
-DocumentListItemFragmentMixin$OutgoingDocListItem
-    _$DocumentListItemFragmentMixin$OutgoingDocListItemFromJson(
-        Map<String, dynamic> json) {
-  return DocumentListItemFragmentMixin$OutgoingDocListItem()
-    ..addressees =
-        (json['addressees'] as List)?.map((e) => e as String)?.toList()
-    ..addresseeIds =
-        (json['addresseeIds'] as List)?.map((e) => e as String)?.toList()
-    ..senderId = json['senderId'] as String
-    ..registrationDate = json['registrationDate'] == null
-        ? null
-        : DateTime.parse(json['registrationDate'] as String)
-    ..registrationNumber = json['registrationNumber'] as String
-    ..actorId = json['actorId'] as String;
-}
-
-Map<String, dynamic> _$DocumentListItemFragmentMixin$OutgoingDocListItemToJson(
-        DocumentListItemFragmentMixin$OutgoingDocListItem instance) =>
-    <String, dynamic>{
-      'addressees': instance.addressees,
-      'addresseeIds': instance.addresseeIds,
-      'senderId': instance.senderId,
-      'registrationDate': instance.registrationDate?.toIso8601String(),
-      'registrationNumber': instance.registrationNumber,
-      'actorId': instance.actorId,
-    };
-
-DocumentListItemFragmentMixin$MassMailListItem
-    _$DocumentListItemFragmentMixin$MassMailListItemFromJson(
-        Map<String, dynamic> json) {
-  return DocumentListItemFragmentMixin$MassMailListItem()
-    ..isSent = json['isSent'] as bool
-    ..senderId = json['senderId'] as String
-    ..sendingDate = json['sendingDate'] == null
-        ? null
-        : DateTime.parse(json['sendingDate'] as String)
-    ..sendingAuthor = json['sendingAuthor'] as String
-    ..mailingGroupsIds =
-        (json['mailingGroupsIds'] as List)?.map((e) => e as String)?.toList();
-}
-
-Map<String, dynamic> _$DocumentListItemFragmentMixin$MassMailListItemToJson(
-        DocumentListItemFragmentMixin$MassMailListItem instance) =>
-    <String, dynamic>{
-      'isSent': instance.isSent,
-      'senderId': instance.senderId,
-      'sendingDate': instance.sendingDate?.toIso8601String(),
-      'sendingAuthor': instance.sendingAuthor,
-      'mailingGroupsIds': instance.mailingGroupsIds,
     };
 
 BaseAttributeSearch _$BaseAttributeSearchFromJson(Map<String, dynamic> json) {

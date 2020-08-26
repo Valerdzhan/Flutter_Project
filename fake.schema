@@ -1594,7 +1594,7 @@ type ContractListItem implements IDocumentListItem {
   """
   Дата составления договора
   """
-  preparationDate: DateTime
+  preparationDate: DateTime @fake(type: date)
 
   """
   Инициатор публикации документа
@@ -1635,6 +1635,7 @@ type ContractListItem implements IDocumentListItem {
   """
   Сумма с НДС
   """
+  
   sumAmountWithTax: Decimal
 
   """
@@ -2755,9 +2756,9 @@ The `DateTimeOffset` scalar type represents a date, time and offset from UTC.
 `DateTimeOffset` expects timestamps to be formatted in accordance with the
 [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) standard.
 """
-scalar DateTimeOffset
+scalar DateTimeOffset @fake(type: date)
 
-scalar Decimal
+scalar Decimal @examples(values: [100.1, 11.2, 43.0])
 
 type DecimalPropertyType implements JournalPropertyInterface {
   """
@@ -4238,7 +4239,7 @@ type DocumentListItemInterfaceCollection {
   """
   Коллекция элементов
   """
-  items: [IDocumentListItem]!
+  items: [IDocumentListItem]! @listLength(min: 10, max:20)
 }
 
 type DocumentMutationAPI {
@@ -6911,7 +6912,7 @@ interface IDocumentListItem {
   """
   Имя автора без дополнительго зарпоса
   """
-  authorName: String
+  authorName: String @fake(type: fullName)
 
   """
   Название
@@ -6956,7 +6957,7 @@ interface IDocumentListItem {
   """
   ИД документа
   """
-  id: DocumentId!
+  id: DocumentId! @fake(type:uuid)
 
   """
   Опубликован ли документ?
@@ -6992,7 +6993,7 @@ interface IDocumentListItem {
   """
   Название
   """
-  title: String!
+  title: String!  @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Создано
@@ -11634,7 +11635,7 @@ type RegistrationBookItem {
   """
   Id документа
   """
-  documentId: DocumentId
+  documentId: DocumentId @fake(type:uuid)
 
   """
   Зарегистрирован
@@ -11644,7 +11645,7 @@ type RegistrationBookItem {
   """
   Регистрационный номер
   """
-  number: ULong
+  number: ULong @fake(type: number)
 
   """
   Журнал регистрации
@@ -11654,7 +11655,7 @@ type RegistrationBookItem {
   """
   Id журнала регистрации
   """
-  registrationBookId: RegistrationBookId
+  registrationBookId: RegistrationBookId @fake(type: uuid)
 }
 
 """

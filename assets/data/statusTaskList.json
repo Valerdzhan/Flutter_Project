@@ -1,582 +1,2309 @@
 {
-    "AgreementTaskStatus": [{
-            "name": "Initial",
-            "description": "Инициализирована"
-        },
-        {
-            "name": "Pending",
-            "description": "В ожидании"
-        },
-        {
-            "name": "InProgress",
-            "description": "Отправлено"
-        },
-        {
-            "name": "Accepted",
-            "description": "Принято в работу"
-        },
-        {
-            "name": "Approved",
-            "description": "Согласовано"
-        },
-        {
-            "name": "Resubmitted",
-            "description": "Отправлено повторно"
-        },
-        {
-            "name": "Rejected",
-            "description": "Отклонено"
-        },
-        {
-            "name": "Final",
-            "description": "Завершено"
-        },
-        {
-            "name": "Canceled",
-            "description": "Отменено"
-        }
-    ],
-    "NormativecontrolTaskStatus": [{
-            "name": "Initial",
-            "description": "Инициализирована"
-        },
-        {
-            "name": "Pending",
-            "description": "В ожидании"
-        },
-        {
-            "name": "InProgress",
-            "description": "Отправлено"
-        },
-        {
-            "name": "Accepted",
-            "description": "Принято в работу"
-        },
-        {
-            "name": "Approved",
-            "description": "Согласовано"
-        },
-        {
-            "name": "Resubmitted",
-            "description": "Отправлено повторно"
-        },
-        {
-            "name": "Rejected",
-            "description": "Отклонено"
-        },
-        {
-            "name": "Final",
-            "description": "Завершено"
-        },
-        {
-            "name": "Canceled",
-            "description": "Отменено"
-        }
-    ],
-
-    "RegistrationTaskStatus": [{
-            "name": "Initial",
-            "description": "Инициализирована"
-        },
-        {
-            "name": "Pending",
-            "description": "В ожидании"
-        },
-        {
-            "name": "InProgress",
-            "description": "Отправлено"
-        },
-        {
-            "name": "Accepted",
-            "description": "Принято в работу"
-        },
-        {
-            "name": "Approved",
-            "description": "Согласовано"
-        },
-        {
-            "name": "Resubmitted",
-            "description": "Отправлено повторно"
-        },
-        {
-            "name": "Rejected",
-            "description": "Отклонено"
-        },
-        {
-            "name": "Final",
-            "description": "Завершено"
-        },
-        {
-            "name": "Canceled",
-            "description": "Отменено"
-        }
-    ],
-    "SigningTaskStatus": [{
-            "name": "Initial",
-            "description": "Инициализирована"
-        },
-        {
-            "name": "Pending",
-            "description": "В ожидании"
-        },
-        {
-            "name": "Accepted",
-            "description": "Принято в работу"
-        },
-        {
-            "name": "InProgress",
-            "description": "Отправлено"
-        },
-        {
-            "name": "Approved",
-            "description": "Подписано"
-        },
-        {
-            "name": "Resubmitted",
-            "description": "Отправлено повторно"
-        },
-        {
-            "name": "Rejected",
-            "description": "Отклонено"
-        },
-        {
-            "name": "Final",
-            "description": "Завершено"
-        },
-        {
-            "name": "Canceled",
-            "description": "Отменено"
-        }
-    ],
-
-    "ApprovalTaskStatus": [{
-            "name": "Initial",
-            "description": "Инициализирована"
-        },
-        {
-            "name": "Pending",
-            "description": "В ожидании"
-        },
-        {
-            "name": "Accepted",
-            "description": "Принято в работу"
-        },
-        {
-            "name": "InProgress",
-            "description": "Отправлено"
-        },
-        {
-            "name": "Resubmitted",
-            "description": "Отправлено повторно"
-        },
-        {
-            "name": "Rejected",
-            "description": "Отклонено"
-        },
-        {
-            "name": "Approved",
-            "description": "Утверждено"
-        },
-        {
-            "name": "Final",
-            "description": "Завершено"
-        },
-        {
-            "name": "Canceled",
-            "description": "Отменено"
-        }
-    ],
-    "ForoutcomingTaskStatus": [
-        {
-            "name": "Initial",
-            "description": "Инициализирована"
-        },
-        {
-            "name": "Pending",
-            "description": "В ожидании"
-        },
-        {
-            "name": "InProgress",
-            "description": "Отправлено"
-        },
-        {
-            "name": "Accepted",
-            "description": "Принято в работу"
-        },
-        {
-            "name": "Resubmitted",
-            "description": "Отправлено повторно"
-        },
-        {
-            "name": "Rejected",
-            "description": "Отклонено"
-        },
-        {
-            "name": "Prepared",
-            "description": "Направлен отчет"
-        },
-        {
-            "name": "Solved",
-            "description": "Выполнено"
-        },
-        {
-            "name": "Final",
-            "description": "Выполнено"
-        },
-        {
-            "name": "Canceled",
-            "description": "Отменено"
-        }
-    ],
-    "ForincomingTaskStatus": [
-        {
-            "name": "Initial",
-            "description": "Инициализирована"
-        },
-        {
-            "name": "Pending",
-            "description": "В ожидании"
-        },
-        {
-            "name": "InProgress",
-            "description": "Отправлено"
-        },
-        {
-            "name": "Accepted",
-            "description": "Принято в работу"
-        },
-        {
-            "name": "Resubmitted",
-            "description": "Отправлено повторно"
-        },
-        {
-            "name": "Rejected",
-            "description": "Отклонено"
-        },
-        {
-            "name": "Prepared",
-            "description": "Направлен отчет"
-        },
-        {
-            "name": "Solved",
-            "description": "Выполнено"
-        },
-        {
-            "name": "Final",
-            "description": "Выполнено"
-        },
-        {
-            "name": "Canceled",
-            "description": "Отменено"
-        }
-    ],
-    "ForperformanceTaskStatus": [{
-            "name": "Initial",
-            "description": "Инициализирована"
-        },
-        {
-            "name": "InProgress",
-            "description": "Отправлено"
-        },
-        {
-            "name": "Accepted",
-            "description": "Принято в работу"
-        },
-        {
-            "name": "Resubmitted",
-            "description": "Отправлено повторно"
-        },
-        {
-            "name": "Rejected",
-            "description": "Отклонено"
-        },
-        {
-            "name": "Prepared",
-            "description": "Направлен отчет"
-        },
-        {
-            "name": "Solved",
-            "description": "Выполнено"
-        },
-        {
-            "name": "Final",
-            "description": "Выполнено"
-        },
-        {
-            "name": "Canceled",
-            "description": "Отменено"
-        }
-    ],
-    "ForconsiderationTaskStatus": [{
-            "name": "Initial",
-            "description": "Инициализирована"
-        },
-        {
-            "name": "InProgress",
-            "description": "Отправлено"
-        },
-        {
-            "name": "Accepted",
-            "description": "Принято в работу"
-        },
-        {
-            "name": "Resubmitted",
-            "description": "Отправлено повторно"
-        },
-        {
-            "name": "Rejected",
-            "description": "Отклонено"
-        },
-        {
-            "name": "Prepared",
-            "description": "Направлен отчет"
-        },
-        {
-            "name": "Solved",
-            "description": "Рассмотрено"
-        },
-        {
-            "name": "Final",
-            "description": "Рассмотрено"
-        },
-        {
-            "name": "Canceled",
-            "description": "Отменено"
-        }
-    ],
-    "ForagreementTaskStatus": [{
-            "name": "Initial",
-            "description": "Инициализирована"
-        },
-        {
-            "name": "InProgress",
-            "description": "Отправлено"
-        },
-        {
-            "name": "Accepted",
-            "description": "Принято в работу"
-        },
-        {
-            "name": "Prepared",
-            "description": "Направлен отчет"
-        },
-        {
-            "name": "Solved",
-            "description": "Согласовано"
-        },
-        {
-            "name": "Final",
-            "description": "Согласовано"
-        },
-        {
-            "name": "Resubmitted",
-            "description": "Отправлено повторно"
-        },
-        {
-            "name": "Rejected",
-            "description": "Отклонено"
-        },
-        {
-            "name": "Canceled",
-            "description": "Отменено"
-        }
-    ],
-    "ForinformationTaskStatus": [{
-            "name": "Initial",
-            "description": "Инициализирована"
-        },
-        {
-            "name": "InProgress",
-            "description": "Отправлено"
-        },
-        {
-            "name": "Accepted",
-            "description": "Принято в работу"
-        },
-        {
-            "name": "Resubmitted",
-            "description": "Отправлено повторно"
-        },
-        {
-            "name": "Rejected",
-            "description": "Отклонено"
-        },
-        {
-            "name": "Prepared",
-            "description": "Направлен отчет"
-        },
-        {
-            "name": "Solved",
-            "description": "Выполнено"
-        },
-        {
-            "name": "Final",
-            "description": "Выполнено"
-        },
-        {
-            "name": "Canceled",
-            "description": "Отменено"
-        }
-    ],
-    "ForinternaluseTaskStatus": [{
-            "name": "Initial",
-            "description": "Инициализирована"
-        },
-        {
-            "name": "Submitted",
-            "description": "Отправлено"
-        },
-        {
-            "name": "InProgress",
-            "description": "Отправлено"
-        },
-        {
-            "name": "Accepted",
-            "description": "Принято в работу"
-        },
-        {
-            "name": "Resubmitted",
-            "description": "Отправлено повторно"
-        },
-        {
-            "name": "Rejected",
-            "description": "Отклонено"
-        },
-        {
-            "name": "Prepared",
-            "description": "Направлен отчет"
-        },
-        {
-            "name": "Solved",
-            "description": "Рассмотрено"
-        },
-        {
-            "name": "Final",
-            "description": "Рассмотрено"
-        },
-        {
-            "name": "Canceled",
-            "description": "Отменено"
-        }
-    ],
-    "ForimplementationTaskStatus": [{
-            "name": "Initial",
-            "description": "Инициализирована"
-        },
-        {
-            "name": "Submitted",
-            "description": "Отправлено"
-        },
-        {
-            "name": "InProgress",
-            "description": "Отправлено"
-        },
-        {
-            "name": "Accepted",
-            "description": "Принято в работу"
-        },
-        {
-            "name": "Resubmitted",
-            "description": "Отправлено повторно"
-        },
-        {
-            "name": "Rejected",
-            "description": "Отклонено"
-        },
-        {
-            "name": "Prepared",
-            "description": "Направлен отчет"
-        },
-        {
-            "name": "Solved",
-            "description": "Выполнено"
-        },
-        {
-            "name": "Final",
-            "description": "Выполнено"
-        },
-        {
-            "name": "Canceled",
-            "description": "Отменено"
-        }
-    ],
-    "ForhrdecisionTaskStatus": [{
-            "name": "Initial",
-            "description": "Инициализирована"
-        },
-        {
-            "name": "Submitted",
-            "description": "Отправлено"
-        },
-        {
-            "name": "InProgress",
-            "description": "Отправлено"
-        },
-        {
-            "name": "Accepted",
-            "description": "Принято в работу"
-        },
-        {
-            "name": "Resubmitted",
-            "description": "Отправлено повторно"
-        },
-        {
-            "name": "Rejected",
-            "description": "Отклонено"
-        },
-        {
-            "name": "Approved",
-            "description": "Согласовано"
-        },
-        {
-            "name": "Final",
-            "description": "Согласовано"
-        },
-        {
-            "name": "Canceled",
-            "description": "Отменено"
-        }
-    ],
-    "ResolutionTaskStatus": [{
-            "name": "Created",
-            "description": "Создана"
-        },
-        {
-            "name": "Initial",
-            "description": "Инициализирована"
-        },
-        {
-            "name": "InProgress",
-            "description": "В работе"
-        },
-        {
-            "name": "Accepted",
-            "description": "Принято в работу"
-        },
-        {
-            "name": "Resubmitted",
-            "description": "Отправлено повторно"
-        },
-        {
-            "name": "Rejected",
-            "description": "Отклонено"
-        },
-        {
-            "name": "Prepared",
-            "description": "Направлен отчет"
-        },
-        {
-            "name": "Solved",
-            "description": "Направлен отчет"
-        },
-        {
-            "name": "Final",
-            "description": "Завершено"
-        },
-        {
-            "name": "Canceled",
-            "description": "Отменено"
-        }
-    ]
-
+    "ActionListType":{
+        "AgreementTaskAction": 
+             [
+                {
+                    "name": "Accept",
+                    "description": "Принято в работу"
+                },
+                {
+                    "name": "Approve",
+                    "description": "Согласовано"
+                },
+                {
+                    "name": "Reject",
+                    "description": "Отклонено"
+                }
+            ]
+        ,
+        "SigningTaskAction": 
+             [
+                {
+                    "name": "Accept",
+                    "description": "Принято в работу"
+                },
+                {
+                    "name": "Approve",
+                    "description": "Подписано"
+                },
+                {
+                    "name": "Reject",
+                    "description": "Отклонено"
+                }
+            ]
+        ,
+        "ApprovalTaskAction": 
+             [
+                {
+                    "name": "Reject",
+                    "description": "Отклонено"
+                },
+                {
+                    "name": "Accept",
+                    "description": "Принято в работу"
+                },
+                {
+                    "name": "Approve",
+                    "description": "Утверждено"
+                }
+            ]
+        },
+    
+    "StatusListType":{
+        "AgreementTaskStatus": 
+             [
+                {
+                    "name": "Initial",
+                    "description": "Инициализирована"
+                },
+                {
+                    "name": "Pending",
+                    "description": "В ожидании"
+                },
+                {
+                    "name": "InProgress",
+                    "description": "Отправлено"
+                },
+                {
+                    "name": "Accepted",
+                    "description": "Принято в работу"
+                },
+                {
+                    "name": "Approved",
+                    "description": "Согласовано"
+                },
+                {
+                    "name": "Resubmitted",
+                    "description": "Отправлено повторно"
+                },
+                {
+                    "name": "Rejected",
+                    "description": "Отклонено"
+                },
+                {
+                    "name": "Final",
+                    "description": "Завершено"
+                },
+                {
+                    "name": "Canceled",
+                    "description": "Отменено"
+                }
+            ]
+        ,
+        "NormativecontrolTaskStatus": 
+             [
+                {
+                    "name": "Initial",
+                    "description": "Инициализирована"
+                },
+                {
+                    "name": "Pending",
+                    "description": "В ожидании"
+                },
+                {
+                    "name": "InProgress",
+                    "description": "Отправлено"
+                },
+                {
+                    "name": "Accepted",
+                    "description": "Принято в работу"
+                },
+                {
+                    "name": "Approved",
+                    "description": "Согласовано"
+                },
+                {
+                    "name": "Resubmitted",
+                    "description": "Отправлено повторно"
+                },
+                {
+                    "name": "Rejected",
+                    "description": "Отклонено"
+                },
+                {
+                    "name": "Final",
+                    "description": "Завершено"
+                },
+                {
+                    "name": "Canceled",
+                    "description": "Отменено"
+                }
+            ]
+        ,
+        "RegistrationTaskStatus": 
+             [
+                {
+                    "name": "Initial",
+                    "description": "Инициализирована"
+                },
+                {
+                    "name": "Pending",
+                    "description": "В ожидании"
+                },
+                {
+                    "name": "InProgress",
+                    "description": "Отправлено"
+                },
+                {
+                    "name": "Accepted",
+                    "description": "Принято в работу"
+                },
+                {
+                    "name": "Approved",
+                    "description": "Согласовано"
+                },
+                {
+                    "name": "Resubmitted",
+                    "description": "Отправлено повторно"
+                },
+                {
+                    "name": "Rejected",
+                    "description": "Отклонено"
+                },
+                {
+                    "name": "Final",
+                    "description": "Завершено"
+                },
+                {
+                    "name": "Canceled",
+                    "description": "Отменено"
+                }
+            ]
+        ,
+        "SigningTaskStatus": 
+             [
+                {
+                    "name": "Initial",
+                    "description": "Инициализирована"
+                },
+                {
+                    "name": "Pending",
+                    "description": "В ожидании"
+                },
+                {
+                    "name": "Accepted",
+                    "description": "Принято в работу"
+                },
+                {
+                    "name": "InProgress",
+                    "description": "Отправлено"
+                },
+                {
+                    "name": "Approved",
+                    "description": "Подписано"
+                },
+                {
+                    "name": "Resubmitted",
+                    "description": "Отправлено повторно"
+                },
+                {
+                    "name": "Rejected",
+                    "description": "Отклонено"
+                },
+                {
+                    "name": "Final",
+                    "description": "Завершено"
+                },
+                {
+                    "name": "Canceled",
+                    "description": "Отменено"
+                }
+            ]
+        ,
+        "ApprovalTaskStatus": 
+             [
+                {
+                    "name": "Initial",
+                    "description": "Инициализирована"
+                },
+                {
+                    "name": "Pending",
+                    "description": "В ожидании"
+                },
+                {
+                    "name": "Accepted",
+                    "description": "Принято в работу"
+                },
+                {
+                    "name": "InProgress",
+                    "description": "Отправлено"
+                },
+                {
+                    "name": "Resubmitted",
+                    "description": "Отправлено повторно"
+                },
+                {
+                    "name": "Rejected",
+                    "description": "Отклонено"
+                },
+                {
+                    "name": "Approved",
+                    "description": "Утверждено"
+                },
+                {
+                    "name": "Final",
+                    "description": "Завершено"
+                },
+                {
+                    "name": "Canceled",
+                    "description": "Отменено"
+                }
+            ]
+        ,
+        "ForperformanceTaskStatus": 
+             [
+                {
+                    "name": "Initial",
+                    "description": "Инициализирована"
+                },
+                {
+                    "name": "InProgress",
+                    "description": "Отправлено"
+                },
+                {
+                    "name": "Accepted",
+                    "description": "Принято в работу"
+                },
+                {
+                    "name": "Resubmitted",
+                    "description": "Отправлено повторно"
+                },
+                {
+                    "name": "Rejected",
+                    "description": "Отклонено"
+                },
+                {
+                    "name": "Prepared",
+                    "description": "Направлен отчет"
+                },
+                {
+                    "name": "Solved",
+                    "description": "Выполнено"
+                },
+                {
+                    "name": "Final",
+                    "description": "Выполнено"
+                },
+                {
+                    "name": "Canceled",
+                    "description": "Отменено"
+                }
+            ]
+        ,
+        "ForconsiderationTaskStatus": 
+             [
+                {
+                    "name": "Initial",
+                    "description": "Инициализирована"
+                },
+                {
+                    "name": "InProgress",
+                    "description": "Отправлено"
+                },
+                {
+                    "name": "Accepted",
+                    "description": "Принято в работу"
+                },
+                {
+                    "name": "Resubmitted",
+                    "description": "Отправлено повторно"
+                },
+                {
+                    "name": "Rejected",
+                    "description": "Отклонено"
+                },
+                {
+                    "name": "Prepared",
+                    "description": "Направлен отчет"
+                },
+                {
+                    "name": "Solved",
+                    "description": "Рассмотрено"
+                },
+                {
+                    "name": "Final",
+                    "description": "Рассмотрено"
+                },
+                {
+                    "name": "Canceled",
+                    "description": "Отменено"
+                }
+            ]
+        ,
+        "ForagreementTaskStatus": 
+             [
+                {
+                    "name": "Initial",
+                    "description": "Инициализирована"
+                },
+                {
+                    "name": "InProgress",
+                    "description": "Отправлено"
+                },
+                {
+                    "name": "Accepted",
+                    "description": "Принято в работу"
+                },
+                {
+                    "name": "Prepared",
+                    "description": "Направлен отчет"
+                },
+                {
+                    "name": "Solved",
+                    "description": "Согласовано"
+                },
+                {
+                    "name": "Final",
+                    "description": "Согласовано"
+                },
+                {
+                    "name": "Resubmitted",
+                    "description": "Отправлено повторно"
+                },
+                {
+                    "name": "Rejected",
+                    "description": "Отклонено"
+                },
+                {
+                    "name": "Canceled",
+                    "description": "Отменено"
+                }
+            ]
+        ,
+        "ForinformationTaskStatus": 
+             [
+                {
+                    "name": "Initial",
+                    "description": "Инициализирована"
+                },
+                {
+                    "name": "InProgress",
+                    "description": "Отправлено"
+                },
+                {
+                    "name": "Accepted",
+                    "description": "Принято в работу"
+                },
+                {
+                    "name": "Resubmitted",
+                    "description": "Отправлено повторно"
+                },
+                {
+                    "name": "Rejected",
+                    "description": "Отклонено"
+                },
+                {
+                    "name": "Prepared",
+                    "description": "Направлен отчет"
+                },
+                {
+                    "name": "Solved",
+                    "description": "Выполнено"
+                },
+                {
+                    "name": "Final",
+                    "description": "Выполнено"
+                },
+                {
+                    "name": "Canceled",
+                    "description": "Отменено"
+                }
+            ]
+        ,
+        "ForinternaluseTaskStatus": 
+             [
+                {
+                    "name": "Initial",
+                    "description": "Инициализирована"
+                },
+                {
+                    "name": "Submitted",
+                    "description": "Отправлено"
+                },
+                {
+                    "name": "InProgress",
+                    "description": "Отправлено"
+                },
+                {
+                    "name": "Accepted",
+                    "description": "Принято в работу"
+                },
+                {
+                    "name": "Resubmitted",
+                    "description": "Отправлено повторно"
+                },
+                {
+                    "name": "Rejected",
+                    "description": "Отклонено"
+                },
+                {
+                    "name": "Prepared",
+                    "description": "Направлен отчет"
+                },
+                {
+                    "name": "Solved",
+                    "description": "Рассмотрено"
+                },
+                {
+                    "name": "Final",
+                    "description": "Рассмотрено"
+                },
+                {
+                    "name": "Canceled",
+                    "description": "Отменено"
+                }
+            ]
+        ,
+        "ForimplementationTaskStatus": 
+             [
+                {
+                    "name": "Initial",
+                    "description": "Инициализирована"
+                },
+                {
+                    "name": "Submitted",
+                    "description": "Отправлено"
+                },
+                {
+                    "name": "InProgress",
+                    "description": "Отправлено"
+                },
+                {
+                    "name": "Accepted",
+                    "description": "Принято в работу"
+                },
+                {
+                    "name": "Resubmitted",
+                    "description": "Отправлено повторно"
+                },
+                {
+                    "name": "Rejected",
+                    "description": "Отклонено"
+                },
+                {
+                    "name": "Prepared",
+                    "description": "Направлен отчет"
+                },
+                {
+                    "name": "Solved",
+                    "description": "Выполнено"
+                },
+                {
+                    "name": "Final",
+                    "description": "Выполнено"
+                },
+                {
+                    "name": "Canceled",
+                    "description": "Отменено"
+                }
+            ]
+        ,
+        "ForhrdecisionTaskStatus": 
+             [
+                {
+                    "name": "Initial",
+                    "description": "Инициализирована"
+                },
+                {
+                    "name": "Submitted",
+                    "description": "Отправлено"
+                },
+                {
+                    "name": "InProgress",
+                    "description": "Отправлено"
+                },
+                {
+                    "name": "Accepted",
+                    "description": "Принято в работу"
+                },
+                {
+                    "name": "Resubmitted",
+                    "description": "Отправлено повторно"
+                },
+                {
+                    "name": "Rejected",
+                    "description": "Отклонено"
+                },
+                {
+                    "name": "Approved",
+                    "description": "Согласовано"
+                },
+                {
+                    "name": "Final",
+                    "description": "Согласовано"
+                },
+                {
+                    "name": "Canceled",
+                    "description": "Отменено"
+                }
+            ]
+        ,
+        "ResolutionTaskStatus": 
+             [
+                {
+                    "name": "Created",
+                    "description": "Создана"
+                },
+                {
+                    "name": "Initial",
+                    "description": "Инициализирована"
+                },
+                {
+                    "name": "InProgress",
+                    "description": "В работе"
+                },
+                {
+                    "name": "Accepted",
+                    "description": "Принято в работу"
+                },
+                {
+                    "name": "Resubmitted",
+                    "description": "Отправлено повторно"
+                },
+                {
+                    "name": "Rejected",
+                    "description": "Отклонено"
+                },
+                {
+                    "name": "Prepared",
+                    "description": "Направлен отчет"
+                },
+                {
+                    "name": "Solved",
+                    "description": "Направлен отчет"
+                },
+                {
+                    "name": "Final",
+                    "description": "Завершено"
+                },
+                {
+                    "name": "Canceled",
+                    "description": "Отменено"
+                }
+            ]
+    },
+    
+    "ActionFromStatus": {
+        "Agreement": [
+            {
+                "status": "Initial",
+                "actions": []
+            },
+            {
+                "status": "Pending",
+                "actions": []
+            },
+            {
+                "status": "InProgress",
+                "actions": [
+                    {
+                        "name": "Accept",
+                        "description": "Принято в работу"
+                    },
+                    {
+                        "name": "Approve",
+                        "description": "Согласовано"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Resubmitted",
+                "actions": [
+                    {
+                        "name": "Accept",
+                        "description": "Принято в работу"
+                    },
+                    {
+                        "name": "Approve",
+                        "description": "Согласовано"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Accepted",
+                "actions": [
+                    {
+                        "name": "Approve",
+                        "description": "Согласовано"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Rejected",
+                "actions": [
+                    {
+                        "name": "Approve",
+                        "description": "Согласовано"
+                    }
+                ]
+            },
+            {
+                "status": "Approved",
+                "actions": []
+            },
+            {
+                "status": "Canceled",
+                "actions": []
+            },
+            {
+                "status": "Final",
+                "actions": []
+            }
+        ],
+        "Normative_control": [
+            {
+                "status": "Initial",
+                "actions": []
+            },
+            {
+                "status": "Pending",
+                "actions": []
+            },
+            {
+                "status": "InProgress",
+                "actions": [
+                    {
+                        "name": "Accept",
+                        "description": "Принято в работу"
+                    },
+                    {
+                        "name": "Approve",
+                        "description": "Согласовано"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Accepted",
+                "actions": [
+                    {
+                        "name": "Approve",
+                        "description": "Согласовано"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Resubmitted",
+                "actions": [
+                    {
+                        "name": "Accept",
+                        "description": "Принято в работу"
+                    },
+                    {
+                        "name": "Approve",
+                        "description": "Согласовано"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Rejected",
+                "actions": [
+                    {
+                        "name": "Approve",
+                        "description": "Согласовано"
+                    }
+                ]
+            },
+            {
+                "status": "Approved",
+                "actions": []
+            },
+            {
+                "status": "Canceled",
+                "actions": []
+            },
+            {
+                "status": "Final",
+                "actions": []
+            }
+        ],
+        "Registration": [
+            {
+                "status": "Initial",
+                "actions": []
+            },
+            {
+                "status": "Pending",
+                "actions": []
+            },
+            {
+                "status": "InProgress",
+                "actions": [
+                    {
+                        "name": "Accept",
+                        "description": "Принято в работу"
+                    },
+                    {
+                        "name": "Approve",
+                        "description": "Согласовано"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Accepted",
+                "actions": [
+                    {
+                        "name": "Approve",
+                        "description": "Согласовано"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Resubmitted",
+                "actions": [
+                    {
+                        "name": "Accept",
+                        "description": "Принято в работу"
+                    },
+                    {
+                        "name": "Approve",
+                        "description": "Согласовано"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Rejected",
+                "actions": [
+                    {
+                        "name": "Approve",
+                        "description": "Согласовано"
+                    }
+                ]
+            },
+            {
+                "status": "Approved",
+                "actions": []
+            },
+            {
+                "status": "Canceled",
+                "actions": []
+            },
+            {
+                "status": "Final",
+                "actions": []
+            }
+        ],
+        "Signing": [
+            {
+                "status": "Initial",
+                "actions": []
+            },
+            {
+                "status": "Pending",
+                "actions": []
+            },
+            {
+                "status": "InProgress",
+                "actions": [
+                    {
+                        "name": "Accept",
+                        "description": "Принято в работу"
+                    },
+                    {
+                        "name": "Approve",
+                        "description": "Подписано"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Resubmitted",
+                "actions": [
+                    {
+                        "name": "Accept",
+                        "description": "Принято в работу"
+                    },
+                    {
+                        "name": "Approve",
+                        "description": "Подписано"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Accepted",
+                "actions": [
+                    {
+                        "name": "Approve",
+                        "description": "Подписано"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Rejected",
+                "actions": [
+                    {
+                        "name": "Approve",
+                        "description": "Подписано"
+                    }
+                ]
+            },
+            {
+                "status": "Approved",
+                "actions": []
+            },
+            {
+                "status": "Canceled",
+                "actions": []
+            },
+            {
+                "status": "Final",
+                "actions": []
+            }
+        ],
+        "Approval": [
+            {
+                "status": "Initial",
+                "actions": []
+            },
+            {
+                "status": "Pending",
+                "actions": []
+            },
+            {
+                "status": "InProgress",
+                "actions": [
+                    {
+                        "name": "Accept",
+                        "description": "Принято в работу"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    },
+                    {
+                        "name": "Approve",
+                        "description": "Утверждено"
+                    }
+                ]
+            },
+            {
+                "status": "Resubmitted",
+                "actions": [
+                    {
+                        "name": "Accept",
+                        "description": "Принято в работу"
+                    },
+                    {
+                        "name": "Approve",
+                        "description": "Утвердено"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Accepted",
+                "actions": [
+                    {
+                        "name": "Approve",
+                        "description": "Подписано"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Rejected",
+                "actions": [
+                    {
+                        "name": "Approve",
+                        "description": "Утверждено"
+                    }
+                ]
+            },
+            {
+                "status": "Approved",
+                "actions": []
+            },
+            {
+                "status": "Canceled",
+                "actions": []
+            },
+            {
+                "status": "Final",
+                "actions": []
+            }
+        ],
+        "For_performance": [
+            {
+                "status": "Initial",
+                "actions": []
+            },
+            {
+                "status": "Pending",
+                "actions": []
+            },
+            {
+                "status": "InProgress",
+                "actions": [
+                    {
+                        "name": "TrySolve",
+                        "description": "Выполнено"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    },
+                    {
+                        "name": "Accept",
+                        "description": "Принято в работу"
+                    }
+                ]
+            },
+            {
+                "status": "Resubmitted",
+                "actions": [
+                    {
+                        "name": "Accept",
+                        "description": "Принято в работу"
+                    },
+                    {
+                        "name": "TrySolve",
+                        "description": "Выполнено"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Accepted",
+                "actions": [
+                    {
+                        "name": "TrySolve",
+                        "description": "Выполнено"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Rejected",
+                "actions": [
+                    {
+                        "name": "TrySolve",
+                        "description": "Выполнено"
+                    }
+                ]
+            },
+            {
+                "status": "Prepared",
+                "actions": []
+            },
+            {
+                "status": "Canceled",
+                "actions": []
+            },
+            {
+                "status": "Solved",
+                "actions": []
+            },
+            {
+                "status": "Final",
+                "actions": []
+            }
+        ],
+        "For_consideration": [
+            {
+                "status": "Initial",
+                "actions": []
+            },
+            {
+                "status": "Pending",
+                "actions": []
+            },
+            {
+                "status": "InProgress",
+                "actions": [
+                    {
+                        "name": "TrySolve",
+                        "description": "Рассмотрено"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    },
+                    {
+                        "name": "Accept",
+                        "description": "Принято в работу"
+                    }
+                ]
+            },
+            {
+                "status": "Resubmitted",
+                "actions": [
+                    {
+                        "name": "Accept",
+                        "description": "Принято в работу"
+                    },
+                    {
+                        "name": "TrySolve",
+                        "description": "Рассмотрено"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Accepted",
+                "actions": [
+                    {
+                        "name": "TrySolve",
+                        "description": "Рассмотрено"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Rejected",
+                "actions": [
+                    {
+                        "name": "TrySolve",
+                        "description": "Рассмотрено"
+                    }
+                ]
+            },
+            {
+                "status": "Prepared",
+                "actions": []
+            },
+            {
+                "status": "Canceled",
+                "actions": []
+            },
+            {
+                "status": "Solved",
+                "actions": []
+            },
+            {
+                "status": "Final",
+                "actions": []
+            }
+        ],
+        "For_agreement": [
+            {
+                "status": "Initial",
+                "actions": []
+            },
+            {
+                "status": "Pending",
+                "actions": []
+            },
+            {
+                "status": "InProgress",
+                "actions": [
+                    {
+                        "name": "TrySolve",
+                        "description": "Согласовано"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    },
+                    {
+                        "name": "Accept",
+                        "description": "Принято в работу"
+                    }
+                ]
+            },
+            {
+                "status": "Resubmitted",
+                "actions": [
+                    {
+                        "name": "Accept",
+                        "description": "Принято в работу"
+                    },
+                    {
+                        "name": "TrySolve",
+                        "description": "Согласовано"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Accepted",
+                "actions": [
+                    {
+                        "name": "TrySolve",
+                        "description": "Согласовано"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Rejected",
+                "actions": [
+                    {
+                        "name": "TrySolve",
+                        "description": "Согласовано"
+                    }
+                ]
+            },
+            {
+                "status": "Prepared",
+                "actions": []
+            },
+            {
+                "status": "Canceled",
+                "actions": []
+            },
+            {
+                "status": "Solved",
+                "actions": []
+            },
+            {
+                "status": "Final",
+                "actions": []
+            }
+        ],
+        "For_information": [
+            {
+                "status": "Initial",
+                "actions": []
+            },
+            {
+                "status": "Pending",
+                "actions": []
+            },
+            {
+                "status": "InProgress",
+                "actions": [
+                    {
+                        "name": "TrySolve",
+                        "description": "Выполнено"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    },
+                    {
+                        "name": "Accept",
+                        "description": "Принято в работу"
+                    }
+                ]
+            },
+            {
+                "status": "Resubmitted",
+                "actions": [
+                    {
+                        "name": "Accept",
+                        "description": "Принято в работу"
+                    },
+                    {
+                        "name": "TrySolve",
+                        "description": "Выполнено"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Accepted",
+                "actions": [
+                    {
+                        "name": "TrySolve",
+                        "description": "Выполнено"
+                    },
+                    {
+                        "name": "Reject",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Rejected",
+                "actions": [
+                    {
+                        "name": "TrySolve",
+                        "description": "Выполнено"
+                    }
+                ]
+            },
+            {
+                "status": "Prepared",
+                "actions": []
+            },
+            {
+                "status": "Canceled",
+                "actions": []
+            },
+            {
+                "status": "Solved",
+                "actions": []
+            },
+            {
+                "status": "Final",
+                "actions": []
+            }
+        ],
+        "For_internal_use": [
+            {
+                "status": "Initial",
+                "actions": []
+            },
+            {
+                "status": "Pending",
+                "actions": []
+            },
+            {
+                "status": "Submitted",
+                "actions": []
+            },
+            {
+                "status": "InProgress",
+                "actions": [
+                    {
+                        "name": "Accept",
+                        "description": "Принято в работу"
+                    },
+                    {
+                        "name": "DoTask",
+                        "description": "Рассмотрено"
+                    }
+                ]
+            },
+            {
+                "status": "Resubmitted",
+                "actions": [
+                    {
+                        "name": "Accept",
+                        "description": "Принято в работу"
+                    },
+                    {
+                        "name": "DoTask",
+                        "description": "Рассмотрено"
+                    }
+                ]
+            },
+            {
+                "status": "Accepted",
+                "actions": [
+                    {
+                        "name": "DoTask",
+                        "description": "Рассмотрено"
+                    }
+                ]
+            },
+            {
+                "status": "Rejected",
+                "actions": [
+                    {
+                        "name": "TrySolve",
+                        "description": "Рассмотрено"
+                    }
+                ]
+            },
+            {
+                "status": "Prepared",
+                "actions": []
+            },
+            {
+                "status": "Canceled",
+                "actions": []
+            },
+            {
+                "status": "Solved",
+                "actions": []
+            },
+            {
+                "status": "Final",
+                "actions": []
+            }
+        ],
+        "For_implementation": [
+            {
+                "status": "Initial",
+                "actions": []
+            },
+            {
+                "status": "Pending",
+                "actions": []
+            },
+            {
+                "status": "Submitted",
+                "actions": []
+            },
+            {
+                "status": "InProgress",
+                "actions": [
+                    {
+                        "name": "Accept",
+                        "description": "Принято в работу"
+                    },
+                    {
+                        "name": "DoTask",
+                        "description": "Выполнено"
+                    }
+                ]
+            },
+            {
+                "status": "Resubmitted",
+                "actions": [
+                    {
+                        "name": "Accept",
+                        "description": "Принято в работу"
+                    },
+                    {
+                        "name": "DoTask",
+                        "description": "Выполнено"
+                    }
+                ]
+            },
+            {
+                "status": "Accepted",
+                "actions": [
+                    {
+                        "name": "DoTask",
+                        "description": "Выполнено"
+                    }
+                ]
+            },
+            {
+                "status": "Rejected",
+                "actions": [
+                    {
+                        "name": "TrySolve",
+                        "description": "Выполнено"
+                    }
+                ]
+            },
+            {
+                "status": "Prepared",
+                "actions": []
+            },
+            {
+                "status": "Canceled",
+                "actions": []
+            },
+            {
+                "status": "Solved",
+                "actions": []
+            },
+            {
+                "status": "Final",
+                "actions": []
+            }
+        ],
+        "For_hr_decision": [
+            {
+                "status": "Initial",
+                "actions": []
+            },
+            {
+                "status": "Pending",
+                "actions": []
+            },
+            {
+                "status": "Submitted",
+                "actions": []
+            },
+            {
+                "status": "InProgress",
+                "actions": [
+                    {
+                        "name": "Accept",
+                        "description": "Принято в работу"
+                    },
+                    {
+                        "name": "ApproveTask",
+                        "description": "Согласовано"
+                    },
+                    {
+                        "name": "RejectTask",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Resubmitted",
+                "actions": [
+                    {
+                        "name": "Accept",
+                        "description": "Принято в работу"
+                    },
+                    {
+                        "name": "ApproveTask",
+                        "description": "Согласовано"
+                    },
+                    {
+                        "name": "RejectTask",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Accepted",
+                "actions": [
+                    {
+                        "name": "ApproveTask",
+                        "description": "Согласовано"
+                    },
+                    {
+                        "name": "RejectTask",
+                        "description": "Отклонено"
+                    }
+                ]
+            },
+            {
+                "status": "Rejected",
+                "actions": [
+                    {
+                        "name": "ApproveTask",
+                        "description": "Согласовано"
+                    }
+                ]
+            },
+            {
+                "status": "Approved",
+                "actions": []
+            },
+            {
+                "status": "Canceled",
+                "actions": []
+            },
+            {
+                "status": "Solved",
+                "actions": []
+            },
+            {
+                "status": "Final",
+                "actions": []
+            }
+        ]
+    },
+    
+    "OverseerActionFromStatus": {
+        "For_performance": [
+            {
+                "status": "Initial",
+                "actions": []
+            },
+            {
+                "status": "Pending",
+                "actions": []
+            },
+            {
+                "status": "InProgress",
+                "actions": [
+                    {
+                        "name": "Solve",
+                        "description": "Выполнено"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Resubmitted",
+                "actions": [
+                    {
+                        "name": "Solve",
+                        "description": "Выполнено"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Accepted",
+                "actions": [
+                    {
+                        "name": "Solve",
+                        "description": "Выполнено"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Rejected",
+                "actions": [
+                    {
+                        "name": "Solve",
+                        "description": "Выполнено"
+                    },
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Prepared",
+                "actions": [
+                    {
+                        "name": "Solve",
+                        "description": "Подтвердить выполнение"
+                    },
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Canceled",
+                "actions": [
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    }
+                ]
+            },
+            {
+                "status": "Solved",
+                "actions": [
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    }
+                ]
+            },
+            {
+                "status": "Final",
+                "actions": []
+            }
+        ],
+        "For_consideration": [
+            {
+                "status": "Initial",
+                "actions": []
+            },
+            {
+                "status": "Pending",
+                "actions": []
+            },
+            {
+                "status": "InProgress",
+                "actions": [
+                    {
+                        "name": "Solve",
+                        "description": "Рассмотрено"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Resubmitted",
+                "actions": [
+                    {
+                        "name": "Solve",
+                        "description": "Рассмотрено"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Accepted",
+                "actions": [
+                    {
+                        "name": "Solve",
+                        "description": "Рассмотрено"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Rejected",
+                "actions": [
+                    {
+                        "name": "Solve",
+                        "description": "Рассмотрено"
+                    },
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Prepared",
+                "actions": [
+                    {
+                        "name": "Solve",
+                        "description": "Подтвердить выполнение"
+                    },
+    
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Canceled",
+                "actions": [
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    }
+                ]
+            },
+            {
+                "status": "Solved",
+                "actions": [
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    }
+                ]
+            },
+            {
+                "status": "Final",
+                "actions": []
+            }
+        ],
+        "For_agreement": [
+            {
+                "status": "Initial",
+                "actions": []
+            },
+            {
+                "status": "Pending",
+                "actions": []
+            },
+            {
+                "status": "InProgress",
+                "actions": [
+                    {
+                        "name": "Solve",
+                        "description": "Согласовано"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Resubmitted",
+                "actions": [
+                    {
+                        "name": "Solve",
+                        "description": "Согласовано"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Accepted",
+                "actions": [
+                    {
+                        "name": "Solve",
+                        "description": "Согласовано"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Rejected",
+                "actions": [
+                    {
+                        "name": "Solve",
+                        "description": "Согласовано"
+                    },
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Prepared",
+                "actions": [
+                    {
+                        "name": "Solve",
+                        "description": "Подтвердить согласование"
+                    },
+    
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Canceled",
+                "actions": [
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    }
+                ]
+            },
+            {
+                "status": "Solved",
+                "actions": [
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    }
+                ]
+            },
+            {
+                "status": "Final",
+                "actions": []
+            }
+        ],
+        "For_information": [
+            {
+                "status": "Initial",
+                "actions": []
+            },
+            {
+                "status": "Pending",
+                "actions": []
+            },
+            {
+                "status": "InProgress",
+                "actions": [
+                    {
+                        "name": "Solve",
+                        "description": "Рассмотрено"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Resubmitted",
+                "actions": [
+                    {
+                        "name": "Solve",
+                        "description": "Рассмотрено"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Accepted",
+                "actions": [
+                    {
+                        "name": "Solve",
+                        "description": "Рассмотрено"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Rejected",
+                "actions": [
+                    {
+                        "name": "Solve",
+                        "description": "Рассмотрено"
+                    },
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Prepared",
+                "actions": [
+                    {
+                        "name": "Solve",
+                        "description": "Подтвердить выполнение"
+                    },
+    
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Canceled",
+                "actions": [
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    }
+                ]
+            },
+            {
+                "status": "Solved",
+                "actions": [
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    }
+                ]
+            },
+            {
+                "status": "Final",
+                "actions": []
+            }
+        ]
+    },
+    
+    "ResponderActionFromStatus": {
+        "Agreement": [
+            {
+                "status": "Initial",
+                "actions": []
+            },
+            {
+                "status": "Pending",
+                "actions": []
+            },
+            {
+                "status": "InProgress",
+                "actions": [
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Resubmitted",
+                "actions": [
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Rejected",
+                "actions": [
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Accepted",
+                "actions": [
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Approved",
+                "actions": []
+            },
+            {
+                "status": "Canceled",
+                "actions": [
+                   
+                ]
+            },
+            {
+                "status": "Final",
+                "actions": []
+            }
+        ],
+        "Normative_control": [
+            {
+                "status": "Initial",
+                "actions": []
+            },
+            {
+                "status": "Pending",
+                "actions": []
+            },
+            {
+                "status": "InProgress",
+                "actions": [
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Resubmitted",
+                "actions": [
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Rejected",
+                "actions": [
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Accepted",
+                "actions": [
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Approved",
+                "actions": []
+            },
+            {
+                "status": "Canceled",
+                "actions": [
+                ]
+            },
+            {
+                "status": "Final",
+                "actions": []
+            }
+        ],
+        "Registration": [
+            {
+                "status": "Initial",
+                "actions": []
+            },
+            {
+                "status": "Pending",
+                "actions": []
+            },
+            {
+                "status": "InProgress",
+                "actions": [
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Resubmitted",
+                "actions": [
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Rejected",
+                "actions": [
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Accepted",
+                "actions": [
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Approved",
+                "actions": []
+            },
+            {
+                "status": "Canceled",
+                "actions": [
+                   
+                ]
+            },
+            {
+                "status": "Final",
+                "actions": []
+            }
+        ],
+        "Signing": [
+            {
+                "status": "Initial",
+                "actions": []
+            },
+            {
+                "status": "Pending",
+                "actions": []
+            },
+            {
+                "status": "InProgress",
+                "actions": [
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Resubmitted",
+                "actions": [
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Rejected",
+                "actions": [
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Accepted",
+                "actions": [
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Approved",
+                "actions": []
+            },
+            {
+                "status": "Canceled",
+                "actions": [
+                   
+                ]
+            },
+            {
+                "status": "Final",
+                "actions": []
+            }
+        ],
+        "Approval": [
+            {
+                "status": "Initial",
+                "actions": []
+            },
+            {
+                "status": "Pending",
+                "actions": []
+            },
+            {
+                "status": "InProgress",
+                "actions": [
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Resubmitted",
+                "actions": [
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Rejected",
+                "actions": [
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Accepted",
+                "actions": [
+                    {
+                        "name": "Resubmit",
+                        "description": "Отправить повторно"
+                    },
+                    {
+                        "name": "Cancel",
+                        "description": "Отменено"
+                    }
+                ]
+            },
+            {
+                "status": "Approved",
+                "actions": []
+            },
+            {
+                "status": "Canceled",
+                "actions": [
+                   
+                ]
+            },
+            {
+                "status": "Final",
+                "actions": []
+            }
+        ]
+    }
+    
 }

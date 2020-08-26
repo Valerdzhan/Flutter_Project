@@ -25,6 +25,7 @@ class SplashScreenPage extends StatelessWidget {
           ],
         ),
       ),
+      resizeToAvoidBottomInset: false,
     );
   }
 }

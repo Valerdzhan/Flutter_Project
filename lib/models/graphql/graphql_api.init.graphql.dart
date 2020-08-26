@@ -1,6 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:meta/meta.dart';
 import 'package:artemis/artemis.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:equatable/equatable.dart';
@@ -491,45 +490,45 @@ class UserItemFragmentMixin$Vacation with EquatableMixin {
 }
 
 enum DocumentType {
-  @JsonValue("UNKNOWN")
+  @JsonValue('UNKNOWN')
   unknown,
-  @JsonValue("CONTRACT")
+  @JsonValue('CONTRACT')
   contract,
-  @JsonValue("TAX_EXPERTISE")
+  @JsonValue('TAX_EXPERTISE')
   taxExpertise,
-  @JsonValue("LETTER")
+  @JsonValue('LETTER')
   letter,
-  @JsonValue("INCOMING_DOC")
+  @JsonValue('INCOMING_DOC')
   incomingDoc,
-  @JsonValue("OUTGOING_DOC")
+  @JsonValue('OUTGOING_DOC')
   outgoingDoc,
-  @JsonValue("CONTROL_CARD")
+  @JsonValue('CONTROL_CARD')
   controlCard,
-  @JsonValue("REQUEST_TO_HIRE")
+  @JsonValue('REQUEST_TO_HIRE')
   requestToHire,
-  @JsonValue("TRANSFER_REQUEST")
+  @JsonValue('TRANSFER_REQUEST')
   transferRequest,
-  @JsonValue("REQUEST_FOR_DISMISSAL")
+  @JsonValue('REQUEST_FOR_DISMISSAL')
   requestForDismissal,
-  @JsonValue("CANCELLATION_REQUEST_FOR_DISMISSAL")
+  @JsonValue('CANCELLATION_REQUEST_FOR_DISMISSAL')
   cancellationRequestForDismissal,
-  @JsonValue("ORDER")
+  @JsonValue('ORDER')
   order,
-  @JsonValue("DIRECTIVE")
+  @JsonValue('DIRECTIVE')
   directive,
-  @JsonValue("GENERIC_REQUEST")
+  @JsonValue('GENERIC_REQUEST')
   genericRequest,
-  @JsonValue("MASS_MAIL")
+  @JsonValue('MASS_MAIL')
   massMail,
-  @JsonValue("ARTEMIS_UNKNOWN")
+  @JsonValue('ARTEMIS_UNKNOWN')
   artemisUnknown,
 }
 enum HostType {
-  @JsonValue("UNKNOWN")
+  @JsonValue('UNKNOWN')
   unknown,
-  @JsonValue("TASK")
+  @JsonValue('TASK')
   task,
-  @JsonValue("ARTEMIS_UNKNOWN")
+  @JsonValue('ARTEMIS_UNKNOWN')
   artemisUnknown,
 }
 

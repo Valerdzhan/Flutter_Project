@@ -709,133 +709,133 @@ class UserTasksAttributeSearchType with EquatableMixin {
 }
 
 enum AllTaskTypeEnumType {
-  @JsonValue("UNKNOWN")
+  @JsonValue('UNKNOWN')
   unknown,
-  @JsonValue("AGREEMENT")
+  @JsonValue('AGREEMENT')
   agreement,
-  @JsonValue("SIGNING")
+  @JsonValue('SIGNING')
   signing,
-  @JsonValue("APPROVAL")
+  @JsonValue('APPROVAL')
   approval,
-  @JsonValue("REGISTRATION")
+  @JsonValue('REGISTRATION')
   registration,
-  @JsonValue("FOR_PERFORMANCE")
+  @JsonValue('FOR_PERFORMANCE')
   forPerformance,
-  @JsonValue("FOR_CONSIDERATION")
+  @JsonValue('FOR_CONSIDERATION')
   forConsideration,
-  @JsonValue("FOR_AGREEMENT")
+  @JsonValue('FOR_AGREEMENT')
   forAgreement,
-  @JsonValue("FOR_INFORMATION")
+  @JsonValue('FOR_INFORMATION')
   forInformation,
-  @JsonValue("FOR_INCOMING")
+  @JsonValue('FOR_INCOMING')
   forIncoming,
-  @JsonValue("FOR_OUTCOMING")
+  @JsonValue('FOR_OUTCOMING')
   forOutcoming,
-  @JsonValue("FOR_INTERNAL_USE")
+  @JsonValue('FOR_INTERNAL_USE')
   forInternalUse,
-  @JsonValue("FOR_NORMO_CONTROL")
+  @JsonValue('FOR_NORMO_CONTROL')
   forNormoControl,
-  @JsonValue("NORMATIVE_CONTROL")
+  @JsonValue('NORMATIVE_CONTROL')
   normativeControl,
-  @JsonValue("FOR_HR_DECISION")
+  @JsonValue('FOR_HR_DECISION')
   forHrDecision,
-  @JsonValue("FOR_IMPLEMENTATION")
+  @JsonValue('FOR_IMPLEMENTATION')
   forImplementation,
-  @JsonValue("ARTEMIS_UNKNOWN")
+  @JsonValue('ARTEMIS_UNKNOWN')
   artemisUnknown,
 }
 enum DocumentType {
-  @JsonValue("UNKNOWN")
+  @JsonValue('UNKNOWN')
   unknown,
-  @JsonValue("CONTRACT")
+  @JsonValue('CONTRACT')
   contract,
-  @JsonValue("TAX_EXPERTISE")
+  @JsonValue('TAX_EXPERTISE')
   taxExpertise,
-  @JsonValue("LETTER")
+  @JsonValue('LETTER')
   letter,
-  @JsonValue("INCOMING_DOC")
+  @JsonValue('INCOMING_DOC')
   incomingDoc,
-  @JsonValue("OUTGOING_DOC")
+  @JsonValue('OUTGOING_DOC')
   outgoingDoc,
-  @JsonValue("CONTROL_CARD")
+  @JsonValue('CONTROL_CARD')
   controlCard,
-  @JsonValue("REQUEST_TO_HIRE")
+  @JsonValue('REQUEST_TO_HIRE')
   requestToHire,
-  @JsonValue("TRANSFER_REQUEST")
+  @JsonValue('TRANSFER_REQUEST')
   transferRequest,
-  @JsonValue("REQUEST_FOR_DISMISSAL")
+  @JsonValue('REQUEST_FOR_DISMISSAL')
   requestForDismissal,
-  @JsonValue("CANCELLATION_REQUEST_FOR_DISMISSAL")
+  @JsonValue('CANCELLATION_REQUEST_FOR_DISMISSAL')
   cancellationRequestForDismissal,
-  @JsonValue("ORDER")
+  @JsonValue('ORDER')
   order,
-  @JsonValue("DIRECTIVE")
+  @JsonValue('DIRECTIVE')
   directive,
-  @JsonValue("GENERIC_REQUEST")
+  @JsonValue('GENERIC_REQUEST')
   genericRequest,
-  @JsonValue("MASS_MAIL")
+  @JsonValue('MASS_MAIL')
   massMail,
-  @JsonValue("ARTEMIS_UNKNOWN")
+  @JsonValue('ARTEMIS_UNKNOWN')
   artemisUnknown,
 }
 enum ProcessingTaskType {
-  @JsonValue("UNKNOWN")
+  @JsonValue('UNKNOWN')
   unknown,
-  @JsonValue("FOR_INCOMING")
+  @JsonValue('FOR_INCOMING')
   forIncoming,
-  @JsonValue("FOR_OUTCOMING")
+  @JsonValue('FOR_OUTCOMING')
   forOutcoming,
-  @JsonValue("FOR_INTERNAL_USE")
+  @JsonValue('FOR_INTERNAL_USE')
   forInternalUse,
-  @JsonValue("FOR_HR_DECISION")
+  @JsonValue('FOR_HR_DECISION')
   forHrDecision,
-  @JsonValue("FOR_IMPLEMENTATION")
+  @JsonValue('FOR_IMPLEMENTATION')
   forImplementation,
-  @JsonValue("ARTEMIS_UNKNOWN")
+  @JsonValue('ARTEMIS_UNKNOWN')
   artemisUnknown,
 }
 enum ResolutionTaskType {
-  @JsonValue("UNKNOWN")
+  @JsonValue('UNKNOWN')
   unknown,
-  @JsonValue("FOR_PERFORMANCE")
+  @JsonValue('FOR_PERFORMANCE')
   forPerformance,
-  @JsonValue("FOR_CONSIDERATION")
+  @JsonValue('FOR_CONSIDERATION')
   forConsideration,
-  @JsonValue("FOR_AGREEMENT")
+  @JsonValue('FOR_AGREEMENT')
   forAgreement,
-  @JsonValue("FOR_INFORMATION")
+  @JsonValue('FOR_INFORMATION')
   forInformation,
-  @JsonValue("FOR_TAX_EXPERTISE")
+  @JsonValue('FOR_TAX_EXPERTISE')
   forTaxExpertise,
-  @JsonValue("ARTEMIS_UNKNOWN")
+  @JsonValue('ARTEMIS_UNKNOWN')
   artemisUnknown,
 }
 enum TaskType {
-  @JsonValue("UNKNOWN")
+  @JsonValue('UNKNOWN')
   unknown,
-  @JsonValue("AGREEMENT")
+  @JsonValue('AGREEMENT')
   agreement,
-  @JsonValue("SIGNING")
+  @JsonValue('SIGNING')
   signing,
-  @JsonValue("APPROVAL")
+  @JsonValue('APPROVAL')
   approval,
-  @JsonValue("REGISTRATION")
+  @JsonValue('REGISTRATION')
   registration,
-  @JsonValue("NORMATIVE_CONTROL")
+  @JsonValue('NORMATIVE_CONTROL')
   normativeControl,
-  @JsonValue("ARTEMIS_UNKNOWN")
+  @JsonValue('ARTEMIS_UNKNOWN')
   artemisUnknown,
 }
 enum UserTaskSortFieldEnumType {
-  @JsonValue("whenCreated")
+  @JsonValue('whenCreated')
   whenCreated,
-  @JsonValue("dueDate")
+  @JsonValue('dueDate')
   dueDate,
-  @JsonValue("status")
+  @JsonValue('status')
   status,
-  @JsonValue("type")
+  @JsonValue('type')
   type,
-  @JsonValue("ARTEMIS_UNKNOWN")
+  @JsonValue('ARTEMIS_UNKNOWN')
   artemisUnknown,
 }
 
@@ -847,6 +847,7 @@ class UserTasksArguments extends JsonSerializable with EquatableMixin {
       this.sort,
       this.attributeSearch});
 
+  @override
   factory UserTasksArguments.fromJson(Map<String, dynamic> json) =>
       _$UserTasksArgumentsFromJson(json);
 
@@ -860,6 +861,7 @@ class UserTasksArguments extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object> get props => [skip, limit, sort, attributeSearch];
+  @override
   Map<String, dynamic> toJson() => _$UserTasksArgumentsToJson(this);
 }
 

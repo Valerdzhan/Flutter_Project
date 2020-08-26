@@ -74,9 +74,9 @@ targets:
           - graphql_type: Curator
             dart_type: String
           - graphql_type: Float
-            dart_type: float
+            dart_type: double
           - graphql_type: Decimal
-            dart_type: float
+            dart_type: double
           - graphql_type: DocumentId
             dart_type: String
           - graphql_type: TaskId

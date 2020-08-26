@@ -2,27 +2,25 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:universal_platform/universal_platform.dart';
 
-String uuidFromObject(Object object) {
-  if (object is Map<String, Object>) {
-    final String typeName = object['__typename'] as String;
-    final String id = object['id'].toString();
-    if (typeName != null && id != null) {
-      return <String>[typeName, id].join('/');
-    }
+String typenameDataIdFromObject(Object object) {
+  if (object is Map<String, Object> &&
+      object.containsKey('__typename') &&
+      object.containsKey('id')) {
+    return "${object['__typename']}/${object['id']}";
   }
   return null;
 }
 
-final OptimisticCache cache = OptimisticCache(
-  dataIdFromObject: uuidFromObject,
+final NormalizedInMemoryCache cache = NormalizedInMemoryCache(
+  dataIdFromObject: typenameDataIdFromObject,
 );
 
 String get host {
 // https://github.com/flutter/flutter/issues/36126#issuecomment-596215587
   if (UniversalPlatform.isAndroid) {
-    return '192.168.0.15';
+    return '192.168.0.12';
   } else {
-    return '192.168.0.15';
+    return '192.168.0.12';
   }
 }
 
@@ -47,7 +45,7 @@ ValueNotifier<GraphQLClient> clientFor({
 
   return ValueNotifier<GraphQLClient>(
     GraphQLClient(
-      cache: cache,
+      cache: InMemoryCache(),
       link: link,
     ),
   );
@@ -62,7 +60,7 @@ class GraphQLConfiguration {
 
   GraphQLClient clientToQuery() {
     return GraphQLClient(
-      cache: cache,
+      cache: InMemoryCache(),
       link: httpLink,
     );
   }

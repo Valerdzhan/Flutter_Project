@@ -3,7 +3,6 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:myapp/business/app_state_store.dart';
 import 'package:myapp/business/graphql_client.dart';
 import 'package:myapp/business/tasks/actions/SetTaskStateAction.dart';
-import 'package:myapp/business/tasks/models/TaskListItemList.dart';
 import 'package:myapp/models/graphql/graphql_api.tasks.graphql.dart';
 import 'package:myapp/business/tasks/actions/TasksActions.dart';
 
@@ -24,8 +23,8 @@ class TaskLoadMoreAction extends ReduxAction<AppState> {
         final QueryResult result = await _client.query(options);
 
         if (!result.hasException) {
-          var userTasks = TaskListItemInterfaceCollection.fromJson(
-              result.data["userTasks"]);
+          var userTasks =
+              UserTasks$DFSQuery$UserTasks.fromJson(result.data["userTasks"]);
 
           var newTasks = state.taskState.taskList;
 

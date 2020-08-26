@@ -1,23 +1,137 @@
-#import '../../fragments/fragment-document-list-item.graphql'
-
 query documents(
-    $skip: Int!
-    $limit: Int!
-    $attributeSearch: BaseAttributeSearch
-    $sort: SortInput_DocumentSortFieldEnumType
-    $onRegisterFilter: Boolean
+  $skip: Int!
+  $limit: Int!
+  $attributeSearch: BaseAttributeSearch
+  $sort: SortInput_DocumentSortFieldEnumType
+  $onRegisterFilter: Boolean
 ) {
-    documents(
-        skip: $skip
-        limit: $limit
-        attributeSearch: $attributeSearch
-        sort: $sort
-        onRegisterFilter: $onRegisterFilter
-    ) {
-        count
-        items {
-            documentType
-            ...documentListItemFragment
+  documents(
+    skip: $skip
+    limit: $limit
+    attributeSearch: $attributeSearch
+    sort: $sort
+    onRegisterFilter: $onRegisterFilter
+  ) {
+    count
+    items {
+      documentType
+      type: documentType
+      id
+      title
+      whenCreated
+      whenEdited
+      documentStatus
+      documentStatusDescription
+      authorName
+      compileTitle
+      responderId
+      authorId
+      editorId
+      controlCardsCount
+      controlCardsRemovedCount
+      scanCopy
+      isPublished
+      publisherId
+      whenPublished
+      __typename
+      ... on ContractListItem {
+        contractorId
+        contractorName
+        sumAmountWithTax
+        departmentResponder
+        status
+        registerNumber
+        preparationDate
+      }
+      ... on HRRequestDocListItem {
+        addressee
+        addresseeName
+        applicant: applicant {
+          firstName
+          lastName
+          patronymic
+          personalIdentifier
         }
+        orderDescriptor {
+          issuedDate
+          number
+        }
+        status
+        applicantId
+        applicantExternalUserId
+      }
+      ... on GenericRequestListItem {
+        addressee
+        addresseeName
+        applicant: applicant {
+          firstName
+          lastName
+          patronymic
+          personalIdentifier
+        }
+        categoryId
+        responderId
+        curatorId
+        documentStatus
+        documentStatusDescription
+        scanCopy
+      }
+      ... on IncomingDocListItem {
+        incomingDocAddresseeId: addresseeIds
+        sender
+        incomingDocSenderId: senderId
+        senderOutgoingNumber
+        documentDate
+        registrationDate
+        registrationNumber
+        registrationAuthorId
+        actor
+      }
+      ... on LetterListItem {
+        head
+        letterAddresseeId: addresseeIds
+        senderId
+        actorId
+        isRegistered
+        registrationDate
+        registrationNumber
+        status
+      }
+      ... on LNAListItem {
+        placeOfRegistrationValue
+        placeOfRegistrationKey
+        validStatusValue
+        isRegistered
+        registrationBookItem {
+          authorId
+          date
+          documentId
+          isPermanent
+          number
+          registrationBookId
+          registrationBook {
+            name
+          }
+        }
+        signerId
+        actorId
+        overseerId
+      }
+      ... on OutgoingDocListItem {
+        addressees
+        addresseeIds
+        senderId
+        registrationDate
+        registrationNumber
+        actorId
+      }
+      ... on MassMailListItem {
+        isSent
+        senderId
+        sendingDate
+        sendingAuthor
+        mailingGroupsIds
+      }
     }
+  }
 }
