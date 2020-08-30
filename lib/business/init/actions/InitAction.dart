@@ -40,6 +40,8 @@ class InitActions extends ReduxAction<AppState> {
 
       await dispatchFuture(SetUsersStateAction(setUserState));
       await dispatchFuture(InitTaskStatus());
+    } else {
+      dispatch(IsInitLoadAction(true));
     }
     return state;
   }

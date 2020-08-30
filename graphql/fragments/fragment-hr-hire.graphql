@@ -28,11 +28,6 @@ fragment requestToHireItemFragment on RequestToHireItem {
     recruitmentSource {
         ...referenceValueFragment
     }
-    registrationInfo {
-        isRegistered
-        registerNumber
-        registrationDate
-    }
     tasks
     remark
     responderId

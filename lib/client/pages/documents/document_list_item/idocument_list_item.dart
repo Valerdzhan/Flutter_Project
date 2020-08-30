@@ -8,12 +8,13 @@ import 'package:myapp/client/pages/documents/document_list_item/letter_list_item
 import 'package:myapp/client/pages/documents/document_list_item/lna_list_item.dart';
 import 'package:myapp/client/pages/documents/document_list_item/mass_mail_list_item.dart';
 import 'package:myapp/client/pages/documents/document_list_item/outgoing_doc_list_item.dart';
+
 import 'package:myapp/models/graphql/graphql_api.lists.graphql.dart';
 
-abstract class IDocumentItem extends StatelessWidget {
+abstract class IDocumentListItem extends StatelessWidget {
   final Documents$DFSQuery$Documents$Items item;
   // ignore: missing_return
-  factory IDocumentItem(Documents$DFSQuery$Documents$Items item) {
+  factory IDocumentListItem(Documents$DFSQuery$Documents$Items item) {
     try {
       // Сделать при реальных данных
       // switch (item.documentType) {
@@ -23,7 +24,6 @@ abstract class IDocumentItem extends StatelessWidget {
       //     return ContractItem(item: item);
       //   default:
       //     return DocumentItem(item: item);
-
       switch (item.$$typename) {
         case r'ContractListItem':
           return ContractListItem(item: item);

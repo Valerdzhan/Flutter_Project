@@ -1,7 +1,7 @@
 fragment taxExpertiseItemFragment on TaxExpertiseItem  {
       id
       eventCount
-      attachments {
+      taxattachments: attachments {
         fileId
         fileContent
         fileName

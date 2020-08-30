@@ -3,25 +3,21 @@
 
 fragment OutgoingDocItemFragment on OutgoingDocItem {
     id
-    actor
+    outgoingActor: actor
     addressees {
         ...correspondentFragment
     }
     head
     remark
     sender
-    responder
+    outgoingResponder: responder
     status {
         ...referenceValueFragment
     }
     type {
         ...referenceValueFragment
     }
-    registrationInfo {
-        isRegistered
-        registerNumber
-        registrationDate
-    }
+    
     reservationInfo {
         isRegistered
         registerNumber

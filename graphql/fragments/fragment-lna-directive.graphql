@@ -1,7 +1,7 @@
 #import './fragment-reference-value.graphql'
 
 fragment lnaDirectiveItemFragment on LNADirectiveItem {
-    title
+    directiveTitle: title
     signer
     actor
     responder
@@ -19,22 +19,6 @@ fragment lnaDirectiveItemFragment on LNADirectiveItem {
     }
     remark
     enableNetworkFolder
-    mailingGroups {
-        id
-        name
-        parentId
-        hasChildren
-        isDeleted
-        state
-        authorId
-        when
-    }
-    mailingUsers {
-        userId
-        state
-        authorId
-        when
-    }
     tasks
     examinationFiles
 }

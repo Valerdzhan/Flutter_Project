@@ -8,7 +8,7 @@
 # Press save or Cmd+Enter to apply the changes and update server. Switch to GraphiQL
 # on the left panel to immediately test your changes.
 # This tool also supports extending existing APIs. Check graphql-faker --help
-#
+#type ContractListItem
 # Developed with ❤️ by APIs.guru | https://github.com/APIs-guru/graphql-faker
 
 # This is sample SDL schema for GraphQL Faker.
@@ -1539,7 +1539,7 @@ type ContractListItem implements IDocumentListItem {
   """
   Контрагент
   """
-  contractorName: String
+  contractorName: String @examples(values: ["Контрагент 1", "Контрагент 2", "Контрагент 3", "Контрагент 4", "Контрагент 5", "Контрагент 6"])
 
   """
   Контрольные карты
@@ -1569,7 +1569,7 @@ type ContractListItem implements IDocumentListItem {
   """
   Тип документа
   """
-  documentType: DocumentType
+  documentType: DocumentType @examples(values:["CONTRACT"])
 
   """
   Кем изменено
@@ -1609,7 +1609,7 @@ type ContractListItem implements IDocumentListItem {
   """
   Номер регистрации
   """
-  registerNumber: String
+  registerNumber: String @examples(values: ["1", "21", "314", "56732"])
   registrationBookItem: RegistrationBookItem
 
   """
@@ -1641,7 +1641,7 @@ type ContractListItem implements IDocumentListItem {
   """
   Название
   """
-  title: String!
+  title: String! @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Создано
@@ -2803,7 +2803,7 @@ input DeliverInternalDocument {
 """
 Идентификатор подразделения. Является строкой.
 """
-scalar DepartmentId @fake(type: number)
+scalar DepartmentId @examples(values:["21", "18"])
 
 type DFSMutation {
   addTodo(title: String!):Todo
@@ -6224,7 +6224,7 @@ type GenericRequestListItem implements IDocumentListItem {
   """
   Название
   """
-  title: String!
+  title: String! @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Создано
@@ -6639,7 +6639,7 @@ type HRRequestDocListItem implements IDocumentListItem {
   """
   Название
   """
-  title: String!
+  title: String! @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Создано
@@ -7275,7 +7275,7 @@ type IncomingDocItem implements IDocument {
   """
   Исходящий номер отправителя
   """
-  senderOutgoingNumber: String
+  senderOutgoingNumber: String @examples(values: ["1", "2", "3", "54321", "234", "19283"])
 
   """
   Особый контроль
@@ -7340,7 +7340,7 @@ type IncomingDocListItem implements IDocumentListItem {
   """
   Id адресатов
   """
-  addresseeIds: [UserId]
+  addresseeIds: [UserId] @listLength(min: 1, max: 6)
 
   """
   Автор
@@ -7431,7 +7431,7 @@ type IncomingDocListItem implements IDocumentListItem {
   """
   Дата
   """
-  registrationNumber: String
+  registrationNumber: String @examples(values: ["1", "2", "3", "54321", "234", "19283"])
 
   """
   Кем забронировано
@@ -7446,7 +7446,7 @@ type IncomingDocListItem implements IDocumentListItem {
   """
   Дата забронирования
   """
-  reservedRegistrationNumber: String
+  reservedRegistrationNumber: String @examples(values: ["1", "2", "3", "54321", "234", "19283"])
 
   """
   Ответственный
@@ -7466,7 +7466,7 @@ type IncomingDocListItem implements IDocumentListItem {
   """
   Отправитель
   """
-  sender: String
+  sender: String  @fake(type: companyName)
 
   """
   ID Отправителя
@@ -7476,12 +7476,12 @@ type IncomingDocListItem implements IDocumentListItem {
   """
   Исх. №
   """
-  senderOutgoingNumber: String
+  senderOutgoingNumber: String  @examples(values: ["1", "2", "3", "54321", "234", "19283"])
 
   """
   Название
   """
-  title: String!
+  title: String! @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Создано
@@ -8368,7 +8368,7 @@ type LetterListItem implements IDocumentListItem {
   """
   Тема
   """
-  head: String!
+  head: String! @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   ИД документа
@@ -8404,7 +8404,7 @@ type LetterListItem implements IDocumentListItem {
   """
   Номер регистрации
   """
-  registrationNumber: String
+  registrationNumber: String @examples(values:["1", "21", "345", "7654"])
 
   """
   Ответственный
@@ -8434,7 +8434,7 @@ type LetterListItem implements IDocumentListItem {
   """
   Название
   """
-  title: String!
+  title: String! @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Создано
@@ -9028,7 +9028,7 @@ type LNAListItem implements IDocumentListItem {
   """
   Место регистрации
   """
-  placeOfRegistrationValue: String
+  placeOfRegistrationValue: String @examples(values:["Приказы Общества", "Распоряжения Общества"])
 
   """
   Инициатор публикации документа
@@ -9064,7 +9064,7 @@ type LNAListItem implements IDocumentListItem {
   """
   Название
   """
-  title: String!
+  title: String! @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Статус действия
@@ -10158,7 +10158,7 @@ type MassMailListItem implements IDocumentListItem {
   """
   Заголовок
   """
-  title: String!
+  title: String! @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Создано
@@ -10498,7 +10498,7 @@ type orderDescriptor {
   """
   Номер
   """
-  number: String!
+  number: String! @examples(values:["1", "21", "425", "6730"])
 }
 
 """
@@ -10970,7 +10970,7 @@ type OutgoingDocListItem implements IDocumentListItem {
   """
   Дата регистрации
   """
-  registrationNumber: String
+  registrationNumber: String @examples(values:["1", "21", "345", "7654"])
 
   """
   Кем забронировано
@@ -10985,7 +10985,7 @@ type OutgoingDocListItem implements IDocumentListItem {
   """
   Дата забронирования
   """
-  reservedRegistrationNumber: String
+  reservedRegistrationNumber: String @examples(values:["1", "21", "345", "7654"])
 
   """
   Ответственный
@@ -11010,7 +11010,7 @@ type OutgoingDocListItem implements IDocumentListItem {
   """
   Название
   """
-  title: String!
+  title: String! @examples(values: ["Документ 1", "Документ 2", "Документ 3", "Документ 4", "Документ 5", "Документ 6"])
 
   """
   Создано

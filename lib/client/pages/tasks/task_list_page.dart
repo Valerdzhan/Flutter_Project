@@ -6,9 +6,11 @@ import 'package:myapp/business/app_state_store.dart';
 import 'package:myapp/business/tasks/models/TaskListItemList.dart';
 import 'package:myapp/business/tasks/models/tasks_model.dart';
 import 'package:myapp/client/pages/tasks/task_item/task_item_connector.dart';
+import 'package:myapp/client/src/layout/card_custom.dart';
 import 'package:myapp/client/src/components/menu.dart';
 import 'package:myapp/client/src/components/my_scaffold.dart';
 import 'package:myapp/client/src/layout/task_status.dart';
+import 'package:myapp/client/src/services/document_type_color.dart';
 
 class TasksPageConnector extends StatelessWidget {
   TasksPageConnector({Key key}) : super(key: key);
@@ -184,43 +186,48 @@ class _TaskListState extends State<TaskListPage> {
                         controller: _controller,
                         itemCount: widget.tasks.items.length,
                         itemBuilder: (context, index) {
-                          return ListTile(
-                            leading: ExcludeSemantics(
-                              child: CircleAvatar(child: Text('$index')),
+                          return CardCustom(
+                            color: DocumentTypeColor.documentColor(widget
+                                .tasks.items[index].documentLastVersion.type),
+                            child: ListTile(
+                              // leading: ExcludeSemantics(
+                              //   child: CircleAvatar(child: Text('$index')),
+                              // ),
+                              title: Row(
+                                children: [
+                                  Expanded(
+                                      child: Text(
+                                          '${widget.tasks.items[index].documentLastVersion.compileTitle}')),
+                                  Text(
+                                    DateFormat('dd.MM.yyyy')
+                                        .format(
+                                            widget.tasks.items[index].dueDate)
+                                        .toString(),
+                                  ),
+                                ],
+                              ),
+                              subtitle: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  StatusTask(
+                                    task: widget.tasks.items[index],
+                                  ),
+                                  Text(widget.tasks.items[index].$$typename)
+                                  // UserItem(
+                                  //   userId: widget.tasks.items[index].actorId,
+                                  // )
+                                ],
+                              ),
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => TaskItemPageConnector(
+                                        taskId: widget.tasks.items[index].id),
+                                  ),
+                                );
+                              },
                             ),
-                            title: Row(
-                              children: [
-                                Expanded(
-                                    child: Text(
-                                        '${widget.tasks.items[index].documentLastVersion.compileTitle}')),
-                                Text(
-                                  DateFormat('dd.MM.yyyy')
-                                      .format(widget.tasks.items[index].dueDate)
-                                      .toString(),
-                                ),
-                              ],
-                            ),
-                            subtitle: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                StatusTask(
-                                  task: widget.tasks.items[index],
-                                ),
-                                Text(widget.tasks.items[index].$$typename)
-                                // UserItem(
-                                //   userId: widget.tasks.items[index].actorId,
-                                // )
-                              ],
-                            ),
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => TaskItemPageConnector(
-                                      taskId: widget.tasks.items[index].id),
-                                ),
-                              );
-                            },
                           );
                         },
                       ),

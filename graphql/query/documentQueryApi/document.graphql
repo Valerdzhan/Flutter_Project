@@ -17,142 +17,144 @@
 #import "../../fragments/fragment-mass-mail.graphql"
 
 query getDocument($id: DocumentId!) {
-    documentQueryAPI(documentId: $id) {
+  documentQueryAPI(documentId: $id) {
+    document {
+      id
+      eventCount
+      version
+      subDocuments {
+        ...documentDescriptorFragment
+      }
+      attachments {
+        ...attachmentsFragment
+      }
+      documentType
+      adminIds
+      readerIds
+      registrationInfo {
+        isRegistered
+        registerNumber
+        registrationDate
+      }
+      registrationBookItem {
+        authorId
+        date
+        documentId
+        isPermanent
+        number
+        registrationBookId
+        registrationBook {
+          name
+        }
+      }
+      revoked {
+        isRevoked
+        revokedNote
+        isTaskCanceled
+      }
+      relations {
+        relationId
+        documentId
         document {
-            id
-            eventCount
-            version
-            subDocuments {
-                ...documentDescriptorFragment
-            }
-            attachments {
-                ...attachmentsFragment
-            }
-            documentType
-            adminIds
-            readerIds
-            registrationInfo {
-                isRegistered
-                registerNumber
-                registrationDate
-            }
-            registrationBookItem {
-                authorId
-                date
-                documentId
-                isPermanent
-                number
-                registrationBookId
-                registrationBook {
-                    name
-                }
-            }
-            revoked {
-                isRevoked
-                revokedNote
-                isTaskCanceled
-            }
-            relations {
-                relationId
-                documentId
-                document {
-                    id
-                    documentType
-                    title: compileTitle
-                    hasAccess
-                    adminIds
-                    ... on ContractItem {
-                        responderId
-                    }
-                    ... on LetterItem {
-                        responderId
-                    }
-                    ... on OutgoingDocItem {
-                        responderId: responder
-                    }
-                }
-                relationType
-            }
-            examinationAuditList {
-                masters
-                userId
-                whenRead
-            }
-            # readAuditList {
-            #     masters
-            #     userId
-            #     whenRead
-            # }
-            authorId
-            editorId
-            whenCreated
-            whenEdited
-            documentSerialNumber
-            documentSystemNumber
-            documentStatus
-            isLinkAccessAllowed
-            isPublished
-            publisherId
-            whenPublished
-            mailingGroups {
-                id
-                authorId
-                hasChildren
-                isDeleted
-                name
-                parentId
-                state
-                when
-            }
-            mailingUsers {
-                authorId
-                state
-                userId
-                when
-            }
-            userRoles
-            ... on ContractItem {
-                ...contractItemFragment
-            }
-            ... on LetterItem {
-                ...letterItemFragment
-            }
-            ... on IncomingDocItem {
-                ...incomingDocItemFragment
-            }
-            ... on OutgoingDocItem {
-                ...OutgoingDocItemFragment
-            }
-            ... on TaxExpertiseItem {
-                ...taxExpertiseItemFragment
-            }
-            ... on RequestToHireItem {
-                ...requestToHireItemFragment
-            }
-            ... on RequestForDismissalItem {
-                ...requestForDismissalItemFragment
-            }
-            ... on TransferRequestItem {
-                ...transferRequestItemFragment
-            }
-            ... on CancellationRequestForDismissalItem {
-                ...requestCancellationForDismissalItemFragment
-            }
-            ... on LNADirectiveItem {
-                ...lnaDirectiveItemFragment
-            }
-            ... on LNAOrderItem {
-                ...lnaOrderItemFragment
-            }
-            ... on GenericRequestItem {
-                ...genericItemFragment
-            }
-            ... on MassMailItem {
-                ...massMailItemFragment
-            }
+          id
+          documentType
+          title: compileTitle
+          hasAccess
+          adminIds
+          __typename
+          ... on ContractItem {
+            ContractResponderId: responderId
+          }
+          ... on LetterItem {
+            LetterResponderId: responderId
+          }
+          ... on OutgoingDocItem {
+            responderId: responder
+          }
         }
-        unlockedAttachments {
-            ...attachmentsFragment
-        }
+        relationType
+      }
+      examinationAuditList {
+        masters
+        userId
+        whenRead
+      }
+      # readAuditList {
+      #     masters
+      #     userId
+      #     whenRead
+      # }
+      authorId
+      editorId
+      whenCreated
+      whenEdited
+      documentSerialNumber
+      documentSystemNumber
+      documentStatus
+      isLinkAccessAllowed
+      isPublished
+      publisherId
+      whenPublished
+      mailingGroups {
+        id
+        authorId
+        hasChildren
+        isDeleted
+        name
+        parentId
+        state
+        when
+      }
+      mailingUsers {
+        authorId
+        state
+        userId
+        when
+      }
+      userRoles
+      __typename
+      ... on ContractItem {
+        ...contractItemFragment
+      }
+      ... on LetterItem {
+        ...letterItemFragment
+      }
+      ... on IncomingDocItem {
+        ...incomingDocItemFragment
+      }
+      ... on OutgoingDocItem {
+        ...OutgoingDocItemFragment
+      }
+      ... on TaxExpertiseItem {
+        ...taxExpertiseItemFragment
+      }
+      ... on RequestToHireItem {
+        ...requestToHireItemFragment
+      }
+      ... on RequestForDismissalItem {
+        ...requestForDismissalItemFragment
+      }
+      ... on TransferRequestItem {
+        ...transferRequestItemFragment
+      }
+      ... on CancellationRequestForDismissalItem {
+        ...requestCancellationForDismissalItemFragment
+      }
+      ... on LNADirectiveItem {
+        ...lnaDirectiveItemFragment
+      }
+      ... on LNAOrderItem {
+        ...lnaOrderItemFragment
+      }
+      ... on GenericRequestItem {
+        ...genericItemFragment
+      }
+      ... on MassMailItem {
+        ...massMailItemFragment
+      }
     }
+    unlockedAttachments {
+      ...attachmentsFragment
+    }
+  }
 }

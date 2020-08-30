@@ -52,7 +52,7 @@ class _UserItemState extends State<UserItem> {
             child: GestureDetector(
               onTap: () => _showModalBottomSheet(context, user),
               child: Text(
-                user != null ? user.displayName : '',
+                user != null ? user.displayName : 'No name person',
                 textAlign: TextAlign.start,
               ),
             ),

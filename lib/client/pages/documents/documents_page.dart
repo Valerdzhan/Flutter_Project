@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:myapp/business/documents/models/DocumentListItemInterfaceCollection.dart';
-import 'package:myapp/client/pages/documents/document_list_item/idocument_item.dart';
+import 'package:myapp/client/pages/documents/document_list_item/idocument_list_item.dart';
 import 'package:myapp/client/src/components/menu.dart';
 
 class DocumentListPage extends StatefulWidget {
@@ -148,7 +148,7 @@ class _DocumentListPageState extends State<DocumentListPage> {
                       controller: _controller,
                       itemCount: widget.documents.items.length,
                       itemBuilder: (context, index) {
-                        return IDocumentItem(widget.documents.items[index]);
+                        return IDocumentListItem(widget.documents.items[index]);
                         // ListTile(
                         //   leading: ExcludeSemantics(
                         //     child: CircleAvatar(child: Text('$index')),

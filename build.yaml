@@ -29,6 +29,11 @@ targets:
               queries_glob: graphql/query/userTasks.graphql
               output: lib/models/graphql/graphql_api.tasks.dart
               naming_scheme: pathedWithFields
+            # Document документ по id
+            - schema: my.schema.graphql
+              queries_glob: graphql/query/documentQueryApi/document.graphql
+              output: lib/models/graphql/graphql_api.document.dart
+              naming_scheme: pathedWithFields
             # - schema: my.schema.graphql
             #   queries_glob: graphql/mutation/**.graphql
             #   output: lib/graphql/graphql_api.mutatuion.dart
@@ -105,7 +110,9 @@ targets:
             dart_type: int
           - graphql_type: RegistrationBookId
             dart_type: String
-          - graphql_type: incomingDocSenderId,
+          - graphql_type: incomingDocSenderId
+            dart_type: String
+          - graphql_type: RelationId
             dart_type: String
           
           

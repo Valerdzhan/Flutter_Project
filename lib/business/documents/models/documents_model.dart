@@ -24,8 +24,8 @@ class DocumentsModel extends BaseModel<AppState> {
 
   @override
   DocumentsModel fromStore() => DocumentsModel.build(
-        documents: state.documentState.documents,
         isLoading: state.documentState.isLoading,
+        documents: state.documentState.documents,
         loadMore: () => dispatch(DocumentsLoadMoreAction()),
         onQuery: () => dispatch(DocumentsListQuery()),
         onRefresh: () => dispatchFuture(DocumentsListQuery()),

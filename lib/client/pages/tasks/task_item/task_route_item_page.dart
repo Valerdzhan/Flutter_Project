@@ -1,7 +1,7 @@
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/client/pages/user/user.dart';
-import 'package:myapp/client/src/components/field_display.dart';
+import 'package:myapp/client/src/layout/field_display.dart';
 import 'package:myapp/client/src/components/labeled_radio.dart';
 import 'package:myapp/models/graphql/graphql_api.tasks.graphql.dart';
 

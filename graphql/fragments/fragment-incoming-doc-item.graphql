@@ -5,13 +5,13 @@
 
 fragment incomingDocItemFragment on IncomingDocItem {
     id
-    sender {
+    incomingSender: sender {
         ...correspondentFragment
     }
     status {
         ...referenceValueFragment
     }
-    actor
+    incomingActor: actor
     documentDate
     type {
         ...referenceValueFragment
@@ -26,11 +26,6 @@ fragment incomingDocItemFragment on IncomingDocItem {
     controlMark
     remark
     commercialSecret
-    registrationInfo {
-        isRegistered
-        registerNumber
-        registrationDate
-    }
     tasks
     controlCardsCount
     enableNetworkFolder
