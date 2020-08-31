@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp/client/pages/documents/document_item/idocument_item.dart';
 import 'package:myapp/client/pages/user/multi_user.dart';
 import 'package:myapp/client/pages/user/user.dart';
+import 'package:myapp/client/src/layout/attachments/file_list.dart';
 import 'package:myapp/client/src/layout/field_display.dart';
 import 'package:myapp/client/src/layout/progress_indicator.dart';
 import 'package:myapp/models/graphql/graphql_api.document.graphql.dart';
@@ -173,52 +174,54 @@ class _LetterItemDisplayState extends State<LetterItemDisplay>
             ],
           ),
         ),
-        Expanded(
-          flex: 1,
-          child: new TabBarView(
-            controller: _tabController,
-            children: <Widget>[
-              Column(
-                children: [
-                  FieldDisplayComponent(
-                      fieldName: "Сообщение", title: widget.item.head),
-                  FieldDisplayComponent(
-                    fieldName: "Адресаты",
-                    customWidget:
-                        MultiUserItem(userIds: widget.item.letterAddresseeIds),
-                  ),
-                  FieldDisplayComponent(
-                    fieldName: "Отправитель",
-                    customWidget: UserItem(userId: widget.item.senderId),
-                  ),
-                  FieldDisplayComponent(
-                    fieldName: "Исполнитель",
-                    customWidget: UserItem(userId: widget.item.actorId),
-                  ),
-                  FieldDisplayComponent(
-                    fieldName: "Ответственный",
-                    customWidget: UserItem(userId: widget.item.responderId),
-                  ),
-                  FieldDisplayComponent(
-                    fieldName: "Номер и дата регистрации",
-                    title:
-                        '№ ${widget.item.registrationInfo.registerNumber} от ${DateFormat('dd.MM.yyyy').format(widget.item.registrationInfo.registrationDate).toString()}',
-                  ),
-                  FieldDisplayComponent(
-                    fieldName: "Примечание",
-                    title: widget.item.remark,
-                  ),
-                  FieldDisplayComponent(
-                    fieldName: "Информация ограниченного доступа",
-                    title: "Содержит КТ",
-                  ),
-                ],
-              ),
-              Container(
-                child: Text('Text'),
-              ),
-            ],
-          ),
+        new TabBarView(
+          controller: _tabController,
+          children: <Widget>[
+            Column(
+              children: [
+                FieldDisplayComponent(
+                    fieldName: "Сообщение", title: widget.item.head),
+                FieldDisplayComponent(
+                  fieldName: "Адресаты",
+                  customWidget:
+                      MultiUserItem(userIds: widget.item.letterAddresseeIds),
+                ),
+                FieldDisplayComponent(
+                  fieldName: "Отправитель",
+                  customWidget: UserItem(userId: widget.item.senderId),
+                ),
+                FieldDisplayComponent(
+                  fieldName: "Исполнитель",
+                  customWidget: UserItem(userId: widget.item.actorId),
+                ),
+                FieldDisplayComponent(
+                  fieldName: "Ответственный",
+                  customWidget: UserItem(userId: widget.item.responderId),
+                ),
+                FieldDisplayComponent(
+                  fieldName: "Номер и дата регистрации",
+                  title:
+                      '№ ${widget.item.registrationInfo.registerNumber} от ${DateFormat('dd.MM.yyyy').format(widget.item.registrationInfo.registrationDate).toString()}',
+                ),
+                FieldDisplayComponent(
+                  fieldName: "Примечание",
+                  title: widget.item.remark,
+                ),
+                FieldDisplayComponent(
+                  fieldName: "Информация ограниченного доступа",
+                  title: "Содержит КТ",
+                ),
+                FieldDisplayComponent(
+                  fieldName: "Информация ограниченного доступа",
+                  customWidget:
+                      FileListLayout(attachments: widget.item.attachments),
+                ),
+              ],
+            ),
+            Container(
+              child: Text('Text'),
+            ),
+          ],
         ),
       ],
     );

@@ -7,7 +7,7 @@ class SetUsersStateAction extends ReduxAction<AppState> {
   SetUsersStateAction(this.usersState);
 
   @override
-  Future<AppState> reduce() async => state.copy(
+  AppState reduce() => state.copy(
         userState: usersState,
       );
 }

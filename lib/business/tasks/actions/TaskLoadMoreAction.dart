@@ -37,7 +37,7 @@ class TaskLoadMoreAction extends ReduxAction<AppState> {
             taskList: newTasks,
           );
 
-          await dispatchFuture(SetTaskStateAction(newTaskState));
+          dispatch(SetTaskStateAction(newTaskState));
         }
 
         return state;
@@ -46,9 +46,11 @@ class TaskLoadMoreAction extends ReduxAction<AppState> {
     return state;
   }
 
+  // The wait starts here. We use the index as a wait-flag reference.
   @override
-  void before() => dispatch(IsLoadingTaskAction(true));
+  void before() => dispatch(WaitAction.add("tasks-wait"));
 
+  // The wait ends here. We remove the index from the wait-flag references.
   @override
-  void after() => dispatch(IsLoadingTaskAction(false));
+  void after() => dispatch(WaitAction.remove("tasks-wait"));
 }

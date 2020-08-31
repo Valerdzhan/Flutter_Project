@@ -39,7 +39,7 @@ class DocumentsLoadMoreAction extends ReduxAction<AppState> {
             documents: newDocuments,
           );
 
-          await dispatchFuture(SetDocumentStateAction(newDocumentState));
+          dispatch(SetDocumentStateAction(newDocumentState));
         }
 
         return state;

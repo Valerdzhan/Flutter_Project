@@ -9,12 +9,12 @@ class DocumentClearAction extends BaseActions with BarrierAction {
   DocumentClearAction();
 
   @override
-  Future<AppState> reduce() async {
+  AppState reduce() {
     var newDocumentState = documentState.copy(
       document: new GetDocument$DFSQuery$DocumentQueryAPI$Document(),
     );
 
-    await dispatchFuture(SetDocumentStateAction(newDocumentState));
+    dispatch(SetDocumentStateAction(newDocumentState));
 
     return null;
   }

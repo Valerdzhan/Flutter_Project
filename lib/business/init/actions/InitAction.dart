@@ -38,8 +38,8 @@ class InitActions extends ReduxAction<AppState> {
       var setUserState = state.userState
           .copy(currentUser: currentUser, allUsers: allUsersState);
 
-      await dispatchFuture(SetUsersStateAction(setUserState));
       await dispatchFuture(InitTaskStatus());
+      dispatch(SetUsersStateAction(setUserState));
     } else {
       dispatch(IsInitLoadAction(true));
     }
@@ -58,7 +58,7 @@ class IsInitLoadAction extends ReduxAction<AppState> {
   final bool val;
 
   @override
-  Future<AppState> reduce() async => state.copy(
+  AppState reduce() => state.copy(
         isInitLoad: val,
       );
 }
@@ -87,7 +87,7 @@ class AllUsersActions extends ReduxAction<AppState> {
         allUsers: MinimalUserItem.listFromAllUsers(serverInfo.allUsers),
       );
 
-      await dispatchFuture(SetUsersStateAction(userStates));
+      dispatch(SetUsersStateAction(userStates));
     }
 
     return state;

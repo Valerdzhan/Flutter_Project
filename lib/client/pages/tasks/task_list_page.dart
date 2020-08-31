@@ -166,81 +166,80 @@ class _TaskListState extends State<TaskListPage> {
         ],
       ),
       drawer: MyDrawer(),
-      body: (widget.tasks == null && widget.isLoading)
-          ? Container(
-              alignment: Alignment.center,
-              child: Center(
-                child: CircularProgressIndicator(),
-              ),
+      body: (widget.tasks.items.length == 0)
+          ? Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Center(child: Text('Нет задач')),
             )
-          : (widget.tasks.items.length == 0)
-              ? Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Center(child: Text('Нет задач')),
-                )
-              : RefreshIndicator(
+          : Stack(
+              children: <Widget>[
+                RefreshIndicator(
                   onRefresh: widget.onRefresh,
-                  child: Stack(
-                    children: <Widget>[
-                      ListView.builder(
-                        controller: _controller,
-                        itemCount: widget.tasks.items.length,
-                        itemBuilder: (context, index) {
-                          return CardCustom(
-                            color: DocumentTypeColor.documentColor(widget
-                                .tasks.items[index].documentLastVersion.type),
-                            child: ListTile(
-                              // leading: ExcludeSemantics(
-                              //   child: CircleAvatar(child: Text('$index')),
-                              // ),
-                              title: Row(
-                                children: [
-                                  Expanded(
-                                      child: Text(
-                                          '${widget.tasks.items[index].documentLastVersion.compileTitle}')),
-                                  Text(
-                                    DateFormat('dd.MM.yyyy')
-                                        .format(
-                                            widget.tasks.items[index].dueDate)
-                                        .toString(),
-                                  ),
-                                ],
+                  child: ListView.builder(
+                    controller: _controller,
+                    itemCount: widget.tasks.items.length,
+                    itemBuilder: (context, index) {
+                      return CardCustom(
+                        color: DocumentTypeColor.documentColor(
+                            widget.tasks.items[index].documentLastVersion.type),
+                        child: ListTile(
+                          // leading: ExcludeSemantics(
+                          //   child: CircleAvatar(child: Text('$index')),
+                          // ),
+                          title: Row(
+                            children: [
+                              Expanded(
+                                  child: Text(
+                                      '${widget.tasks.items[index].documentLastVersion.compileTitle}')),
+                              Text(
+                                DateFormat('dd.MM.yyyy')
+                                    .format(widget.tasks.items[index].dueDate)
+                                    .toString(),
                               ),
-                              subtitle: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  StatusTask(
-                                    task: widget.tasks.items[index],
-                                  ),
-                                  Text(widget.tasks.items[index].$$typename)
-                                  // UserItem(
-                                  //   userId: widget.tasks.items[index].actorId,
-                                  // )
-                                ],
-                              ),
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => TaskItemPageConnector(
-                                        taskId: widget.tasks.items[index].id),
-                                  ),
-                                );
-                              },
-                            ),
-                          );
-                        },
-                      ),
-                      if (widget.isLoading)
-                        Container(
-                          alignment: Alignment.center,
-                          child: Center(
-                            child: CircularProgressIndicator(),
+                            ],
                           ),
+                          subtitle: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              StatusTask(
+                                task: widget.tasks.items[index],
+                              ),
+                              Text(widget.tasks.items[index].$$typename)
+                              // UserItem(
+                              //   userId: widget.tasks.items[index].actorId,
+                              // )
+                            ],
+                          ),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => TaskItemPageConnector(
+                                    taskId: widget.tasks.items[index].id),
+                              ),
+                            );
+                          },
                         ),
-                    ],
+                      );
+                    },
                   ),
                 ),
+                (widget.isLoading)
+                    ? new Align(
+                        child: new Container(
+                          child: new Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: new Center(
+                                  child: new CircularProgressIndicator())),
+                        ),
+                        alignment: FractionalOffset.bottomCenter,
+                      )
+                    : new SizedBox(
+                        width: 0.0,
+                        height: 0.0,
+                      )
+              ],
+            ),
       floatingActionButton: new Visibility(
         visible: isScrollVisible,
         child: new FloatingActionButton(

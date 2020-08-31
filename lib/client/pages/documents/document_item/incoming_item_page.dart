@@ -8,7 +8,7 @@ import 'package:myapp/client/src/layout/progress_indicator.dart';
 import 'package:myapp/models/graphql/graphql_api.document.graphql.dart';
 
 // ignore: must_be_immutable
-class DocumentItemPage extends StatelessWidget implements IDocumentItem {
+class IncomingDocItemPage extends StatelessWidget implements IDocumentItem {
   GetDocument$DFSQuery$DocumentQueryAPI$Document item;
   bool isLoading;
   Function(String) onQuery;
@@ -17,7 +17,7 @@ class DocumentItemPage extends StatelessWidget implements IDocumentItem {
   Function(int) onRemove;
   VoidCallback onPop;
 
-  DocumentItemPage({
+  IncomingDocItemPage({
     Key key,
     this.isLoading = false,
     this.item,
@@ -30,7 +30,7 @@ class DocumentItemPage extends StatelessWidget implements IDocumentItem {
 
   @override
   Widget build(BuildContext context) {
-    return DocumentItemDisplay(
+    return IncomingItemDisplay(
       item: item,
       isLoading: isLoading,
       onQuery: onQuery,
@@ -43,7 +43,7 @@ class DocumentItemPage extends StatelessWidget implements IDocumentItem {
 }
 
 // ignore: must_be_immutable
-class DocumentItemDisplay extends StatefulWidget {
+class IncomingItemDisplay extends StatefulWidget {
   GetDocument$DFSQuery$DocumentQueryAPI$Document item;
   bool isLoading;
   Function(String) onQuery;
@@ -52,7 +52,7 @@ class DocumentItemDisplay extends StatefulWidget {
   Function(int) onRemove;
   VoidCallback onPop;
 
-  DocumentItemDisplay({
+  IncomingItemDisplay({
     Key key,
     this.isLoading,
     this.item,
@@ -64,10 +64,10 @@ class DocumentItemDisplay extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _DocumentItemDisplayState createState() => _DocumentItemDisplayState();
+  _IncomingItemDisplayState createState() => _IncomingItemDisplayState();
 }
 
-class _DocumentItemDisplayState extends State<DocumentItemDisplay>
+class _IncomingItemDisplayState extends State<IncomingItemDisplay>
     with TickerProviderStateMixin {
   TabController _tabController;
 
@@ -178,7 +178,7 @@ class _DocumentItemDisplayState extends State<DocumentItemDisplay>
               Column(
                 children: [
                   Container(
-                    child: Text('Contract'),
+                    child: Text('Incoming'),
                   ),
                   FieldDisplayComponent(
                     fieldName: "Ответственный",

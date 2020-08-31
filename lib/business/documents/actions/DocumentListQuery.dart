@@ -32,7 +32,7 @@ class DocumentsListQuery extends BaseActions {
         documents: documents,
       );
 
-      await dispatchFuture(SetDocumentStateAction(newDocumentState));
+      dispatch(SetDocumentStateAction(newDocumentState));
     }
 
     return state;
@@ -51,7 +51,7 @@ class IsLoadingDocumentState extends ReduxAction<AppState> {
   final bool val;
 
   @override
-  Future<AppState> reduce() async => state.copy(
+  AppState reduce() => state.copy(
         documentState: state.documentState.copy(isLoading: val),
       );
 }

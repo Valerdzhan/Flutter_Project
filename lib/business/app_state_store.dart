@@ -1,10 +1,12 @@
 import 'package:async_redux/async_redux.dart';
+import 'package:flutter/services.dart';
 import 'package:myapp/business/documents/document_state.dart';
 import 'package:myapp/business/tasks/tasks_state.dart';
 import 'package:myapp/business/todos/models/todo.dart';
 import 'package:myapp/business/users/users_state.dart';
 
 class AppState {
+  final Wait wait;
   final bool waiting;
   final bool isInitLoad;
   final List<Todo> todoList;
@@ -13,6 +15,7 @@ class AppState {
   final DocumentState documentState;
 
   AppState({
+    this.wait,
     this.todoList,
     this.taskState,
     this.userState,
@@ -28,6 +31,7 @@ class AppState {
     DocumentState documentState,
     bool isInitLoad,
     bool waiting,
+    Wait wait,
   }) =>
       AppState(
         todoList: todoList ?? this.todoList,
@@ -36,6 +40,7 @@ class AppState {
         documentState: documentState ?? this.documentState,
         isInitLoad: isInitLoad ?? this.isInitLoad,
         waiting: waiting ?? this.waiting,
+        wait: wait ?? this.wait,
       );
 
   static AppState initialState() => AppState(
@@ -45,6 +50,7 @@ class AppState {
         documentState: DocumentState.initial(),
         isInitLoad: false,
         waiting: false,
+        wait: Wait(),
       );
 
   @override
@@ -57,7 +63,8 @@ class AppState {
           taskState == other.taskState &&
           documentState == other.documentState &&
           isInitLoad == other.isInitLoad &&
-          waiting == other.waiting;
+          waiting == other.waiting &&
+          wait == other.wait;
 
   @override
   int get hashCode =>
@@ -66,11 +73,27 @@ class AppState {
       taskState.hashCode ^
       documentState.hashCode ^
       isInitLoad.hashCode ^
-      waiting.hashCode;
+      waiting.hashCode ^
+      wait.hashCode;
 }
 
 var store = Store<AppState>(
   initialState: AppState.initialState(),
+  wrapError: MyWrapError(),
   // actionObservers: [Log<AppState>.printer()],
   // modelObserver: DefaultModelObserver(),
 );
+
+class MyWrapError extends WrapError {
+  @override
+  UserException wrap(
+      Object error, StackTrace stackTrace, ReduxAction<dynamic> action) {
+    if ((error is PlatformException) &&
+        (error.code == "Error performing get") &&
+        (error.message ==
+            "Failed to get document because the client is offline."))
+      return UserException("Check your internet connection.", cause: error);
+    else
+      return null;
+  }
+}

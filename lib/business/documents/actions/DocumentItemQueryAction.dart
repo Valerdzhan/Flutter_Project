@@ -33,7 +33,7 @@ class DocumentItemQueryAction extends BaseActions with BarrierAction {
         document: documents,
       );
 
-      await dispatchFuture(SetDocumentStateAction(newDocumentState));
+      dispatch(SetDocumentStateAction(newDocumentState));
     }
 
     return state;

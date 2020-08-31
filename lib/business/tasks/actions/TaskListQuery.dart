@@ -14,40 +14,47 @@ class TaskListQuery extends BaseActions {
 
   @override
   Future<AppState> reduce() async {
-    // await Future.delayed(
-    //   Duration(milliseconds: 5000),
-    //   () async {
-    GraphQLClient _client = graphQLConfiguration.clientToQuery();
+    await Future.delayed(
+      Duration(milliseconds: 5000),
+      () async {
+        GraphQLClient _client = graphQLConfiguration.clientToQuery();
 
-    final QueryOptions options = QueryOptions(
-        documentNode: UserTasksQuery().document,
-        variables: <String, dynamic>{'skip': 0, 'limit': 20});
+        final QueryOptions options = QueryOptions(
+            documentNode: UserTasksQuery().document,
+            variables: <String, dynamic>{'skip': 0, 'limit': 20});
 
-    final QueryResult result = await _client.query(options);
+        final QueryResult result = await _client.query(options);
 
-    if (!result.hasException) {
-      var userTasks =
-          TaskListItemInterfaceCollection.fromJson(result.data["userTasks"]);
+        if (!result.hasException) {
+          var userTasks = TaskListItemInterfaceCollection.fromJson(
+              result.data["userTasks"]);
 
-      var newTaskState = taskState.copy(
-        taskList: userTasks,
-      );
+          var newTaskState = taskState.copy(
+            taskList: userTasks,
+          );
 
-      await dispatchFuture(SetTaskStateAction(newTaskState));
-      await dispatchFuture(SetTaskToMapAction(userTasks.items));
-    }
+          dispatch(SetTaskStateAction(newTaskState));
+          dispatch(SetTaskToMapAction(userTasks.items));
+        }
+      },
+    );
 
-    //     return state;
-    //   },
-    // );
     return state;
   }
 
+// The wait starts here. We use the index as a wait-flag reference.
   @override
-  void before() => dispatch(IsLoadingTaskAction(true));
+  void before() => dispatch(WaitAction.add("tasks-wait"));
 
+  // The wait ends here. We remove the index from the wait-flag references.
   @override
-  void after() => dispatch(IsLoadingTaskAction(false));
+  void after() => dispatch(WaitAction.remove("tasks-wait"));
+
+  // @override
+  // void before() => dispatch(IsLoadingTaskAction(true));
+
+  // @override
+  // void after() => dispatch(IsLoadingTaskAction(false));
 }
 
 class SetTaskToMapAction extends ReduxAction<AppState> {
@@ -55,7 +62,7 @@ class SetTaskToMapAction extends ReduxAction<AppState> {
   final List<UserTasks$DFSQuery$UserTasks$Items> tasks;
 
   @override
-  Future<AppState> reduce() async {
+  AppState reduce() {
     var dictTasks =
         Map<String, UserTasks$DFSQuery$UserTasks$Items>.fromIterable(tasks,
             key: (task) => task.id.toString(), value: (task) => task);
@@ -64,7 +71,7 @@ class SetTaskToMapAction extends ReduxAction<AppState> {
       tasks: dictTasks,
     );
 
-    await dispatchFuture(SetTaskStateAction(newTaskState));
+    dispatch(SetTaskStateAction(newTaskState));
     return state;
   }
 }
@@ -75,7 +82,7 @@ class IsLoadingTaskAction extends ReduxAction<AppState> {
   final bool val;
 
   @override
-  Future<AppState> reduce() async => state.copy(
+  AppState reduce() => state.copy(
         taskState: state.taskState.copy(isLoading: val),
       );
 }

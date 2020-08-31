@@ -25,7 +25,8 @@ class TasksModel extends BaseModel<AppState> {
   @override
   TasksModel fromStore() => TasksModel.build(
         tasks: state.taskState.taskList,
-        isLoading: state.taskState.isLoading,
+        // isLoading: state.taskState.isLoading,
+        isLoading: state.wait.isWaitingFor("tasks-wait"),
         loadMore: () => dispatch(TaskLoadMoreAction()),
         onQuery: () => dispatch(TaskListQuery()),
         onRefresh: () => dispatchFuture(TaskListQuery()),

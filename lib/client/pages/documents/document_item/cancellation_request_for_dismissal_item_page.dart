@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_redux/flutter_redux.dart';
-import 'package:myapp/business/documents/actions/DocumentClearAction.dart';
 import 'package:myapp/client/pages/documents/document_item/idocument_item.dart';
 import 'package:myapp/client/pages/user/user.dart';
 import 'package:myapp/client/src/layout/field_display.dart';
@@ -8,7 +6,8 @@ import 'package:myapp/client/src/layout/progress_indicator.dart';
 import 'package:myapp/models/graphql/graphql_api.document.graphql.dart';
 
 // ignore: must_be_immutable
-class DocumentItemPage extends StatelessWidget implements IDocumentItem {
+class CancellationRequestForDismissalItemPage extends StatelessWidget
+    implements IDocumentItem {
   GetDocument$DFSQuery$DocumentQueryAPI$Document item;
   bool isLoading;
   Function(String) onQuery;
@@ -17,7 +16,7 @@ class DocumentItemPage extends StatelessWidget implements IDocumentItem {
   Function(int) onRemove;
   VoidCallback onPop;
 
-  DocumentItemPage({
+  CancellationRequestForDismissalItemPage({
     Key key,
     this.isLoading = false,
     this.item,
@@ -30,7 +29,7 @@ class DocumentItemPage extends StatelessWidget implements IDocumentItem {
 
   @override
   Widget build(BuildContext context) {
-    return DocumentItemDisplay(
+    return CancellationRequestForDismissalItemDisplay(
       item: item,
       isLoading: isLoading,
       onQuery: onQuery,
@@ -43,7 +42,7 @@ class DocumentItemPage extends StatelessWidget implements IDocumentItem {
 }
 
 // ignore: must_be_immutable
-class DocumentItemDisplay extends StatefulWidget {
+class CancellationRequestForDismissalItemDisplay extends StatefulWidget {
   GetDocument$DFSQuery$DocumentQueryAPI$Document item;
   bool isLoading;
   Function(String) onQuery;
@@ -52,7 +51,7 @@ class DocumentItemDisplay extends StatefulWidget {
   Function(int) onRemove;
   VoidCallback onPop;
 
-  DocumentItemDisplay({
+  CancellationRequestForDismissalItemDisplay({
     Key key,
     this.isLoading,
     this.item,
@@ -64,10 +63,12 @@ class DocumentItemDisplay extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _DocumentItemDisplayState createState() => _DocumentItemDisplayState();
+  _CancellationRequestForDismissalItemDisplayState createState() =>
+      _CancellationRequestForDismissalItemDisplayState();
 }
 
-class _DocumentItemDisplayState extends State<DocumentItemDisplay>
+class _CancellationRequestForDismissalItemDisplayState
+    extends State<CancellationRequestForDismissalItemDisplay>
     with TickerProviderStateMixin {
   TabController _tabController;
 
@@ -178,7 +179,7 @@ class _DocumentItemDisplayState extends State<DocumentItemDisplay>
               Column(
                 children: [
                   Container(
-                    child: Text('Contract'),
+                    child: Text('HR'),
                   ),
                   FieldDisplayComponent(
                     fieldName: "Ответственный",

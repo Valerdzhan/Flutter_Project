@@ -9,7 +9,7 @@ class SetDocumentStateAction extends ReduxAction<AppState> {
   SetDocumentStateAction(this.documentState);
 
   @override
-  Future<AppState> reduce() async => state.copy(
+  AppState reduce() => state.copy(
         documentState: documentState,
       );
 }

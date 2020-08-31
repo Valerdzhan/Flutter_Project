@@ -1,6 +1,7 @@
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/client/pages/documents/document_item/document_item_connector.dart';
 import 'package:myapp/client/pages/documents/document_list_item/idocument_list_item.dart';
 import 'package:myapp/client/pages/user/user.dart';
 import 'package:myapp/client/src/layout/card_custom.dart';
@@ -81,13 +82,14 @@ class LNAListItem extends StatelessWidget implements IDocumentListItem {
                         ],
                       ),
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //     builder: (context) => TaskItemPageConnector(
-                        //         taskId: widget.tasks.items[index].id),
-                        //   ),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DocumentItemPageConnector(
+                              documentId: item.id,
+                            ),
+                          ),
+                        );
                       },
                     ),
                   ],

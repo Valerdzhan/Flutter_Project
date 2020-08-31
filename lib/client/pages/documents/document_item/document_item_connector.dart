@@ -23,25 +23,19 @@ class _DocumentItemPageConnectorState extends State<DocumentItemPageConnector> {
   @override
   Widget build(BuildContext context) {
     return StoreConnector<AppState, DocumentItemModel>(
+      distinct: true,
       model: DocumentItemModel(),
-      onInit: (store) => store
-          .dispatch(DocumentItemQueryAction(documentId: widget.documentId)),
-      builder: (BuildContext context, DocumentItemModel vm) =>
-          (vm.document != null)
-              ? IDocumentItem(
-                  item: vm.document,
-                  isLoading: vm.isLoading,
-                  onQuery: vm.onQuery,
-                  onCreate: vm.onCreate,
-                  onUpdate: vm.onUpdate,
-                  onRemove: vm.onRemove,
-                  onPop: vm.onPop,
-                )
-              : Container(
-                  child: Center(
-                    child: Text('Loading...'),
-                  ),
-                ),
+      onInit: (store) async => await store.dispatchFuture(
+          DocumentItemQueryAction(documentId: widget.documentId)),
+      builder: (BuildContext context, DocumentItemModel vm) => IDocumentItem(
+        item: vm.document,
+        isLoading: vm.isLoading,
+        onQuery: vm.onQuery,
+        onCreate: vm.onCreate,
+        onUpdate: vm.onUpdate,
+        onRemove: vm.onRemove,
+        onPop: vm.onPop,
+      ),
     );
   }
 }

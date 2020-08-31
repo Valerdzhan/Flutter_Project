@@ -1,6 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/client/pages/documents/document_item/cancellation_request_for_dismissal_item_page.dart';
+import 'package:myapp/client/pages/documents/document_item/contract_item_page.dart';
 import 'package:myapp/client/pages/documents/document_item/document_item_page.dart';
 import 'package:myapp/client/pages/documents/document_item/document_loading_page.dart';
+import 'package:myapp/client/pages/documents/document_item/generic_item_page.dart';
+import 'package:myapp/client/pages/documents/document_item/lna_order_item_page.dart';
+import 'package:myapp/client/pages/documents/document_item/request_for_dismissal_item_page.dart';
+import 'package:myapp/client/pages/documents/document_item/request_to_hire_item_page.dart';
+import 'package:myapp/client/pages/documents/document_item/incoming_item_page.dart';
+import 'package:myapp/client/pages/documents/document_item/letter_item_page.dart';
+import 'package:myapp/client/pages/documents/document_item/lna_directive_item_page.dart';
+import 'package:myapp/client/pages/documents/document_item/mass_mail_item_page.dart';
+import 'package:myapp/client/pages/documents/document_item/outgoing_item_page.dart';
+import 'package:myapp/client/pages/documents/document_item/transfer_request_item_page.dart';
 import 'package:myapp/models/graphql/graphql_api.document.graphql.dart';
 
 abstract class IDocumentItem extends StatelessWidget {
@@ -22,24 +34,31 @@ abstract class IDocumentItem extends StatelessWidget {
     bool isLoading,
   }) {
     try {
-      if (item == null) return DocumentLoadPage(item: item);
       switch (item.$$typename) {
         // case r'ContractItem':
-        //   return ContractItem(item: item);
+        //   return ContractItemPage(item: item);
         // case r'LetterItem':
-        //   return LetterItem(item: item);
-        // case r'HRRequestDocItem':
-        //   return HRRequestDocItem(item: item);
-        // case r'GenericRequestItem':
-        //   return GenericRequestItem(item: item);
+        //   return LetterItemPage(item: item);
         // case r'IncomingDocItem':
-        //   return IncomingDocItem(item: item);
-        // case r'LNAItem':
-        //   return LNAItem(item: item);
+        //   return IncomingDocItemPage(item: item);
         // case r'OutgoingDocItem':
-        //   return OutgoingDocItem(item: item);
+        //   return OutgoingDocItemPage(item: item);
+        // case r'RequestToHireItem':
+        //   return RequestToHireItemPage(item: item);
+        // case r'RequestForDismissalItem':
+        //   return RequestForDismissalItemPage(item: item);
+        // case r'TransferRequestItem':
+        //   return TransferRequestItemPage(item: item);
+        // case r'CancellationRequestForDismissalItem':
+        //   return CancellationRequestForDismissalItemPage(item: item);
+        // case r'GenericRequestItem':
+        //   return GenericRequestItemPage(item: item);
+        // case r'LNADirectiveItem':
+        //   return LNADirectiveItemPage(item: item);
+        // case r'LNAOrderItem':
+        //   return LNAOrderItemPage(item: item);
         // case r'MassMailItem':
-        //   return MassMailItem(item: item);
+        //   return MassMailItemPage(item: item);
         default:
           return DocumentItemPage(
             item: item,

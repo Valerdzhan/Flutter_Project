@@ -9,7 +9,7 @@ class SetTaskStateAction extends ReduxAction<AppState> {
   SetTaskStateAction(this.taskState);
 
   @override
-  Future<AppState> reduce() async => state.copy(
+  AppState reduce() => state.copy(
         taskState: taskState,
       );
 }
