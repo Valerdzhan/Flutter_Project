@@ -3,6 +3,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:myapp/business/documents/actions/DocumentClearAction.dart';
 import 'package:myapp/client/pages/documents/document_item/idocument_item.dart';
 import 'package:myapp/client/pages/user/user.dart';
+import 'package:myapp/client/src/layout/attachments/file_list.dart';
 import 'package:myapp/client/src/layout/field_display.dart';
 import 'package:myapp/client/src/layout/progress_indicator.dart';
 import 'package:myapp/models/graphql/graphql_api.document.graphql.dart';
@@ -122,7 +123,35 @@ class _DocumentItemDisplayState extends State<DocumentItemDisplay>
           ),
         ],
       ),
-      body: widget.isLoading ? progressIndicator() : _documentBody(),
+      body: widget.isLoading ? progressIndicator() : simpleBody(),
+    );
+  }
+
+  Widget simpleBody() {
+    return Container(
+      child: ListView(
+        children: [
+          Container(color: Colors.red, height: 150.0),
+          Container(color: Colors.purple, height: 150.0),
+          Container(color: Colors.green, height: 150.0),
+          Container(color: Colors.orange, height: 150.0),
+          Container(color: Colors.yellow, height: 150.0),
+          Container(color: Colors.pink, height: 150.0),
+          Container(color: Colors.cyan, height: 150.0),
+          Container(color: Colors.indigo, height: 150.0),
+          Container(color: Colors.blue, height: 150.0),
+          FieldDisplayComponent(
+            fieldName: "Ответственный",
+            customWidget: UserItem(
+              userId: widget.item.authorId,
+            ),
+            // 'Очень длинное название документа Очень длинное название документа Очень длинное название документа'
+          ),
+          // FileListLayout(
+          //   attachments: [],
+          // )
+        ],
+      ),
     );
   }
 
@@ -179,13 +208,6 @@ class _DocumentItemDisplayState extends State<DocumentItemDisplay>
                 children: [
                   Container(
                     child: Text('Contract'),
-                  ),
-                  FieldDisplayComponent(
-                    fieldName: "Ответственный",
-                    customWidget: UserItem(
-                      userId: widget.item.authorId,
-                    ),
-                    // 'Очень длинное название документа Очень длинное название документа Очень длинное название документа'
                   ),
                 ],
               ),
