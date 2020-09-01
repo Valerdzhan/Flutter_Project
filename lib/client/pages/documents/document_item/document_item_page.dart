@@ -118,7 +118,7 @@ class _DocumentItemDisplayState extends State<DocumentItemDisplay>
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.notifications_none),
-            tooltip: 'Напоминалка',
+            tooltip: 'Напоминалка!',
             onPressed: () => {print('click search')},
           ),
         ],
