@@ -34,22 +34,25 @@ class _LoginPageState extends State<LoginPage> {
             padding: EdgeInsets.symmetric(horizontal: 24.0),
             children: <Widget>[
               SizedBox(height: 80.0),
-              Column(
-                children: <Widget>[
-                  Image.asset(
-                    'assets/images/logo.png',
-                    width: 100.0,
-                    height: 100.0,
-                  ),
-                  SizedBox(height: 5.0),
-                  Text('Система электронного документооборота',
-                      style: TextStyle(color: Colors.white, fontSize: 16.0)),
-                  Text('ООО «Газпром добыча Уренгой»',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.bold)),
-                ],
+              Center(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/images/logo.png',
+                      width: 100.0,
+                      height: 100.0,
+                    ),
+                    SizedBox(height: 5.0),
+                    Text('Система электронного документооборота',
+                        style: TextStyle(color: Colors.white, fontSize: 16.0)),
+                    Text('ООО «Газпром добыча Уренгой»',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.bold)),
+                  ],
+                ),
               ),
               SizedBox(height: 120.0),
               TextField(

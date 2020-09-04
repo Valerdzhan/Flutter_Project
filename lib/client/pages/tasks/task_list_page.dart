@@ -124,8 +124,6 @@ class _TaskListState extends State<TaskListPage> {
         ),
      */
     return Scaffold(
-      // title: this._title,
-      // titleSecondLine: '${widget.tasks.count.toString()} задач',
       appBar: new AppBar(
         title: RichText(
           textAlign: TextAlign.start,
@@ -191,11 +189,11 @@ class _TaskListState extends State<TaskListPage> {
                               Expanded(
                                   child: Text(
                                       '${widget.tasks.items[index].documentLastVersion.compileTitle}')),
-                              Text(
-                                DateFormat('dd.MM.yyyy')
-                                    .format(widget.tasks.items[index].dueDate)
-                                    .toString(),
-                              ),
+                              Text(widget.tasks.items[index].dueDate != null
+                                  ? DateFormat('dd.MM.yyyy')
+                                      .format(widget.tasks.items[index].dueDate)
+                                      .toString()
+                                  : ''),
                             ],
                           ),
                           subtitle: Column(

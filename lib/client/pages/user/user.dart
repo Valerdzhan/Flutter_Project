@@ -51,9 +51,11 @@ class _UserItemState extends State<UserItem> {
             tooltipDirection: TooltipDirection.up,
             child: GestureDetector(
               onTap: () => _showModalBottomSheet(context, user),
-              child: Text(
-                user != null ? user.displayName : 'No name person',
-                textAlign: TextAlign.start,
+              child: Container(
+                child: Text(
+                  user != null ? user.displayName : 'No name person',
+                  textAlign: TextAlign.start,
+                ),
               ),
             ),
             content: Text(
