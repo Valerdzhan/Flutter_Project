@@ -7,7 +7,10 @@ import 'package:myapp/models/graphql/graphql_api.tasks.graphql.dart';
 import 'package:myapp/business/tasks/actions/TasksActions.dart';
 
 class TaskLoadMoreAction extends ReduxAction<AppState> {
+  final int skip;
   GraphQLConfiguration graphQLConfiguration = GraphQLConfiguration();
+
+  TaskLoadMoreAction({this.skip = 0});
 
   @override
   Future<AppState> reduce() async {
@@ -18,7 +21,7 @@ class TaskLoadMoreAction extends ReduxAction<AppState> {
 
         final QueryOptions options = QueryOptions(
             documentNode: UserTasksQuery().document,
-            variables: <String, dynamic>{'skip': 0, 'limit': 20});
+            variables: <String, dynamic>{'skip': skip, 'limit': 20});
 
         final QueryResult result = await _client.query(options);
 

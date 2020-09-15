@@ -32,7 +32,7 @@ class TasksPageConnector extends StatelessWidget {
 }
 
 class TaskListPage extends StatefulWidget {
-  final VoidCallback loadMore;
+  final Function(int) loadMore;
   final VoidCallback onQuery;
   final Future<void> Function() onRefresh;
   final bool isLoading;
@@ -59,6 +59,7 @@ class TaskListPage extends StatefulWidget {
 class _TaskListState extends State<TaskListPage> {
   ScrollController _controller;
   final String _title = 'Мои задачи';
+  int skip = 0;
   bool isScrollVisible = false;
 
   @override
@@ -69,7 +70,8 @@ class _TaskListState extends State<TaskListPage> {
           if (!widget.isLoading &&
               _controller.position.maxScrollExtent ==
                   _controller.position.pixels) {
-            widget.loadMore();
+            this.skip += 1;
+            widget.loadMore(this.skip);
           }
           if (_controller.position.userScrollDirection ==
               ScrollDirection.reverse) {

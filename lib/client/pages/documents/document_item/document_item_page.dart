@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:myapp/business/documents/actions/DocumentClearAction.dart';
@@ -118,44 +120,16 @@ class _DocumentItemDisplayState extends State<DocumentItemDisplay>
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.notifications_none),
-            tooltip: 'Напоминалка!',
+            tooltip: 'Напоминалка',
             onPressed: () => {print('click search')},
           ),
         ],
       ),
-      body: widget.isLoading ? progressIndicator() : simpleBody(),
+      body: widget.isLoading ? progressIndicator() : _newbar(),
     );
   }
 
-  Widget simpleBody() {
-    return Container(
-      child: ListView(
-        children: [
-          Container(color: Colors.red, height: 150.0),
-          Container(color: Colors.purple, height: 150.0),
-          Container(color: Colors.green, height: 150.0),
-          Container(color: Colors.orange, height: 150.0),
-          Container(color: Colors.yellow, height: 150.0),
-          Container(color: Colors.pink, height: 150.0),
-          Container(color: Colors.cyan, height: 150.0),
-          Container(color: Colors.indigo, height: 150.0),
-          Container(color: Colors.blue, height: 150.0),
-          FieldDisplayComponent(
-            fieldName: "Ответственный",
-            customWidget: UserItem(
-              userId: widget.item.authorId,
-            ),
-            // 'Очень длинное название документа Очень длинное название документа Очень длинное название документа'
-          ),
-          // FileListLayout(
-          //   attachments: [],
-          // )
-        ],
-      ),
-    );
-  }
-
-  Widget _documentBody() {
+  Widget _newbar() {
     return new Column(
       children: <Widget>[
         new Container(
@@ -170,7 +144,7 @@ class _DocumentItemDisplayState extends State<DocumentItemDisplay>
                 shape: UnderlineInputBorder(
                     borderSide: BorderSide(
                         color: Colors.transparent,
-                        width: 0,
+                        width: 4.0,
                         style: BorderStyle.solid)),
                 gradient: LinearGradient(colors: [
                   Color(0xff0e5cad),
@@ -204,15 +178,27 @@ class _DocumentItemDisplayState extends State<DocumentItemDisplay>
           child: new TabBarView(
             controller: _tabController,
             children: <Widget>[
-              Column(
+              new ListView(
                 children: [
-                  Container(
-                    child: Text('Contract'),
+                  FieldDisplayComponent(
+                    fieldName: "Ответственный",
+                    customWidget: UserItem(
+                      userId: widget.item.authorId,
+                    ),
+                  ),
+                  FieldDisplayComponent(
+                    fieldName: "Вложения",
+                    customWidget: FileListLayout(
+                      attachments: widget.item.attachments,
+                    ),
+                    // 'Очень длинное название документа Очень длинное название документа Очень длинное название документа'
                   ),
                 ],
               ),
-              Container(
-                child: Text('Text'),
+              new ListView(
+                children: [
+                  Text('bla'),
+                ],
               ),
             ],
           ),

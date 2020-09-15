@@ -13,211 +13,437 @@ class FileListLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(25.0),
-            topRight: Radius.circular(25.0),
-          ),
-          color: Colors.white),
-      padding: EdgeInsets.all(15.0),
-      child: Expanded(
-        child: ListView(
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  "Вложения",
-                  style: Theme.of(context).textTheme.display1.apply(
-                        color: Color(0xff0b1666),
-                        fontWeightDelta: 2,
-                      ),
+    return new Column(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(25.0),
+                topRight: Radius.circular(25.0),
+              ),
+              color: Colors.white),
+          padding: EdgeInsets.all(5.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(
+                "Вложения",
+                style: Theme.of(context).textTheme.headline5.apply(
+                      color: Color(0xff0b1666),
+                      fontWeightDelta: 2,
+                    ),
+              ),
+              FlatButton(
+                child: Text(
+                  "View All",
+                  style: TextStyle(color: Colors.blue),
                 ),
-                FlatButton(
-                  child: Text(
-                    "View All",
-                    style: TextStyle(color: Colors.blue),
-                  ),
-                  onPressed: () {},
-                )
-              ],
-            ),
-            // Container(color: Colors.red, height: 150.0),
-            // Container(color: Colors.purple, height: 150.0),
-            // Container(color: Colors.green, height: 150.0),
-            // Container(color: Colors.orange, height: 150.0),
-            // Container(color: Colors.yellow, height: 150.0),
-            // Container(color: Colors.pink, height: 150.0),
-            // Container(color: Colors.cyan, height: 150.0),
-            // Container(color: Colors.indigo, height: 150.0),
-            // Container(color: Colors.blue, height: 150.0),
-            // Expanded(
-            //   child: ListView.builder(
-            //     itemCount: attachments.length,
-            //     itemBuilder: (ctx, i) {
-            //       String image;
-            //       Icon icon;
-            //       Color color;
-            //       switch (attachments[i].fileType) {
-            //         case ('.doc'):
-            //           {
-            //             icon = Icon(FontAwesome.file_word);
-            //             color = Color(0xffe3f9f3);
-            //           }
-            //           break;
-            //         case ('.docx'):
-            //           {
-            //             icon = Icon(FontAwesome.file_word);
-            //             color = Color(0xffe3f9f3);
-            //           }
-            //           break;
-            //         case ('.rtf'):
-            //           {
-            //             icon = Icon(FontAwesome.file_word);
-            //             color = Color(0xffe3f9f3);
-            //           }
-            //           break;
-            //         case ('.ocx'):
-            //           {
-            //             icon = Icon(FontAwesome.file_word);
-            //             color = Color(0xffe3f9f3);
-            //           }
-            //           break;
-            //         case ('.pdf'):
-            //           {
-            //             icon = Icon(FontAwesome.file_pdf);
-            //             color = Color(0xffe3f9f3);
-            //           }
-            //           break;
-            //         case ('.txt'):
-            //           {
-            //             icon = Icon(FontAwesome.file);
-            //             color = Color(0xffe3f9f3);
-            //           }
-            //           break;
-            //         case ('.ptx'):
-            //           {
-            //             icon = Icon(FontAwesome.file_powerpoint);
-            //             color = Color(0xffe3f9f3);
-            //           }
-            //           break;
-            //         case ('.ppt'):
-            //           {
-            //             icon = Icon(FontAwesome.file_powerpoint);
-            //             color = Color(0xffe3f9f3);
-            //           }
-            //           break;
-            //         case ('.xls'):
-            //           {
-            //             icon = Icon(FontAwesome.file_excel);
-            //             color = Color(0xffe3f9f3);
-            //           }
-            //           break;
-            //         case ('.xlsx'):
-            //           {
-            //             icon = Icon(FontAwesome.file_excel);
-            //             color = Color(0xffe3f9f3);
-            //           }
-            //           break;
-            //         case ('.xlsm'):
-            //           {
-            //             icon = Icon(FontAwesome.file_excel);
-            //             color = Color(0xffe3f9f3);
-            //           }
-            //           break;
-            //         case ('.xlsb'):
-            //           {
-            //             icon = Icon(FontAwesome.file_excel);
-            //             color = Color(0xffe3f9f3);
-            //           }
-            //           break;
-            //         case ('.jpg'):
-            //           {
-            //             icon = Icon(FontAwesome.file_image);
-            //             color = Color(0xffe3f9f3);
-            //           }
-            //           break;
-            //         case ('.png'):
-            //           {
-            //             icon = Icon(FontAwesome.file_image);
-            //             color = Color(0xffe3f9f3);
-            //           }
-            //           break;
-            //         case ('.gif'):
-            //           {
-            //             icon = Icon(FontAwesome.file_image);
-            //             color = Color(0xffe3f9f3);
-            //           }
-            //           break;
-            //         case ('.zip'):
-            //           {
-            //             icon = Icon(FontAwesome.file_archive);
-            //             color = Color(0xffe3f9f3);
-            //           }
-            //           break;
-            //         case ('.rar'):
-            //           {
-            //             icon = Icon(FontAwesome.file_archive);
-            //             color = Color(0xffe3f9f3);
-            //           }
-            //           break;
-            //         case ('.js'):
-            //           {
-            //             icon = Icon(FontAwesome.file_code);
-            //             color = Color(0xffe3f9f3);
-            //           }
-            //           break;
-
-            //         // case fileType.document:
-            //         //   {
-            //         //     image = 'assets/file_word.png';
-            //         //     color = Color(0xffeaeaea);
-            //         //   }
-            //         //   break;
-            //         // case fileType.pdf:
-            //         //   {
-            //         //     image = 'assets/file_pdf.png';
-            //         //     color = Color(0xfff8bdba);
-            //         //   }
-            //         //   break;
-            //         // case fileType.video:
-            //         //   {
-            //         //     image = 'assets/file_video.png';
-            //         //     color = Color(0xfffceeeb);
-            //         //   }
-            //         //   break;
-            //         default:
-            //           {
-            //             icon = Icon(FontAwesome.file);
-            //             color = Color(0xff939aef);
-            //           }
-            //       }
-            //       return ListTile(
-            //         onTap: () {},
-            //         leading: Container(
-            //           padding: EdgeInsets.all(11.0),
-            //           decoration: BoxDecoration(
-            //             color: color,
-            //             borderRadius: BorderRadius.circular(5.0),
-            //           ),
-            //           child: icon,
-            //         ),
-            //         title: Text("${attachments[i].fileName}"),
-            //         subtitle: Text(
-            //             "${attachments[i].date} | ${attachments[i].fileLength}"),
-            //         trailing: IconButton(
-            //           icon: Icon(Icons.more_vert),
-            //           onPressed: () {},
-            //         ),
-            //       );
-            //     },
-            //   ),
-            // )
-          ],
+                onPressed: () {},
+              )
+            ],
+          ),
         ),
-      ),
+        SingleChildScrollView(
+          child: ListView.builder(
+              itemCount: attachments.length,
+              itemBuilder: (ctx, i) {
+                String image;
+                Icon icon;
+                Color color;
+                switch (attachments[i].fileType) {
+                  case ('.doc'):
+                    {
+                      icon = Icon(FontAwesome.file_word);
+                      color = Color(0xffe3f9f3);
+                    }
+                    break;
+                  case ('.docx'):
+                    {
+                      icon = Icon(FontAwesome.file_word);
+                      color = Color(0xffe3f9f3);
+                    }
+                    break;
+                  case ('.rtf'):
+                    {
+                      icon = Icon(FontAwesome.file_word);
+                      color = Color(0xffe3f9f3);
+                    }
+                    break;
+                  case ('.ocx'):
+                    {
+                      icon = Icon(FontAwesome.file_word);
+                      color = Color(0xffe3f9f3);
+                    }
+                    break;
+                  case ('.pdf'):
+                    {
+                      icon = Icon(FontAwesome.file_pdf);
+                      color = Color(0xffe3f9f3);
+                    }
+                    break;
+                  case ('.txt'):
+                    {
+                      icon = Icon(FontAwesome.file);
+                      color = Color(0xffe3f9f3);
+                    }
+                    break;
+                  case ('.ptx'):
+                    {
+                      icon = Icon(FontAwesome.file_powerpoint);
+                      color = Color(0xffe3f9f3);
+                    }
+                    break;
+                  case ('.ppt'):
+                    {
+                      icon = Icon(FontAwesome.file_powerpoint);
+                      color = Color(0xffe3f9f3);
+                    }
+                    break;
+                  case ('.xls'):
+                    {
+                      icon = Icon(FontAwesome.file_excel);
+                      color = Color(0xffe3f9f3);
+                    }
+                    break;
+                  case ('.xlsx'):
+                    {
+                      icon = Icon(FontAwesome.file_excel);
+                      color = Color(0xffe3f9f3);
+                    }
+                    break;
+                  case ('.xlsm'):
+                    {
+                      icon = Icon(FontAwesome.file_excel);
+                      color = Color(0xffe3f9f3);
+                    }
+                    break;
+                  case ('.xlsb'):
+                    {
+                      icon = Icon(FontAwesome.file_excel);
+                      color = Color(0xffe3f9f3);
+                    }
+                    break;
+                  case ('.jpg'):
+                    {
+                      icon = Icon(FontAwesome.file_image);
+                      color = Color(0xffe3f9f3);
+                    }
+                    break;
+                  case ('.png'):
+                    {
+                      icon = Icon(FontAwesome.file_image);
+                      color = Color(0xffe3f9f3);
+                    }
+                    break;
+                  case ('.gif'):
+                    {
+                      icon = Icon(FontAwesome.file_image);
+                      color = Color(0xffe3f9f3);
+                    }
+                    break;
+                  case ('.zip'):
+                    {
+                      icon = Icon(FontAwesome.file_archive);
+                      color = Color(0xffe3f9f3);
+                    }
+                    break;
+                  case ('.rar'):
+                    {
+                      icon = Icon(FontAwesome.file_archive);
+                      color = Color(0xffe3f9f3);
+                    }
+                    break;
+                  case ('.js'):
+                    {
+                      icon = Icon(FontAwesome.file_code);
+                      color = Color(0xffe3f9f3);
+                    }
+                    break;
+
+                  // case fileType.document:
+                  //   {
+                  //     image = 'assets/file_word.png';
+                  //     color = Color(0xffeaeaea);
+                  //   }
+                  //   break;
+                  // case fileType.pdf:
+                  //   {
+                  //     image = 'assets/file_pdf.png';
+                  //     color = Color(0xfff8bdba);
+                  //   }
+                  //   break;
+                  // case fileType.video:
+                  //   {
+                  //     image = 'assets/file_video.png';
+                  //     color = Color(0xfffceeeb);
+                  //   }
+                  //   break;
+                  default:
+                    {
+                      icon = Icon(FontAwesome.file);
+                      color = Color(0xff939aef);
+                    }
+                }
+                return ListTile(
+                  onTap: () {},
+                  leading: Container(
+                    padding: EdgeInsets.all(11.0),
+                    decoration: BoxDecoration(
+                      color: color,
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                    child: icon,
+                  ),
+                  title: Text("${attachments[i].fileName}"),
+                  subtitle: Text(
+                      "${attachments[i].date} | ${attachments[i].fileLength}"),
+                  trailing: IconButton(
+                    icon: Icon(Icons.more_vert),
+                    onPressed: () {},
+                  ),
+                );
+              }
+              // children: [
+              //   Container(color: Colors.red, height: 150.0),
+              //   Container(color: Colors.purple, height: 150.0),
+              //   Container(color: Colors.green, height: 150.0),
+              //   Container(color: Colors.orange, height: 150.0),
+              //   Container(color: Colors.yellow, height: 150.0),
+              //   Container(color: Colors.pink, height: 150.0),
+              //   Container(color: Colors.cyan, height: 150.0),
+              //   Container(color: Colors.indigo, height: 150.0),
+              //   Container(color: Colors.blue, height: 150.0),
+              // ],
+              ),
+        ),
+      ],
     );
+    // Container(
+    //   decoration: BoxDecoration(
+    //       borderRadius: BorderRadius.only(
+    //         topLeft: Radius.circular(25.0),
+    //         topRight: Radius.circular(25.0),
+    //       ),
+    //       color: Colors.white),
+    //   padding: EdgeInsets.all(15.0),
+    //   child: Expanded(
+    //     flex: 1,
+    //     child:
+    // Row(
+    //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //       children: <Widget>[
+    //         Text(
+    //           "Вложения",
+    //           style: Theme.of(context).textTheme.display1.apply(
+    //                 color: Color(0xff0b1666),
+    //                 fontWeightDelta: 2,
+    //               ),
+    //         ),
+    //         FlatButton(
+    //           child: Text(
+    //             "View All",
+    //             style: TextStyle(color: Colors.blue),
+    //           ),
+    //           onPressed: () {},
+    //         )
+    //       ],
+    //     ),
+    //     //  ListView(
+    //     //   children: <Widget>[
+    //     //     // Row(
+    //     //     //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //     //     //   children: <Widget>[
+    //     //     //     Text(
+    //     //     //       "Вложения",
+    //     //     //       style: Theme.of(context).textTheme.display1.apply(
+    //     //     //             color: Color(0xff0b1666),
+    //     //     //             fontWeightDelta: 2,
+    //     //     //           ),
+    //     //     //     ),
+    //     //     //     FlatButton(
+    //     //     //       child: Text(
+    //     //     //         "View All",
+    //     //     //         style: TextStyle(color: Colors.blue),
+    //     //     //       ),
+    //     //     //       onPressed: () {},
+    //     //     //     )
+    //     //     //   ],
+    //     //     // ),
+    //     //     // Container(color: Colors.red, height: 150.0),
+    //     //     // Container(color: Colors.purple, height: 150.0),
+    //     //     // Container(color: Colors.green, height: 150.0),
+    //     //     // Container(color: Colors.orange, height: 150.0),
+    //     //     // Container(color: Colors.yellow, height: 150.0),
+    //     //     // Container(color: Colors.pink, height: 150.0),
+    //     //     // Container(color: Colors.cyan, height: 150.0),
+    //     //     // Container(color: Colors.indigo, height: 150.0),
+    //     //     // Container(color: Colors.blue, height: 150.0),
+    //     //     // Expanded(
+    //     //     //   child: ListView.builder(
+    //     //     //     itemCount: attachments.length,
+    //     //     //     itemBuilder: (ctx, i) {
+    //     //     //       String image;
+    //     //     //       Icon icon;
+    //     //     //       Color color;
+    //     //     //       switch (attachments[i].fileType) {
+    //     //     //         case ('.doc'):
+    //     //     //           {
+    //     //     //             icon = Icon(FontAwesome.file_word);
+    //     //     //             color = Color(0xffe3f9f3);
+    //     //     //           }
+    //     //     //           break;
+    //     //     //         case ('.docx'):
+    //     //     //           {
+    //     //     //             icon = Icon(FontAwesome.file_word);
+    //     //     //             color = Color(0xffe3f9f3);
+    //     //     //           }
+    //     //     //           break;
+    //     //     //         case ('.rtf'):
+    //     //     //           {
+    //     //     //             icon = Icon(FontAwesome.file_word);
+    //     //     //             color = Color(0xffe3f9f3);
+    //     //     //           }
+    //     //     //           break;
+    //     //     //         case ('.ocx'):
+    //     //     //           {
+    //     //     //             icon = Icon(FontAwesome.file_word);
+    //     //     //             color = Color(0xffe3f9f3);
+    //     //     //           }
+    //     //     //           break;
+    //     //     //         case ('.pdf'):
+    //     //     //           {
+    //     //     //             icon = Icon(FontAwesome.file_pdf);
+    //     //     //             color = Color(0xffe3f9f3);
+    //     //     //           }
+    //     //     //           break;
+    //     //     //         case ('.txt'):
+    //     //     //           {
+    //     //     //             icon = Icon(FontAwesome.file);
+    //     //     //             color = Color(0xffe3f9f3);
+    //     //     //           }
+    //     //     //           break;
+    //     //     //         case ('.ptx'):
+    //     //     //           {
+    //     //     //             icon = Icon(FontAwesome.file_powerpoint);
+    //     //     //             color = Color(0xffe3f9f3);
+    //     //     //           }
+    //     //     //           break;
+    //     //     //         case ('.ppt'):
+    //     //     //           {
+    //     //     //             icon = Icon(FontAwesome.file_powerpoint);
+    //     //     //             color = Color(0xffe3f9f3);
+    //     //     //           }
+    //     //     //           break;
+    //     //     //         case ('.xls'):
+    //     //     //           {
+    //     //     //             icon = Icon(FontAwesome.file_excel);
+    //     //     //             color = Color(0xffe3f9f3);
+    //     //     //           }
+    //     //     //           break;
+    //     //     //         case ('.xlsx'):
+    //     //     //           {
+    //     //     //             icon = Icon(FontAwesome.file_excel);
+    //     //     //             color = Color(0xffe3f9f3);
+    //     //     //           }
+    //     //     //           break;
+    //     //     //         case ('.xlsm'):
+    //     //     //           {
+    //     //     //             icon = Icon(FontAwesome.file_excel);
+    //     //     //             color = Color(0xffe3f9f3);
+    //     //     //           }
+    //     //     //           break;
+    //     //     //         case ('.xlsb'):
+    //     //     //           {
+    //     //     //             icon = Icon(FontAwesome.file_excel);
+    //     //     //             color = Color(0xffe3f9f3);
+    //     //     //           }
+    //     //     //           break;
+    //     //     //         case ('.jpg'):
+    //     //     //           {
+    //     //     //             icon = Icon(FontAwesome.file_image);
+    //     //     //             color = Color(0xffe3f9f3);
+    //     //     //           }
+    //     //     //           break;
+    //     //     //         case ('.png'):
+    //     //     //           {
+    //     //     //             icon = Icon(FontAwesome.file_image);
+    //     //     //             color = Color(0xffe3f9f3);
+    //     //     //           }
+    //     //     //           break;
+    //     //     //         case ('.gif'):
+    //     //     //           {
+    //     //     //             icon = Icon(FontAwesome.file_image);
+    //     //     //             color = Color(0xffe3f9f3);
+    //     //     //           }
+    //     //     //           break;
+    //     //     //         case ('.zip'):
+    //     //     //           {
+    //     //     //             icon = Icon(FontAwesome.file_archive);
+    //     //     //             color = Color(0xffe3f9f3);
+    //     //     //           }
+    //     //     //           break;
+    //     //     //         case ('.rar'):
+    //     //     //           {
+    //     //     //             icon = Icon(FontAwesome.file_archive);
+    //     //     //             color = Color(0xffe3f9f3);
+    //     //     //           }
+    //     //     //           break;
+    //     //     //         case ('.js'):
+    //     //     //           {
+    //     //     //             icon = Icon(FontAwesome.file_code);
+    //     //     //             color = Color(0xffe3f9f3);
+    //     //     //           }
+    //     //     //           break;
+
+    //     //     //         // case fileType.document:
+    //     //     //         //   {
+    //     //     //         //     image = 'assets/file_word.png';
+    //     //     //         //     color = Color(0xffeaeaea);
+    //     //     //         //   }
+    //     //     //         //   break;
+    //     //     //         // case fileType.pdf:
+    //     //     //         //   {
+    //     //     //         //     image = 'assets/file_pdf.png';
+    //     //     //         //     color = Color(0xfff8bdba);
+    //     //     //         //   }
+    //     //     //         //   break;
+    //     //     //         // case fileType.video:
+    //     //     //         //   {
+    //     //     //         //     image = 'assets/file_video.png';
+    //     //     //         //     color = Color(0xfffceeeb);
+    //     //     //         //   }
+    //     //     //         //   break;
+    //     //     //         default:
+    //     //     //           {
+    //     //     //             icon = Icon(FontAwesome.file);
+    //     //     //             color = Color(0xff939aef);
+    //     //     //           }
+    //     //     //       }
+    //     //     //       return ListTile(
+    //     //     //         onTap: () {},
+    //     //     //         leading: Container(
+    //     //     //           padding: EdgeInsets.all(11.0),
+    //     //     //           decoration: BoxDecoration(
+    //     //     //             color: color,
+    //     //     //             borderRadius: BorderRadius.circular(5.0),
+    //     //     //           ),
+    //     //     //           child: icon,
+    //     //     //         ),
+    //     //     //         title: Text("${attachments[i].fileName}"),
+    //     //     //         subtitle: Text(
+    //     //     //             "${attachments[i].date} | ${attachments[i].fileLength}"),
+    //     //     //         trailing: IconButton(
+    //     //     //           icon: Icon(Icons.more_vert),
+    //     //     //           onPressed: () {},
+    //     //     //         ),
+    //     //     //       );
+    //     //     //     },
+    //     //     //   ),
+    //     //     // )
+    //     //   ],
+    //     // ),
+    //   ),
+    // );
   }
 }
 

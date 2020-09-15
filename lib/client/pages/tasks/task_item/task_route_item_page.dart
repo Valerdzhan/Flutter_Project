@@ -89,6 +89,24 @@ class _TaskRouteItemPageState extends State<TaskRouteItemPage>
         ));
   }
 
+  Widget _customScroll() {
+    return CustomScrollView(
+      slivers: <Widget>[
+        // Next, create a SliverList
+        SliverList(
+          // Use a delegate to build items as they're scrolled on screen.
+          delegate: SliverChildBuilderDelegate(
+            // The builder function returns a ListTile with a title that
+            // displays the index of the current item.
+            (context, index) => ListTile(title: Text('Item #$index')),
+            // Builds 1000 ListTiles
+            childCount: 1000,
+          ),
+        ),
+      ],
+    );
+  }
+
   Widget _taskBody() {
     return new Column(
       children: <Widget>[
@@ -136,7 +154,7 @@ class _TaskRouteItemPageState extends State<TaskRouteItemPage>
           child: new TabBarView(
             controller: _tabController,
             children: <Widget>[
-              Column(
+              ListView(
                 children: [
                   FieldDisplayComponent(
                     fieldName: "Маршрут",

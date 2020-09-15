@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:myapp/business/app_state_store.dart';
 import 'package:myapp/business/tasks/models/task_item_model.dart';
 import 'package:myapp/business/tasks/tasks_state.dart';
+import 'package:myapp/client/pages/tasks/task_item/task_hr_task_item_page.dart';
+import 'package:myapp/client/pages/tasks/task_item/task_processing_item_page.dart';
+import 'package:myapp/client/pages/tasks/task_item/task_resolution_item_page.dart';
 import 'package:myapp/client/pages/tasks/task_item/task_route_item_page.dart';
 
 class TaskItemPageConnector extends StatefulWidget {
@@ -29,15 +32,17 @@ class _TaskItemPageConnectorState extends State<TaskItemPageConnector> {
           case r'RouteTaskListItemType':
             return TaskRouteItemPage(task: vm.task);
           case r'ResolutionTaskListItemType':
+            return TaskResolutionItemPage(task: vm.task);
             break;
           case r'ProcessingTaskListItemType':
+            return TaskProcessingItemPage(task: vm.task);
             break;
           case r'ForHRDecisionTaskListItemType':
+            return TaskHRItemPage(task: vm.task);
             break;
           default:
             return Container();
         }
-        return Container();
       },
     );
   }

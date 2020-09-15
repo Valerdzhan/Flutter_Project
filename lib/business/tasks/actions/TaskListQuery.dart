@@ -15,31 +15,25 @@ class TaskListQuery extends BaseActions {
 
   @override
   Future<AppState> reduce() async {
-    await Future.delayed(
-      Duration(milliseconds: 5000),
-      () async {
-        dispatch(MockTaskListQuery());
-        // GraphQLClient _client = graphQLConfiguration.clientToQuery();
+    GraphQLClient _client = graphQLConfiguration.clientToQuery();
 
-        // final QueryOptions options = QueryOptions(
-        //     documentNode: UserTasksQuery().document,
-        //     variables: <String, dynamic>{'skip': 0, 'limit': 20});
+    final QueryOptions options = QueryOptions(
+        documentNode: UserTasksQuery().document,
+        variables: <String, dynamic>{'skip': 0, 'limit': 20});
 
-        // final QueryResult result = await _client.query(options);
+    final QueryResult result = await _client.query(options);
 
-        // if (!result.hasException) {
-        //   var userTasks = TaskListItemInterfaceCollection.fromJson(
-        //       result.data["userTasks"]);
+    if (!result.hasException) {
+      var userTasks =
+          TaskListItemInterfaceCollection.fromJson(result.data["userTasks"]);
 
-        //   var newTaskState = taskState.copy(
-        //     taskList: userTasks,
-        //   );
+      var newTaskState = taskState.copy(
+        taskList: userTasks,
+      );
 
-        //   dispatch(SetTaskStateAction(newTaskState));
-        //   dispatch(SetTaskToMapAction(userTasks.items));
-        // }
-      },
-    );
+      dispatch(SetTaskStateAction(newTaskState));
+      dispatch(SetTaskToMapAction(userTasks.items));
+    }
 
     return state;
   }

@@ -18,13 +18,13 @@ final NormalizedInMemoryCache cache = NormalizedInMemoryCache(
 String get host {
 // https://github.com/flutter/flutter/issues/36126#issuecomment-596215587
   if (UniversalPlatform.isAndroid) {
-    return '192.168.0.12';
+    return '10.0.2.2';
   } else {
-    return '192.168.0.12';
+    return 'localhost';
   }
 }
 
-final graphqlEndpoint = 'http://$host:9002/graphql';
+final graphqlEndpoint = 'http://$host:9000/graphql';
 
 ValueNotifier<GraphQLClient> clientFor({
   @required String uri,

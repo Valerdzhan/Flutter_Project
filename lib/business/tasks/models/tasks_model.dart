@@ -10,7 +10,7 @@ class TasksModel extends BaseModel<AppState> {
 
   TaskListItemInterfaceCollection tasks;
   VoidCallback onQuery;
-  VoidCallback loadMore;
+  Function(int) loadMore;
   Future<void> Function() onRefresh;
   bool isLoading;
 
@@ -27,7 +27,7 @@ class TasksModel extends BaseModel<AppState> {
         tasks: state.taskState.taskList,
         // isLoading: state.taskState.isLoading,
         isLoading: state.wait.isWaitingFor("tasks-wait"),
-        loadMore: () => dispatch(TaskLoadMoreAction()),
+        loadMore: (skip) => dispatch(TaskLoadMoreAction(skip: skip)),
         onQuery: () => dispatch(TaskListQuery()),
         onRefresh: () => dispatchFuture(TaskListQuery()),
       );
